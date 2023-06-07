@@ -71,9 +71,13 @@ Before downloading, the malware will create the enclosing directory if it does n
 
 If you find these files, you should delete them immediately, but consider *all* JAR files on your system compromised, and potentially all logins on your web browser as well. Passwords should be changed.
 
+You should also set up your firewall to block all connections to IPs 107.189.3.101 & 85.217.144.130 and to the website https://files-8ie.pages.dev/ip. Please note that if you are suffering a DDoS attack by this malware, you can block the User-Agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/112.0"
+
 ### Given a jar file, how do I know if it's safe?
 
 There are various heuristics you can use to determine whether a jar is infected with Stage 0.
+
+The latest and safest methods is to use https://github.com/overwolf/detection-tool (for steps 1-3) and https://github.com/MCRcortex/nekodetector (for the step 0).
 
 Emi's shell script [here](https://gist.github.com/emilyploszaj/a9693c4f3de5ec9fbc255c51ff3ca47e) simply checks for all usages of `ClassLoader`, which is uncommon in mod code. This can lead to false positives and negatives. For example, it falsely flags the latest Quark 1.19 file as infected when it is not.
 
