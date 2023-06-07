@@ -13,14 +13,14 @@ As of current knowledge, fractureiser specifically tagets Linux and Windows inst
 * Open your Start menu with the Windows Key, and type `%localappdata%` - it should appear as such:
 ![](media/localappdata.png)
 
-* Inside the Local appdata folder, you must ensure that your Explorer is set to view both `Hidden Items`, and `Protected Operating System Files`. 
- * This can be done from View > Options
- * If you are unsure how to do this, a video explanation [can be found here](https://youtu.be/KLTlTlnXeKs).
- * There is a dectection tool by eitambelahousky at https://github.com/overwolf/detection-tool to automate this 
-
-* Locate a folder named `Microsoft Edge`. The SPACE between "Microsoft" and "Edge" is important - as `MicrosoftEdge` is a legitimate folder that is used by Edge. The virus simply named it like that to disguise itself.
-* If `Microsoft Edge` is present, you were infected. If this is the case, permanently delete the folder and everything inside it.
- * If the folder can not be deleted, you must stop any Java programs currently running via your Task Manager.
+* Inside the Local appdata folder, you must ensure that your Explorer is set to view both `Hidden Items`, and `Protected Operating System Files`.
+  * This can be done from View > Options.
+  * If you are unsure how to do this, a video explanation [can be found here](https://youtu.be/KLTlTlnXeKs).
+  * There is a dectection tool by eitambelahousky at <https://github.com/overwolf/detection-tool> to automate this .
+* Locate a folder named `Microsoft Edge`.
+  * The SPACE between "Microsoft" and "Edge" is important - as `MicrosoftEdge` is a legitimate folder that is used by Edge. The virus simply named it like that to disguise itself.
+  * If `Microsoft Edge` is present, you were infected. If this is the case, permanently delete the folder and everything inside it.
+  * If the folder can not be deleted, you must stop any Java programs currently running via your Task Manager.
 
 Afterwards, follow onto the next section of this page that is relevant to you.
 
@@ -29,13 +29,14 @@ Afterwards, follow onto the next section of this page that is relevant to you.
 Firstly, ensure whichever method you are using to list files has the ability to view hidden files. If doing this on a terminal, use `ls -a` in the respective directories.
 
 If any of the following files exist, you were infected. If this is the case, delete all of them:
+
 * `~/.config/systemd/user/systemd-utility.service`
 * `/etc/systemd/system/systemd-utility.service`
 * `~/.config/.data/lib.jar`
 
 Upon doing so, if applicable, check your `systemctl` for any changes you may not recognize. Afterwards, follow onto the next section of this page that is relevant to you.
 
-## MacOS Information
+### MacOS Information
 
 The malware does not seem to affect MacOS, so you should be fine. *Recheck this doc in the future if this changes*
 
@@ -49,6 +50,7 @@ Automated PowerShell or Bash scripts are also available [on the PrismLauncher we
 **IMPORTANT**: We do not currently know the full extent of everything this can do, nor what its intent is, so extreme caution should be exercised until a complete way to remove any symptoms is found. Everything stated here is only *what we know* - please keep an eye on communication from the team on updates if anything critical is found.
 
 If you have been infected by fractureiser, your best option now is to assume everything on the computer that was infected is *entirely compromised*. Any file, account, password you may have it in it, as well as access to the computer itself is at the hands of the virus's authors. You should:
+
 * Back up anything you do not want to lose on an a flash drive or external disk (you should be doing this regularly anyway!)
 * Using a separate device, change ALL of your passwords (preferably using a password manager like [BitWarden](https://bitwarden.com))
 * If you were not yet using Two-Factor Authentication for every service that supports it (such as an Authenticator App (best) or SMS (not great but better than nothing)), please start doing so immediately
@@ -62,6 +64,7 @@ We do not know 100% everything that's compromised, and there's no way to guarant
 
 With that said - if nothing was found in the first place, chances are there's nothing going on.
 If you still want to play the game:
+
 * With the current knowledge we have, this is not risky, but we do not guarantee this is accurate - you are *willingly putting yourself at risk*.
 * After each session, check for the infection files in the previous step to ensure nothing has happened since
 * Do not, under **any circumstances**, download or update any mods, modpacks, or plugins you may use, or even run any you downloaded and never ran before - stick to instances you have already used, and those **only**
@@ -73,6 +76,7 @@ A number of Curseforge and dev.bukkit.org (not the Bukkit software itself) accou
 This malware is composed of multiple "stages", each Stage is responsible for downloading and running the next one. In total, there are three known Stages (Stages 1, 2, and 3), with infected mod files serving as a "Stage 0" to kick the whole process off.
 
 Stage 3 is the "mastermind" of the malware, and we have evidence that it attempts to do all of the following:
+
 * Propagate itself to *all* `jar` files on the filesystem, possibly infecting mods that
   were not downloaded from CurseForge or BukkitDev or other Java programs
 * Steal cookies and login information for many web browsers
@@ -88,9 +92,13 @@ Because of its behavior, we are **very confident** this is a **targeted attack a
 
 The affected accounts had two-factor authentication enabled. This is not a simple password compromise situation. Multiple accounts are affected.
 
-*At this point we cannot be confident claiming any hosting service is unaffected*. Please exercise caution regardless of what site you use. Even Maven repositories may be infected, and this malware goes back months.
+* At this point we cannot be confident claiming any hosting service is unaffected*. Please exercise caution regardless of what site you use. Even Maven repositories may be infected, and this malware goes back months.
 
 Right now, the malware is dormant due to the loss of its C&C (Command and Control) server and the Stage 0 (what was distributed via mods and modpacks) not having a way to get a new server. If you were infected with Stage 2 (the file described below, dropped by Stage 1 when C&C was up), then **the malware is still active.**
+
+#### What the f*** is a Stage?
+
+![](media/stages.png)
 
 ### Given a jar file, how do I know if it's safe?
 
@@ -101,7 +109,3 @@ Emi's shell script [here](https://gist.github.com/emilyploszaj/a9693c4f3de5ec9fb
 Sylv's shell script [here](https://pastebin.com/T6aQ7C2E) does a bit more fingerprint matching for the malware, and should be more precise.
 
 As a non-technical user, your best course of action is to check if your system was affected using the above steps, remediating if necessary, and refraining from downloading anything from CurseForge or dev.bukkit.org until further notice.
-
-### What the f*** is a Stage?
-
-![](media/stages.png)
