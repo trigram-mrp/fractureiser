@@ -346,14 +346,14 @@ This is a added on jar with the C2 server update which seems to be just the SkyR
 
 ## New C2 (`107.189.3.101`)
 
-The new C2 came with a deobfuscated stage3, accidentialy pushed by the looks of it. After, the upload URI was changed to a Stage4, which is `SkyRage` the blackspigot malware.
+The new C2 came with a deobfuscated stage3, accidentialy pushed by the looks of it. 
 
-The new C2 is hosted on BuyVM, please make sure to report it if you know anyone working there.
+After, the upload URI was changed to a Stage4, which is `SkyRage` the blackspigot malware.
 
 ## Other Stuff
 *The only official channel run by the same team that wrote this writeup*  is [#cfmalware on EsperNet IRC](https://webchat.esper.net/?channels=cfmalware) — we do not have a Discord. You may join the channel if you wish — due to an influx of new users we've set the channel +m, you will need permission to speak. **Joining an IRC channel will expose your IP address.**
 
-IRC logs: ~~TODO~~ Done: [Discord #irc-logs](https://discord.gg/serverscanning), NOTE: This discord is unrelated, if you are here just to read logs please do not chat about the actual situation here.
+IRC logs: TODO
 
 The main payload server ~~is~~ *was* (got taken down) hosted on Serverion, a company based in the Netherlands.
 
@@ -391,12 +391,6 @@ Java edition modding has always had the full power of Java, and this is the othe
 Minecraft itself is not run with any sandboxing, and servers usually are not sandboxed unless the owner is knowledgeable enough to do so.
 
 Good sandboxing is difficult, especially on systems such as Linux where SELinux/AppArmor have such poor UX that no one deploys them.
-## Unmasking
-
-The person currently suspected to do this is mori0, a script kiddie from our perspective.
-
-Reason for this is SkyRage.
-The jar `dummyloader3.jar` on the new C2 is the skyrage updater connecting to `connect.skyrage.de` which is a malware associated with mori0
 
 ## Credits
 Nonextensive! Thank you to all that pitched in. We'll flesh this out after this all blows over.
