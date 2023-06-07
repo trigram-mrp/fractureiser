@@ -264,22 +264,6 @@ It appears to be just the SkyRage updater, which is another minecraft malware ta
 - persistence (see above)
 - contains auto-updater, current version is 932 (`hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/version`)
 
----
-
-The main payload server ~~is~~ *was* (got taken down) hosted on Serverion, a company based in the Netherlands.
-
-The new C&C has been taken down as well. _2023-06-07 18:51 UTC_
-
-Other than an HTTP server on port 80/443 and an SSH server on port 22, the following ports were open on `85.217.144.130` and `107.189.3.101`:
-
-* 1337
-* 1338 (a port referenced in Stage 1's file for creating new Debugger connection)
-* 8081 (this is a WebSocket server - no apparent function right now, not referenced in any malicious code)
-* 8082 (nobody's gotten anything out of this one,  not referenced in any malicious code)
-* 8083 (contacted by Stage 1)
-
-Curiously, fractureiser's bukkit page says "Last active Sat, Jan, 1 2000 00:00:00" https://dev.bukkit.org/members/fractureiser/projects/
-
 ### Mappings
 
 These are the mappings for this sample, which can be applied via Enigma or another tool supporting Engima mappings.
@@ -327,6 +311,20 @@ More details are available in the live stage-3 reversal doc: https://hackmd.io/5
 
 When the second C&C server was stood up, a deobfuscated version of stage 3 was
 accidentally served for around 40 minutes.
+
+The main payload server ~~is~~ *was* (got taken down) hosted on Serverion, a company based in the Netherlands.
+
+The new C&C has been taken down as well. _2023-06-07 18:51 UTC_
+
+Other than an HTTP server on port 80/443 and an SSH server on port 22, the following ports were open on `85.217.144.130` and `107.189.3.101`:
+
+* 1337
+* 1338 (a port referenced in Stage 1's file for creating new Debugger connection)
+* 8081 (this is a WebSocket server - no apparent function right now, not referenced in any malicious code)
+* 8082 (nobody's gotten anything out of this one,  not referenced in any malicious code)
+* 8083 (contacted by Stage 1)
+
+Curiously, fractureiser's bukkit page says "Last active Sat, Jan, 1 2000 00:00:00" https://dev.bukkit.org/members/fractureiser/projects/
 
 ## Samples
 
