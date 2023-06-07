@@ -1,4 +1,6 @@
-# Modded Minecraft Malware "fractureiser"
+<p align="center">
+    <img src="docs/media/logo.svg" alt="Logo">
+</p>
 *Pardon our dust, documentation not finalized*
 
 This is a living document that is being edited by multiple people about a developing situation. 
