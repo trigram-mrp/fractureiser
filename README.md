@@ -4,8 +4,6 @@ We've dubbed this malware `fractureiser` because that's the name of the CurseFor
 
 <center>*Pardon our dust*, this is a living document being edited in realtime by multiple people about a developing situation.</center>
 
-<br>
-
 #### Current status
 We have a good idea how fractureiser works, from stages 0 to 3. There are certain unknowns, but stage 0 bootstrapping was quickly nipped and tomorrow we'll be moving our focus to mitigation. As a plan, we've contacted Mojang and will likely be working with teams to get detection software distributed and integrated into CurseForge and Modrinth, as well as considering integration in launchers like Prism, and mod loaders like Fabric and Forge. It is also worthwhile to run this detection software on mod distribution mavens, as it's possible some have become infected.
 
