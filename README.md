@@ -360,6 +360,10 @@ Other than an HTTP server on port 80/443 and an SSH server on port 22, the follo
 
 Curiously, fractureiser's bukkit page says "Last active Sat, Jan, 1 2000 00:00:00" https://dev.bukkit.org/members/fractureiser/projects/
 
+## Samples
+
+Please ask in the IRC chat for read or read/write access to samples. Source code of the decompiled stage 3 client is available: https://github.com/clrxbl/NekoClient
+
 ## Follow-Ups
 While it's a bit early to speak of long term follow-ups, this whole debacle has brought up several critical flaws in the modded Minecraft ecosystem. This section is just brainstorming on them and how we can improve.
 
