@@ -14,7 +14,7 @@ Work has begun on a detector for infected stage0 mods: https://github.com/MCRcor
 
 ----
 
-If you have files relevant to this malware, please upload them to https://wormhole.app and email the URL to fractureiser.investigation@opayq.com — this inbox is controlled by xylemlandmark, and anything sent to it will be shared with the rest of the team. **Please also let us know if you have the ability to download files from VirusTotal**, as that would let us get ahold of many of the files we're missing. We are looking especially for one `lib.dll`.
+If you have files relevant to this malware, please upload them to https://wormhole.app and email the URL to fractureiser.investigation@opayq.com — this inbox is controlled by xylemlandmark, and anything sent to it will be shared with the rest of the team. **Please also let us know if you have the ability to download files from VirusTotal**, as that would let us get ahold of many of the files we're missing.
 
 If you need to get in touch more generally, please send mail to jaskarth4@gmail.com.
 
