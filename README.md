@@ -1,8 +1,7 @@
 # Modded Minecraft Malware "fractureiser" - What We Know
 
-We've dubbed this malware `fractureiser` because that's the name of the CurseForge account that uploaded the most notable malicious files.
-
-*Pardon our dust*, this is a living document being edited in realtime by multiple people about a developing situation.
+We've dubbed this malware `fractureiser` because that's the name of the CurseForge account that uploaded the most notable malicious files.  
+*Pardon our dust*, this is a living document being edited by multiple people about a developing situation. Some sections may be messy.
 
 ---
 
@@ -273,7 +272,7 @@ The creation of the classloader is hardcoded to that URL and does not use the Cl
 
 SHA-1: `dc43c4685c3f47808ac207d1667cc1eb915b2d82`
 
-[Decompiled copy of `Utility` from the malware](https://github.com/fractureiser-investigation/fractureiser/blob/main/README.md).
+[Decompiled files from the Malware can be found here](decomp).
 
 The very first thing `Utility.run` does is check if the system property `neko.run` is set. If it is, it will *immediately stop executing*. If not, it sets it to the empty string and continues. This appears to be a very simplistic way of avoiding the same process running the malware multiple times, such as if it had multiple infected mods. *This cannot be relied upon as a killswitch because Stage1 is downloaded from the Internet and may change.*
 
