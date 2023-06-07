@@ -1,8 +1,6 @@
 # Modded Minecraft Malware "fractureiser" - What We Know
 
 
-## If your browser is lagging, [go here instead](https://hackmd.io/@jaskarth4/B1gaTOaU2)
-
 We've dubbed this malware `fractureiser` because that's the name of the CurseForge account that uploaded the most notable malicious files.
 
 <span style="float: left;margin-right: 18px">![][underconstruction.gif]</span> <span style="float: right;margin-left: 18px">![][underconstruction.gif]</span><center>*Pardon our dust*, this is a living document being edited in realtime by multiple people about a developing situation.</center>
