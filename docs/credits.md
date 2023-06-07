@@ -7,4 +7,4 @@ Nonextensive! Thank you to all that pitched in. We'll flesh this out after this 
 **Emi**: Coordination, initial discovery (for this team), and early research  
 **williewillus**: Coordination, journalist  
 **quat**: Documentation, initial infected sample research  
-**xylemlandmark**: Coordination of documentation, crowd control, responsible for using Snopyta at first and the disaster that caused
+**unascribed**: Coordination of documentation, crowd control, responsible for using Snopyta at first and the disaster that caused
