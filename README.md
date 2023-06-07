@@ -344,15 +344,22 @@ This is a added on jar with the C2 server update which seems to be just the SkyR
 
 *This section needs more information, feel free to contribute*
 
+## New C2 (`107.189.3.101`)
+
+The new C2 came with a deobfuscated stage3, accidentialy pushed by the looks of it. After, the upload URI was changed to a Stage4, which is `SkyRage` the blackspigot malware.
+
+The new C2 is hosted on BuyVM, please make sure to report it if you know anyone working there.
 
 ## Other Stuff
 *The only official channel run by the same team that wrote this writeup*  is [#cfmalware on EsperNet IRC](https://webchat.esper.net/?channels=cfmalware) — we do not have a Discord. You may join the channel if you wish — due to an influx of new users we've set the channel +m, you will need permission to speak. **Joining an IRC channel will expose your IP address.**
 
-IRC logs: TODO
+IRC logs: ~~TODO~~ Done: [Discord #irc-logs](https://discord.gg/serverscanning), NOTE: This discord is unrelated, if you are here just to read logs please do not chat about the actual situation here.
 
 The main payload server ~~is~~ *was* (got taken down) hosted on Serverion, a company based in the Netherlands.
 
-Other than an HTTP server on port 80/443 and an SSH server on port 22, the following ports were open on `85.217.144.130`:
+The new C2 is still up, please make sure to contact BuyVM for this.
+
+Other than an HTTP server on port 80/443 and an SSH server on port 22, the following ports were open on `85.217.144.130` and `107.189.3.101`:
 
 * 1337
 * 1338 (a port referenced in stage 1's file for creating new Debugger connection)
