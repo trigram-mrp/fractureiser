@@ -396,7 +396,7 @@ Good sandboxing is difficult, especially on systems such as Linux where SELinux/
 ## Credits
 Nonextensive! Thank you to all that pitched in. We'll flesh this out after this all blows over.
 
-**Shadowex3**: Extensive reverse engineering, early discovery learned of later  
+**D3SL**: Extensive reverse engineering, early discovery learned of later  
 **Nia**: Extensive stage 3 reverse engineering  
 **Jasmine**: Coordination, writing the decompiler we've been using (Quiltflower)  
 **Emi**: Coordination, initial discovery (for this team), and early research  
