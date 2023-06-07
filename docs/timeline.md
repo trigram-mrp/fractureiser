@@ -3,6 +3,33 @@
 The timeline is from bottom-to-top. Topmost events are the most recent.
 
 ---
+*2023-06-07 14:40 UTC*
+
+The unobfuscated stage 3 was replaced by an obfuscated one, then further by another
+payload.
+
+That payload is the skyrage updater, which is a known Minecraft malware targeting spigot
+servers.
+
+(TODO this timeframe is not completely accurate)
+
+---
+*2023-06-07 14:20 UTC*
+
+Analysis of the new IP address yields a fully deobfuscated stage 3, seemingly uploaded by accident.
+It has been archived here: https://github.com/clrxbl/NekoClient
+
+---
+*2023-06-07 14:19 UTC*
+
+The Cloudflare pages domain has been taken down.
+
+---
+*2023-06-07 14:05 UTC*
+
+The Cloudflare pages domain has switched to pointing to a new IP address, 107.189.3.101.
+
+---
 
 
 *2023-06-07 08:52 UTC*

@@ -82,6 +82,8 @@ It attempts to contact `85.217.144.130`, and a Cloudflare Pages domain (`https:/
 
 *The C&C IP has been nullrouted after an abuse report to the server provider. We will need to keep an eye on the Cloudflare page to see if a new C&C server is stood up, I can't imagine they didn't plan for this.* Thank you Serverion for your prompt response.
 
+*The Cloudflare Pages domain has been terminated.* There is a new command and control server located at `107.189.3.101`.
+
 Stage 1 then attempts to achieve persistence by doing the following:
 1. Downloading stage 2 (lib.jar on Linux, libWebGL64.jar on Windows) from the server
 2. Making stage 2 run automatically on startup:
@@ -136,9 +138,34 @@ Jars are heuristically detected as Minecraft mods or plugins as follows:
 
 More details are available in the live stage-3 reversal doc: https://hackmd.io/5gqXVri5S4ewZcGaCbsJdQ
 
+When the second C&C server was stood up, a deobfuscated version of stage 3 was
+accidentally served for around 40 minutes.
+
+## Stage3b (`dummyloader3.jar`)
+Stage 3 was replaced with another jar some time after the second C&C server was stood up.
+
+It appears to be just the SkyRage updater, which is another minecraft malware targetting
+blackspigot.
+
+### Persistence
+Windows: task scheduler `MicrosoftEdgeUpdateTaskMachineVM`, file `%AppData%\..\LocalLow\Microsoft\Internet Explorer\DOMStore\microsoft-vm-core`
+Linux: `/bin/vmd-gnu`, `/etc/systemd/system/vmd-gnu.service`, service `vmd-gnu`
+
+### Connections
+C&C server: `connect.skyrage.de`
+Downloading: `hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/qqqqqqqqq`
+
+### Actions
+- `qqqqqqqqq` jar extracts all kinds of information (browser cookies, discord, minecraft, epic games, steam login, also some stuff about crypto wallets and password pamangers), which update jar uploads to C&C server
+- replaces crypto coin addresses in clipboard with address recieved from `95.214.27.172:18734`
+- persistence (see above)
+- contains auto-updater, current version is 932 (`hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/version`)
+
 The main payload server ~~is~~ *was* (got taken down) hosted on Serverion, a company based in the Netherlands.
 
-Other than an HTTP server on port 80/443 and an SSH server on port 22, the following ports were open on `85.217.144.130`:
+The new C&C is still up. This line will be updated when its taken down.
+
+Other than an HTTP server on port 80/443 and an SSH server on port 22, the following ports were open on `85.217.144.130` and `107.189.3.101`:
 
 * 1337
 * 1338 (a port referenced in stage 1's file for creating new Debugger connection)
