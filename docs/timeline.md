@@ -97,13 +97,13 @@ We believe this is how the infection initially spread, and Curseforge may not ha
 
 *2023-06-07 6:27 UTC*
 
-Investigation has slowed down and most of the team is going to bed. xylemlandmark has opened an email inbox for people to submit samples or other useful information. williewillus is currently working to clean up and get the information presented by Shadowex3 into this doc. 
+Investigation has slowed down and most of the team is going to bed. xylemlandmark has opened an email inbox for people to submit samples or other useful information. williewillus is currently working to clean up and get the information presented by D3SL into this doc. 
 
 ----
 
 *2023-06-07 6:20 UTC*
 
-Shadowex3 informs the unofficial Discord that they have a copy of the full (untruncated) Stage 3 `client.jar`, as well as an in-depth analysis of what the malware is doing. They first noticed this weeks ago and undertook in-depth analysis, and as a result was able to obtain full copies of all the payloads.
+D3SL informs the unofficial Discord that they have a copy of the full (untruncated) Stage 3 `client.jar`, as well as an in-depth analysis of what the malware is doing. They first noticed this weeks ago and undertook in-depth analysis, and as a result was able to obtain full copies of all the payloads.
 
 ----
 
