@@ -7,9 +7,6 @@ We've dubbed this malware `fractureiser` because that's the name of the CurseFor
 #### Current status
 The threat actors attempted to bring up a new server IP. In the process, they accidentally uploaded an unobfuscated version of Stage 3.
 
-
-As a plan, we've contacted Mojang and will likely be working with teams to get detection software distributed and integrated into CurseForge and Modrinth, as well as considering integration in launchers like Prism, and mod loaders like Fabric and Forge. It is also worthwhile to run this detection software on mod distribution mavens, as it's possible some have become infected.
-
 Work has begun on a detector for infected stage0 mods: https://github.com/MCRcortex/nekodetector
 
 ----
