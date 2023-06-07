@@ -229,6 +229,7 @@ The malicious mods have upload dates multiple weeks in the past. Most of them we
 |Display Entity Editor|[www.curseforge.com]/minecraft/bukkit-plugins/display-entity-editor/files/4570122|`A4B6385D1140C111549D95EAB25CB51922EEFBA2`|santa_faust_2120
 
 Darkhax sent this: https://gist.github.com/Darkhax/d7f6d1b5bfb51c3c74d3bd1609cab51f
+updated version from Leclowndu93150: https://github.com/Leclowndu93150/cfmalwareinfo/blob/main/affected_projects_removed.txt
 
 potentially more: Sophisticated Core, Dramatic Doors, Moonlight lib, Union lib
 
