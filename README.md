@@ -1,8 +1,5 @@
 # Modded Minecraft Malware "fractureiser" - What We Know
 
-
-## If your browser is lagging, [go here instead](https://hackmd.io/@jaskarth4/B1gaTOaU2)
-
 We've dubbed this malware `fractureiser` because that's the name of the CurseForge account that uploaded the most notable malicious files.
 
 <span style="float: left;margin-right: 18px">![][underconstruction.gif]</span> <span style="float: right;margin-left: 18px">![][underconstruction.gif]</span><center>*Pardon our dust*, this is a living document being edited in realtime by multiple people about a developing situation.</center>
@@ -24,7 +21,7 @@ If you have files relevant to this malware, please upload them to https://wormho
 
 If you need to get in touch more generally, please send mail to jaskarth4@gmail.com.
 
-If you copy portions of this document elsewhere, *please* put a prominent link back to this HackMD page (https://hackmd.io/@jaskarth4/B1gaTOaU2) somewhere near the top so that people can read the latest updates and get in contact.
+If you copy portions of this document elsewhere, *please* put a prominent link back to this page (https://github.com/jaskarth/fractureiser/) near the top so that people can read the latest updates and get in contact.
 
 # Non-technical overview [READ ME!]
 
