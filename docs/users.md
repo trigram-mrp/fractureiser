@@ -34,6 +34,10 @@ If any of the following files exist, you were infected. If this is the case, del
 
 Upon doing so, if applicable, check your `systemctl` for any changes you may not recognize. Afterwards, follow onto the next section of this page that is relevant to you.
 
+## MacOS Information
+
+The malware does not seem to affect MacOS, so you should be fine. *Recheck this doc in the future if this changes*
+
 ### Scripts
 
 *If you don't know how to run a PowerShell or Bash script, these are not for you.*  
@@ -83,9 +87,9 @@ Because of its behavior, we are **very confident** this is a **targeted attack a
 
 The affected accounts had two-factor authentication enabled. This is not a simple password compromise situation. Multiple accounts are affected.
 
-~~Currently, we do not suspect other platforms such as Modrinth to be affected.~~ *At this point we cannot be confident claiming any hosting service is unaffected*. Please exercise caution regardless of what site you use. Even Maven repositories may be infected, and this malware goes back months.
+*At this point we cannot be confident claiming any hosting service is unaffected*. Please exercise caution regardless of what site you use. Even Maven repositories may be infected, and this malware goes back months.
 
-Right now, the malware is dormant due to the loss of its C&C (Command and Control) server and the Stage0 (what was distributed via mods and modpacks) not having a way to get a new server. If you were infected with Stage2 (the file described below, dropped by Stage1 when C&C was up), then **the malware is still active.**
+Right now, the malware is dormant due to the loss of its C&C (Command and Control) server and the Stage 0 (what was distributed via mods and modpacks) not having a way to get a new server. If you were infected with Stage 2 (the file described below, dropped by Stage 1 when C&C was up), then **the malware is still active.**
 
 ### Given a jar file, how do I know if it's safe?
 
