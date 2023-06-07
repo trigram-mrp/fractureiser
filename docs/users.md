@@ -47,8 +47,7 @@ If you have been infected by fractureiser, your best option now is to assume eve
 * Back up anything you do not want to lose on an a flash drive or external disk (you should be doing this regularly anyway!)
 * Using a separate device, change ALL of your passwords (preferably using a password manager like [BitWarden](https://bitwarden.com))
 * If you were not yet using Two-Factor Authentication for every service that supports it (such as an Authenticator App (best) or SMS (not great but better than nothing)), please start doing so immediately
-* Delete *every single .jar file* in your computer, even if not related to Minecraft, including but not limited to every single mod, plugin, game installation, game library, or gradle cache (if you're a developer) as the malware spreads itself to all that it can find in your file system
-* If you are able to, contact a professional service in your area to run a proper diagnostic on your machine for anything suspicious.
+* If you are able to, contact a professional service in your area to run a proper diagnostic on your machine for anything suspicious, or simply wipe and reinstall the system.
 * Read the below section on what to do if you're not infected, as the steps there apply to you too.
 
 ## I'm Not Infected, Now What?
