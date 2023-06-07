@@ -37,6 +37,23 @@ malware and what it does.
 
 As of the time of writing this new control IP has been taken offline by its hosting provider.
 
+## News
+
+### Curseforge
+
+Curseforge is fully aware of this ongoing problem and peforming their own investigation. 
+You can see their latest updates in their [Discord](https://discord.com/invite/curseforge) server.
+
+Their most recent announcement was at `1686153780` or Wednesday June 07 2023 16:03:00 GMT+0000, and is as follows follows:
+> 📢 UPDATE: Repeated Questions
+> 
+> Hey all, as we are still seeing some misconceptions regarding the current situations, please note the following:
+> 
+> ONLY Minecraft is affected. This malware specifically targets Minecraft JAR files and nothing else. Any concerned players can rest assured their Addons, CC and non Minecraft mods are safe.
+> We are currently in the process of scanning all Minecraft projects to detect any other affected projects and make sure you are safe to update and use your mods with Minecraft. Estimated time for this process is around 12 hours.
+> 
+> Once we have more information and can recommend more actions to you (beyond using the previously mentioned tool ⁠📢news⁠) we will post here.
+
 ## Additional Info
 
 If you have files relevant to this malware, please upload them to https://wormhole.app and email the URL to fractureiser.investigation@opayq.com — this inbox is controlled by xylemlandmark, and anything sent to it will be shared with the rest of the team. If you need to get in touch more generally, please send mail to jaskarth4@gmail.com.
