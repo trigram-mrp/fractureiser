@@ -10,7 +10,13 @@ We've dubbed this malware `fractureiser` because that's the name of the CurseFor
 
 ## What YOU need to know
 
-TODO
+### [Mod PLAYERS Click Here](docs/users.md)
+
+If you're simply a mod player and not a developer, the above link is all you need. It contains surface level information of the malware's effects, steps to check if you have it and how to remove it, and a FAQ.
+
+Anyone who wishes to dig deeper may also look at
+* [Event Timeline](docs/timeline.md)
+* [Technical Breakdown](docs/tech.md)
 
 ## Current Investigation Status
 We have a good idea how fractureiser works, from stages 0 to 3. There are certain unknowns, but stage 0 bootstrapping was quickly nipped and tomorrow we'll be moving our focus to mitigation. As a plan, we've contacted Mojang and will likely be working with teams to get detection software distributed and integrated into CurseForge and Modrinth, as well as considering integration in launchers like Prism, and mod loaders like Fabric and Forge. It is also worthwhile to run this detection software on mod distribution mavens, as it's possible some have become infected.
