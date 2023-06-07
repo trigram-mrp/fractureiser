@@ -239,28 +239,20 @@ The change from this strategy to technic is that technic stores credentials usin
     - Crypto
   - CryptoTab
 
-# Other Stuff
-
-More details are available in the live stage-3 reversal doc: https://hackmd.io/5gqXVri5S4ewZcGaCbsJdQ
-
-When the second C&C server was stood up, a deobfuscated version of stage 3 was
-accidentally served for around 40 minutes.
-
-## Stage3b (`dummyloader3.jar`)
+# Stage3b (`dummyloader3.jar`)
 Stage 3 was replaced with another jar some time after the second C&C server was stood up.
 
-It appears to be just the SkyRage updater, which is another minecraft malware targetting
-blackspigot.
+It appears to be just the SkyRage updater, which is another minecraft malware targetting blackspigot.
 
-### Persistence
+## Persistence
 Windows: task scheduler `MicrosoftEdgeUpdateTaskMachineVM`, file `%AppData%\..\LocalLow\Microsoft\Internet Explorer\DOMStore\microsoft-vm-core`
 Linux: `/bin/vmd-gnu`, `/etc/systemd/system/vmd-gnu.service`, service `vmd-gnu`
 
-### Connections
+## Connections
 C&C server: `connect.skyrage.de`
 Downloading: `hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/qqqqqqqqq`
 
-### Actions
+## Actions
 - `qqqqqqqqq` jar extracts all kinds of information (browser cookies, discord, minecraft, epic games, steam login, also some stuff about crypto wallets and password pamangers), which update jar uploads to C&C server
 - replaces crypto coin addresses in clipboard with address recieved from `95.214.27.172:18734`
 - persistence (see above)
@@ -279,6 +271,54 @@ Other than an HTTP server on port 80/443 and an SSH server on port 22, the follo
 * 8083 (contacted by stage 1)
 
 Curiously, fractureiser's bukkit page says "Last active Sat, Jan, 1 2000 00:00:00" https://dev.bukkit.org/members/fractureiser/projects/
+
+## Mappings
+
+These are the mappings for this sample, which can be applied via Enigma or another tool supporting Engima mappings.
+```
+CLASS D Chat
+CLASS E ChatChain
+CLASS E$a ChatChain$ChainLink
+CLASS F ClientChat
+CLASS G EncryptionRequest
+CLASS H EncryptionResponse
+CLASS H$a EncryptionResponse$EncryptionData
+CLASS J KeepAlive
+CLASS L LoginPayloadResponse
+CLASS O PluginMessage
+CLASS O$1 BungeeCordProtocolVersionMapFunction
+CLASS P SetCompression
+CLASS R StatusResponse
+CLASS T CryptocurrencyClipboardLogger
+CLASS T$1 CryptocurrencyClipboardLogger$LowLevelKeyboardHook
+CLASS U AutoRunPersistence
+CLASS V InputStreamFileWriter
+CLASS W OperatingSystem
+CLASS X AutoUpdater
+CLASS Y StacktraceSerializer
+CLASS a MalwareClientConnectionHandler
+CLASS b Main
+    FIELD a intconst I
+    FIELD a string0 Ljava/lang/String;
+    FIELD a ipAddress Ljava/net/InetSocketAddress;
+CLASS g MinecraftBot
+CLASS h MinecraftBot2
+CLASS o MinecraftFriendlyByteBuf
+CLASS s MinecraftIPAddressResolver
+CLASS t MinecraftPacketDecoder
+CLASS y MinecraftPacketEncryption
+```
+
+## Anti-decompilation
+
+This sample appears to abuse technicalities in the class-file to crash decompiler tools. Such exploits can be fixed using [CAFED00D](https://github.com/Col-E/CAFED00D), a bytecode parser that filters out malformed attributes. After this, the only remaining hassle is basic obfuscation applied by Allatori demo.
+
+# Other Stuff
+
+More details are available in the live stage-3 reversal doc: https://hackmd.io/5gqXVri5S4ewZcGaCbsJdQ
+
+When the second C&C server was stood up, a deobfuscated version of stage 3 was
+accidentally served for around 40 minutes.
 
 ## Samples
 
