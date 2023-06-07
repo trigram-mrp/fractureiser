@@ -1,4 +1,4 @@
-# Mod Player Guide
+# Modded Players Guide
 
 If you're a Modded Minecraft player, you need to verify if you have been infected by the fractureiser malware to ensure your machine and personal data are not at risk. You can do so with the instructions below.
 
@@ -21,7 +21,8 @@ As of current knowledge, fractureiser specifically tagets Linux and Windows inst
 * Locate a folder named `Microsoft Edge`. The SPACE between "Microsoft" and "Edge" is important - as `MicrosoftEdge` is a legitimate folder that is used by Edge. The virus simply named it like that to disguise itself.
 * If `Microsoft Edge` is present, you were infected. If this is the case, permanently delete the folder and everything inside it.
  * If the folder can not be deleted, you must stop any Java programs currently running via your Task Manager.
- * There is a dectection tool by eitambelahousky at https://github.com/overwolf/detection-tool to automate this 
+
+   * There is a detection tool by eitambelahousky at https://github.com/overwolf/detection-tool to automate this 
 
 Afterwards, follow onto the next section of this page that is relevant to you.
 

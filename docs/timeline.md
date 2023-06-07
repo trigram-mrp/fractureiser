@@ -97,7 +97,7 @@ We believe this is how the infection initially spread, and Curseforge may not ha
 
 *2023-06-07 6:27 UTC*
 
-Investigation has slowed down and most of the team is going to bed. xylemlandmark has opened an email inbox for people to submit samples or other useful information. williewillus is currently working to clean up and get the information presented by D3SL into this doc. 
+Investigation has slowed down and most of the team is going to bed. unascribed has opened an email inbox for people to submit samples or other useful information. williewillus is currently working to clean up and get the information presented by D3SL into this doc. 
 
 ----
 

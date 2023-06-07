@@ -1,4 +1,7 @@
-# Modded Minecraft Malware "fractureiser"
+<p align="center">
+    <img src="docs/media/logo.svg" alt="Logo">
+</p>
+
 *Pardon our dust, documentation not finalized*
 
 This is a living document that is being edited by multiple people about a developing situation. 
@@ -14,7 +17,8 @@ We've dubbed this malware `fractureiser` because that's the name of the CurseFor
 
 ## What YOU need to know
 
-### [Mod PLAYERS Click Here](docs/users.md)
+
+### [Modded Players CLICK HERE](docs/users.md)
 To mitigate the effects of an infection check [Mitigations](docs/mitigations.md) 
 
 If you're simply a mod player and not a developer, the above link is all you need. It contains surface level information of the malware's effects, steps to check if you have it and how to remove it, and a FAQ.
@@ -40,7 +44,7 @@ As of the time of writing this new control IP has been taken offline by its host
 
 ## Additional Info
 
-If you have files relevant to this malware, please upload them to https://wormhole.app and email the URL to fractureiser.investigation@opayq.com — this inbox is controlled by xylemlandmark, and anything sent to it will be shared with the rest of the team. If you need to get in touch more generally, please send mail to jaskarth4@gmail.com.
+If you have files relevant to this malware, please upload them to https://wormhole.app and email the URL to fractureiser.investigation@opayq.com — this inbox is controlled by unascribed, and anything sent to it will be shared with the rest of the team. If you need to get in touch more generally, please send mail to jaskarth4@gmail.com.
 
 If you copy portions of this document elsewhere, *please* put a prominent link back to this [GitHub Repository](https://github.com/fractureiser-investigation/fractureiser) somewhere near the top so that people can read the latest updates and get in contact.
 
