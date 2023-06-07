@@ -21,9 +21,9 @@ Anyone who wishes to dig deeper may also look at
 ## Current Investigation Status
 We have a good idea how fractureiser works, from stages 0 to 3. There are certain unknowns, but stage 0 bootstrapping was quickly nipped and tomorrow we'll be moving our focus to mitigation. As a plan, we've contacted Mojang and will likely be working with teams to get detection software distributed and integrated into CurseForge and Modrinth, as well as considering integration in launchers like Prism, and mod loaders like Fabric and Forge. It is also worthwhile to run this detection software on mod distribution mavens, as it's possible some have become infected.
 
-Most of the current team responsible for updating this doc is tired and going to bed (as of 02:46a Pacific time). Others are continuing to reverse engineer stage 3.
-
 Work has begun on a detector for infected stage0 mods: https://github.com/MCRcortex/nekodetector
+
+The threat actors attempted to bring up a new server IP. In the process, they accidentally uploaded an unobfuscated version of Stage 3. This allowed us to further understand the malware and what it does.
 
 ## Additional Info
 
