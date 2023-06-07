@@ -22,7 +22,10 @@ Anyone who wishes to dig deeper may also look at
 * [Event Timeline](docs/timeline.md)
 * [Technical Breakdown](docs/tech.md)
 
-## Current Investigation Status
+
+## News
+
+### Current Investigation Status
 We have a good idea how fractureiser works, from Stages 0 to 3. There are certain
 unknowns, but Stage 0 bootstrapping was quickly nipped and tomorrow we'll be moving our
 focus to mitigation.
@@ -36,8 +39,6 @@ uploaded an unobfuscated version of Stage 3. This allowed us to further understa
 malware and what it does.
 
 As of the time of writing this new control IP has been taken offline by its hosting provider.
-
-## News
 
 ### Curseforge
 
