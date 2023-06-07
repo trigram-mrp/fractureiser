@@ -117,7 +117,7 @@ When launched it does the following:
     5. Loads and invokes the static method `dev.neko.nekoclient.Client#start(InetAddress, refFileBytes)`
     6. Sleeps for 5 seconds
 
-## Stage3 (`client.jar` - obfuscated)
+## Stage3 (`client.jar`)
 
 sha-1: `c2d0c87a1fe99e3c44a52c48d8bcf65a67b3e9a5`
 sha-1: `e299bf5a025f5c3fff45d017c3c2f467fa599915`
@@ -155,7 +155,7 @@ Around 2023-06-07 14:20 UTC the stage3 client jar was seemingly accidentally rep
 
 This validates the suspected behavior/evidence from the analysis done on the prior obfuscated `client.jar` sample.
 
-**Replication** - [`dev/neko/nekoinjector`](https://github.com/clrxbl/NekoClient/tree/main/dev/neko/nekoinjector)
+## Replication
 
 Replication is handled through automatic processing of classes in jar files across the entire filesystem on the local machine. Any jar file that contains classes meeting certain critera is subject for infection. The process of scanning the local file system and injecting malicious code can be found here: [`dev/neko/nekoclient/Client.start(InetSocketAddress, byte[])`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L273)
 
@@ -168,6 +168,76 @@ The critera that the process looks for can be found here: [`dev/neko/nekoinjecto
 * `SpigotPluginTemplate` looks for the super-type `org/bukkit/plugin/java/JavaPlugin` in classes
 
 The malicious code injected is the backdoor logic seen in Stage0. The way that injection works is that the malicious code is declared in the `Loader` class in a static method. The `Injector` class that is adjacent to it is responsible for extracting the code from `Loader` and inserting it into new classes targeted for infection. The return value of `Injector.loadInstallerNode(...)` is a `MethodNode` outlining the infection process itself. Now they just need to add that method to the targeted class. Back in the [`dev/neko/nekoclient/Client.start(InetSocketAddress, byte[])`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L272) they call `Entry.inject(MethodNode)` to achive this. To ensure the malicious method is invoked this `inject` method adds logic to the targeted class's static initializer that invokes the added method. Since the static initializer is run when the class first loads, and the target class is a plugin/mod the assumption is this code will always be triggered by users who run infected modpacks or servers. After this, they repackage the jar with the newly infected target class.
+
+## Anti-sandbox tricks
+
+Something not commonly seen in JVM malware that is present here is a class titled `VMEscape`. It checks if its in a sandboxed windows environment by checking if the current user is `WDAGUtilityAccount`, which is part of the [Windows Defender Application Guard](https://www.majorgeeks.com/content/page/what_is_the_wdagutilityaccount.html). If this condition is met, an attempt to escape the sandbox system is made.
+
+The process is roughly as follows:
+
+- Start a repeating thread to run the following actions:
+  - Create a temporary directory using `Files.createTempDirectory(...)`
+  - Iterate over `FileDescriptor` entries in the system clipboard _(Supposedly this will be accessing the contents of the host)_ 
+  - Create a shortcut that looks like the original file _(using icons from SHELL32)_ but instead invokes the malware
+  - Assings this shortcut to the clipboard, overwriting the original file reference
+ 
+Thus, if a user copies a file and goes to paste it elsewhere they will instead paste a shortcut that looks like their intended file, but actually runs the malware.
+
+## Data theft
+
+**MSA Tokens**: Since this mod is targeting Minecraft mods, its only natural to attempt to steal the MSA token used to login to Minecraft with. Some launchers keep this data in a local file, which this malware will attempt to read from. This affects a variety of launchers such as:
+
+* The vanilla/mojang launcher
+* The legacy vanilla/mojang launcher
+* PolyMC / Prism
+* Technic
+* Feather
+* LabyMod
+* And any MSA token found in the [Windows Credential Manager](https://support.microsoft.com/en-us/windows/accessing-credential-manager-1b5c916a-6a16-889f-8581-fc16e8165ac0)
+
+The retrival logic (Seen in [`dev/neko/nekoclient/api/stealer/msa/impl/MSAStealer.java`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/api/stealer/msa/impl/MSAStealer.java)) looks similar across a number of items since they store this data in a similr way. For example here is the laby-mod code:
+```java
+private static void retrieveRefreshTokensFromLabyMod(List<RefreshToken> refreshTokens) throws IOException {
+	String appdata = System.getenv("APPDATA");
+	if (Platform.isWindows() || Objects.isNull(appdata)) {
+		Path path = appdata == null ? null : Paths.get(appdata, ".minecraft", "LabyMod", "accounts.json");
+		if (Files.isReadable(path)) {
+			extractRefreshTokensFromLabyModLauncher(refreshTokens, Json.parse(Files.readString(path)).asObject());
+		}
+	}
+}
+```
+The code for retrieving tokens from Feather/PolyMC/Prism are essentially identical.
+
+The change from this strategy to the vanilla launchers is that the Json has an additional layer of cryptography protecting it.
+
+The change from this strategy to technic is that technic stores credentials using Java's built-in object serialization, wrapping the `com.google.api.client.auth.oauth2.StoredCredential` type.
+
+**Discord tokens**: Everyone's seen a token-stealer before. Affects the standard client, canary, ptb, and lightcord clients.
+
+**Cookies & Saved credentials**: Steals saved cookies and login credentials saved in affected browsers.  Relevant source: [`dev/neko/nekoclient/api/stealer/browser/impl/BrowserDataStealer.java`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/api/stealer/browser/impl/BrowserDataStealer.java)
+
+- Mozilla Firefox
+  - Waterfox
+  - Pale Moon
+  - SeaMonkey
+- Chrome
+  - Edge
+  - Brave
+  - Vivaldi
+  - Yandex
+  - Slimjet
+  - CentBrowser
+  - Comodo
+  - Iridium
+  - UCBrowser
+  - Opera
+    - Beta
+    - Developer
+    - Stable
+    - GX
+    - Crypto
+  - CryptoTab
 
 # Other Stuff
 
