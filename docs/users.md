@@ -34,10 +34,6 @@ If any of the following files exist, you were infected. If this is the case, del
 
 Upon doing so, if applicable, check your `systemctl` for any changes you may not recognize. Afterwards, follow onto the next section of this page that is relevant to you.
 
-## MacOS Information
-
-The malware does not seem to affect MacOS, so you should be fine. *Recheck this doc in the future if this changes*
-
 ### Scripts
 
 *If you don't know how to run a PowerShell or Bash script, these are not for you.*  
@@ -56,11 +52,10 @@ If you have been infected by fractureiser, your best option now is to assume eve
 
 ## I'm Not Infected, Now What?
 
-The absolute safest thing you can do at the moment is to **not launch Minecraft at all**. Yes, even Vanilla.  
-We do not know 100% everything that's compromised, and there's no way to guaranteed any one given installation has not been corrupted by a step of the code we have not found yet.
+The absolute safest thing you can do at the moment is to **Not launch Modded Minecraft**, Yes you can still play vanilla.
 
 With that said - if nothing was found in the first place, chances are there's nothing going on.
-If you still want to play the game:
+If you still want to play the game modded:
 * With the current knowledge we have, this is not risky, but we do not guarantee this is accurate - you are *willingly putting yourself at risk*.
 * After each session, check for the infection files in the previous step to ensure nothing has happened since
 * Do not, under **any circumstances**, download or update any mods, modpacks, or plugins you may use, or even run any you downloaded and never ran before - stick to instances you have already used, and those **only**
@@ -69,7 +64,7 @@ If you still want to play the game:
 
 A number of Curseforge and dev.bukkit.org (not the Bukkit software itself) accounts were compromised, and malicious software was injected into copies of many popular plugins and mods. Some of these malicious copies have been injected into popular modpacks including Better Minecraft. *There are reports of malicious plugin/mod JARs as early as mid-April.*
 
-This malware is composed of multiple "stages", each Stage is responsible for downloading and running the next one. In total, there are three known Stages (Stages 1, 2, and 3), with infected mod files serving as a "Stage 0" to kick the whole process off.
+This malware is composed of multiple "stages", each stage is responsible for downloading and running the next one. In total, there are three known stages (Stages 1, 2, and 3), with infected mod files serving as a "Stage 0" to kick the whole process off.
 
 Stage 3 is the "mastermind" of the malware, and we have evidence that it attempts to do all of the following:
 * Propagate itself to *all* `jar` files on the filesystem, possibly infecting mods that
@@ -87,9 +82,9 @@ Because of its behavior, we are **very confident** this is a **targeted attack a
 
 The affected accounts had two-factor authentication enabled. This is not a simple password compromise situation. Multiple accounts are affected.
 
-*At this point we cannot be confident claiming any hosting service is unaffected*. Please exercise caution regardless of what site you use. Even Maven repositories may be infected, and this malware goes back months.
+~~Currently, we do not suspect other platforms such as Modrinth to be affected.~~ *At this point we cannot be confident claiming any hosting service is unaffected*. Please exercise caution regardless of what site you use. Even Maven repositories may be infected, and this malware goes back months.
 
-Right now, the malware is dormant due to the loss of its C&C (Command and Control) server and the Stage 0 (what was distributed via mods and modpacks) not having a way to get a new server. If you were infected with Stage 2 (the file described below, dropped by Stage 1 when C&C was up), then **the malware is still active.**
+Right now, the malware is dormant due to the loss of its C&C (Command and Control) server and the Stage0 (what was distributed via mods and modpacks) not having a way to get a new server. If you were infected with Stage2 (the file described below, dropped by Stage1 when C&C was up), then **the malware is still active.**
 
 ### Given a jar file, how do I know if it's safe?
 
