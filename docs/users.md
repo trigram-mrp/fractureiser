@@ -11,7 +11,7 @@ As of current knowledge, fractureiser specifically tagets Linux and Windows inst
 ### Windows Instructions
 
 * Open your Start menu with the Windows Key, and type `%localappdata%` - it should appear as such:
-![](media/localappdata.png)
+![Screenshot of localappdata folder](media/localappdata.png)
 
 * Inside the Local appdata folder, you must ensure that your Explorer is set to view both `Hidden Items`, and `Protected Operating System Files`. 
  * This can be done from View > Options
@@ -32,7 +32,7 @@ If any of the following files exist, you were infected. If this is the case, del
 * `/etc/systemd/system/systemd-utility.service`
 * `~/.config/.data/lib.jar`
 
-Upon doing so, if applicable, check your `systemctl` for any changes you may not recognize. Afterwards, follow onto the next section of this page that is relevant to you.
+Upon doing so, if applicable, check `systemctl` for any changes and services you may not recognize. Afterwards, follow onto the next section of this page that is relevant to you.
 
 ### Scripts
 
@@ -47,7 +47,7 @@ If you have been infected by fractureiser, your best option now is to assume eve
 * Back up anything you do not want to lose on an a flash drive or external disk (you should be doing this regularly anyway!)
 * Using a separate device, change ALL of your passwords (preferably using a password manager like [BitWarden](https://bitwarden.com))
 * If you were not yet using Two-Factor Authentication for every service that supports it (such as an Authenticator App (best) or SMS (not great but better than nothing)), please start doing so immediately
-* Delete *every single .jar file* in your computer related to Minecraft, including but not limited to every single mod, plugin, game installation, game library, or gradle cache (if you're a developer) as the malware spreads itself to all that it can find in your file system
+* Delete *every single .jar file* in your computer, even if not related to Minecraft, including but not limited to every single mod, plugin, game installation, game library, or gradle cache (if you're a developer) as the malware spreads itself to all that it can find in your file system
 * If you are able to, contact a professional service in your area to run a proper diagnostic on your machine for anything suspicious.
 * Read the below section on what to do if you're not infected, as the steps there apply to you too.
 

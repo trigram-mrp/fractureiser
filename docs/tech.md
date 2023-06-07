@@ -13,15 +13,15 @@ mods, as it was an interesting new upload.
 
 |mod/plugin|link|SHA1|"Uploader"|
 |---|---|---|---|
-|Skyblock Core|[www.curseforge.com]/minecraft/mc-mods/skyblock-core/files/4570565 |`33677CA0E4C565B1F34BAA74A79C09A3B690BF41`|Luna Pixel Studios|
-|Dungeonz|[legacy.curseforge.com]/minecraft/mc-mods/dungeonx/files/4551100 |`2DB855A7F40C015F8C9CA7CBAB69E1F1AAFA210B`|fractureiser|
-|Haven Elytra|[dev.bukkit.org]/projects/havenelytra/files/4551105   [legacy.curseforge.com]/minecraft/bukkit-plugins/havenelytra/files/4551105 |`284A4449E58868036B2BAFDFB5A210FD0480EF4A`|fractureiser|
-|Vault Integrations|[www.curseforge.com]/minecraft/mc-mods/vault-integrations-bug-fix/files/4557590|`0C6576BDC6D1B92D581C18F3A150905AD97FA080`|simpleharvesting82|
-|AutoBroadcast|[www.curseforge.com]/minecraft/mc-mods/autobroadcast/files/4567257|`C55C3E9D6A4355F36B0710AB189D5131A290DF26`|shyandlostboy81|
-|Museum Curator Advanced|[www.curseforge.com]/minecraft/mc-mods/museum-curator-advanced/files/4553353|`32536577D5BB074ABD493AD98DC12CCC86F30172`|racefd16|
-|Vault Integrations Bug fix|[www.curseforge.com]/minecraft/mc-mods/vault-integrations-bug-fix/files/4557590|`0C6576BDC6D1B92D581C18F3A150905AD97FA080`|simplyharvesting82
-|Floating Damage|[dev.bukkit.org]/projects/floating-damage|`1d1aaccdc13244e980c0c024610ecc77ea2674a33a52129edf1bb4ce3b2cc2fc`|mamavergas3001
-|Display Entity Editor|[www.curseforge.com]/minecraft/bukkit-plugins/display-entity-editor/files/4570122|`A4B6385D1140C111549D95EAB25CB51922EEFBA2`|santa_faust_2120
+|Skyblock Core|www.curseforge.com\[/\]minecraft/mc-mods/skyblock-core/files/4570565 |`33677CA0E4C565B1F34BAA74A79C09A3B690BF41`|Luna Pixel Studios|
+|Dungeonz|legacy.curseforge.com\[/\]minecraft/mc-mods/dungeonx/files/4551100 |`2DB855A7F40C015F8C9CA7CBAB69E1F1AAFA210B`|fractureiser|
+|Haven Elytra|dev.bukkit.org\[/\]projects/havenelytra/files/4551105   [legacy.curseforge.com]/minecraft/bukkit-plugins/havenelytra/files/4551105 |`284A4449E58868036B2BAFDFB5A210FD0480EF4A`|fractureiser|
+|Vault Integrations|www.curseforge.com\[/\]minecraft/mc-mods/vault-integrations-bug-fix/files/4557590|`0C6576BDC6D1B92D581C18F3A150905AD97FA080`|simpleharvesting82|
+|AutoBroadcast|www.curseforge.com\[/\]minecraft/mc-mods/autobroadcast/files/4567257|`C55C3E9D6A4355F36B0710AB189D5131A290DF26`|shyandlostboy81|
+|Museum Curator Advanced|www.curseforge.com\[/\]minecraft/mc-mods/museum-curator-advanced/files/4553353|`32536577D5BB074ABD493AD98DC12CCC86F30172`|racefd16|
+|Vault Integrations Bug fix|www.curseforge.com\[/\]minecraft/mc-mods/vault-integrations-bug-fix/files/4557590|`0C6576BDC6D1B92D581C18F3A150905AD97FA080`|simplyharvesting82
+|Floating Damage|dev.bukkit.org\[/\]projects/floating-damage|`1d1aaccdc13244e980c0c024610ecc77ea2674a33a52129edf1bb4ce3b2cc2fc`|mamavergas3001
+|Display Entity Editor|www.curseforge.com\[/\]minecraft/bukkit-plugins/display-entity-editor/files/4570122|`A4B6385D1140C111549D95EAB25CB51922EEFBA2`|santa_faust_2120
 
 Darkhax sent this: https://gist.github.com/Darkhax/d7f6d1b5bfb51c3c74d3bd1609cab51f
 

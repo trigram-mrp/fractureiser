@@ -1,16 +1,17 @@
 # Modded Minecraft Malware "fractureiser"
 
 ## What?
-`fractureiser` is a [Worm](https://en.wikipedia.org/wiki/Computer_worm) Virus found in several Minecraft projects uploaded to CurseForge and CraftBukkit's dev website. The malware is embedded in multiple mods, some of which were added to highly popular modpacks.
+`fractureiser` is a [worm](https://en.wikipedia.org/wiki/Computer_worm) virus and info stealer found in several Minecraft projects uploaded to CurseForge and CraftBukkit's dev website. The malware is embedded in multiple mods, some of which were added to highly popular modpacks.
 
 If left unchecked, fractureiser can be **INCREDIBLY DANGEROUS** to your machine. Please read through this document for the info you need to keep yourself safe.
 
 We've dubbed this malware `fractureiser` because that's the name of the CurseForge account that uploaded the most notable malicious files.  
+
 *Pardon our dust*, this is a living document being edited by multiple people about a developing situation. Some sections may be messy.
 
 ## What YOU need to know
 
-### [Mod PLAYERS Click Here](docs/users.md)
+### [Modded players, click here](docs/users.md)
 
 If you're simply a mod player and not a developer, the above link is all you need. It contains surface level information of the malware's effects, steps to check if you have it and how to remove it, and a FAQ.
 
@@ -23,7 +24,7 @@ We have a good idea how fractureiser works, from stages 0 to 3. There are certai
 unknowns, but stage 0 bootstrapping was quickly nipped and tomorrow we'll be moving our
 focus to mitigation.
 
-Work has begun on a detector for infected stage0 mods:
+Work has begun on a detector for infected stage 0 mods:
 https://github.com/MCRcortex/nekodetector and arranging for this detector to be run on
 Modrinth.
 
@@ -31,7 +32,7 @@ The threat actors attempted to bring up a new server IP. In the process, they ac
 uploaded an unobfuscated version of Stage 3. This allowed us to further understand the
 malware and what it does.
 
-As of the time of writing this new control IP has been taking offline by its hosting provider
+As of the time of writing this new control IP has been taking offline by its hosting provider.
 
 ## Additional Info
 
