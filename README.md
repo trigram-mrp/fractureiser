@@ -355,7 +355,7 @@ IRC logs: TODO
 
 The main payload server ~~is~~ *was* (got taken down) hosted on Serverion, a company based in the Netherlands.
 
-The new C2 is still up, please make sure to contact BuyVM for this.
+The new C2 is still up. This line will be updated when its taken down.
 
 Other than an HTTP server on port 80/443 and an SSH server on port 22, the following ports were open on `85.217.144.130` and `107.189.3.101`:
 
