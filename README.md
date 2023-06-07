@@ -79,6 +79,12 @@ As a non-technical user, your best course of action is to check if your system w
 ### Timeline
 
 ---
+*2023-06-07 16:00 UTC*
+
+Due to lag in the HackMD, this document was transferred to the GitHub repository
+https://github.com/fractureiser-investigation/fractureiser
+
+---
 *2023-06-07 14:40 UTC*
 
 The unobfuscated stage 3 was replaced by an obfuscated one, then further by another
