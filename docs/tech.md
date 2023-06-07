@@ -92,7 +92,9 @@ Stage 1 then attempts to achieve persistence by doing the following:
 2. Making Stage 2 run automatically on startup:
 * On Linux, it tries placing systemd unit files in `/etc/systemd/system` or `~/.config/systemd/user`
     * The unit file it places in the user folder never works, because it tries using `multi-user.target`, which doesn't exist for user units
-* On Windows, it attempts to modify the registry to start itself, or failing that, tries adding itself to the `Windows\Start Menu\Programs\Startup` folder
+* On Windows, it attempts to modify the registry
+  (`HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run`) to start itself, or
+  failing that, tries adding itself to the `Windows\Start Menu\Programs\Startup` folder
 
 ## Stage 2 (`lib.jar` or `libWebGL64.jar`)
 
