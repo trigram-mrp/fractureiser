@@ -99,4 +99,4 @@ As a non-technical user, your best course of action is to check if your system w
 
 ### What the f*** is a Stage?
 
-![](media/stage.png)
+![](media/stages.png)
