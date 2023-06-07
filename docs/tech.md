@@ -165,12 +165,12 @@ It appears to be just the SkyRage updater, which is another minecraft malware ta
 blackspigot.
 
 ### Persistence
-Windows: task scheduler `MicrosoftEdgeUpdateTaskMachineVM`, file `%AppData%\..\LocalLow\Microsoft\Internet Explorer\DOMStore\microsoft-vm-core`
-Linux: `/bin/vmd-gnu`, `/etc/systemd/system/vmd-gnu.service`, service `vmd-gnu`
+- Windows: task scheduler `MicrosoftEdgeUpdateTaskMachineVM`, file `%AppData%\..\LocalLow\Microsoft\Internet Explorer\DOMStore\microsoft-vm-core`
+- Linux: `/bin/vmd-gnu`, `/etc/systemd/system/vmd-gnu.service`, service `vmd-gnu`
 
 ### Connections
-C&C server: `connect.skyrage.de`
-Downloading: `hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/qqqqqqqqq`
+- C&C server: `connect.skyrage.de`
+- Downloading: `hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/qqqqqqqqq`
 
 ### Actions
 - `qqqqqqqqq` jar extracts all kinds of information (browser cookies, discord, minecraft, epic games, steam login, also some stuff about crypto wallets and password pamangers), which update jar uploads to C&C server
@@ -178,9 +178,11 @@ Downloading: `hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/qqqqqqqqq`
 - persistence (see above)
 - contains auto-updater, current version is 932 (`hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/version`)
 
+---
+
 The main payload server ~~is~~ *was* (got taken down) hosted on Serverion, a company based in the Netherlands.
 
-The new C&C is still up. This line will be updated when its taken down.
+The new C&C has been taken down as well. _2023-06-07 18:51 UTC_
 
 Other than an HTTP server on port 80/443 and an SSH server on port 22, the following ports were open on `85.217.144.130` and `107.189.3.101`:
 
