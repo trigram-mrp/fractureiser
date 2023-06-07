@@ -56,11 +56,10 @@ If you have been infected by fractureiser, your best option now is to assume eve
 
 ## I'm Not Infected, Now What?
 
-The absolute safest thing you can do at the moment is to **not launch Minecraft at all**. Yes, even Vanilla.  
-We do not know 100% everything that's compromised, and there's no way to guaranteed any one given installation has not been corrupted by a step of the code we have not found yet.
+The absolute safest thing you can do at the moment is to **Not launch Modded Minecraft**
 
 With that said - if nothing was found in the first place, chances are there's nothing going on.
-If you still want to play the game:
+If you still want to play the game modded:
 * With the current knowledge we have, this is not risky, but we do not guarantee this is accurate - you are *willingly putting yourself at risk*.
 * After each session, check for the infection files in the previous step to ensure nothing has happened since
 * Do not, under **any circumstances**, download or update any mods, modpacks, or plugins you may use, or even run any you downloaded and never ran before - stick to instances you have already used, and those **only**
