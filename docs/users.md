@@ -34,6 +34,10 @@ If any of the following files exist, you were infected. If this is the case, del
 
 Upon doing so, if applicable, check your `systemctl` for any changes you may not recognize. Afterwards, follow onto the next section of this page that is relevant to you.
 
+## MacOS Information
+
+The malware does not seem to affect MacOS, so you should be fine. *Recheck this doc in the future if this changes*
+
 ### Scripts
 
 *If you don't know how to run a PowerShell or Bash script, these are not for you.*  
@@ -65,7 +69,7 @@ If you still want to play the game:
 
 A number of Curseforge and dev.bukkit.org (not the Bukkit software itself) accounts were compromised, and malicious software was injected into copies of many popular plugins and mods. Some of these malicious copies have been injected into popular modpacks including Better Minecraft. *There are reports of malicious plugin/mod JARs as early as mid-April.*
 
-This malware is composed of multiple "stages", each stage is responsible for downloading and running the next one. In total, there are three known stages (Stages 1, 2, and 3), with infected mod files serving as a "Stage 0" to kick the whole process off.
+This malware is composed of multiple "stages", each Stage is responsible for downloading and running the next one. In total, there are three known Stages (Stages 1, 2, and 3), with infected mod files serving as a "Stage 0" to kick the whole process off.
 
 Stage 3 is the "mastermind" of the malware, and we have evidence that it attempts to do all of the following:
 * Propagate itself to *all* `jar` files on the filesystem, possibly infecting mods that
@@ -83,9 +87,9 @@ Because of its behavior, we are **very confident** this is a **targeted attack a
 
 The affected accounts had two-factor authentication enabled. This is not a simple password compromise situation. Multiple accounts are affected.
 
-~~Currently, we do not suspect other platforms such as Modrinth to be affected.~~ *At this point we cannot be confident claiming any hosting service is unaffected*. Please exercise caution regardless of what site you use. Even Maven repositories may be infected, and this malware goes back months.
+*At this point we cannot be confident claiming any hosting service is unaffected*. Please exercise caution regardless of what site you use. Even Maven repositories may be infected, and this malware goes back months.
 
-Right now, the malware is dormant due to the loss of its C&C (Command and Control) server and the Stage0 (what was distributed via mods and modpacks) not having a way to get a new server. If you were infected with Stage2 (the file described below, dropped by Stage1 when C&C was up), then **the malware is still active.**
+Right now, the malware is dormant due to the loss of its C&C (Command and Control) server and the Stage 0 (what was distributed via mods and modpacks) not having a way to get a new server. If you were infected with Stage 2 (the file described below, dropped by Stage 1 when C&C was up), then **the malware is still active.**
 
 ### Given a jar file, how do I know if it's safe?
 
