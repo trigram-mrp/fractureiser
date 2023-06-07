@@ -1,4 +1,9 @@
 # Modded Minecraft Malware "fractureiser"
+*Pardon our dust, documentation not finalized*
+
+This is a living document that is being edited by multiple people about a developing situation. 
+
+We apologize for the inconvenience of any formatting issues, this means that some sections may be messy.
 
 ## What?
 `fractureiser` is a [Virus](https://en.wikipedia.org/wiki/Computer_virus) found in several Minecraft projects uploaded to CurseForge and CraftBukkit's dev website. The malware is embedded in multiple mods, some of which were added to highly popular modpacks.
@@ -6,7 +11,6 @@
 If left unchecked, fractureiser can be **INCREDIBLY DANGEROUS** to your machine. Please read through this document for the info you need to keep yourself safe.
 
 We've dubbed this malware `fractureiser` because that's the name of the CurseForge account that uploaded the most notable malicious files.  
-*Pardon our dust*, this is a living document being edited by multiple people about a developing situation. Some sections may be messy.
 
 ## What YOU need to know
 
