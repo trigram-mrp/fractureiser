@@ -97,11 +97,23 @@ Known sha1 hashes:
 * `52d08736543a240b0cbbbf2da03691ae525bb119`
 * `6ec85c8112c25abe4a71998eb32480d266408863` (Shadowex3's earlier upload)
 
-Stage 2 is obfuscated with a demo version of the Allatori obfuscator, and its main class is called `Bootstrap`. 
+Stage 2 is obfuscated with a demo version of the Allatori obfuscator, and its main class is called `Bootstrap`.
+It additionally contains another class called named `h` which seems to be a simple communications class, but is empty
+otherwise. You can view an attempt to reconstruct the source code at
+https://gist.github.com/SilverAndro/a992f85bec29bb248c354ccf5d2206fe
 
-TODO, describe the double wrapped behaviour.
-
-Stage 2 downloads stage 3, `client.jar`, loads its code, and executes the `start` method located within `dev.neko.nekoclient.Client`.
+When launched it does the following:
+1. Open port `9655` and add a shutdown hook to close it when the jvm closes.
+2. Locate itself on disk and works next to itself (likely in the `/mods` or `/plugins` directory)
+3. If `.ref` exists, it reads the identifier key from the file
+4. Launches a loop to
+    1. Check with `https://[files-8ie.pages.dev]:8083/ip` for the server and attempts to connect to it
+    2. Receives a flag for if the update check should continue, throwing if not (reported to the server on port `1338`)
+    3. If so, receives a hash and checks it against `client.jar` if it exists, sending back a byte for if it wants to update
+    4. If so, receives and overwrites/creates `client.jar`
+    5. Hides `client.jar` using file attributes
+    6. loads and invokes the static method `dev.neko.nekoclient.Client#start(InetAddress, refFileBytes)`
+    7. Sleeps for 5 seconds
 
 ## Stage3 (`client.jar`)
 
