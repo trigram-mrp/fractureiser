@@ -1,8 +1,9 @@
 General 
-- **Do not use a VM it can **
+- **Do not use a VM it can escape**
 - set 'neko.run' to an empty string
   * May change due to Stage 1 sourcing 
 - protect your startup programs 
+- Sandbox mincraft to only acess '.minecraft' and its recursive descendants and the internet 
 
 Windows
 
