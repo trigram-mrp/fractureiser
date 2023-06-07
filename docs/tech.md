@@ -33,7 +33,7 @@ Affected mods or plugins have a new `static void` method inserted into their mai
 
 The method's code is obfuscated, using `new String(new byte[]{...})` instead of string literals.
 
-From Shadowex3's sample of "Create Infernal Expansion Plus", a copycat version of "Create Infernal Expansion Compat" with malware inserted into the main mod class:
+From D3SL sample of "Create Infernal Expansion Plus", a copycat version of "Create Infernal Expansion Compat" with malware inserted into the main mod class:
 ```java
 static void _1685f49242dd46ef9c553d8af1a4e0bb() {
   Class.forName(new String(new byte[] {
@@ -98,7 +98,7 @@ Stage 1 then attempts to achieve persistence by doing the following:
 
 Known sha1 hashes:
 * `52d08736543a240b0cbbbf2da03691ae525bb119`
-* `6ec85c8112c25abe4a71998eb32480d266408863` (Shadowex3's earlier upload)
+* `6ec85c8112c25abe4a71998eb32480d266408863` (D3SL's earlier upload)
 
 Stage 2 is obfuscated with a demo version of the Allatori obfuscator, and its main class is called `Bootstrap`.
 It additionally contains another class called named `h` which seems to be a simple communications class, but is empty
