@@ -32,7 +32,7 @@ If any of the following files exist, you were infected. If this is the case, del
 * `/etc/systemd/system/systemd-utility.service`
 * `~/.config/.data/lib.jar`
 
-Upon doing so, if applicable, check your SystemCTL for any changes you may not recognize. Afterwards, follow onto the next section of this page that is relevant to you.
+Upon doing so, if applicable, check your `systemctl` for any changes you may not recognize. Afterwards, follow onto the next section of this page that is relevant to you.
 
 ### Scripts
 
