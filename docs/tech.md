@@ -11,29 +11,29 @@ mods, as it was an interesting new upload.
 
 ### Known affected mods & plugins
 
-|mod/plugin|link|SHA1|"Uploader"|
+|mod/plugin|link(s)|SHA1|"Uploader"|
 |---|---|---|---|
-|Skyblock Core|[www.curseforge.com]/minecraft/mc-mods/skyblock-core/files/4570565 |`33677CA0E4C565B1F34BAA74A79C09A3B690BF41`|Luna Pixel Studios|
-|Dungeonz|[legacy.curseforge.com]/minecraft/mc-mods/dungeonx/files/4551100 |`2DB855A7F40C015F8C9CA7CBAB69E1F1AAFA210B`|fractureiser|
-|Haven Elytra|[dev.bukkit.org]/projects/havenelytra/files/4551105   [legacy.curseforge.com]/minecraft/bukkit-plugins/havenelytra/files/4551105 |`284A4449E58868036B2BAFDFB5A210FD0480EF4A`|fractureiser|
-|Vault Integrations|[www.curseforge.com]/minecraft/mc-mods/vault-integrations-bug-fix/files/4557590|`0C6576BDC6D1B92D581C18F3A150905AD97FA080`|simpleharvesting82|
-|AutoBroadcast|[www.curseforge.com]/minecraft/mc-mods/autobroadcast/files/4567257|`C55C3E9D6A4355F36B0710AB189D5131A290DF26`|shyandlostboy81|
-|Museum Curator Advanced|[www.curseforge.com]/minecraft/mc-mods/museum-curator-advanced/files/4553353|`32536577D5BB074ABD493AD98DC12CCC86F30172`|racefd16|
-|Vault Integrations Bug fix|[www.curseforge.com]/minecraft/mc-mods/vault-integrations-bug-fix/files/4557590|`0C6576BDC6D1B92D581C18F3A150905AD97FA080`|simplyharvesting82
-|Floating Damage|[dev.bukkit.org]/projects/floating-damage|`1d1aaccdc13244e980c0c024610ecc77ea2674a33a52129edf1bb4ce3b2cc2fc`|mamavergas3001
-|Display Entity Editor|[www.curseforge.com]/minecraft/bukkit-plugins/display-entity-editor/files/4570122|`A4B6385D1140C111549D95EAB25CB51922EEFBA2`|santa_faust_2120
+|Skyblock Core| `[www.curseforge.com]/minecraft/mc-mods/skyblock-core/files/4570565` | `33677CA0E4C565B1F34BAA74A79C09A3B690BF41` |Luna Pixel Studios|
+|Dungeonz| `[legacy.curseforge.com]/minecraft/mc-mods/dungeonx/files/4551100` | `2DB855A7F40C015F8C9CA7CBAB69E1F1AAFA210B` |fractureiser|
+|Haven Elytra| `[dev.bukkit.org]/projects/havenelytra/files/4551105` <br><br> `[legacy.curseforge.com]/minecraft/bukkit-plugins/havenelytra/files/4551105` | `284A4449E58868036B2BAFDFB5A210FD0480EF4A` |fractureiser|
+|Vault Integrations| `[www.curseforge.com]/minecraft/mc-mods/vault-integrations-bug-fix/files/4557590` | `0C6576BDC6D1B92D581C18F3A150905AD97FA080` |simpleharvesting82|
+|AutoBroadcast| `[www.curseforge.com]/minecraft/mc-mods/autobroadcast/files/4567257` | `C55C3E9D6A4355F36B0710AB189D5131A290DF26` |shyandlostboy81|
+|Museum Curator Advanced| `[www.curseforge.com]/minecraft/mc-mods/museum-curator-advanced/files/4553353` | `32536577D5BB074ABD493AD98DC12CCC86F30172` |racefd16|
+|Vault Integrations Bug fix| `[www.curseforge.com]/minecraft/mc-mods/vault-integrations-bug-fix/files/4557590` | `0C6576BDC6D1B92D581C18F3A150905AD97FA080` |simplyharvesting82
+|Floating Damage| `[dev.bukkit.org]/projects/floating-damage` | `1d1aaccdc13244e980c0c024610ecc77ea2674a33a52129edf1bb4ce3b2cc2fc` |mamavergas3001
+|Display Entity Editor| `[www.curseforge.com]/minecraft/bukkit-plugins/display-entity-editor/files/4570122` | `A4B6385D1140C111549D95EAB25CB51922EEFBA2` |santa_faust_2120
 
 Darkhax sent this: https://gist.github.com/Darkhax/d7f6d1b5bfb51c3c74d3bd1609cab51f
 
 potentially more: Sophisticated Core, Dramatic Doors, Moonlight lib, Union lib
 
-## Stage0 (Infected mod jars)
+## Stage 0 (Infected mod jars)
 
 Affected mods or plugins have a new `static void` method inserted into their main class, and a call to this method is inserted into that class's static initializer. For DungeonZ, the method is named `_d1385bd3c36f464882460aa4f0484c53` and exists in `net.dungeonz.DungeonzMain`. For Skyblock Core, the method is named `_f7dba6a3a72049a78a308a774a847180` and is inserted into `com.bmc.coremod.BMCSkyblockCore`. For HavenElytra, the code is inserted directly into the otherwise-unused static initializer of `valorless.havenelytra.HavenElytra`.
 
 The method's code is obfuscated, using `new String(new byte[]{...})` instead of string literals.
 
-From Shadowex3's sample of "Create Infernal Expansion Plus", a copycat version of "Create Infernal Expansion Compat" with malware inserted into the main mod class:
+From D3SL sample of "Create Infernal Expansion Plus", a copycat version of "Create Infernal Expansion Compat" with malware inserted into the main mod class:
 ```java
 static void _1685f49242dd46ef9c553d8af1a4e0bb() {
   Class.forName(new String(new byte[] {
@@ -69,36 +69,36 @@ This:
     * HavenElytra: "`-114.-18.38.108.-100`"
     * Vault Integrations: "`-114.-18.38.108.-100`"
 
-The passed numerals are parsed as bytes by Stage1 and written to a file named ".ref". They appear to be a way for the author to track infection sources.
+The passed numerals are parsed as bytes by Stage 1 and written to a file named ".ref". They appear to be a way for the author to track infection sources.
 
 The creation of the classloader is hardcoded to that URL and does not use the Cloudflare URL that Stage 1 does. As that IP is now offline, this means the Stage 0 payloads *we are presently aware of* no longer function.
 
-## Stage1 (`dl.jar`)
+## Stage 1 (`dl.jar`)
 
 SHA-1: `dc43c4685c3f47808ac207d1667cc1eb915b2d82`
 
-[Decompiled files from the Malware can be found here](decomp).
+[Decompiled files from the Malware can be found here](../decomp).
 
-The very first thing `Utility.run` does is check if the system property `neko.run` is set. If it is, it will *immediately stop executing*. If not, it sets it to the empty string and continues. This appears to be a very simplistic way of avoiding the same process running the malware multiple times, such as if it had multiple infected mods. *This cannot be relied upon as a killswitch because Stage1 is downloaded from the Internet and may change.*
+The very first thing `Utility.run` does is check if the system property `neko.run` is set. If it is, it will *immediately stop executing*. If not, it sets it to an empty string and continues. This appears to be the malware trying to avoid executing itself multiple times, such as if it had infected multiple mods. *This cannot be relied upon as a killswitch because Stage1 is downloaded from the Internet and may change.*
 
-It attempts to contact `85.217.144.130`, and a Cloudflare Pages domain (`https://[files-8ie.pages.dev]/ip`). Yes, people have already reported abuse. The Pages domain is used to retrieve the IP of the C&C server if the first IP no longer responds — the URL responds with a 4 byte file which is just a binary IPv4 address.
+It attempts to contact `85.217.144.130`, and a Cloudflare Pages domain (`https://files-8ie.pages.dev/ip`). Abuse reports have already been sent. The Pages domain is used to retrieve the IP of the C&C server if the first IP no longer responds — the URL responds with a binary representation of an IPv4 address.
 
 *The C&C IP has been nullrouted after an abuse report to the server provider. We will need to keep an eye on the Cloudflare page to see if a new C&C server is stood up, I can't imagine they didn't plan for this.* Thank you Serverion for your prompt response.
 
-*The Cloudflare Pages domain has been terminated.* There is a new command and control server located at `107.189.3.101`.
+*The Cloudflare Pages domain has been terminated.* There is a new C&C server located at `107.189.3.101`.
 
 Stage 1 then attempts to achieve persistence by doing the following:
-1. Downloading stage 2 (lib.jar on Linux, libWebGL64.jar on Windows) from the server
-2. Making stage 2 run automatically on startup:
+1. Downloading Stage 2 (lib.jar on Linux, libWebGL64.jar on Windows) from the server
+2. Making Stage 2 run automatically on startup:
 * On Linux, it tries placing systemd unit files in `/etc/systemd/system` or `~/.config/systemd/user`
     * The unit file it places in the user folder never works, because it tries using `multi-user.target`, which doesn't exist for user units
 * On Windows, it attempts to modify the registry to start itself, or failing that, tries adding itself to the `Windows\Start Menu\Programs\Startup` folder
 
-## Stage2 (`lib.jar` or `libWebGL64.jar`)
+## Stage 2 (`lib.jar` or `libWebGL64.jar`)
 
 Known sha1 hashes:
 * `52d08736543a240b0cbbbf2da03691ae525bb119`
-* `6ec85c8112c25abe4a71998eb32480d266408863` (Shadowex3's earlier upload)
+* `6ec85c8112c25abe4a71998eb32480d266408863` (D3SL's earlier upload)
 
 Stage 2 is obfuscated with a demo version of the Allatori obfuscator, and its main class is called `Bootstrap`.
 It additionally contains another class called named `h` which seems to be a simple communications class, but is empty
@@ -107,7 +107,7 @@ https://gist.github.com/SilverAndro/a992f85bec29bb248c354ccf5d2206fe
 
 When launched it does the following:
 1. Open port `9655` and add a shutdown hook to close it when the jvm closes.
-2. Locate itself on disk and works next to itself (likely in the `/mods` or `/plugins` directory)
+2. Locate itself on disk and works next to itself
 3. If `.ref` exists, it reads the identifier key from the file
 4. Launches a loop to
     1. Checks with `https://[files-8ie.pages.dev]:8083/ip` for the server and attempts to connect to it
@@ -117,7 +117,7 @@ When launched it does the following:
     5. Loads and invokes the static method `dev.neko.nekoclient.Client#start(InetAddress, refFileBytes)`
     6. Sleeps for 5 seconds
 
-## Stage3 (`client.jar`)
+## Stage 3 (`client.jar`)
 
 sha-1: `c2d0c87a1fe99e3c44a52c48d8bcf65a67b3e9a5`
 sha-1: `e299bf5a025f5c3fff45d017c3c2f467fa599915`
@@ -135,7 +135,10 @@ From analysis, these do what they say on the tin:
 * Steal Microsoft account credentials
 
 There is also evidence of code attempting to do the following:
-* Scan for *all* JAR files on the system that look like Minecraft mods (by detecting Forge/Fabric/Quilt/Bukkit) and attempt to inject stage 0 into them
+* Scan for *all* JAR files on the system that look like Minecraft mods (by detecting
+  Forge/Fabric/Quilt/Bukkit), or [declare a Main
+  class](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L235-L244)
+  (most plain Java programs) and attempt to inject Stage 0 into them
 * Steal cookies and login information for many web browsers
 * Replace cryptocurrency addresses in the clipboard with alternates that are presumably owned by the attacker
 * Steal Discord credentials
@@ -149,13 +152,13 @@ Jars are heuristically detected as Minecraft mods or plugins as follows:
 * Bungee (`dev/neko/e/e/e/l`): The malware checks if a class extends Bungee's `Plugin` class
 * Vanilla (`dev/neko/e/e/e/c`): The malware checks if the main client class `net.minecraft.client.main.Main` exists
 
-# Stage3 (`unobf-client.jar`)
+## Stage3 (`unobf-client.jar`)
 
 Around 2023-06-07 14:20 UTC the stage3 client jar was seemingly accidentally replaced with an unobfuscated version. You can find the archive here: https://github.com/clrxbl/NekoClient
 
 This validates the suspected behavior/evidence from the analysis done on the prior obfuscated `client.jar` sample.
 
-## Replication
+### Replication
 
 Replication is handled through automatic processing of classes in jar files across the entire filesystem on the local machine. Any jar file that contains classes meeting certain critera is subject for infection. The process of scanning the local file system and injecting malicious code can be found here: [`dev/neko/nekoclient/Client.start(InetSocketAddress, byte[])`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L273)
 
@@ -169,7 +172,7 @@ The critera that the process looks for can be found here: [`dev/neko/nekoinjecto
 
 The malicious code injected is the backdoor logic seen in Stage0. The way that injection works is that the malicious code is declared in the `Loader` class in a static method. The `Injector` class that is adjacent to it is responsible for extracting the code from `Loader` and inserting it into new classes targeted for infection. The return value of `Injector.loadInstallerNode(...)` is a `MethodNode` outlining the infection process itself. Now they just need to add that method to the targeted class. Back in the [`dev/neko/nekoclient/Client.start(InetSocketAddress, byte[])`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L272) they call `Entry.inject(MethodNode)` to achive this. To ensure the malicious method is invoked this `inject` method adds logic to the targeted class's static initializer that invokes the added method. Since the static initializer is run when the class first loads, and the target class is a plugin/mod the assumption is this code will always be triggered by users who run infected modpacks or servers. After this, they repackage the jar with the newly infected target class.
 
-## Anti-sandbox tricks
+### Anti-sandbox tricks
 
 Something not commonly seen in JVM malware that is present here is a class titled `VMEscape`. It checks if its in a sandboxed windows environment by checking if the current user is `WDAGUtilityAccount`, which is part of the [Windows Defender Application Guard](https://www.majorgeeks.com/content/page/what_is_the_wdagutilityaccount.html). If this condition is met, an attempt to escape the sandbox system is made.
 
@@ -180,10 +183,10 @@ The process is roughly as follows:
   - Iterate over `FileDescriptor` entries in the system clipboard _(Supposedly this will be accessing the contents of the host)_ 
   - Create a shortcut that looks like the original file _(using icons from SHELL32)_ but instead invokes the malware
   - Assings this shortcut to the clipboard, overwriting the original file reference
- 
+
 Thus, if a user copies a file and goes to paste it elsewhere they will instead paste a shortcut that looks like their intended file, but actually runs the malware.
 
-## Data theft
+### Data theft
 
 **MSA Tokens**: Since this mod is targeting Minecraft mods, its only natural to attempt to steal the MSA token used to login to Minecraft with. Some launchers keep this data in a local file, which this malware will attempt to read from. This affects a variety of launchers such as:
 
@@ -239,40 +242,43 @@ The change from this strategy to technic is that technic stores credentials usin
     - Crypto
   - CryptoTab
 
-# Stage3b (`dummyloader3.jar`)
+## Stage 3b (`dummyloader3.jar`)
+
 Stage 3 was replaced with another jar some time after the second C&C server was stood up.
 
 It appears to be just the SkyRage updater, which is another minecraft malware targetting blackspigot.
 
-## Persistence
-Windows: task scheduler `MicrosoftEdgeUpdateTaskMachineVM`, file `%AppData%\..\LocalLow\Microsoft\Internet Explorer\DOMStore\microsoft-vm-core`
-Linux: `/bin/vmd-gnu`, `/etc/systemd/system/vmd-gnu.service`, service `vmd-gnu`
+### Persistence
+- Windows: task scheduler `MicrosoftEdgeUpdateTaskMachineVM`, file `%AppData%\..\LocalLow\Microsoft\Internet Explorer\DOMStore\microsoft-vm-core`
+- Linux: `/bin/vmd-gnu`, `/etc/systemd/system/vmd-gnu.service`, service `vmd-gnu`
 
-## Connections
-C&C server: `connect.skyrage.de`
-Downloading: `hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/qqqqqqqqq`
+### Connections
+- C&C server: `connect.skyrage.de`
+- Downloading: `hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/qqqqqqqqq`
 
-## Actions
+### Actions
 - `qqqqqqqqq` jar extracts all kinds of information (browser cookies, discord, minecraft, epic games, steam login, also some stuff about crypto wallets and password pamangers), which update jar uploads to C&C server
 - replaces crypto coin addresses in clipboard with address recieved from `95.214.27.172:18734`
 - persistence (see above)
 - contains auto-updater, current version is 932 (`hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/version`)
 
+---
+
 The main payload server ~~is~~ *was* (got taken down) hosted on Serverion, a company based in the Netherlands.
 
-The new C&C is still up. This line will be updated when its taken down.
+The new C&C has been taken down as well. _2023-06-07 18:51 UTC_
 
 Other than an HTTP server on port 80/443 and an SSH server on port 22, the following ports were open on `85.217.144.130` and `107.189.3.101`:
 
 * 1337
-* 1338 (a port referenced in stage 1's file for creating new Debugger connection)
+* 1338 (a port referenced in Stage 1's file for creating new Debugger connection)
 * 8081 (this is a WebSocket server - no apparent function right now, not referenced in any malicious code)
 * 8082 (nobody's gotten anything out of this one,  not referenced in any malicious code)
-* 8083 (contacted by stage 1)
+* 8083 (contacted by Stage 1)
 
 Curiously, fractureiser's bukkit page says "Last active Sat, Jan, 1 2000 00:00:00" https://dev.bukkit.org/members/fractureiser/projects/
 
-## Mappings
+### Mappings
 
 These are the mappings for this sample, which can be applied via Enigma or another tool supporting Engima mappings.
 ```
@@ -309,7 +315,7 @@ CLASS t MinecraftPacketDecoder
 CLASS y MinecraftPacketEncryption
 ```
 
-## Anti-decompilation
+### Anti-decompilation
 
 This sample appears to abuse technicalities in the class-file to crash decompiler tools. Such exploits can be fixed using [CAFED00D](https://github.com/Col-E/CAFED00D), a bytecode parser that filters out malformed attributes. After this, the only remaining hassle is basic obfuscation applied by Allatori demo.
 
@@ -322,7 +328,7 @@ accidentally served for around 40 minutes.
 
 ## Samples
 
-Please ask in the IRC chat for read or read/write access to samples. Source code of the decompiled stage 3 client is available: https://github.com/clrxbl/NekoClient
+Please ask in the IRC chat for read or read/write access to samples. Source code of the decompiled Stage 3 client is available: https://github.com/clrxbl/NekoClient
 
 ## Follow-Ups
 While it's a bit early to speak of long term follow-ups, this whole debacle has brought up several critical flaws in the modded Minecraft ecosystem. This section is just brainstorming on them and how we can improve.
@@ -334,7 +340,7 @@ Should be we be running some sort of static analysis? (williewillus has a few id
 
 #### 2. A lack of code signing for mods
 
-Unlike the software industry at large, mods released and uploaded to repositories are usually not signed with a signing key that proves that the owner of the key uploaded the mod. Having signing and a separate key distribution/trust mechanism mitigates compromise of CurseForge accounts.
+Unlike the software industry at large, mods released and uploaded to repositories are usually not signed with a signing key that proves that the owner of the key uploaded the mod. Having signing and a separate key distribution/trust mechanism mitigates CurseForge accounts getting compromised.
 
 However, this then leads to the greater issue of how to derive key trust, as the fact that "this jar has this signature" has to be communicated out of band from CurseForge/Modrinth, in a standard way so that loaders or users can verify the signatures.
 Forge tried to introduce signing many years ago and it had limited uptake.

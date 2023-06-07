@@ -16,6 +16,7 @@ As of current knowledge, fractureiser specifically tagets Linux and Windows inst
 * Inside the Local appdata folder, you must ensure that your Explorer is set to view both `Hidden Items`, and `Protected Operating System Files`. 
  * This can be done from View > Options
  * If you are unsure how to do this, a video explanation [can be found here](https://youtu.be/KLTlTlnXeKs).
+ * There is a dectection tool by eitambelahousky at https://github.com/overwolf/detection-tool to automate this 
 
 * Locate a folder named `Microsoft Edge`. The SPACE between "Microsoft" and "Edge" is important - as `MicrosoftEdge` is a legitimate folder that is used by Edge. The virus simply named it like that to disguise itself.
 * If `Microsoft Edge` is present, you were infected. If this is the case, permanently delete the folder and everything inside it.
@@ -32,7 +33,11 @@ If any of the following files exist, you were infected. If this is the case, del
 * `/etc/systemd/system/systemd-utility.service`
 * `~/.config/.data/lib.jar`
 
-Upon doing so, if applicable, check your SystemCTL for any changes you may not recognize. Afterwards, follow onto the next section of this page that is relevant to you.
+Upon doing so, if applicable, check your `systemctl` for any changes you may not recognize. Afterwards, follow onto the next section of this page that is relevant to you.
+
+## MacOS Information
+
+The malware does not seem to affect MacOS, so you should be fine. *Recheck this doc in the future if this changes*
 
 ### Scripts
 
@@ -47,8 +52,7 @@ If you have been infected by fractureiser, your best option now is to assume eve
 * Back up anything you do not want to lose on an a flash drive or external disk (you should be doing this regularly anyway!)
 * Using a separate device, change ALL of your passwords (preferably using a password manager like [BitWarden](https://bitwarden.com))
 * If you were not yet using Two-Factor Authentication for every service that supports it (such as an Authenticator App (best) or SMS (not great but better than nothing)), please start doing so immediately
-* Delete *every single .jar file* in your computer related to Minecraft, including but not limited to every single mod, plugin, game installation, game library, or gradle cache (if you're a developer) as the malware spreads itself to all that it can find in your file system
-* If you are able to, contact a professional service in your area to run a proper diagnostic on your machine for anything suspicious.
+* If you are able to, contact a professional service in your area to run a proper diagnostic on your machine for anything suspicious, or simply wipe and reinstall the system.
 * Read the below section on what to do if you're not infected, as the steps there apply to you too.
 
 ## I'm Not Infected, Now What?
@@ -66,10 +70,11 @@ If you still want to play the game:
 
 A number of Curseforge and dev.bukkit.org (not the Bukkit software itself) accounts were compromised, and malicious software was injected into copies of many popular plugins and mods. Some of these malicious copies have been injected into popular modpacks including Better Minecraft. *There are reports of malicious plugin/mod JARs as early as mid-April.*
 
-This malware is composed of multiple "stages", each stage is responsible for downloading and running the next one. In total, there are three known stages (Stages 1, 2, and 3), with infected mod files serving as a "Stage 0" to kick the whole process off.
+This malware is composed of multiple "stages", each Stage is responsible for downloading and running the next one. In total, there are three known Stages (Stages 1, 2, and 3), with infected mod files serving as a "Stage 0" to kick the whole process off.
 
 Stage 3 is the "mastermind" of the malware, and we have evidence that it attempts to do all of the following:
-* Propagate itself to *all* `jar` files on the filesystem, possibly infecting mods that were not downloaded from CurseForge or BukkitDev
+* Propagate itself to *all* `jar` files on the filesystem, possibly infecting mods that
+  were not downloaded from CurseForge or BukkitDev or other Java programs
 * Steal cookies and login information for many web browsers
 * Replace cryptocurrency addresses in the clipboard with alternates that are presumably owned by the attacker
 * Steal Discord credentials
@@ -83,9 +88,9 @@ Because of its behavior, we are **very confident** this is a **targeted attack a
 
 The affected accounts had two-factor authentication enabled. This is not a simple password compromise situation. Multiple accounts are affected.
 
-~~Currently, we do not suspect other platforms such as Modrinth to be affected.~~ *At this point we cannot be confident claiming any hosting service is unaffected*. Please exercise caution regardless of what site you use. Even Maven repositories may be infected, and this malware goes back months.
+*At this point we cannot be confident claiming any hosting service is unaffected*. Please exercise caution regardless of what site you use. Even Maven repositories may be infected, and this malware goes back months.
 
-Right now, the malware is dormant due to the loss of its C&C (Command and Control) server and the Stage0 (what was distributed via mods and modpacks) not having a way to get a new server. If you were infected with Stage2 (the file described below, dropped by Stage1 when C&C was up), then **the malware is still active.**
+Right now, the malware is dormant due to the loss of its C&C (Command and Control) server and the Stage 0 (what was distributed via mods and modpacks) not having a way to get a new server. If you were infected with Stage 2 (the file described below, dropped by Stage 1 when C&C was up), then **the malware is still active.**
 
 ### Given a jar file, how do I know if it's safe?
 

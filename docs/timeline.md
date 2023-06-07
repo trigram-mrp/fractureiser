@@ -97,13 +97,13 @@ We believe this is how the infection initially spread, and Curseforge may not ha
 
 *2023-06-07 6:27 UTC*
 
-Investigation has slowed down and most of the team is going to bed. xylemlandmark has opened an email inbox for people to submit samples or other useful information. williewillus is currently working to clean up and get the information presented by Shadowex3 into this doc. 
+Investigation has slowed down and most of the team is going to bed. xylemlandmark has opened an email inbox for people to submit samples or other useful information. williewillus is currently working to clean up and get the information presented by D3SL into this doc. 
 
 ----
 
 *2023-06-07 6:20 UTC*
 
-Shadowex3 informs the unofficial Discord that they have a copy of the full (untruncated) Stage 3 `client.jar`, as well as an in-depth analysis of what the malware is doing. They first noticed this weeks ago and undertook in-depth analysis, and as a result was able to obtain full copies of all the payloads.
+D3SL informs the unofficial Discord that they have a copy of the full (untruncated) Stage 3 `client.jar`, as well as an in-depth analysis of what the malware is doing. They first noticed this weeks ago and undertook in-depth analysis, and as a result was able to obtain full copies of all the payloads.
 
 ----
 
@@ -152,11 +152,25 @@ The team behind this document learns of the malicious files included in an unaut
 
 ----
 
-*2023-06-03 (approximately? TODO is this correct)*
-Shadowex3 notices the activity and reverse engineers a large chunk of it. 
+*2023-06-01 to 2023-06-04*
 
-They wanted to coordinate to gather more intel before tipping the attackers off that something was happening.
-As a result, they captured a reasonably complete set of files containing all stages of the malware, besides a missing `lib.dll` file.
+D3SL becomes suspicious of the malicious files' consumption of CPU and RAM and begins
+investigating. Order of operations:
 
+1. Suspicion about the Java executable's firewall request leads to it being blocked.
+2. Inability to reach self-hosted services leads to event viewer showing all tcpip ports
+   blocked
+3. Netstat shows massive port consumption via the hostile jar file's PID
+4. Identifying the malicious javaw.exe running libwebgl64.jar confirmed malware
+
+From here Tzalumen was instrumental in assisting with the initial reverse engineering of
+the byte[] obfuscated code and manually capturing a complete set of files from the remote
+destinations.
+
+Full copies of all original files (incl. deobfuscations) except lib.dll, translations of
+all remote destinations contacted, and a writeup of the infection process and several
+hostile capabilities were provided through channels to Windows Defender and
+Malwarebytes. Curseforge was notified as well. Knowledge of the malware wasn't shared
+publicly at this time in order to avoid tipping off the attackers
 
 ----
