@@ -55,6 +55,8 @@ Their most recent announcement was at `1686153780` or Wednesday June 07 2023 16:
 > 
 > Once we have more information and can recommend more actions to you (beyond using the previously mentioned tool ⁠📢news⁠) we will post here.
 
+! Warning: This information from their latest news post has been found to be incorrect. The virus will try to self-replicate on all .jar files on your system resulting in not just Minecraft being impacted.
+
 ## Additional Info
 
 If you have files relevant to this malware, please upload them to https://wormhole.app and email the URL to fractureiser.investigation@opayq.com — this inbox is controlled by xylemlandmark, and anything sent to it will be shared with the rest of the team. If you need to get in touch more generally, please send mail to jaskarth4@gmail.com.
