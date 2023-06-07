@@ -34,6 +34,10 @@ If any of the following files exist, you were infected. If this is the case, del
 
 Upon doing so, if applicable, check your `systemctl` for any changes you may not recognize. Afterwards, follow onto the next section of this page that is relevant to you.
 
+## MacOS Information
+
+The malware does not seem to affect MacOS, so you should be fine. *Recheck this doc in the future if this changes*
+
 ### Scripts
 
 *If you don't know how to run a PowerShell or Bash script, these are not for you.*  
