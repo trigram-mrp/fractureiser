@@ -377,7 +377,19 @@ Stage 3 was replaced with another jar some time after the second C&C server was 
 It appears to be just the SkyRage updater, which is another minecraft malware targetting
 blackspigot.
 
-*This section needs more information, feel free to contribute*
+### Persistence
+Windows: task scheduler `MicrosoftEdgeUpdateTaskMachineVM`, file `%AppData%\..\LocalLow\Microsoft\Internet Explorer\DOMStore\microsoft-vm-core`
+Linux: `/bin/vmd-gnu`, `/etc/systemd/system/vmd-gnu.service`, service `vmd-gnu`
+
+### Connections
+C&C server: `connect.skyrage.de`
+Downloading: `hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/qqqqqqqqq`
+
+### Actions
+- `qqqqqqqqq` jar extracts all kinds of information (browser cookies, discord, minecraft, epic games, steam login, also some stuff about crypto wallets and password pamangers), which update jar uploads to C&C server
+- replaces crypto coin addresses in clipboard with address recieved from `95.214.27.172:18734`
+- persistence (see above)
+- contains auto-updater, current version is 932 (`hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/version`)
 
 ## Other Stuff
 *The only official channel run by the same team that wrote this writeup*  is [#cfmalware on EsperNet IRC](https://webchat.esper.net/?channels=cfmalware) — we do not have a Discord. You may join the channel if you wish — due to an influx of new users we've set the channel +m, you will need permission to speak. **Joining an IRC channel will expose your IP address.**
