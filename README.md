@@ -19,7 +19,7 @@ If you have files relevant to this malware, please upload them to https://wormho
 
 If you need to get in touch more generally, please send mail to jaskarth4@gmail.com.
 
-If you copy portions of this document elsewhere, *please* put a prominent link back to this HackMD page (https://hackmd.io/@jaskarth4/B1gaTOaU2) somewhere near the top so that people can read the latest updates and get in contact.
+If you copy portions of this document elsewhere, *please* put a prominent link back to this Github page (https://github.com/jaskarth/fractureiser) somewhere near the top so that people can read the latest updates and get in contact.
 
 # Non-technical overview [READ ME!]
 
