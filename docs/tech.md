@@ -206,7 +206,7 @@ Should be we be running some sort of static analysis? (williewillus has a few id
 
 #### 2. A lack of code signing for mods
 
-Unlike the software industry at large, mods released and uploaded to repositories are usually not signed with a signing key that proves that the owner of the key uploaded the mod. Having signing and a separate key distribution/trust mechanism mitigates compromise of CurseForge accounts.
+Unlike the software industry at large, mods released and uploaded to repositories are usually not signed with a signing key that proves that the owner of the key uploaded the mod. Having signing and a separate key distribution/trust mechanism mitigates CurseForge accounts getting compromised.
 
 However, this then leads to the greater issue of how to derive key trust, as the fact that "this jar has this signature" has to be communicated out of band from CurseForge/Modrinth, in a standard way so that loaders or users can verify the signatures.
 Forge tried to introduce signing many years ago and it had limited uptake.
