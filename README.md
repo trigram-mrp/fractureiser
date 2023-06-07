@@ -56,7 +56,7 @@ You can check whether the malware ever ran on your computer, since Stage1 attemp
     * Make sure to show hidden files when checking
     * Yes, "Microsoft Edge" with a space. MicrosoftEdge is the legitimate directory used by actual Edge.
     * Also check the registry for an entry at `HKEY_CURRENT_USER:\Software\Microsoft\Windows\CurrentVersion\Run` 
-    * Or a shortcut in `%appdata%\Microsoft\Windows\Start Menu\Programs\Startup` 
+    * Or a shortcut named `.lnk` in `%appdata%\Microsoft\Windows\Start Menu\Programs\Startup` 
 * **All other OSes**: Unaffected. The malware is hardcoded for Windows and Linux only. It is possible it will receive an update adding payloads for other OSes in the future.
 
 There are scripts available [here](https://prismlauncher.org/news/cf-compromised-alert/) which will help you check whether these files exist.
