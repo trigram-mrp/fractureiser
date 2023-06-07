@@ -1,15 +1,10 @@
 # Modded Minecraft Malware "fractureiser" - What We Know
 
-
-## If your browser is lagging, [go here instead](https://hackmd.io/@jaskarth4/B1gaTOaU2)
-
 We've dubbed this malware `fractureiser` because that's the name of the CurseForge account that uploaded the most notable malicious files.
 
-<span style="float: left;margin-right: 18px">![][underconstruction.gif]</span> <span style="float: right;margin-left: 18px">![][underconstruction.gif]</span><center>*Pardon our dust*, this is a living document being edited in realtime by multiple people about a developing situation.</center>
+*Pardon our dust*, this is a living document being edited in realtime by multiple people about a developing situation.
 
-<div style="display: table; clear:both"></div>
-
-<br>
+---
 
 #### Current status
 We have a good idea how fractureiser works, from stages 0 to 3. There are certain unknowns, but stage 0 bootstrapping was quickly nipped and tomorrow we'll be moving our focus to mitigation. As a plan, we've contacted Mojang and will likely be working with teams to get detection software distributed and integrated into CurseForge and Modrinth, as well as considering integration in launchers like Prism, and mod loaders like Fabric and Forge. It is also worthwhile to run this detection software on mod distribution mavens, as it's possible some have become infected.
@@ -24,7 +19,7 @@ If you have files relevant to this malware, please upload them to https://wormho
 
 If you need to get in touch more generally, please send mail to jaskarth4@gmail.com.
 
-If you copy portions of this document elsewhere, *please* put a prominent link back to this HackMD page (https://hackmd.io/@jaskarth4/B1gaTOaU2) somewhere near the top so that people can read the latest updates and get in contact.
+If you copy portions of this document elsewhere, *please* put a prominent link back to this [GitHub Repository](https://github.com/fractureiser-investigation/fractureiser) somewhere near the top so that people can read the latest updates and get in contact.
 
 # Non-technical overview [READ ME!]
 
@@ -83,11 +78,7 @@ As a non-technical user, your best course of action is to check if your system w
 
 
 ### Timeline
-----
-*temp*
-The static IP used to find the dynamic IP has been 
 
-----
 *2023-06-07 08:52 UTC*
 
 The dust has mostly settled for now. We have a good idea of the early stages of the malware, and stage 3 is being reverse-engineered. The first stage is temporarily dormant.
@@ -225,7 +216,7 @@ The malicious mods have upload dates multiple weeks in the past. Most of them we
 |AutoBroadcast|[www.curseforge.com]/minecraft/mc-mods/autobroadcast/files/4567257|`C55C3E9D6A4355F36B0710AB189D5131A290DF26`|shyandlostboy81|
 |Museum Curator Advanced|[www.curseforge.com]/minecraft/mc-mods/museum-curator-advanced/files/4553353|`32536577D5BB074ABD493AD98DC12CCC86F30172`|racefd16|
 |Vault Integrations Bug fix|[www.curseforge.com]/minecraft/mc-mods/vault-integrations-bug-fix/files/4557590|`0C6576BDC6D1B92D581C18F3A150905AD97FA080`|simplyharvesting82
-|Floating Damage|[dev.bukkit.org]/projects/floating-damage|1d1aaccdc13244e980c0c024610ecc77ea2674a33a52129edf1bb4ce3b2cc2fc|mamavergas3001
+|Floating Damage|[dev.bukkit.org]/projects/floating-damage|`1d1aaccdc13244e980c0c024610ecc77ea2674a33a52129edf1bb4ce3b2cc2fc`|mamavergas3001
 |Display Entity Editor|[www.curseforge.com]/minecraft/bukkit-plugins/display-entity-editor/files/4570122|`A4B6385D1140C111549D95EAB25CB51922EEFBA2`|santa_faust_2120
 
 Darkhax sent this: https://gist.github.com/Darkhax/d7f6d1b5bfb51c3c74d3bd1609cab51f
@@ -282,7 +273,7 @@ The creation of the classloader is hardcoded to that URL and does not use the Cl
 
 SHA-1: `dc43c4685c3f47808ac207d1667cc1eb915b2d82`
 
-[Decompiled copy of `Utility` from the malware](https://pastebin.com/k2ZQKbEz).
+[Decompiled copy of `Utility` from the malware](https://github.com/fractureiser-investigation/fractureiser/blob/main/README.md).
 
 The very first thing `Utility.run` does is check if the system property `neko.run` is set. If it is, it will *immediately stop executing*. If not, it sets it to the empty string and continues. This appears to be a very simplistic way of avoiding the same process running the malware multiple times, such as if it had multiple infected mods. *This cannot be relied upon as a killswitch because Stage1 is downloaded from the Internet and may change.*
 
@@ -403,5 +394,3 @@ Nonextensive! Thank you to all that pitched in. We'll flesh this out after this 
 **williewillus**: Coordination, journalist  
 **quat**: Documentation, initial infected sample research  
 **xylemlandmark**: Coordination of documentation, crowd control, responsible for using Snopyta at first and the disaster that caused
-
-[underconstruction.gif]: data:image/gif;base64,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
