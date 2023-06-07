@@ -117,20 +117,21 @@ When launched it does the following:
     5. Loads and invokes the static method `dev.neko.nekoclient.Client#start(InetAddress, refFileBytes)`
     6. Sleeps for 5 seconds
 
-## Stage3 (`client.jar`)
+## Stage3 (`client.jar` - obfuscated)
 
 sha-1: `c2d0c87a1fe99e3c44a52c48d8bcf65a67b3e9a5`
+sha-1: `e299bf5a025f5c3fff45d017c3c2f467fa599915`
 
 `client.jar` is an incredibly obfuscated and complex bundle of code and contains both java and native code.
 
-It appears to contain a native payload `hook.dll`, decompiled: https://gist.githubusercontent.com/NotNite/79ab1e5501e1ef109e8030059356b1b8/raw/c2102bf5ff74275ac44c2200d5121bfff652fd49/hook.dll.c
+It contains a native payload `hook.dll`, decompiled: https://gist.githubusercontent.com/NotNite/79ab1e5501e1ef109e8030059356b1b8/raw/c2102bf5ff74275ac44c2200d5121bfff652fd49/hook.dll.c
 
 There are two native functions meant to be called from Java, as they are JNI callable:
 * `__int64 __fastcall Java_dev_neko_nekoclient_api_windows_WindowsHook_retrieveClipboardFiles(__int64 a1);`
 * `__int64 __fastcall Java_dev_neko_nekoclient_api_windows_WindowsHook_retrieveMSACredentials(__int64 a1);`
 
-from analysis, these do what they say on the tin:
-* read clipboard contents
+From analysis, these do what they say on the tin:
+* Read clipboard contents
 * Steal Microsoft account credentials
 
 There is also evidence of code attempting to do the following:
@@ -142,11 +143,31 @@ There is also evidence of code attempting to do the following:
 * Steal crypto wallets
 
 Jars are heuristically detected as Minecraft mods or plugins as follows:
-* Forge (dev/neko/e/e/e/A): The malware attempts to locate the `@Mod` annotation, which is required in every mod
-* Bukkit (dev/neko/e/e/e/C): The malware checks if a class extends Bukkit's `JavaPlugin` class
-* Fabric/Quilt (dev/neko/e/e/e/i): The malware checks if a class implements `ModInitializer`
-* Bungee (dev/neko/e/e/e/l): The malware checks if a class extends Bungee's `Plugin` class
-* Vanilla (dev/neko/e/e/e/c): The malware checks if the main client class `net.minecraft.client.main.Main` exists
+* Forge (`dev/neko/e/e/e/A`): The malware attempts to locate the `@Mod` annotation, which is required in every mod
+* Bukkit (`dev/neko/e/e/e/C`): The malware checks if a class extends Bukkit's `JavaPlugin` class
+* Fabric/Quilt (`dev/neko/e/e/e/i`): The malware checks if a class implements `ModInitializer`
+* Bungee (`dev/neko/e/e/e/l`): The malware checks if a class extends Bungee's `Plugin` class
+* Vanilla (`dev/neko/e/e/e/c`): The malware checks if the main client class `net.minecraft.client.main.Main` exists
+
+# Stage3 (`unobf-client.jar`)
+
+Around 2023-06-07 14:20 UTC the stage3 client jar was seemingly accidentally replaced with an unobfuscated version. You can find the archive here: https://github.com/clrxbl/NekoClient
+
+This validates the suspected behavior/evidence from the analysis done on the prior obfuscated `client.jar` sample.
+
+**Replication** - [`dev/neko/nekoinjector`](https://github.com/clrxbl/NekoClient/tree/main/dev/neko/nekoinjector)
+
+Replication is handled through automatic processing of classes in jar files across the entire filesystem on the local machine. Any jar file that contains classes meeting certain critera is subject for infection. The process of scanning the local file system and injecting malicious code can be found here: [`dev/neko/nekoclient/Client.start(InetSocketAddress, byte[])`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L273)
+
+The critera that the process looks for can be found here: [`dev/neko/nekoinjector/template/impl`](https://github.com/clrxbl/NekoClient/tree/main/dev/neko/nekoinjector/template/impl)
+
+* `BungeecordPluginTemplate` looks for the interface `net/md_5/bungee/api/plugin/Plugin` in classes
+* `FabricModTemplate` looks for the interface `net/fabricmc/api/ModInitializer` in classes
+* `ForgeModTemplate` looks for the annotation `net/minecraftforge/fml/common/Mod` in classes
+* `MinecraftClientTemplate` looks for the existence of `net/minecraft/client/main/Main.class` and `net/minecraft/client/gui/GuiMultiplayer.class` in the jar 
+* `SpigotPluginTemplate` looks for the super-type `org/bukkit/plugin/java/JavaPlugin` in classes
+
+The malicious code injected is the backdoor logic seen in Stage0. The way that injection works is that the malicious code is declared in the `Loader` class in a static method. The `Injector` class that is adjacent to it is responsible for extracting the code from `Loader` and inserting it into new classes targeted for infection. The return value of `Injector.loadInstallerNode(...)` is a `MethodNode` outlining the infection process itself. Now they just need to add that method to the targeted class. Back in the [`dev/neko/nekoclient/Client.start(InetSocketAddress, byte[])`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L272) they call `Entry.inject(MethodNode)` to achive this. To ensure the malicious method is invoked this `inject` method adds logic to the targeted class's static initializer that invokes the added method. Since the static initializer is run when the class first loads, and the target class is a plugin/mod the assumption is this code will always be triggered by users who run infected modpacks or servers. After this, they repackage the jar with the newly infected target class.
 
 # Other Stuff
 
