@@ -365,7 +365,19 @@ More details are available in the live stage-3 reversal doc: https://hackmd.io/5
 ## Stage4 (`dummyloader3.jar`)
 This is a added on jar with the C2 server update which seems to be just the SkyRage updater, which is another minecraft malware targetting blackspigot.
 
-*This section needs more information, feel free to contribute*
+### Persistence
+Windows: task scheduler `MicrosoftEdgeUpdateTaskMachineVM`, file `%AppData%\..\LocalLow\Microsoft\Internet Explorer\DOMStore\microsoft-vm-core`
+Linux: `/bin/vmd-gnu`, `/etc/systemd/system/vmd-gnu.service`, service `vmd-gnu`
+
+### Connections
+C&C server: `connect.skyrage.de`
+Downloading: `hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/qqqqqqqqq`
+
+### Actions
+- `qqqqqqqqq` jar extracts all kinds of information (browser cookies, discord, minecraft, epic games, steam login, also some stuff about crypto wallets and password pamangers), which update jar uploads to C&C server
+- replaces crypto coin addresses in clipboard with address recieved from `95.214.27.172:18734`
+- persistence (see above)
+- contains auto-updater, current version is 932 (`hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/version`)
 
 ## New C2 (`107.189.3.101`)
 
