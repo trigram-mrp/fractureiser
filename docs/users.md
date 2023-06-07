@@ -69,7 +69,8 @@ A number of Curseforge and dev.bukkit.org (not the Bukkit software itself) accou
 This malware is composed of multiple "stages", each stage is responsible for downloading and running the next one. In total, there are three known stages (Stages 1, 2, and 3), with infected mod files serving as a "Stage 0" to kick the whole process off.
 
 Stage 3 is the "mastermind" of the malware, and we have evidence that it attempts to do all of the following:
-* Propagate itself to *all* `jar` files on the filesystem, possibly infecting mods that were not downloaded from CurseForge or BukkitDev
+* Propagate itself to *all* `jar` files on the filesystem, possibly infecting mods that
+  were not downloaded from CurseForge or BukkitDev or other Java programs
 * Steal cookies and login information for many web browsers
 * Replace cryptocurrency addresses in the clipboard with alternates that are presumably owned by the attacker
 * Steal Discord credentials
