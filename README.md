@@ -367,24 +367,31 @@ Please ask in the IRC chat for read or read/write access to samples. Source code
 ## Follow-Ups
 While it's a bit early to speak of long term follow-ups, this whole debacle has brought up several critical flaws in the modded Minecraft ecosystem. This section is just brainstorming on them and how we can improve.
 
-1. Review at mod repositories is inadequate
+#### 1. Review at mod repositories is inadequate
+
 What exactly does CurseForge and Modrinth do when "reviewing" a mod? We should know as a community, instead of relying on security through obscurity.
 Should be we be running some sort of static analysis? (williewillus has a few ideas here)
 
-2. A lack of code signing for mods
+#### 2. A lack of code signing for mods
+
 Unlike the software industry at large, mods released and uploaded to repositories are usually not signed with a signing key that proves that the owner of the key uploaded the mod. Having signing and a separate key distribution/trust mechanism mitigates compromise of CurseForge accounts.
+
 However, this then leads to the greater issue of how to derive key trust, as the fact that "this jar has this signature" has to be communicated out of band from CurseForge/Modrinth, in a standard way so that loaders or users can verify the signatures.
 Forge tried to introduce signing many years ago and it had limited uptake.
 
-3. A lack of reproducible builds
+#### 3. A lack of reproducible builds
+
 Minecraft toolchains are a mess, and builds are usually not reproducible. It is common to have buildscripts fetching unpinned -SNAPSHOT versions of random Gradle plugins and using them, which results in artifacts that are non-reproducible and thus non-auditable.
+
 A random Gradle plugin being a future attack vector is not out of the question.
 
-4. Lack of sandboxing of Minecraft itself
+#### 4. Lack of sandboxing of Minecraft itself
+
 Java edition modding has always had the full power of Java, and this is the other side of that double-edged sword: malicious code has far-reaching impact.
 Minecraft itself is not run with any sandboxing, and servers usually are not sandboxed unless the owner is knowledgeable enough to do so.
 
 Good sandboxing is difficult, especially on systems such as Linux where SELinux/AppArmor have such poor UX that no one deploys them.
+
 
 ## Credits
 Nonextensive! Thank you to all that pitched in. We'll flesh this out after this all blows over.
