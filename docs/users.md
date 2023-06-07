@@ -1,4 +1,4 @@
-# Mod Player Guide
+# Modded Players Guide
 
 If you're a Modded Minecraft player, you need to verify if you have been infected by the fractureiser malware to ensure your machine and personal data are not at risk. You can do so with the instructions below.
 
