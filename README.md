@@ -38,7 +38,7 @@ Stage 3 is the "mastermind" of the malware, and we have evidence that it attempt
 * Replace cryptocurrency addresses in the clipboard with alternates that are presumably owned by the attacker
 * Steal Discord credentials
 * Steal Microsoft and Minecraft credentials
-   Affected Launchers: Vanilla,Technic,PrismLauncher,PolyMC,FeatherClient
+   Affected Launchers: Vanilla,Technic,PrismLauncher,PolyMC,FeatherClient,LabyMod
 
 (See [technical details](#Stage3-clientjar) for more info)
 
@@ -332,7 +332,7 @@ There is also evidence of code attempting to do the following:
 * Steal cookies and login information for many web browsers
 * Replace cryptocurrency addresses in the clipboard with alternates that are presumably owned by the attacker
 * Steal Discord credentials
-* Steal Microsoft and Minecraft credentials, from a variety of launchers (Affected Launchers: Vanilla,Technic,PrismLauncher,PolyMC,FeatherClient)
+* Steal Microsoft and Minecraft credentials, from a variety of launchers (Affected Launchers: Vanilla,Technic,PrismLauncher,PolyMC,FeatherClient,LabyMod)
 * Steal crypto wallets
 
 Jars are heuristically detected as Minecraft mods or plugins as follows:
