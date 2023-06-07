@@ -3,6 +3,17 @@
 The timeline is from bottom-to-top. Topmost events are the most recent.
 
 ---
+*2023-06-07 18:51 UTC*
+
+The second C&C server 107[.]189.3.101 has been suspended by its hosting provider
+
+---
+*2023-06-07 16:00 UTC*
+
+Due to lag in the HackMD, this document was transferred to the GitHub repository
+https://github.com/fractureiser-investigation/fractureiser
+
+---
 *2023-06-07 14:40 UTC*
 
 The unobfuscated stage 3 was replaced by an obfuscated one, then further by another
