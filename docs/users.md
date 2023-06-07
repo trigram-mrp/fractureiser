@@ -65,7 +65,7 @@ If you still want to play the game:
 
 A number of Curseforge and dev.bukkit.org (not the Bukkit software itself) accounts were compromised, and malicious software was injected into copies of many popular plugins and mods. Some of these malicious copies have been injected into popular modpacks including Better Minecraft. *There are reports of malicious plugin/mod JARs as early as mid-April.*
 
-This malware is composed of multiple "stages", each stage is responsible for downloading and running the next one. In total, there are three known stages (Stages 1, 2, and 3), with infected mod files serving as a "Stage 0" to kick the whole process off.
+This malware is composed of multiple "stages", each Stage is responsible for downloading and running the next one. In total, there are three known Stages (Stages 1, 2, and 3), with infected mod files serving as a "Stage 0" to kick the whole process off.
 
 Stage 3 is the "mastermind" of the malware, and we have evidence that it attempts to do all of the following:
 * Propagate itself to *all* `jar` files on the filesystem, possibly infecting mods that
