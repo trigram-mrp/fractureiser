@@ -360,6 +360,20 @@ Other than an HTTP server on port 80/443 and an SSH server on port 22, the follo
 
 Curiously, fractureiser's bukkit page says "Last active Sat, Jan, 1 2000 00:00:00" https://dev.bukkit.org/members/fractureiser/projects/
 
+## Samples
+
+Note: Please take precautions when dealing with malware samples.
+
+Samples are available as a read only S3-compatible bucket on https://minio.buyvm-lux-1.semisol.dev/fractureiser-malware-samples/. Please contact jas for write access.
+
+Listing:
+- https://minio.buyvm-lux-1.semisol.dev/fractureiser-malware-samples/NekoClient-stage3-deobf-src.zip, deobfuscated source code of stage 3
+- https://minio.buyvm-lux-1.semisol.dev/fractureiser-malware-samples/deobf_client.zip
+- https://minio.buyvm-lux-1.semisol.dev/fractureiser-malware-samples/obf_client.zip
+- https://minio.buyvm-lux-1.semisol.dev/fractureiser-malware-samples/sample2.zip
+- https://minio.buyvm-lux-1.semisol.dev/fractureiser-malware-samples/stage2.zip
+- https://minio.buyvm-lux-1.semisol.dev/fractureiser-malware-samples/cfmalware-files-honbra.zip
+
 ## Follow-Ups
 While it's a bit early to speak of long term follow-ups, this whole debacle has brought up several critical flaws in the modded Minecraft ecosystem. This section is just brainstorming on them and how we can improve.
 
