@@ -31,7 +31,7 @@ The threat actors attempted to bring up a new server IP. In the process, they ac
 uploaded an unobfuscated version of Stage 3. This allowed us to further understand the
 malware and what it does.
 
-As of the time of writing this new control IP has been taking offline by its hosting provider
+As of the time of writing this new control IP has been taken offline by its hosting provider.
 
 ## Additional Info
 
