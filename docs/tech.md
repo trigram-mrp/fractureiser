@@ -107,13 +107,12 @@ When launched it does the following:
 2. Locate itself on disk and works next to itself (likely in the `/mods` or `/plugins` directory)
 3. If `.ref` exists, it reads the identifier key from the file
 4. Launches a loop to
-    1. Check with `https://[files-8ie.pages.dev]:8083/ip` for the server and attempts to connect to it
+    1. Checks with `https://[files-8ie.pages.dev]:8083/ip` for the server and attempts to connect to it
     2. Receives a flag for if the update check should continue, throwing if not (reported to the server on port `1338`)
     3. If so, receives a hash and checks it against `client.jar` if it exists, sending back a byte for if it wants to update
-    4. If so, receives and overwrites/creates `client.jar`
-    5. Hides `client.jar` using file attributes
-    6. loads and invokes the static method `dev.neko.nekoclient.Client#start(InetAddress, refFileBytes)`
-    7. Sleeps for 5 seconds
+    4. If so, receives and overwrites/creates `client.jar`, hiding it using file attributes
+    5. Loads and invokes the static method `dev.neko.nekoclient.Client#start(InetAddress, refFileBytes)`
+    6. Sleeps for 5 seconds
 
 ## Stage3 (`client.jar`)
 
