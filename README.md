@@ -362,16 +362,16 @@ Jars are heuristically detected as Minecraft mods or plugins as follows:
 
 More details are available in the live stage-3 reversal doc: https://hackmd.io/5gqXVri5S4ewZcGaCbsJdQ
 
-## Stage4 (`dummyloader3.jar`)
-This is a added on jar with the C2 server update which seems to be just the SkyRage updater, which is another minecraft malware targetting blackspigot.
+When the second C&C server was stood up, a deobfuscated version of stage 3 was
+accidentally served for around 40 minutes.
+
+## Stage3b (`dummyloader3.jar`)
+Stage 3 was replaced with another jar some time after the second C&C server was stood up.
+
+It appears to be just the SkyRage updater, which is another minecraft malware targetting
+blackspigot.
 
 *This section needs more information, feel free to contribute*
-
-## New C2 (`107.189.3.101`)
-
-The new C2 came with a deobfuscated stage3, accidentialy pushed by the looks of it. 
-
-After, the upload URI was changed to a Stage4, which is `SkyRage` the blackspigot malware.
 
 ## Other Stuff
 *The only official channel run by the same team that wrote this writeup*  is [#cfmalware on EsperNet IRC](https://webchat.esper.net/?channels=cfmalware) — we do not have a Discord. You may join the channel if you wish — due to an influx of new users we've set the channel +m, you will need permission to speak. **Joining an IRC channel will expose your IP address.**
@@ -380,7 +380,7 @@ IRC logs: TODO
 
 The main payload server ~~is~~ *was* (got taken down) hosted on Serverion, a company based in the Netherlands.
 
-The new C2 is still up. This line will be updated when its taken down.
+The new C&C is still up. This line will be updated when its taken down.
 
 Other than an HTTP server on port 80/443 and an SSH server on port 22, the following ports were open on `85.217.144.130` and `107.189.3.101`:
 
