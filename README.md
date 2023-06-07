@@ -285,6 +285,8 @@ It attempts to contact `85.217.144.130`, and a Cloudflare Pages domain (`https:/
 
 *The C&C IP has been nullrouted after an abuse report to the server provider. We will need to keep an eye on the Cloudflare page to see if a new C&C server is stood up, I can't imagine they didn't plan for this.* Thank you Serverion for your prompt response.
 
+*The Cloudflare pages has been terminated* Theres a new C2 IP: `107.189.3.101`
+
 Stage 1 then attempts to achieve persistence by doing the following:
 1. Downloading stage 2 (lib.jar on Linux, libWebGL64.jar on Windows) from the server
 2. Making stage 2 run automatically on startup:
@@ -337,6 +339,12 @@ Jars are heuristically detected as Minecraft mods or plugins as follows:
 
 More details are available in the live stage-3 reversal doc: https://hackmd.io/5gqXVri5S4ewZcGaCbsJdQ
 
+## Stage4 (`dummyloader3.jar`)
+This is a added on jar with the C2 server update which seems to be just the SkyRage updater, which is another minecraft malware targetting blackspigot.
+
+*This section needs more information, feel free to contribute*
+
+
 ## Other Stuff
 *The only official channel run by the same team that wrote this writeup*  is [#cfmalware on EsperNet IRC](https://webchat.esper.net/?channels=cfmalware) — we do not have a Discord. You may join the channel if you wish — due to an influx of new users we've set the channel +m, you will need permission to speak. **Joining an IRC channel will expose your IP address.**
 
@@ -376,6 +384,12 @@ Java edition modding has always had the full power of Java, and this is the othe
 Minecraft itself is not run with any sandboxing, and servers usually are not sandboxed unless the owner is knowledgeable enough to do so.
 
 Good sandboxing is difficult, especially on systems such as Linux where SELinux/AppArmor have such poor UX that no one deploys them.
+## Unmasking
+
+The person currently suspected to do this is mori0, a script kiddie from our perspective.
+
+Reason for this is SkyRage.
+The jar `dummyloader3.jar` on the new C2 is the skyrage updater connecting to `connect.skyrage.de` which is a malware associated with mori0
 
 ## Credits
 Nonextensive! Thank you to all that pitched in. We'll flesh this out after this all blows over.
