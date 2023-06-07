@@ -283,7 +283,7 @@ It attempts to contact `85.217.144.130`, and a Cloudflare Pages domain (`https:/
 
 *The C&C IP has been nullrouted after an abuse report to the server provider. We will need to keep an eye on the Cloudflare page to see if a new C&C server is stood up, I can't imagine they didn't plan for this.* Thank you Serverion for your prompt response.
 
-*The Cloudflare pages has been terminated* Theres a new C2 IP: `107.189.3.101`
+*The Cloudflare Pages domain has been terminated.* There is a new command and control server located at `107.189.3.101`.
 
 Stage 1 then attempts to achieve persistence by doing the following:
 1. Downloading stage 2 (lib.jar on Linux, libWebGL64.jar on Windows) from the server
