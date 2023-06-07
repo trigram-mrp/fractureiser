@@ -19,11 +19,11 @@ Anyone who wishes to dig deeper may also look at
 * [Technical Breakdown](docs/tech.md)
 
 ## Current Investigation Status
-We have a good idea how fractureiser works, from stages 0 to 3. There are certain
-unknowns, but stage 0 bootstrapping was quickly nipped and tomorrow we'll be moving our
+We have a good idea how fractureiser works, from Stages 0 to 3. There are certain
+unknowns, but Stage 0 bootstrapping was quickly nipped and tomorrow we'll be moving our
 focus to mitigation.
 
-Work has begun on a detector for infected stage0 mods:
+Work has begun on a detector for infected Stage 0 mods:
 https://github.com/MCRcortex/nekodetector and arranging for this detector to be run on
 Modrinth.
 
