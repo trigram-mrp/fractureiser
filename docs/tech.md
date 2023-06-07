@@ -107,7 +107,7 @@ https://gist.github.com/SilverAndro/a992f85bec29bb248c354ccf5d2206fe
 
 When launched it does the following:
 1. Open port `9655` and add a shutdown hook to close it when the jvm closes.
-2. Locate itself on disk and works next to itself (likely in the `/mods` or `/plugins` directory)
+2. Locate itself on disk and works next to itself
 3. If `.ref` exists, it reads the identifier key from the file
 4. Launches a loop to
     1. Checks with `https://[files-8ie.pages.dev]:8083/ip` for the server and attempts to connect to it
