@@ -137,70 +137,53 @@ systemctl --user daemon-reload
 
 ## 我中招了，怎么办？
 
-**IMPORTANT**: We do not currently know the full extent of everything this can do, nor what its
-intent is, so extreme caution should be exercised until a complete way to remove any symptoms is
-found. Everything stated here is only *what we know* - please keep an eye on communication from the
-team on updates if anything critical is found.
+**重要提示**：我们目前仍不清楚 Fractureiser 的全部能力以及其传播动机，所以在出现完全查杀指南之前，请保持最高程度的戒备。下文中列出的所有对策均针对**我们目前掌握的信息**，所以还请时刻关注我们的最新消息，我们会在发现关键信息时在第一时间披露。
 
-If you find stage 2 files from fractureiser on your system, it's very likely that the stage 3 code
-has ran and infected your machine.  
-Your best option now is to assume everything on that system is *entirely compromised*. You should:
+若你的设备已感染 Fractureiser 阶段 2，你的设备有相当大可能性也已遭阶段 3 感染。此时，你的最佳选项是：假设你的系统已被**完全入侵**；此时你应该：
 
-* Back up anything you do not want to lose on an a flash drive or external disk (you should be
-doing this regularly anyway!)
-* Using a separate device, change the passwords to all services you were logged into on
-  the old machine (Discord, email, etc.). Preferably using a password manager like
-  [BitWarden](https://bitwarden.com).
-* If you were not yet using Two-Factor Authentication (Authenticator app or SMS) for every service
-that supports it, please start doing so immediately
-* If you are able to, contact a professional service in your area to run a proper
-  diagnostic on your machine for anything suspicious, or as a safe default simply wipe and
-  reinstall the system.
-* Read the below section on what to do if you're not infected, as the steps there apply to you too.
+* 备份所有有价值数据到 U 盘或者其他硬盘上（平时你也应该有这样的习惯！）
+* 在另一台设备上，修改被感染设备上登录的所有服务的账号密码（Discord、电邮、……）。考虑使用诸如 [BitWarden](https://bitwarden.com) 之类的密码管理器。
+* 若你还没有使用 2FA（Two-Factor Authentication，双因子验证），不管是专用的 App 还是手机短信，但你使用的服务支持 2FA，请立即开始使用。
+* 如果条件允许，请联系当地的专业维修人员对你的设备进行彻底检查，或者（作为更保险的备用方案）直接格盘重装操作系统。
+* 阅读下文中「我没中招」一节。这其中内容也适用于已感染的情况。
 
 ## 我没中招，然后呢？
 
 如果你过去数月中玩过模组，那么你现在能做的最安全的事情是：**不要启动 Minecraft，原版也不要碰。**
 
-With that said - if nothing was found in the first place, chances are there's nothing going on.
-If you still want to play the game:
-* With the current knowledge we have, this is not risky, but we do not guarantee this is
-accurate - you are *willingly putting yourself at risk*.
-* After each session, check for the stage 2 infection files in the previous step to ensure nothing
-has happened since
-* Do not, under **any circumstances**, download or update any mods, modpacks, or plugins you
-may use, or even run any you downloaded and never ran before - stick to instances you have
-already used, and those **ONLY**.
+在此前提下——若你按上述流程排查未发现问题，那么你的设备有可能并未受影响。若你仍然想继续玩 Minecraft：
+
+* 基于我们掌握的信息，我们认为继续玩 Minecraft 并不构成威胁，但我们不保证这一点准确无误——若你选择继续玩 Minecraft，那么**你同时也选择了承担所有风险**。
+* 每次玩 Minecraft 结束后，使用上述流程检查你的设备是否存在阶段 2 感染文件，以确保你的设备安全。
+* **在任何情况下都不要**下载、安装或更新任何你想用的模组、整合包和插件，尤其是此前从未使用过的——请暂时**只使用**你已经下载安装的模组、整合包、插件。
 
 ## 常见问题解答
 
 ### CurseForge 被入侵了吗？
-CurseForge itself is not compromised, only individual users. This is not a CurseForge problem, they
-just happened to the be place this happened in. CurseForge have also [posted an article](https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool/) describing the situation from their end and
-are working on deploying countermeasures.
+
+CurseForge 本身没有被入侵，只有其个别用户账号被盗。这不是 CurseForge 平台的问题，CurseForge 只是意外成为了事件发生地。CurseForge 也已[就此事发文](https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool/)，阐述了其目前的状况，以及正在部署的应对措施。
 
 ### Modrinth 有没有事？
-Modrinth has ran a full scan of the last 10 months of uploads and no infected projects were found. 
-We still recommend exercising extreme caution when downloading anything mod related at the moment. 
-The fact no mods were infected there was entirely luck.
+
+Modrinth 已对其站内 10 个月内上传的所有文件进行了全盘检查，没有发现受感染文件。尽管如此，我们在此仍然建议，在下载任何模组文件时，保持最大程度的警惕。Modrinth 没有受影响纯粹是因为运气。
 
 ### Modrinth 更安全吗？
-This isn't a website-level issue, Modrinth is just as safe as CurseForge is.
+
+这不是网站的问题。Modrinth 目前的安全程度，可以说，和 CurseForge 在同一水平上。
 
 ### CurseForge 怎么让这玩意过审的？
-The code the stage 0 infection ran wasn't necessarily suspicious to an automated system, and could
-very well have been something another mod would've used. In fact, early heuristics for determining
-stage 0 infection had significant amounts of false flags on popular mods such as Quark.
 
-Realistically, this type of prevention on a platform scale is non-feasible due to the infinite
-different ways you can lay out code to hide your intent.
+阶段 0 感染中所执行的代码，并不一定能引起自动化审核系统的怀疑，且有一定概率确为作者需要使用的代码。事实上，此前一部分通过启发式检测来判定文件是否存在阶段 0 感染的方式产生了相当多的误报，有些甚至将包括 Quark（夸克）在内的知名模组也错标为「阶段 0」感染。
+
+事实上，考虑到你有无数种方法隐藏你的代码的真正目的，此类全平台范围内的预防机制并不行得通。
 
 ### 哪个杀毒软件能查杀这个？
-New ones are being added as we speak, it's best to do the manual verification above instead of
-relying on AV for now.
+
+在我们编写本文档时，杀软也在更新其特征库，所以我们在此建议不要过度依赖杀软，先使用上文所述自查流程进行初步排查。
 
 ### 多人联机是否安全？
-Yes, you can not be infected via a multiplayer server if you don't download mods for it elsewhere.
+
+安全，在你没有下载联机所需模组的前提下，单纯通过多人游戏无法感染此病毒/恶意软件。
 
 ### 基岩版是否安全？
 
@@ -236,9 +219,6 @@ infection period. Quote from CF's Discord announcement:
 > for Minecraft.
 
 ### 是不是有人想毁掉 Minecraft 1.20 的发布活动？
-
-It appears to be a coincidence - this malware campaign was active for quite a while before being 
-widely uncovered the morning-of the 1.20 release.
 
 目前的线索显示：这只是巧合。该恶意软件在 1.20 日发布日早上被大范围披露时，就已经悄无声息地传播了一段时间了。
 
