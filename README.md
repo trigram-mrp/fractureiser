@@ -29,6 +29,8 @@ not possible. Old infections may still be active.
 We are currently working on refining user-facing documentation, please check there for
 resources.
 
+We're holding a meeting to follow-up and discuss potential solutions, see [this page](https://github.com/fractureiser-investigation/fractureiser/blob/main/docs/2023-06-08-meeting.md) for more information about how you can listen in, and about the agenda.
+
 ## Additional Info
 
 If you have files relevant to this malware, please upload them to https://wormhole.app and email the URL to fractureiser.investigation@opayq.com — this inbox is controlled by unascribed, and anything sent to it will be shared with the rest of the team. If you need to get in touch more generally, please send mail to jaskarth4@gmail.com.
