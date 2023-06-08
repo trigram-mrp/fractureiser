@@ -6,22 +6,21 @@ Additional info on what to do if you are or are not infected will also be provid
 
 ## Am I Infected?
 
-As of current knowledge, fractureiser specifically tagets Linux and Windows installations. If you are on any other Operating System, you are not infected. The way to verify if you are infected is by looking for specific files in your system, as such:
+As of current knowledge, fractureiser specifically targets Linux and Windows installations. If you are on any other Operating System, you are not infected. The way to verify if you are infected is by looking for specific files in your system, as such:
 
 ### Windows Instructions
 
 * Open your Start menu with the Windows Key, and type `%localappdata%` - it should appear as such:
-![](media/localappdata.png)
+![Search results for the above query](media/localappdata.png)
 
 * Inside the Local appdata folder, you must ensure that your Explorer is set to view both `Hidden Items`, and `Protected Operating System Files`. 
- * This can be done from View > Options
- * If you are unsure how to do this, a video explanation [can be found here](https://youtu.be/KLTlTlnXeKs).
+  * This can be done from View > Options
+  * If you are unsure how to do this, a video explanation [can be found here](https://youtu.be/KLTlTlnXeKs).
 
 
 * Locate a folder named `Microsoft Edge`. The SPACE between "Microsoft" and "Edge" is important - as `MicrosoftEdge` is a legitimate folder that is used by Edge. The virus simply named it like that to disguise itself.
 * If `Microsoft Edge` is present, you were infected. If this is the case, permanently delete the folder and everything inside it.
- * If the folder can not be deleted, you must stop any Java programs currently running via your Task Manager.
-   * There is a detection tool by eitambelahousky at https://github.com/overwolf/detection-tool to automate this 
+  * If the folder can not be deleted, you must stop any Java programs currently running via your Task Manager.
 
 Afterwards, follow onto the next section of this page that is relevant to you.
 
@@ -43,7 +42,7 @@ The malware does not seem to affect MacOS, so you should be fine. *Recheck this 
 ### Scripts
 
 *If you don't know how to run a PowerShell or Bash script, these are not for you.*  
-Automated PowerShell or Bash scripts are also available [on the PrismLauncher website](https://prismlauncher.org/news/cf-compromised-alert/#automated-script) to do this for you, if you have the technical knowhow to run them.
+Automated PowerShell or Bash scripts are also available [on the PrismLauncher website](https://prismlauncher.org/news/cf-compromised-alert/#automated-script) to do this for you, if you have the technical knowhow to run them. Overwolf (Curseforge's parent company) has also released a C# detection tool: https://github.com/overwolf/detection-tool
 
 ## I'm Infected, Now What?
 
