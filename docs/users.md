@@ -90,11 +90,11 @@ A variety of scanners exist that take a mod file and detect whether it is infect
 the malware.
 
 * Overwolf's [scanner](https://github.com/overwolf/jar-infection-scanner/releases)
- * This is the recommended option for checking your entire game - just point it at the CurseForge 
+  * This is the recommended option for checking your entire game - just point it at the CurseForge 
 installation folder or wherever else  you have your instances saved)
 * douira's [website-based online scanner](https://douira.github.io/fractureiser-web-detector/)
 * cortex's [nekodetector](https://github.com/MCRcortex/nekodetector/releases) 
- * Click on "Assets" to show the runnable file - requires Java to be installed
+  * Click on "Assets" to show the runnable file - requires Java to be installed
 
 In isolation, stage 0 infection is not dangerous if the files are deleted and never ran.
 
