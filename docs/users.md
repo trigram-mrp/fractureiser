@@ -48,6 +48,10 @@ existing infections may still be active.
 
 ![](media/stages.png)
 
+### Get to the point, how do I fix this?
+
+![Flowchart](media/flowchart.png)
+
 ## Am I Infected?
 
 The malware has multiple stages, so asking whether you are infected is actually two questions
