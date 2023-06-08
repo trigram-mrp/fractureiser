@@ -109,34 +109,27 @@ https://github.com/overwolf/detection-tool
 
 **IMPORTANT**: We do not currently know the full extent of everything this can do, nor what its intent is, so extreme caution should be exercised until a complete way to remove any symptoms is found. Everything stated here is only *what we know* - please keep an eye on communication from the team on updates if anything critical is found.
 
-If you have been infected by fractureiser, your best option now is to assume everything on the computer that was infected is *entirely compromised*. Any file, account, password you may have it in it, as well as access to the computer itself is at the hands of the virus's authors. You should:
+If you have been infected by fractureiser, your best option now is to assume everything on
+the computer that was infected is *entirely compromised*. You should:
+
 * Back up anything you do not want to lose on an a flash drive or external disk (you should be doing this regularly anyway!)
-* Using a separate device, change ALL of your passwords (preferably using a password manager like [BitWarden](https://bitwarden.com))
-* If you were not yet using Two-Factor Authentication (authenticator app or SMS) for every service that supports it, please start doing so immediately
-* If you are able to, contact a professional service in your area to run a proper diagnostic on your machine for anything suspicious, or simply wipe and reinstall the system.
+* Using a separate device, change the passwords to all services you were logged into on
+  the old machine (Discord, email, etc.). Preferably using a password manager like
+  [BitWarden](https://bitwarden.com).
+* If you were not yet using Two-Factor Authentication (Authenticator app or SMS) for every service that supports it, please start doing so immediately
+* If you are able to, contact a professional service in your area to run a proper
+  diagnostic on your machine for anything suspicious, or as a safe default simply wipe and
+  reinstall the system.
 * Read the below section on what to do if you're not infected, as the steps there apply to you too.
 
 ## I'm Not Infected, Now What?
 
 The absolute safest thing you can do at the moment is to **not launch Minecraft at all**. Yes, even Vanilla.  
-We do not know 100% everything that's compromised, and there's no way to guaranteed any one given installation has not been corrupted by a step of the code we have not found yet.
+
 
 With that said - if nothing was found in the first place, chances are there's nothing going on.
 If you still want to play the game:
+
 * With the current knowledge we have, this is not risky, but we do not guarantee this is accurate - you are *willingly putting yourself at risk*.
 * After each session, check for the infection files in the previous step to ensure nothing has happened since
 * Do not, under **any circumstances**, download or update any mods, modpacks, or plugins you may use, or even run any you downloaded and never ran before - stick to instances you have already used, and those **only**
-
-
-
-## Given a jar file, how do I know if it's safe?
-
-There are various heuristics you can use to determine whether a jar is infected with Stage 0.
-
-Emi's shell script [here](https://gist.github.com/emilyploszaj/a9693c4f3de5ec9fbc255c51ff3ca47e) simply checks for all usages of `ClassLoader`, which is uncommon in mod code. This can lead to false positives and negatives. For example, it falsely flags the latest Quark 1.19 file as infected when it is not.
-
-Sylv's shell script [here](https://pastebin.com/T6aQ7C2E) does a bit more fingerprint matching for the malware, and should be more precise.
-
-As a non-technical user, your best course of action is to check if your system was affected using the above steps, remediating if necessary, and refraining from downloading anything from CurseForge or dev.bukkit.org until further notice.
-
-
