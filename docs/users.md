@@ -60,7 +60,7 @@ The malware has multiple stages, so asking whether you are infected is actually 
 A variety of scanners exist that take a mod file and detect whether it is infected by Stage 0 of the malware.
 
 - Overwolf's [scanner](https://github.com/overwolf/jar-infection-scanner/releases)
-- cortex's [nekodetector](https://github.com/MCRcortex/nekodetector)
+- cortex's [nekodetector](https://github.com/MCRcortex/nekodetector/releases) (click on "Assets" to show the binary)
 
 ### Are Stage 2 files present on my system?
 
