@@ -3,6 +3,16 @@
 The timeline is from bottom-to-top. Topmost events are the most recent.
 
 ---
+*2023-06-08 01:12 UTC*
+
+Things have mostly settled down again, virus scanners have begun detecting the stage 1+
+jars as malicious, and a meeting for next steps is planned for the next morning in the US.
+
+The meeting will be semi-private, but recordings/minutes will be shared afterwards.
+
+CurseForge is scanning all mods, but that process is still ongoing.
+
+---
 *2023-06-07 18:51 UTC*
 
 The second C&C server 107[.]189.3.101 has been suspended by its hosting provider
