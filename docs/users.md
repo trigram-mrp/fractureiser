@@ -94,6 +94,8 @@ In isolation, stage 0 infection is not dangerous if the files are deleted and ne
 ### Are Stage 2 files present on my system?
 
 Stage 2 files being on your system means that the stages 0 and 1 of the malware ran successfully.
+If they are present at all, you are likely *fully infected* and should continue reading the
+instructions in the document.
 
 Many virus scanners are starting to detect stage 2 files. If you get a warning that such
 files were found and removed, proceed to the "I'm Infected, Now What?" section.
@@ -209,6 +211,9 @@ Modrinth has ran a full scan of the last 10 months of uploads and no infected pr
 We still recommend exercising extreme caution when downloading anything mod related at the moment. 
 The fact no mods were infected there was entirely luck.
 
+### Is Modrinth safer?
+This isn't a website-level issue, Modrinth is just as safe as CurseForge is.
+
 ### How did CurseForge let this slip through?
 The code the stage 0 infection ran wasn't necessarily suspicious to an automated system, and could
 very well have been something another mod would've used. In fact, early heuristics for determining
@@ -227,7 +232,10 @@ Yes, you can not be infected via a multiplayer server if you don't download mods
 ### Is Bedrock safe?
 Yes, this affects only Java.
 
-### Is Optifine safe? / Is Sodium safe? / Is Iris safe? / Is Create safe? / Is (insert mod) safe?
+### Are alternative game clients such as Lunar or Badlion safe?
+See the below point.
+
+### Is Optifine safe? / Is Sodium safe? / Is Iris safe? / Is Create safe? / Is Essential safe? / Is (insert mod) safe?
 
 **We can not currently fully confirm the safety of any given mod.**
 
