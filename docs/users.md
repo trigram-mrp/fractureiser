@@ -199,17 +199,17 @@ already used, and those **ONLY**.
 
 ## Frequently Asked Questions
 
-#### Is CurseForge hacked?
+### Is CurseForge hacked?
 CurseForge itself is not compromised, only individual users. This is not a CurseForge problem, they
 just happened to the be place this happened in. CurseForge have also [posted an article](https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool/) describing the situation from their end and
 are working on deploying countermeasures.
 
-#### Is Modrinth okay?
+### Is Modrinth okay?
 Modrinth has ran a full scan of the last 10 months of uploads and no infected projects were found. 
 We still recommend exercising extreme caution when downloading anything mod related at the moment. 
 The fact no mods were infected there was entirely luck.
 
-#### How did CurseForge let this slip through?
+### How did CurseForge let this slip through?
 The code the stage 0 infection ran wasn't necessarily suspicious to an automated system, and could
 very well have been something another mod would've used. In fact, early heuristics for determining
 stage 0 infection had singnificant amounts of false flags on popular mods such as Quark.
@@ -217,17 +217,17 @@ stage 0 infection had singnificant amounts of false flags on popular mods such a
 Realistically, this type of prevention on a platform scale is non-feasible due to the infinite
 different ways you can lay out code to hide your intent.
 
-#### Which Antiviruses catch this?
+### Which Antiviruses catch this?
 New ones are being added as we speak, it's best to do the manual verification above instead of
 relying on AV for now.
 
-#### Is Multiplayer safe?
+### Is Multiplayer safe?
 Yes, you can not be infected via a multiplayer server if you don't download mods for it elsewhere.
 
-#### Is Bedrock safe?
+### Is Bedrock safe?
 Yes, this affects only Java.
 
-#### Is Optifine safe? / Is Sodium safe? / Is Iris safe? / Is Create safe? / Is (insert mod) safe?
+### Is Optifine safe? / Is Sodium safe? / Is Iris safe? / Is Create safe? / Is (insert mod) safe?
 
 **We can not currently fully confirm the safety of any given mod.**
 
@@ -245,21 +245,21 @@ This does *not guarantee no sneaky ones slipped through*. To check whether a giv
 stage0 of fractureiser, check the [Am I Infected?](#am-i-infected) section and overall exercise
 extreme caution downloading anything mod related for now.
 
-#### How widespread was the infection?
+### How widespread was the infection?
 
 CurseForge is reporting infected files were downloaded roughly 6,000 times for the entire 
 infection period. Quote from CF's Discord announcement: 
 > Just to give perspective, this accounts to about 0.015% of CurseForge’s daily downloads 
 > for Minecraft.
 
-#### Did someone want to spoil the 1.20 release event?
+### Did someone want to spoil the 1.20 release event?
 
 It appears to be a coincidence - this malware campaign was active for quite a while before being 
 widely uncovered the morning-of the 1.20 release.
 
 ## Technical FAQ
 
-#### Can fractureiser escape VMs (Virtual Machines)?
+### Can fractureiser escape VMs (Virtual Machines)?
 
 **No.**
 
@@ -277,14 +277,14 @@ than the "Windows Sandbox", and disable features like VirtualBox's "Guest Addons
 some Minecraft kids, and we have reason to believe the author of this malware is not a very good
 programmer in the first place.)
 
-#### Does this spread over the network?
+### Does this spread over the network?
 
 As far as we know, fractureiser does not contain network spread functionality, but it is not fully
 out of the question.  
 A security researcher we are working with got an alert, but it ended up being about completely 
 unrelated malware that happened to use a similar filename. This was just a false alarm.
 
-#### What are CurseForge and Modrinth doing about it?
+### What are CurseForge and Modrinth doing about it?
 
 CurseForge has developed an open-source [stage2/3 detection tool](https://github.com/overwolf/detection-tool) 
 and [stage0 detection tool](https://github.com/overwolf/jar-infection-scanner), have scanned *all* 
@@ -296,7 +296,7 @@ not find any.
 Both platforms are considering introducing some sort of automated "virus scan" process to the mod 
 submission pipeline. It's hard, since Java malware like this is typically bespoke.
 
-#### What IP addresses and URLs should I block in my firewall/routing table?
+### What IP addresses and URLs should I block in my firewall/routing table?
 
 fractureiser-related code has been observed to connect to these URLs and addresses over a wide 
 variety of port numbers.
@@ -322,12 +322,12 @@ addresses anyway):
 
 Should go without saying that you should not visit these.
 
-#### Can we make it against CurseForge/Modrinth rules for your mod to download other files?
+### Can we make it against CurseForge/Modrinth rules for your mod to download other files?
 
 It's already against CurseForge rules to upload malware. There are also many legitimate use cases 
 for a mod to download files that this would also stifle.
 
-#### Would it be possible to include some sort of "antivirus" or "sandbox" in the modloader itself?
+### Would it be possible to include some sort of "antivirus" or "sandbox" in the modloader itself?
 
 "Antivirus": Probably not, for the same reasons that regular antiviruses didn't detect it. 
 Antiviruses can only detect known malware, not unknown malware.
@@ -347,7 +347,7 @@ Sandboxing Java is pretty much impossible - see articles like
 
 Java mods are simply bundles of arbitrary code: treat them like an `.exe`, they can do anything. 
 
-#### Why aren't mods cryptographically signed to prevent malware from tampering with them?
+### Why aren't mods cryptographically signed to prevent malware from tampering with them?
 
 Part of the problem is that signatures alone do not prevent malware - a cryptographically-signed 
 virus is still a virus - and if self-signing was permitted, it doesn't prevent tampering either - 
@@ -359,7 +359,7 @@ Signed mods with online signature verification *does* seem like a somewhat promi
 though it's not without tradeoffs. There will be [a meeting](2023-06-08-meeting.md) with
 many different reps from the modding ecosystem to discuss how to move forward.
 
-#### Would it be possible to forbid mods from downloading executable code?
+### Would it be possible to forbid mods from downloading executable code?
 
 It's not possible. You can't know whether a file contains executable code before you download it, 
 and after a file is downloaded, you can't control what is done with it.
@@ -374,7 +374,7 @@ even number of words correspond to a 0, and sentences with an odd number of word
 a 1? - even though it's a prose document I can technically reassemble it into 
 an `.exe`, if I so choose.
 
-#### Is this related to that Spigot plugin malware going around?
+### Is this related to that Spigot plugin malware going around?
 
 Possibly! There's some ties to the existing malware `skyrage` - the malware author uploaded a 
 skyrage-relevant `.jar` to their backup command&control server, in a fruitless attempt to 
