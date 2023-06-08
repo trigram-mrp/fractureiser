@@ -2,11 +2,7 @@
     <img src="docs/media/logo.svg" alt="Logo">
 </p>
 
-*Pardon our dust, documentation not finalized*
-
-This is a living document that is being edited by multiple people about a developing situation. 
-
-We apologize for the inconvenience of any formatting issues, this means that some sections may be messy.
+*Pardon our dust, documentation still in progress*
 
 ## What?
 `fractureiser` is a [Virus](https://en.wikipedia.org/wiki/Computer_virus) found in several Minecraft projects uploaded to CurseForge and CraftBukkit's dev website. The malware is embedded in multiple mods, some of which were added to highly popular modpacks. The Malware is only known to target Windows and Linux Systems.
@@ -27,18 +23,11 @@ Anyone who wishes to dig deeper may also look at
 
 ## Current Investigation Status
 We have a good idea how fractureiser works, from Stages 0 to 3. There are certain
-unknowns, but Stage 0 bootstrapping was quickly nipped and tomorrow we'll be moving our
-focus to mitigation.
+unknowns, but the attack servers are offline and to our knowledge, *new* infections are
+not possible. Old infections may still be active.
 
-Work has begun on a detector for infected Stage 0 mods:
-https://github.com/MCRcortex/nekodetector and arranging for this detector to be run on
-Modrinth.
-
-The threat actors attempted to bring up a new server IP. In the process, they accidentally
-uploaded an unobfuscated version of Stage 3. This allowed us to further understand the
-malware and what it does.
-
-As of the time of writing this new control IP has been taken offline by its hosting provider.
+We are currently working on refining user-facing documentation, please check there for
+resources.
 
 ## Additional Info
 
