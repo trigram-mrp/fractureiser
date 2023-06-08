@@ -11,6 +11,14 @@ mods, as it was an interesting new upload.
 
 ### Known affected mods & plugins
 
+Note: This list is **non-comprehensive**. It was constructed in the early days of
+investigation and quickly we realized the scope of this was much larger than we though,
+making tracking of individual cases pointless. It's left here for historical purposes.
+
+See also CurseForge's
+[list](https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool/)
+of affected projects
+
 |mod/plugin|link(s)|SHA1|"Uploader"|
 |---|---|---|---|
 |Skyblock Core|[www.curseforge.com/minecraft/mc-mods/skyblock-core/files/4570565](https://www.curseforge.com/minecraft/mc-mods/skyblock-core/files/4570565) |`33677CA0E4C565B1F34BAA74A79C09A3B690BF41`|Luna Pixel Studios|
