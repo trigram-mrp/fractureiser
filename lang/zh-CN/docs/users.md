@@ -289,9 +289,6 @@ Should go without saying that you should not visit these.
 
 ### 我们能否要求 CurseForge/Modrinth 出台新规，禁止模组下载其他文件？
 
-It's already against CurseForge rules to upload malware. There are also many legitimate use cases 
-for a mod to download files that this would also stifle.
-
 向 CurseForge 上传恶意软件已经是违反其使用规定的了。同时，这样的规定还会误杀其他有合理理由下载文件的模组。
 
 ### 模组加载器本身有没有可能内置「防病毒」或「沙箱」功能？ 
@@ -313,7 +310,7 @@ Sandboxing Java is pretty much impossible - see articles like
 
 Java mods are simply bundles of arbitrary code: treat them like an `.exe`, they can do anything. 
 
-### 为什么模组文件没有密码学签名，这样不就可以从源头恶意软件窜改了吗？
+### 为什么模组文件没有密码学签名，这样不就可以从源头阻止恶意软件窜改了吗？
 
 Part of the problem is that signatures alone do not prevent malware - a cryptographically-signed 
 virus is still a virus - and if self-signing was permitted, it doesn't prevent tampering either - 
@@ -329,15 +326,12 @@ many different reps from the modding ecosystem to discuss how to move forward.
 
 不可行。你在下载完成之前无法确认你下载文件里是否有可执行代码，下载完后也无法控制程序对这个文件的操作。
 
-* What if my mod downloads a single Java class file?
-* What about a Java class file but spelled backwards, so it doesn't look like a class file at first?
-* What about a Java class file but encrypted?
-* What about Java *source* code that is compiled on your computer?
-* What about a Python script?
-* What about a file containing English prose where it just so *happens* that sentences with an 
-even number of words correspond to a 0, and sentences with an odd number of words correspond to 
-a 1? - even though it's a prose document I can technically reassemble it into 
-an `.exe`, if I so choose.
+* 如果我的模组只下载一个 Java class 文件？
+* 如果我的模组下载的 Java class 文件需要从尾往头读，所以不能一眼看出这是一个 Java class 文件？
+* 如果我的模组下载了加密后的 Java class 文件？
+* 如果我的模组下载了 Java 源代码，在本机编译成 class 文件后运行？
+* 如果我的模组下载了 Python 脚本？
+* 如果我的模组下载的文件内容是英语写的散文，不过这篇散文**恰巧**有如下特征：有偶数个词的一句话代表 0，有奇数个词的一句话代表 1？尽管这表面上就是个纯文本文件，内容是篇散文，我也可以选择根据上述规则，将其翻译为一串 0 和 1 组成的 `.exe` 可执行文件。
 
 ### 此次事件是否与当下流行的 Spigot 插件恶意软件有关？
 
