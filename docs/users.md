@@ -90,6 +90,7 @@ A variety of scanners exist that take a mod file and detect whether it is infect
 the malware.
 
 - Overwolf's [scanner](https://github.com/overwolf/jar-infection-scanner/releases)
+- douira's [website-based online scanner](https://douira.github.io/fractureiser-web-detector/)
 - cortex's [nekodetector](https://github.com/MCRcortex/nekodetector/releases) (click on "Assets" 
 to show the binary)
 
