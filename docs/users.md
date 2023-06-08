@@ -69,9 +69,9 @@ and this malware goes back months.
 Currently, new infections are impossible as the attacker's server has been shut down,
 existing infections may still be active.
 
-### Get to the point, how do I fix this?
+<!--### Get to the point, how do I fix this?
 
-![Flowchart](media/flowchart.png)
+![Flowchart](media/flowchart.png)-->
 
 ### Wait, what the f*** is a "stage"?
 
