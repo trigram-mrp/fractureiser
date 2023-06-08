@@ -125,6 +125,12 @@ folder and everything inside it.
   * If the folder can not be deleted, you must stop any Java programs currently running via your 
 Task Manager.
 
+
+#### MacOS Information
+
+The malware does not seem to affect MacOS, so you should be fine.  
+*Check back here every now and then just in case.*
+
 #### Linux Instructions
 
 Firstly, ensure whichever method you are using to list files has the ability to view hidden files.
@@ -143,11 +149,6 @@ can do this with the commands `journalctl -exb` (for system logs) and `journalct
 sudo systemctl daemon-reload # Enter your user password
 systemctl --user daemon-reload 
 ```
-
-#### MacOS Information
-
-The malware does not seem to affect MacOS, so you should be fine.  
-*Check back here every now and then just in case.*
 
 #### Scripts
 
