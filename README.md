@@ -1,4 +1,7 @@
-# Modded Minecraft Malware "fractureiser"
+<p align="center">
+    <img src="docs/media/logo.svg" alt="Logo">
+</p>
+
 *Pardon our dust, documentation not finalized*
 
 This is a living document that is being edited by multiple people about a developing situation. 
@@ -14,7 +17,7 @@ We've dubbed this malware `fractureiser` because that's the name of the CurseFor
 
 ## What YOU need to know
 
-### [Mod PLAYERS Click Here](docs/users.md)
+### [Modded Players CLICK HERE](docs/users.md)
 
 If you're simply a mod player and not a developer, the above link is all you need. It contains surface level information of the malware's effects, steps to check if you have it and how to remove it, and a FAQ.
 

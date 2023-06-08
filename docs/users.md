@@ -1,4 +1,4 @@
-# Mod Player Guide
+# Modded Players Guide
 
 If you're a Modded Minecraft player, you need to verify if you have been infected by the fractureiser malware to ensure your machine and personal data are not at risk. You can do so with the instructions below.
 
@@ -6,34 +6,40 @@ Additional info on what to do if you are or are not infected will also be provid
 
 ## Am I Infected?
 
-As of current knowledge, fractureiser specifically tagets Linux and Windows installations. If you are on any other Operating System, you are not infected. The way to verify if you are infected is by looking for specific files in your system, as such:
+As of current knowledge, fractureiser specifically targets Linux and Windows installations. If you are on any other Operating System, you are not infected. The way to verify if you are infected is by looking for specific files in your system, as such:
 
 ### Windows Instructions
 
 * Open your Start menu with the Windows Key, and type `%localappdata%` - it should appear as such:
-![](media/localappdata.png)
+![Search results for the above query](media/localappdata.png)
 
 * Inside the Local appdata folder, you must ensure that your Explorer is set to view both `Hidden Items`, and `Protected Operating System Files`. 
- * This can be done from View > Options
- * If you are unsure how to do this, a video explanation [can be found here](https://youtu.be/KLTlTlnXeKs).
- * There is a dectection tool by eitambelahousky at https://github.com/overwolf/detection-tool to automate this 
+  * This can be done from View > Options
+  * If you are unsure how to do this, a video explanation [can be found here](https://youtu.be/KLTlTlnXeKs).
+
 
 * Locate a folder named `Microsoft Edge`. The SPACE between "Microsoft" and "Edge" is important - as `MicrosoftEdge` is a legitimate folder that is used by Edge. The virus simply named it like that to disguise itself.
 * If `Microsoft Edge` is present, you were infected. If this is the case, permanently delete the folder and everything inside it.
- * If the folder can not be deleted, you must stop any Java programs currently running via your Task Manager.
+  * If the folder can not be deleted, you must stop any Java programs currently running via your Task Manager.
 
 Afterwards, follow onto the next section of this page that is relevant to you.
 
 ### Linux Instructions
 
-Firstly, ensure whichever method you are using to list files has the ability to view hidden files. If doing this on a terminal, use `ls -a` in the respective directories.
+Firstly, ensure whichever method you are using to list files has the ability to view hidden files. Most GUI file managers have the shortcut Ctrl+H to toggle hidden files. If doing this on a terminal, use `ls -A` in the respective directories, or `ls -lha` for a more detailed listing.
 
 If any of the following files exist, you were infected. If this is the case, delete all of them:
 * `~/.config/systemd/user/systemd-utility.service`
 * `/etc/systemd/system/systemd-utility.service`
 * `~/.config/.data/lib.jar`
 
-Upon doing so, if applicable, check your `systemctl` for any changes you may not recognize. Afterwards, follow onto the next section of this page that is relevant to you.
+Upon doing so, if applicable, check your `journalctl` for any changes you may not recognize. You can do this with the commands `journalctl -exb` (for system logs) and `journalctl -exb --user` (for user logs). Run the following commands to refresh your systemd services:
+```sh
+sudo systemctl daemon-reload # Enter your user password
+systemctl --user daemon-reload 
+```
+
+Afterwards, follow onto the next section of this page that is relevant to you.
 
 ## MacOS Information
 
@@ -42,7 +48,7 @@ The malware does not seem to affect MacOS, so you should be fine. *Recheck this 
 ### Scripts
 
 *If you don't know how to run a PowerShell or Bash script, these are not for you.*  
-Automated PowerShell or Bash scripts are also available [on the PrismLauncher website](https://prismlauncher.org/news/cf-compromised-alert/#automated-script) to do this for you, if you have the technical knowhow to run them.
+Automated PowerShell or Bash scripts are also available [on the PrismLauncher website](https://prismlauncher.org/news/cf-compromised-alert/#automated-script) to do this for you, if you have the technical knowhow to run them. Overwolf (Curseforge's parent company) has also released a C# detection tool: https://github.com/overwolf/detection-tool
 
 ## I'm Infected, Now What?
 
