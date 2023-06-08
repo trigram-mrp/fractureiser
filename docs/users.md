@@ -17,6 +17,7 @@ Yes. Check back later.
 * [I'm Infected, Now What?](#im-infected-now-what)
 * [I'm Not Infected, Now What?](#im-not-infected-now-what)
 * [Frequently Asked Questions](#frequently-asked-questions)
+* [Technical FAQ](#technical-faq)
 
 If you have any questions about fractureiser, please read this page in full, including the FAQ at
 the end, as most of the questions we've been getting are answered here.
@@ -244,6 +245,20 @@ This does *not guarantee no sneaky ones slipped through*. To check whether a giv
 stage0 of fractureiser, check the [Am I Infected?](#am-i-infected) section and overall exercise
 extreme caution downloading anything mod related for now.
 
+#### How widespread was the infection?
+
+CurseForge is reporting infected files were downloaded roughly 6,000 times for the entire 
+infection period. Quote from CF's Discord announcement: 
+> Just to give perspective, this accounts to about 0.015% of CurseForge’s daily downloads 
+> for Minecraft.
+
+#### Did someone want to spoil the 1.20 release event?
+
+It appears to be a coincidence - this malware campaign was active for quite a while before being 
+widely uncovered the morning-of the 1.20 release.
+
+## Technical FAQ
+
 #### Can fractureiser escape VMs (Virtual Machines)?
 
 **No.**
@@ -261,13 +276,6 @@ than the "Windows Sandbox", and disable features like VirtualBox's "Guest Addons
 (*Real* virtual-machine escape exploits are worth millions of dollars and would not be burned on
 some Minecraft kids, and we have reason to believe the author of this malware is not a very good
 programmer in the first place.)
-
-#### How widespread was the infection?
-
-CurseForge is reporting infected files were downloaded roughly 6,000 times for the entire 
-infection period. Quote from CF's Discord announcement: 
-> Just to give perspective, this accounts to about 0.015% of CurseForge’s daily downloads 
-> for Minecraft.
 
 #### Does this spread over the network?
 
@@ -288,10 +296,31 @@ not find any.
 Both platforms are considering introducing some sort of automated "virus scan" process to the mod 
 submission pipeline. It's hard, since Java malware like this is typically bespoke.
 
-#### Did someone want to spoil the 1.20 release event?
+#### What IP addresses and URLs should I block in my firewall/routing table?
 
-It appears to be a coincidence - this malware campaign was active for quite a while before being 
-widely uncovered the morning-of the 1.20 release.
+fractureiser-related code has been observed to connect to these URLs and addresses over a wide 
+variety of port numbers.
+
+* The hardcoded address in stage0-infected mods, and the first observed command&control 
+server: `85.217.144.130`
+* The second observed command&control server: `107.189.3.101`
+* The fallback URL that stage1 tries to use, and the stage2 command&control hostname: 
+`files-8ie.pages.dev`
+
+There's also evidence of it trying to connect to the hostname `v2202209151437200088` 
+over port 25575 - unknown reasons; probably from an older version of the malware.
+
+Here are some additional addresses to firewall related to skyrage stuff (again, *very* unlikely 
+skyrage was downloaded to anyone's PC through this vector, but nothing good comes from these 
+addresses anyway):
+
+* `95.214.27.172`
+* `connect.skyrage.de`
+* `t23e7v6uz8idz87ehugwq.skyrage.de`
+* `qw3e1ee12e9hzheu9h1912hew1sh12uw9.skyrage.de`
+* *Probably just block all of `skyrage.de` honestly*
+
+Should go without saying that you should not visit these.
 
 #### Can we make it against CurseForge/Modrinth rules for your mod to download other files?
 
@@ -358,29 +387,3 @@ curiosity that the attacker tried to serve this jar at all.
 
 skyrage is an existing, well-studied piece of malware and you can find some more info about 
 it [here](https://ljskatt.no/analysis/updater_class/).
-
-#### What IP addresses and URLs should I block in my firewall/routing table?
-
-fractureiser-related code has been observed to connect to these URLs and addresses over a wide 
-variety of port numbers.
-
-* The hardcoded address in stage0-infected mods, and the first observed command&control 
-server: `85.217.144.130`
-* The second observed command&control server: `107.189.3.101`
-* The fallback URL that stage1 tries to use, and the stage2 command&control hostname: 
-`files-8ie.pages.dev`
-
-There's also evidence of it trying to connect to the hostname `v2202209151437200088` 
-over port 25575 - unknown reasons; probably from an older version of the malware.
-
-Here are some additional addresses to firewall related to skyrage stuff (again, *very* unlikely 
-skyrage was downloaded to anyone's PC through this vector, but nothing good comes from these 
-addresses anyway):
-
-* `95.214.27.172`
-* `connect.skyrage.de`
-* `t23e7v6uz8idz87ehugwq.skyrage.de`
-* `qw3e1ee12e9hzheu9h1912hew1sh12uw9.skyrage.de`
-* *Probably just block all of `skyrage.de` honestly*
-
-Should go without saying that you should not visit these.
