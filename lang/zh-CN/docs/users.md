@@ -111,10 +111,6 @@
 
 #### Linux 流程
 
-Firstly, ensure whichever method you are using to list files has the ability to view hidden files.
-Most GUI file managers have the shortcut Ctrl+H to toggle hidden files. If doing this on a terminal, 
-use `ls -A` in the respective directories, or `ls -lha` for a more detailed listing.
-
 首先，你需要确认你列出文件列表的程序可以显示隐藏文件。大部分带 GUI 的文件管理器支持 Ctrl+H 快捷键显示隐藏文件。在终端（命令行）界面中则可使用 `ls -A` 列出包括隐藏文件在内的所有文件，或使用 `ls -lha` 显示更多详细信息。
 
 若你找到下列任何文件，那么你已被感染了，请立即完整删除这些文件：
@@ -210,7 +206,7 @@ CurseForge 自称，受感染文件在最终下架删除前，下载量高达 60
 > Just to give perspective, this accounts to about 0.015% of CurseForge’s daily downloads 
 > for Minecraft.
 >
-> 「从另一个角度来看，这些下载量仅占[CurseForge 的] Minecraft 分区日下载量的 0.015%。
+> 「从另一个角度来看，这些下载量仅占[CurseForge 的] Minecraft 分区日下载量的 0.015%。」
 
 ### 是不是有人想毁掉 Minecraft 1.20 的发布活动？
 
