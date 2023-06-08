@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="docs/media/logo.svg" alt="Logo">
+    <img src="../../docs/media/logo.svg" alt="Logo">
 </p>
 
 *施工现场，如有疏漏，还请海涵*
