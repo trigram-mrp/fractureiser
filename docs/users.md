@@ -50,9 +50,20 @@ existing infections may still be active.
 
 ## Am I Infected?
 
-As of current knowledge, fractureiser specifically targets Linux and Windows installations. If you are on any other Operating System, you are not infected. The way to verify if you are infected is by looking for specific files in your system, as such:
+The malware has multiple stages, so asking whether you are infected is actually two questions
 
-### Windows Instructions
+### Do any of my mod files have Stage 0?
+A variety of scanners exist that take a mod file and detect whether it is infected by Stage 0 of the malware.
+
+- Overwolf's [scanner](https://github.com/overwolf/detection-tool/releases)
+- douira's [web scanner](https://douira.github.io/fractureiser-web-detector/)
+
+### Are Stage 2 files present on my system?
+
+You can check if Stage 2 files are present on your system (implying stage 0 and 1 of the
+malware ran successfully) by doing the following.
+
+#### Windows Instructions
 
 * Open your Start menu with the Windows Key, and type `%localappdata%` - it should appear as such:
 ![Search results for the above query](media/localappdata.png)
@@ -66,9 +77,7 @@ As of current knowledge, fractureiser specifically targets Linux and Windows ins
 * If `Microsoft Edge` is present, you were infected. If this is the case, permanently delete the folder and everything inside it.
   * If the folder can not be deleted, you must stop any Java programs currently running via your Task Manager.
 
-Afterwards, follow onto the next section of this page that is relevant to you.
-
-### Linux Instructions
+#### Linux Instructions
 
 Firstly, ensure whichever method you are using to list files has the ability to view hidden files. Most GUI file managers have the shortcut Ctrl+H to toggle hidden files. If doing this on a terminal, use `ls -A` in the respective directories, or `ls -lha` for a more detailed listing.
 
@@ -83,16 +92,18 @@ sudo systemctl daemon-reload # Enter your user password
 systemctl --user daemon-reload 
 ```
 
-Afterwards, follow onto the next section of this page that is relevant to you.
-
-### MacOS Information
+#### MacOS Information
 
 The malware does not seem to affect MacOS, so you should be fine. *Recheck this doc in the future if this changes*
 
-## Scripts
+#### Scripts
 
 *If you don't know how to run a PowerShell or Bash script, these are not for you.*  
-Automated PowerShell or Bash scripts are also available [on the PrismLauncher website](https://prismlauncher.org/news/cf-compromised-alert/#automated-script) to do this for you, if you have the technical knowhow to run them. Overwolf (Curseforge's parent company) has also released a C# detection tool: https://github.com/overwolf/detection-tool
+Automated PowerShell or Bash scripts are also available [on the PrismLauncher
+website](https://prismlauncher.org/news/cf-compromised-alert/#automated-script) to check
+for Stage 2 for you, if you have the technical knowhow to run them. Overwolf (Curseforge's
+parent company) has also released a C# Stage 2 detection tool:
+https://github.com/overwolf/detection-tool
 
 ## I'm Infected, Now What?
 
@@ -101,7 +112,7 @@ Automated PowerShell or Bash scripts are also available [on the PrismLauncher we
 If you have been infected by fractureiser, your best option now is to assume everything on the computer that was infected is *entirely compromised*. Any file, account, password you may have it in it, as well as access to the computer itself is at the hands of the virus's authors. You should:
 * Back up anything you do not want to lose on an a flash drive or external disk (you should be doing this regularly anyway!)
 * Using a separate device, change ALL of your passwords (preferably using a password manager like [BitWarden](https://bitwarden.com))
-* If you were not yet using Two-Factor Authentication for every service that supports it (such as an Authenticator App (best) or SMS (not great but better than nothing)), please start doing so immediately
+* If you were not yet using Two-Factor Authentication (authenticator app or SMS) for every service that supports it, please start doing so immediately
 * If you are able to, contact a professional service in your area to run a proper diagnostic on your machine for anything suspicious, or simply wipe and reinstall the system.
 * Read the below section on what to do if you're not infected, as the steps there apply to you too.
 
