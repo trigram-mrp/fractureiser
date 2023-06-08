@@ -212,7 +212,7 @@ The fact no mods were infected there was entirely luck.
 ### How did CurseForge let this slip through?
 The code the stage 0 infection ran wasn't necessarily suspicious to an automated system, and could
 very well have been something another mod would've used. In fact, early heuristics for determining
-stage 0 infection had singnificant amounts of false flags on popular mods such as Quark.
+stage 0 infection had significant amounts of false flags on popular mods such as Quark.
 
 Realistically, this type of prevention on a platform scale is non-feasible due to the infinite
 different ways you can lay out code to hide your intent.
