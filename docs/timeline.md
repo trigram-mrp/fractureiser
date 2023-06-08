@@ -32,6 +32,8 @@ payload.
 That payload is the skyrage updater, which is a known Minecraft malware targeting spigot
 servers.
 
+After serving skyrage for a while, it switched again to serving the Meteor hacked client.
+
 (TODO this timeframe is not completely accurate)
 
 ---
