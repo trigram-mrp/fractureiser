@@ -1,6 +1,12 @@
 # Modded Players Guide
 
-If you're a Modded Minecraft player, you need to verify if you have been infected by the fractureiser malware to ensure your machine and personal data are not at risk. You can do so with the instructions below.
+If you **only** play vanilla through a trusted launcher such as the official launcher or
+Prism, and have never touched mods ever: you are 100% safe. Stay away from mods for the
+time being.
+
+If you're a Modded Minecraft player, you need to verify if you have been infected by the
+fractureiser malware to ensure your machine and personal data are not at risk. You can do
+so with the instructions below.
 
 Additional info on what to do if you are or are not infected will also be provided after the diagnostic steps.
 
