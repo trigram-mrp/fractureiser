@@ -55,13 +55,17 @@ The malware has multiple stages, so asking whether you are infected is actually 
 ### Do any of my mod files have Stage 0?
 A variety of scanners exist that take a mod file and detect whether it is infected by Stage 0 of the malware.
 
-- Overwolf's [scanner](https://github.com/overwolf/detection-tool/releases)
+- Overwolf's [scanner](https://github.com/overwolf/jar-infection-scanner/releases)
 - douira's [web scanner](https://douira.github.io/fractureiser-web-detector/)
 
 ### Are Stage 2 files present on my system?
 
-You can check if Stage 2 files are present on your system (implying stage 0 and 1 of the
-malware ran successfully) by doing the following.
+Stage 2 files being on your system implies stage 0 and 1 of the malware ran successfully.
+
+Many virus scanners are starting to detect stage 2 files. If you get a warning that such
+files were found and removed, proceed to the "I'm Infected, Now What?" section.
+
+Otherwise, you can check manually by doing the following, based on your platform:
 
 #### Windows Instructions
 
