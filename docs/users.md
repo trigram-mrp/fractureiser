@@ -125,7 +125,6 @@ folder and everything inside it.
   * If the folder can not be deleted, you must stop any Java programs currently running via your 
 Task Manager.
 
-
 #### MacOS Information
 
 The malware does not seem to affect MacOS, so you should be fine.  
@@ -201,7 +200,8 @@ already used, and those **ONLY**.
 
 #### Is CurseForge hacked?
 CurseForge itself is not compromised, only individual users. This is not a CurseForge problem, they
-just happened to the be place this happened in.
+just happened to the be place this happened in. CurseForge have also [posted an article](https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool/) describing the situation from their end and
+are working on deploying countermeasures.
 
 #### Is Modrinth okay?
 Modrinth has ran a full scan of the last 10 months of uploads and no infected projects were found. 
