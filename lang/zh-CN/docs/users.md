@@ -23,54 +23,32 @@
 
 ## 到底发生了什么？
 
-Several innocent looking malicious mods and plugins were initially uploaded by the malware's creator 
-to the mod hosting website CurseForge and plugin hub dev.craftbukkit.org (not the Bukkit 
-software itself). A high-profile mod pack developer downloaded one of these mods to try
-out, which infected files in their computer without their knowledge - this included a copy of a 
-working project that would then be uploaded to CurseForge as a seemingly leigimate file, with the 
-virus included. 
+恶意软件的作者向模组托管网站 CurseForge 及 Bukkit 插件发布网站 dev.craftbukkit.org（注意不是 Bukkit 本身）上传了数个伪装成无害模组或插件的恶意软件。有一位社区知名的整合包开发团队的开发者在不知情的情况下，下载试用了其中一个模组，并直接导致其设备遭到感染。而被感染的文件中，就有即将要上传至 CurseForge 的项目文件。
 
-This process then repeated itself for a few other cases from users on CurseForge and 
-dev.craftbukkit.org, infecting copies of several popular plugins and mods. *There are reports of 
-malicious plugin and mod JARs as early
-as mid-April.*
+同样的过程在数位 CurseForge 及 dev.craftbukkit.org 用户身上重演，进而感染了其他数个知名插件及模组。**有报告指最早的感染记录可追溯到（2023 年）四月中旬。**
 
-Alongside this, brute force access attempts on high traffic content creator accounts on CurseForge
-were attempted by the malware author. We are currently unsure whether the breach was due to the
-brute force attempt or due to trojan infection on the accounts' owners.
+与此同时，恶意软件作者开始尝试暴力破解 CurseForge 上大流量创作者的登录信息。我们目前仍不清楚登录信息泄漏是因为暴力破解还是因为账号持有者的设备遭木马入侵。
 
-This malware is composed of multiple "stages", each Stage is responsible for downloading and
-running the next one. In total, there are three known Stages (Stages 1, 2, and 3), with infected
-mod files serving as a "Stage 0" to kick the whole process off.
 
-Stage 3 is the "mastermind" of the malware, and we have evidence that it attempts to do all of
-the following:
+该恶意软件感染分数个「阶段」，每个阶段均负责下载并执行下一阶段的程序。我们目前已知其拥有三个阶段（阶段 1、2、3）；同时我们将受感染的模组文件称之为「阶段 0」，该阶段负责「启动」整个感染流程。
 
-* Propagate itself to *all* `jar` files on the filesystem, possibly infecting mods that
-  were not downloaded from CurseForge or BukkitDev, or other Java programs
-* Steal cookies and login information for many web browsers
-* Replace cryptocurrency addresses in the clipboard with alternates that are presumably owned by
-the attacker
-* Steal Discord credentials
-* Steal Microsoft and Minecraft credentials
+阶段 3 是整个恶意软件的「总指挥」。根据我们收集到的证据显示，此阶段的恶意软件会执行下列操作：
 
-(See [technical details](tech.md) for more info)
+* 将自身传播到整个文件系统中的**全部** `jar` 格式文件中，可能包括不是从 CurseForge 或 BukkitDev 上下载的文件，甚至可能包括其他任意 Java 程序
+* 通过网页浏览器窃取 Cookies 和登录信息
+* 将剪贴板上的加密货币钱包地址替换为其他地址，据信替换后的地址由攻击者所有
+* 窃取 Discord 登录信息
+* 窃取 Microsoft 及 Minecraft 登录信息
 
-Because of its behavior, we are **very confident** this is a **targeted attack against the modded 
-Minecraft ecosystem**. It's quite bad.
+（参阅[技术细节](tech.md)了解更多信息。)
 
-**Until further notice, exercise extreme caution with Minecraft mod downloads, regardless
-of origin.** While the control server for this malware is currently offline, **any
-download from Curseforge or the Bukkit plugin repository in the last 2-3 weeks should be
-treated as potentially malicious**. Some malware scanners have started adding signatures
-to their databases, but until this rolls out to all of them, please exercise caution.
+考虑到其行为，我们有**十足把握**确定，这是一次**针对 Minecraft 模组生态的攻击**。形势不容乐观。
 
-*At this point we cannot be confident claiming any hosting service is unaffected*. Please
-exercise caution regardless of what site you use. Even Maven repositories may be infected,
-and this malware goes back months.
+**我们在此强烈建议，不论你从哪里下载模组或插件，都应对下载到的文件保持最高程度的警惕，直至后续通知发布。**尽管该恶意软件的控制服务器目前已下线，**任何过去 2-3 周间从 CurseForge 及 Bukkit 插件仓库下载的文件都应视作可能存在恶意软件感染**。某些安全防护软件已将 Fractureiser 录入其特征库，但在全体杀软跟进之前，请务必小心行事。
 
-Currently, new infections are impossible as the attacker's server has been shut down,
-existing infections may still be active.
+**考虑到当前形势，我们无法保证任何托管服务的绝对安全**。无论你从哪里下载模组，请务必保持戒备。要知道，各种 Maven 仓库也可能会被感染，且此恶意软件的流行时间可能已达数月。
+
+目前，攻击者的服务器已下线，因此**新感染**已不可能，但已感染的设备仍会受影响。
 
 <!--### Get to the point, how do I fix this?
 
@@ -137,27 +115,25 @@ Firstly, ensure whichever method you are using to list files has the ability to 
 Most GUI file managers have the shortcut Ctrl+H to toggle hidden files. If doing this on a terminal, 
 use `ls -A` in the respective directories, or `ls -lha` for a more detailed listing.
 
-If any of the following files exist, you were infected. If this is the case, delete all of them:
+首先，你需要确认你列出文件列表的程序可以显示隐藏文件。大部分带 GUI 的文件管理器支持 Ctrl+H 快捷键显示隐藏文件。在终端（命令行）界面中则可使用 `ls -A` 列出包括隐藏文件在内的所有文件，或使用 `ls -lha` 显示更多详细信息。
+
+若你找到下列任何文件，那么你已被感染了，请立即完整删除这些文件：
 * `~/.config/systemd/user/systemd-utility.service`
 * `/etc/systemd/system/systemd-utility.service`
 * `~/.config/.data/lib.jar`
 
-Upon doing so, if applicable, check your `journalctl` for any changes you may not recognize. You
-can do this with the commands `journalctl -exb` (for system logs) and `journalctl -exb --user` 
-(for user logs). Run the following commands to refresh your systemd services:
+在此之后，如果你符合下述情况：通过 `journalctl` 检查是否有你没有印象的变更。你可以通过 `journalctl -exb`（调阅 system log 系统日志）或 `journalctl -exb --user`（调阅 user log 用户日志）确认这一点，同时执行下列命令刷新你的 `systemd` 服务：
+
 ```sh
 sudo systemctl daemon-reload # Enter your user password
 systemctl --user daemon-reload 
 ```
 
-#### Scripts
+#### 脚本
 
-*If you don't know how to run a PowerShell or Bash script, these are not for you.*  
-Automated PowerShell or Bash scripts are also available [on the PrismLauncher
-website](https://prismlauncher.org/news/cf-compromised-alert/#automated-script) to check
-for Stage 2 for you, if you have the technical knowhow to run them. Overwolf (Curseforge's
-parent company) has also released a C# Stage 2 detection tool:
-https://github.com/overwolf/detection-tool
+*如果你不知道如何运行 PowerShell 或者 Bash 脚本，那么这些脚本不是为你准备的。*  
+
+[PrismLauncher 网站上提供了](https://prismlauncher.org/news/cf-compromised-alert/#automated-script)可自动检查感染情况的 PowerShell 及 Bash 脚本，如果你有一定技术水平的话，可使用这些脚本辅助查杀。Overwolf（CurseForge 母公司）已发布阶段 2 感染检查工具，使用 C# 编写：https://github.com/overwolf/detection-tool
 
 ## 我中招了，怎么办？
 
@@ -184,8 +160,7 @@ that supports it, please start doing so immediately
 
 ## 我没中招，然后呢？
 
-If you have played mods in the last few months, the absolute safest thing you can do at the moment 
-is to **not launch Minecraft at all**. Yes, even Vanilla.  
+如果你过去数月中玩过模组，那么你现在能做的最安全的事情是：**不要启动 Minecraft，原版也不要碰。**
 
 With that said - if nothing was found in the first place, chances are there's nothing going on.
 If you still want to play the game:
@@ -199,20 +174,20 @@ already used, and those **ONLY**.
 
 ## 常见问题解答
 
-### Is CurseForge hacked?
+### CurseForge 被入侵了吗？
 CurseForge itself is not compromised, only individual users. This is not a CurseForge problem, they
 just happened to the be place this happened in. CurseForge have also [posted an article](https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool/) describing the situation from their end and
 are working on deploying countermeasures.
 
-### Is Modrinth okay?
+### Modrinth 有没有事？
 Modrinth has ran a full scan of the last 10 months of uploads and no infected projects were found. 
 We still recommend exercising extreme caution when downloading anything mod related at the moment. 
 The fact no mods were infected there was entirely luck.
 
-### Is Modrinth safer?
+### Modrinth 更安全吗？
 This isn't a website-level issue, Modrinth is just as safe as CurseForge is.
 
-### How did CurseForge let this slip through?
+### CurseForge 怎么让这玩意过审的？
 The code the stage 0 infection ran wasn't necessarily suspicious to an automated system, and could
 very well have been something another mod would've used. In fact, early heuristics for determining
 stage 0 infection had significant amounts of false flags on popular mods such as Quark.
@@ -220,22 +195,24 @@ stage 0 infection had significant amounts of false flags on popular mods such as
 Realistically, this type of prevention on a platform scale is non-feasible due to the infinite
 different ways you can lay out code to hide your intent.
 
-### Which Antiviruses catch this?
+### 哪个杀毒软件能查杀这个？
 New ones are being added as we speak, it's best to do the manual verification above instead of
 relying on AV for now.
 
-### Is Multiplayer safe?
+### 多人联机是否安全？
 Yes, you can not be infected via a multiplayer server if you don't download mods for it elsewhere.
 
-### Is Bedrock safe?
-Yes, this affects only Java.
+### 基岩版是否安全？
 
-### Are alternative game clients such as Lunar or Badlion safe?
-See the below point.
+安全。该恶意软件只影响 Java 版。
 
-### Is Optifine safe? / Is Sodium safe? / Is Iris safe? / Is Create safe? / Is Essential safe? / Is (insert mod) safe?
+### 第三方客户端（Lunar、Badlion 等）安全吗？
 
-**We can not currently fully confirm the safety of any given mod.**
+见下一条。
+
+### OptiFine/Sodium/Iris/Create/Essential/[填入任意模组名] 安全吗？
+
+**我们无法确认任何模组是否安全。**
 
 One of the functions of stage3 of the virus is infecting as many .jars as it can find on your 
 computer. It can infect **all `.jar`s**, including Minecraft itself (vanilla/modded), Minecraft 
@@ -251,23 +228,25 @@ This does *not guarantee no sneaky ones slipped through*. To check whether a giv
 stage0 of fractureiser, check the [Am I Infected?](#am-i-infected) section and overall exercise
 extreme caution downloading anything mod related for now.
 
-### How widespread was the infection?
+### 感染的范围究竟有多大？
 
 CurseForge is reporting infected files were downloaded roughly 6,000 times for the entire 
 infection period. Quote from CF's Discord announcement: 
 > Just to give perspective, this accounts to about 0.015% of CurseForge’s daily downloads 
 > for Minecraft.
 
-### Did someone want to spoil the 1.20 release event?
+### 是不是有人想毁掉 Minecraft 1.20 的发布活动？
 
 It appears to be a coincidence - this malware campaign was active for quite a while before being 
 widely uncovered the morning-of the 1.20 release.
 
+目前的线索显示：这只是巧合。该恶意软件在 1.20 日发布日早上被大范围披露时，就已经悄无声息地传播了一段时间了。
+
 ## 技术问题解答
 
-### Can fractureiser escape VMs (Virtual Machines)?
+### Fractureiser 有没有虚拟机（Virtual Machine，VM）逃逸能力？
 
-**No.**
+**没有。**
 
 stage3 *does* contain code for *attempting* a *manual* escape from the 
 ["Windows Sandbox"](https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview).
@@ -283,14 +262,14 @@ than the "Windows Sandbox", and disable features like VirtualBox's "Guest Addons
 some Minecraft kids, and we have reason to believe the author of this malware is not a very good
 programmer in the first place.)
 
-### Does this spread over the network?
+### Fractureiser 能通过网络传播吗？
 
 As far as we know, fractureiser does not contain network spread functionality, but it is not fully
 out of the question.  
 A security researcher we are working with got an alert, but it ended up being about completely 
 unrelated malware that happened to use a similar filename. This was just a false alarm.
 
-### What are CurseForge and Modrinth doing about it?
+### CurseForge 和 Modrinth 对此有何反应？
 
 CurseForge has developed an open-source [stage2/3 detection tool](https://github.com/overwolf/detection-tool) 
 and [stage0 detection tool](https://github.com/overwolf/jar-infection-scanner), have scanned *all* 
@@ -302,7 +281,7 @@ not find any.
 Both platforms are considering introducing some sort of automated "virus scan" process to the mod 
 submission pipeline. It's hard, since Java malware like this is typically bespoke.
 
-### What IP addresses and URLs should I block in my firewall/routing table?
+### 我应该在我的防火墙/路由表里阻断哪些 IP 地址和 URL？
 
 fractureiser-related code has been observed to connect to these URLs and addresses over a wide 
 variety of port numbers.
@@ -328,17 +307,18 @@ addresses anyway):
 
 Should go without saying that you should not visit these.
 
-### Can we make it against CurseForge/Modrinth rules for your mod to download other files?
+### 我们能否要求 CurseForge/Modrinth 出台新规，禁止模组下载其他文件？
 
 It's already against CurseForge rules to upload malware. There are also many legitimate use cases 
 for a mod to download files that this would also stifle.
 
-### Would it be possible to include some sort of "antivirus" or "sandbox" in the modloader itself?
+向 CurseForge 上传恶意软件已经是违反其使用规定的了。同时，这样的规定还会误杀其他有合理理由下载文件的模组。
 
-"Antivirus": Probably not, for the same reasons that regular antiviruses didn't detect it. 
-Antiviruses can only detect known malware, not unknown malware.
+### 模组加载器本身有没有可能内置「防病毒」或「沙箱」功能？ 
 
-Sandboxing: Including some sort of "does this class contain 'safe' code?" check before loading a 
+「防病毒」：大概不行，理由同常规杀软起初也无法探测。杀毒软件只能检测已知恶意软件，不能查出未知恶意软件。
+
+「沙箱」：Including some sort of "does this class contain 'safe' code?" check before loading a 
 class is a great way to spur on a cat-and-mouse game between malware developers and modloader 
 developers.
 
@@ -353,7 +333,7 @@ Sandboxing Java is pretty much impossible - see articles like
 
 Java mods are simply bundles of arbitrary code: treat them like an `.exe`, they can do anything. 
 
-### Why aren't mods cryptographically signed to prevent malware from tampering with them?
+### 为什么模组文件没有密码学签名，这样不就可以从源头恶意软件窜改了吗？
 
 Part of the problem is that signatures alone do not prevent malware - a cryptographically-signed 
 virus is still a virus - and if self-signing was permitted, it doesn't prevent tampering either - 
@@ -365,10 +345,9 @@ Signed mods with online signature verification *does* seem like a somewhat promi
 though it's not without tradeoffs. There will be [a meeting](2023-06-08-meeting.md) with
 many different reps from the modding ecosystem to discuss how to move forward.
 
-### Would it be possible to forbid mods from downloading executable code?
+### 禁止模组下载可执行代码是否可行？
 
-It's not possible. You can't know whether a file contains executable code before you download it, 
-and after a file is downloaded, you can't control what is done with it.
+不可行。你在下载完成之前无法确认你下载文件里是否有可执行代码，下载完后也无法控制程序对这个文件的操作。
 
 * What if my mod downloads a single Java class file?
 * What about a Java class file but spelled backwards, so it doesn't look like a class file at first?
@@ -380,7 +359,7 @@ even number of words correspond to a 0, and sentences with an odd number of word
 a 1? - even though it's a prose document I can technically reassemble it into 
 an `.exe`, if I so choose.
 
-### Is this related to that Spigot plugin malware going around?
+### 此次事件是否与当下流行的 Spigot 插件恶意软件有关？
 
 Possibly! There's some ties to the existing malware `skyrage` - the malware author uploaded a 
 skyrage-relevant `.jar` to their backup command&control server, in a fruitless attempt to 
