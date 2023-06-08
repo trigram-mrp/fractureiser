@@ -29,12 +29,16 @@ to the mod hosting website CurseForge and plugin hub dev.craftbukkit.org (not th
 software itself). A high-profile mod pack developer downloaded one of these mods to try
 out, which infected files in their computer without their knowledge - this included a copy of a 
 working project that would then be uploaded to CurseForge as a seemingly leigimate file, with the 
-virus  included. 
+virus included. 
 
 This process then repeated itself for a few other cases from users on CurseForge and 
 dev.craftbukkit.org, infecting copies of several popular plugins and mods. *There are reports of 
 malicious plugin and mod JARs as early
 as mid-April.*
+
+Alongside this, brute force access attempts on high traffic content creator accounts on CurseForge
+were attempted by the malware author. We are currently unsure whether the breach was due to the
+brute force attempt or due to trojan infection on the accounts' owners.
 
 This malware is composed of multiple "stages", each Stage is responsible for downloading and
 running the next one. In total, there are three known Stages (Stages 1, 2, and 3), with infected
