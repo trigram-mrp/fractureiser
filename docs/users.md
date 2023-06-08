@@ -26,14 +26,20 @@ Afterwards, follow onto the next section of this page that is relevant to you.
 
 ### Linux Instructions
 
-Firstly, ensure whichever method you are using to list files has the ability to view hidden files. If doing this on a terminal, use `ls -a` in the respective directories.
+Firstly, ensure whichever method you are using to list files has the ability to view hidden files. Most GUI file managers have the shortcut Ctrl+H to toggle hidden files. If doing this on a terminal, use `ls -A` in the respective directories, or `ls -lha` for a more detailed listing.
 
 If any of the following files exist, you were infected. If this is the case, delete all of them:
 * `~/.config/systemd/user/systemd-utility.service`
 * `/etc/systemd/system/systemd-utility.service`
 * `~/.config/.data/lib.jar`
 
-Upon doing so, if applicable, check your `systemctl` for any changes you may not recognize. Afterwards, follow onto the next section of this page that is relevant to you.
+Upon doing so, if applicable, check your `journalctl` for any changes you may not recognize. You can do this with the commands `journalctl -exb` (for system logs) and `journalctl -exb --user` (for user logs). Run the following commands to refresh your systemd services:
+```sh
+sudo systemctl daemon-reload # Enter your user password
+systemctl --user daemon-reload 
+```
+
+Afterwards, follow onto the next section of this page that is relevant to you.
 
 ## MacOS Information
 
