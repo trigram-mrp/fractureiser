@@ -218,64 +218,44 @@ CurseForge 自称，受感染文件在最终下架删除前，下载量高达 60
 
 **没有。**
 
-stage3 *does* contain code for *attempting* a *manual* escape from the 
-["Windows Sandbox"](https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview).
-It does not happen automatically. If the virus is ran from the Windows Sandbox, it will try to
-mess with the clipboard to trick you into pasting a shortcut to the malware.
+阶段 3 **确有**用于**试图**从所谓[「Windows Sandbox」](https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview)中逃逸的代码。然而此过程并非自动完成：病毒会在检测到 Windows Sandbox 时，试图修改剪贴板中内容，以引诱你将指向恶意软件的快捷方式粘贴出来（译注：指粘贴到宿主机中，以此引诱用户双击，进而触发恶意行为）。
 
-Note that this sort of "clipboard escape" is nothing new and it is very easy to defeat by simply
-not sharing the clipboard between the host and guest OS. Use a more heavyweight virtual-machine
-than the "Windows Sandbox", and disable features like VirtualBox's "Guest Addons" or Hyper-V's
-"integration services".
+要注意的是，此类所谓「粘贴板逃逸（Clipboard escape）」技术并不新鲜，且防御方式也很简单：不要在宿主机（Host）和虚拟机（Guest）之间分享剪贴板内容就行了。如有需要，请使用比「Windows Sandbox」更重量级的虚拟机软件，并禁用诸如 VirtualBox 的「Guest Addons」、Hyper-V 的「integration services」之类的附加软件。
 
-(*Real* virtual-machine escape exploits are worth millions of dollars and would not be burned on
-some Minecraft kids, and we have reason to believe the author of this malware is not a very good
-programmer in the first place.)
+（**真正**的虚拟机逃逸漏洞实际上价值连城（译注：原文直译为「价值上百万美元」），单凭一个玩 Minecraft 的小孩并不一定搞得定。我们有理由相信，这个恶意软件的作者本身也并非训练有素的程序员。）
 
 ### Fractureiser 能通过网络传播吗？
 
-As far as we know, fractureiser does not contain network spread functionality, but it is not fully
-out of the question.  
-A security researcher we are working with got an alert, but it ended up being about completely 
-unrelated malware that happened to use a similar filename. This was just a false alarm.
+根据我们掌握的信息，Fractureiser 并不包含通过网络传播的功能，但我们并不能排除这个可能性。
+与我们合作的一位安全研究员收到了相关警报，但经调查发现是与此次事件无关的恶意程序，只是文件名碰巧相似，最终认定为假警报。
 
 ### CurseForge 和 Modrinth 对此有何反应？
 
-CurseForge has developed an open-source [stage2/3 detection tool](https://github.com/overwolf/detection-tool) 
-and [stage0 detection tool](https://github.com/overwolf/jar-infection-scanner), have scanned *all* 
-uploaded mods/plugins for stage0 infections, and have deleted all *known* infection cases.
+CurseForge 开发了开源的[阶段 2/3 检测工具](https://github.com/overwolf/detection-tool)以及[阶段 0 检测工具](https://github.com/overwolf/jar-infection-scanner)，同时扫描了整个 CurseForge 上**所有的**模组及插件以确认阶段 0 感染情况，并下架删除了所有发现的受感染文件。
 
-Modrinth has also scanned uploaded mods/plugins for stage0 infections going back 10 months and did 
-not find any.
+Modrinth 也已对 10 个月内上传的所有模组及插件完成了阶段 0 感染状况，结果显示并未发现感染。
 
-Both platforms are considering introducing some sort of automated "virus scan" process to the mod 
-submission pipeline. It's hard, since Java malware like this is typically bespoke.
+两家平台均计划在其文件上传流程中引入某种形式的全自动「病毒检测」机制。然而，鉴于此类基于 Java 的恶意软件通常为定制，实现这一点并非易事。
 
 ### 我应该在我的防火墙/路由表里阻断哪些 IP 地址和 URL？
 
-fractureiser-related code has been observed to connect to these URLs and addresses over a wide 
-variety of port numbers.
+Fractureiser 相关代码会试图访问下列 URL 或 IP 的诸多端口：
 
-* The hardcoded address in stage0-infected mods, and the first observed command&control 
-server: `85.217.144.130`
-* The second observed command&control server: `107.189.3.101`
-* The fallback URL that stage1 tries to use, and the stage2 command&control hostname: 
-`files-8ie.pages.dev`
+* 在阶段 0 中发现的硬编码地址，同时亦是首个发现的「指挥控制」（Command & Control，下简称 C&C）服务器地址：`85.217.144.130`
+* 第二个发现的 C&C 服务器地址：`107.189.3.101`
+* 阶段 1 使用的备用 URL，同时也是阶段 2 的 C&C 服务器主机名：`files-8ie.pages.dev`
 
-There's also evidence of it trying to connect to the hostname `v2202209151437200088` 
-over port 25575 - unknown reasons; probably from an older version of the malware.
+同时亦有证据显示 Fractureiser 还试图访问主机名为 `v2202209151437200088` 的服务器的 25575 端口，原因未知，推测为旧版恶意软件遗留。
 
-Here are some additional addresses to firewall related to skyrage stuff (again, *very* unlikely 
-skyrage was downloaded to anyone's PC through this vector, but nothing good comes from these 
-addresses anyway):
+此外，我们也建议将下列下列和 Skyrage 有关的地址填加入防火墙中（再次强调，尽管有人因此恶意软件而被 Skyrage 感染的可能性**很低**，但保守起见，一并加上去也无妨）：
 
 * `95.214.27.172`
 * `connect.skyrage.de`
 * `t23e7v6uz8idz87ehugwq.skyrage.de`
 * `qw3e1ee12e9hzheu9h1912hew1sh12uw9.skyrage.de`
-* *Probably just block all of `skyrage.de` honestly*
+* *也许应该直接屏蔽整个 `skyrage.de` 二级域下的所有域名*
 
-Should go without saying that you should not visit these.
+请勿点击访问上述地址！这一点想必不言而喻。
 
 ### 我们能否要求 CurseForge/Modrinth 出台新规，禁止模组下载其他文件？
 
@@ -312,14 +292,9 @@ Java 编写的模组本质上就是任意代码的集合。你理应将其视作
 
 ### 此次事件是否与当下流行的 Spigot 插件恶意软件有关？
 
-Possibly! There's some ties to the existing malware `skyrage` - the malware author uploaded a 
-skyrage-relevant `.jar` to their backup command&control server, in a fruitless attempt to 
-extend the attack, shortly before CloudFlare took it down anyway.
+有可能！有迹象显示此次恶意软件和已知恶意软件 `Skyrage` 之间有所关联——本次事件中的恶意软件作者曾试图在备份 C&C 服务器中上传和 Skyrage 相关的 `.jar`，但随后 CloudFlare 切断了服务器与公网的连接，是次扩大攻击范围的尝试也未能得手。
 
-**We have not received any reports of anyone becoming infected by Skyrage through this vector.** 
-The author updated their CloudFlare URL to point to Skyrage a significant length of time *after* 
-the hardcoded IP address in stage0-infected mods was already taken down. It's mostly a funny 
-curiosity that the attacker tried to serve this jar at all.
+**我们还未收到任何藉由此感染 Skyrage 的报告。** 
+作者将 CloudFalre URL 指向 Skyrage 时，其在阶段 0 感染的模组中硬编码的服务器地址**早已**下线多时了。可以说，攻击者选在这种时候试图传播这个 jar 的举动，少见且离谱。
 
-skyrage is an existing, well-studied piece of malware and you can find some more info about 
-it [here](https://ljskatt.no/analysis/updater_class/).
+Skyrage 是款已知，且已有深入研究的恶意软件，关于 Skyrage 的更多信息可在[这里](https://ljskatt.no/analysis/updater_class/)找到。
