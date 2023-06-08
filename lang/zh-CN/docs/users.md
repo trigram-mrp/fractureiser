@@ -289,32 +289,19 @@ Should go without saying that you should not visit these.
 
 「防病毒」：大概不行，理由同常规杀软起初也无法探测。杀毒软件只能检测已知恶意软件，不能查出未知恶意软件。
 
-「沙箱」：Including some sort of "does this class contain 'safe' code?" check before loading a 
-class is a great way to spur on a cat-and-mouse game between malware developers and modloader 
-developers.
+「沙箱」：在类加载前就进行「这个类的代码是否『安全』？」的检查，无疑会将整个社群推向一场模组加载器开发者和恶意软件开发者之间的「猫捉老鼠」游戏中。
 
-It's really hard to ban Java code from using a specific class (say, `URLClassLoader`) because you 
-can also refer to it with `Class.forName` (which has a ton of legitimate use-cases), and if you 
-ban or deny-list classes from *that*, you can typically find something *else* on the classpath 
-willing to call `Class.forName` for you, and trying to get rid of these gadgets is an endless 
-game of whack-a-mole.
+阻止 Java 代码引用某一特定类（比如 `URLClassLoader`）相当困难，因为你也可以在 `Class.forName` 中用到这个类，而这个用法有相当多的合理用途。如果你直接禁止引用，或者只限定某一列表内的类对其直接引用，你通常还能在你的 classpath 里找到**另一段代码**可以帮你调用 `Class.forName`，然后你会开始阻止更多的类，最终掉进无穷无尽的「打地鼠」循环中。
 
-Sandboxing Java is pretty much impossible - see articles like 
-["Twenty Years of Escaping the Java Sandbox"](https://www.exploit-db.com/papers/45517).
+沙箱化 Java 基本上不可能，可参考[《Twenty Years of Escaping the Java Sandbox》](https://www.exploit-db.com/papers/45517)了解其中原因。
 
-Java mods are simply bundles of arbitrary code: treat them like an `.exe`, they can do anything. 
+Java 编写的模组本质上就是任意代码的集合。你理应将其视作和 `.exe` 一样，有执行任意代码能力的程序。
 
 ### 为什么模组文件没有密码学签名，这样不就可以从源头阻止恶意软件窜改了吗？
 
-Part of the problem is that signatures alone do not prevent malware - a cryptographically-signed 
-virus is still a virus - and if self-signing was permitted, it doesn't prevent tampering either - 
-it's possible for a virus to simply strip digital signatures off a jar ("delete META-INF") and 
-re-sign it with its own key. (This isn't a hypothetical, either: fractureiser does contain code to 
-remove digital signatures from the jars it infects.)
+这样做的问题之一在于，签名不能阻止恶意软件，带密码学签名的病毒仍然是病毒。如果我们允许自签名，甚至还不能防窜改：病毒只需删除原有签名（即「删除 `META-INF` 目录」）然后用自己的密钥重新签一份就是了。事实上，这个情况已经出现了：本次事件的主角 Fractureiser 就有删除其感染的 jar 内的数字签名的代码。
 
-Signed mods with online signature verification *does* seem like a somewhat promising way forward, 
-though it's not without tradeoffs. There will be [a meeting](2023-06-08-meeting.md) with
-many different reps from the modding ecosystem to discuss how to move forward.
+模组签名搭配在线验证**听起来很美好**，但也有代价。我们将就此事[召开会议](2023-06-08-meeting.md)，邀请社区中各个生态的代表人物，共同讨论应对方向及策略。
 
 ### 禁止模组下载可执行代码是否可行？
 
