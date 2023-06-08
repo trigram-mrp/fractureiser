@@ -185,13 +185,13 @@ The malicious code injected is the backdoor logic seen in Stage0. The way that i
 
 ### Anti-sandbox tricks
 
-Something not commonly seen in JVM malware that is present here is a class titled `VMEscape`. It checks if its in a sandboxed windows environment by checking if the current user is `WDAGUtilityAccount`, which is part of the [Windows Defender Application Guard](https://www.majorgeeks.com/content/page/what_is_the_wdagutilityaccount.html). If this condition is met, an attempt to escape the sandbox system is made.
+Something not commonly seen in JVM malware that is present here is a class titled `VMEscape`. It checks if its in [Windows Sandbox](https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview) by checking if the current user is `WDAGUtilityAccount`. If this condition is met, an attempt to escape Windows Sandbox is made.
 
 The process is roughly as follows:
 
 - Start a repeating thread to run the following actions:
   - Create a temporary directory using `Files.createTempDirectory(...)`
-  - Iterate over `FileDescriptor` entries in the system clipboard _(Supposedly this will be accessing the contents of the host)_ 
+  - Iterate over `FileDescriptor` entries in the system clipboard which mirrors the hosts clipboard 
   - Create a shortcut that looks like the original file _(using icons from SHELL32)_ but instead invokes the malware
   - Assings this shortcut to the clipboard, overwriting the original file reference
 
