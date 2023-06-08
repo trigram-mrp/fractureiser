@@ -21,6 +21,10 @@ Anyone who wishes to dig deeper may also look at
 * [Event Timeline](docs/timeline.md)
 * [Technical Breakdown](docs/tech.md)
 
+### I have never used any minecraft mods
+
+You are not infected.
+
 ## Current Investigation Status
 We have a good idea how fractureiser works, from Stages 0 to 3. There are certain
 unknowns, but the attack servers are offline and to our knowledge, *new* infections are
