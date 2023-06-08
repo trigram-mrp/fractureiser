@@ -47,7 +47,7 @@ systemctl --user daemon-reload
 
 Afterwards, follow onto the next section of this page that is relevant to you.
 
-## MacOS Information
+### MacOS Information
 
 The malware does not seem to affect MacOS, so you should be fine. *Recheck this doc in the future if this changes*
 
