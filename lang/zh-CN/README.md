@@ -30,13 +30,12 @@
 
 我们正在改进针对普通用户的文档，请查阅相关文档了解更多信息。
 
-We're holding a meeting to follow-up and discuss potential solutions, see [this page](https://github.com/fractureiser-investigation/fractureiser/blob/main/docs/2023-06-08-meeting.md) for more information about how you can listen in, and about the agenda.
+我们计划就善后及可能解决方案的讨论召开社区会议，关于如何旁听会议及日程安排等详细信息可在[此页](docs/2023-06-08-meeting.md)找到
 
 ## 其他信息
 
 如果你持有该恶意软件的样本，请上传至 https://wormhole.app 然后将文件地址通过电邮发送到这个邮箱地址：`fractureiser.investigation@opayq.com`。该邮箱由 unascribed 控制，所有收到的样本将会分享给其他团队成员。若你需要就其他事项联系，请向 `jaskarth4@gmail.com` 发电邮咨询。
 
-If you copy portions of this document elsewhere, *please* put a prominent link back to this [GitHub Repository](https://github.com/fractureiser-investigation/fractureiser) somewhere near the top so that people can read the latest updates and get in contact.
 如果你把本文档部分复制、转载到了别处，**请务必**在开头或其他位置显著标明[本 GitHub 仓库的链接](https://github.com/fractureiser-investigation/fractureiser)，这样其他人可以在第一时间内了解事态的最新进展。
 
 我们**只有一个**__由本文档撰写者原班人马维护__，可以无需邀请即可加入的聊天频道：[EsperNet 上的 IRC 频道 #cfmalware](https://webchat.esper.net/?channels=cfmalware)。
