@@ -41,7 +41,7 @@ to their databases, but until this rolls out to all of them, please exercise cau
 exercise caution regardless of what site you use. Even Maven repositories may be infected,
 and this malware goes back months.
 
-Currently, new infections are impossible as the attacker's server has been shot down,
+Currently, new infections are impossible as the attacker's server has been shut down,
 existing infections may still be active.
 
 ### What the f*** is a Stage?
