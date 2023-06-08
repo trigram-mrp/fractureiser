@@ -10,6 +10,44 @@ so with the instructions below.
 
 Additional info on what to do if you are or are not infected will also be provided after the diagnostic steps.
 
+## What Actually Happened?
+
+A number of Curseforge and dev.bukkit.org (not the Bukkit software itself) accounts were compromised, and malicious software was injected into copies of many popular plugins and mods. Some of these malicious copies have been injected into popular modpacks including Better Minecraft. *There are reports of malicious plugin/mod JARs as early as mid-April.*
+
+This malware is composed of multiple "stages", each Stage is responsible for downloading
+and running the next one. In total, there are three known Stages (Stages 1, 2, and 3),
+with infected mod files serving as a "Stage 0" to kick the whole process off.
+
+Stage 3 is the "mastermind" of the malware, and we have evidence that it attempts to do all of the following:
+
+* Propagate itself to *all* `jar` files on the filesystem, possibly infecting mods that
+  were not downloaded from CurseForge or BukkitDev, or other Java programs
+* Steal cookies and login information for many web browsers
+* Replace cryptocurrency addresses in the clipboard with alternates that are presumably owned by the attacker
+* Steal Discord credentials
+* Steal Microsoft and Minecraft credentials
+
+(See [technical details](tech.md) for more info)
+
+Because of its behavior, we are **very confident** this is a **targeted attack against the modded Minecraft ecosystem**. It's quite bad.
+
+**Until further notice, exercise extreme caution with Minecraft mod downloads, regardless
+of origin.** While the control server for this malware is currently offline, **any
+download from Curseforge or the Bukkit plugin repository in the last 2-3 weeks should be
+treated as potentially malicious**. Some malware scanners have started adding signatures
+to their databases, but until this rolls out to all of them, please exercise caution.
+
+*At this point we cannot be confident claiming any hosting service is unaffected*. Please
+exercise caution regardless of what site you use. Even Maven repositories may be infected,
+and this malware goes back months.
+
+Currently, new infections are impossible as the attacker's server has been shot down,
+existing infections may still be active.
+
+### What the f*** is a Stage?
+
+![](media/stages.png)
+
 ## Am I Infected?
 
 As of current knowledge, fractureiser specifically targets Linux and Windows installations. If you are on any other Operating System, you are not infected. The way to verify if you are infected is by looking for specific files in your system, as such:
@@ -78,33 +116,9 @@ If you still want to play the game:
 * After each session, check for the infection files in the previous step to ensure nothing has happened since
 * Do not, under **any circumstances**, download or update any mods, modpacks, or plugins you may use, or even run any you downloaded and never ran before - stick to instances you have already used, and those **only**
 
-### What Actually Happened?
 
-A number of Curseforge and dev.bukkit.org (not the Bukkit software itself) accounts were compromised, and malicious software was injected into copies of many popular plugins and mods. Some of these malicious copies have been injected into popular modpacks including Better Minecraft. *There are reports of malicious plugin/mod JARs as early as mid-April.*
 
-This malware is composed of multiple "stages", each Stage is responsible for downloading and running the next one. In total, there are three known Stages (Stages 1, 2, and 3), with infected mod files serving as a "Stage 0" to kick the whole process off.
-
-Stage 3 is the "mastermind" of the malware, and we have evidence that it attempts to do all of the following:
-* Propagate itself to *all* `jar` files on the filesystem, possibly infecting mods that
-  were not downloaded from CurseForge or BukkitDev or other Java programs
-* Steal cookies and login information for many web browsers
-* Replace cryptocurrency addresses in the clipboard with alternates that are presumably owned by the attacker
-* Steal Discord credentials
-* Steal Microsoft and Minecraft credentials
-
-(See [technical details](tech.md) for more info)
-
-Because of its behavior, we are **very confident** this is a **targeted attack against the modded Minecraft ecosystem**. It's quite bad.
-
-**Until further notice, exercise extreme caution with Minecraft mod downloads, regardless of origin.** While the control server for this malware is currently offline, **any download from Curseforge or the Bukkit plugin repository in the last 2-3 weeks should be treated as potentially malicious**. This malware is unlikely to be detected by Windows Defender or similar antimalware products.
-
-The affected accounts had two-factor authentication enabled. This is not a simple password compromise situation. Multiple accounts are affected.
-
-*At this point we cannot be confident claiming any hosting service is unaffected*. Please exercise caution regardless of what site you use. Even Maven repositories may be infected, and this malware goes back months.
-
-Right now, the malware is dormant due to the loss of its C&C (Command and Control) server and the Stage 0 (what was distributed via mods and modpacks) not having a way to get a new server. If you were infected with Stage 2 (the file described below, dropped by Stage 1 when C&C was up), then **the malware is still active.**
-
-### Given a jar file, how do I know if it's safe?
+## Given a jar file, how do I know if it's safe?
 
 There are various heuristics you can use to determine whether a jar is infected with Stage 0.
 
@@ -114,6 +128,4 @@ Sylv's shell script [here](https://pastebin.com/T6aQ7C2E) does a bit more finger
 
 As a non-technical user, your best course of action is to check if your system was affected using the above steps, remediating if necessary, and refraining from downloading anything from CurseForge or dev.bukkit.org until further notice.
 
-### What the f*** is a Stage?
 
-![](media/stages.png)
