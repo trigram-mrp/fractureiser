@@ -116,8 +116,8 @@ https://github.com/overwolf/detection-tool
 
 **IMPORTANT**: We do not currently know the full extent of everything this can do, nor what its intent is, so extreme caution should be exercised until a complete way to remove any symptoms is found. Everything stated here is only *what we know* - please keep an eye on communication from the team on updates if anything critical is found.
 
-If you have been infected by fractureiser, your best option now is to assume everything on
-the computer that was infected is *entirely compromised*. You should:
+If you find stage 2 files from fractureiser on your system, your best option now is to
+assume everything on that system is *entirely compromised*. You should:
 
 * Back up anything you do not want to lose on an a flash drive or external disk (you should be doing this regularly anyway!)
 * Using a separate device, change the passwords to all services you were logged into on
