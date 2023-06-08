@@ -5,7 +5,8 @@ The timeline is from bottom-to-top. Topmost events are the most recent.
 ---
 *2023-06-08 10:50 UTC*
 
-The current C&C servers of stage3b (skyrage) `95[.].214.27.172` and `171[.]22.30.117` are no longer reachable. Watching out for potential DNS changes.
+The current C&C servers of Stage 3b (skyrage) `95[.].214.27.172` and `171[.]22.30.117` are no longer reachable. Watching
+out for potential DNS changes.
 
 Time is when it was noticed, not when it happened.
 
@@ -24,7 +25,7 @@ Prospector announces the following:
 Things have mostly settled down again, virus scanners have begun detecting the stage 1+
 jars as malicious, and a meeting for next steps is planned for the next morning in the US.
 
-The meeting will be semi-private, but recordings/minutes will be shared afterwards.
+The meeting will be semi-private, but recordings/minutes will be shared afterward.
 
 CurseForge is scanning all mods, but that process is still ongoing.
 
@@ -73,7 +74,8 @@ The Cloudflare pages domain has switched to pointing to a new IP address, 107.18
 
 *2023-06-07 08:52 UTC*
 
-The dust has mostly settled for now. We have a good idea of the early stages of the malware, and stage 3 is being reverse-engineered. The first stage is temporarily dormant.
+The dust has mostly settled for now. We have a good idea of the early stages of the malware, and stage 3 is being
+reverse-engineered. The first stage is temporarily dormant.
 
 We will resume updates next morning US time (or thereabouts).
 
@@ -88,36 +90,47 @@ We are still working on reversing stage 3, see the section below for technical d
 CurseForge published the following statement in their discord's #news channel:
 
 > Hey everyone,
-> 
+>
 > We would like to address the current situation that is ongoing and highlight some important points:
-> 
+>
 > * A malicious user has created several accounts and uploaded projects containing malware to the platform
 > * Separately a user belonging to Luna Pixel Studios (LPS) was hacked and was used to upload similar malware
-> * We have banned all accounts relevant to this and disabled the LPS one as well. We are in direct contact with the LPS team to help them restore their access
-> * We are in the process of going through ALL new projects and files to guarantee your safety. We are of course <u>holding the approval process of all new files until this is resolved</u>
-> * Deleting your CF client isn’t a recommended solution as it will not solve the issue and will prevent us from deploying a fix. We are working on a tool to help you make sure you weren’t exposed to any of this. In the meantime refer to information published in #current-issues.
+> * We have banned all accounts relevant to this and disabled the LPS one as well. We are in direct contact with the LPS
+    team to help them restore their access
+> * We are in the process of going through ALL new projects and files to guarantee your safety. We are of course <u>
+    holding the approval process of all new files until this is resolved</u>
+> * Deleting your CF client isn’t a recommended solution as it will not solve the issue and will prevent us from
+    deploying a fix. We are working on a tool to help you make sure you weren’t exposed to any of this. In the meantime
+    refer to information published in #current-issues.
 > * This is relevant ONLY to Minecraft users
 > * To be clear **CurseForge is not compromised! No admin account was hacked.**
 >
-> We are working on this to make sure the platform remains a safe place to download and share mods. Thank you to all authors and users who help us with highlighting, we appreciate your cooperation and patience ❤️ 
+> We are working on this to make sure the platform remains a safe place to download and share mods. Thank you to all
+> authors and users who help us with highlighting, we appreciate your cooperation and patience ❤️
 >
 > Stay tuned for more updates and we will clear this issue.
 
 ----
 *2023-06-07 07:24 UTC*
 
-Darkhax has contacted Curseforge representatives who have confirmed that the affected files were uploaded via the UI, not the API.
+Darkhax has contacted Curseforge representatives who have confirmed that the affected files were uploaded via the UI,
+not the API.
 
 Curseforge has halted upload approvals while this situation unfolds and have taken down many infected files.
 
-They are also investigating the IPs of the uploaders of the malicious files, to see if they match previous requests by the rightful account holders.
+They are also investigating the IPs of the uploaders of the malicious files, to see if they match previous requests by
+the rightful account holders.
 
 ----
 *2023-06-07 7:03 UTC*
 
-We believe we've discovered the true function of Stage3 (`client.jar`) and are attempting to document it here. It's not good, folks.
+We believe we've discovered the true function of Stage 3 (`client.jar`) and are attempting to document it here. It's not
+good, folks.
 
-The quick version, while we get this document in shape: client.jar searches *the entire filesystem* for files that look like mod JARs, and infects them with Stage0. This includes *entire Gradle and Maven caches*, as well as tons of things mod devs would likely never think to check. The potential scale and scope of this infection has gone from "a couple weird mods" to *potentially infinite*.
+The quick version, while we get this document in shape: client.jar searches *the entire filesystem* for files that look
+like mod JARs, and infects them with Stage 0. This includes *entire Gradle and Maven caches*, as well as tons of things
+mod devs would likely never think to check. The potential scale and scope of this infection has gone from "a couple
+weird mods" to *potentially infinite*.
 
 We believe this is how the infection initially spread, and Curseforge may not have been the initial attack vector.
 
@@ -125,40 +138,48 @@ We believe this is how the infection initially spread, and Curseforge may not ha
 
 *2023-06-07 6:27 UTC*
 
-Investigation has slowed down and most of the team is going to bed. unascribed has opened an email inbox for people to submit samples or other useful information. williewillus is currently working to clean up and get the information presented by D3SL into this doc. 
+Investigation has slowed down and most of the team is going to bed. unascribed has opened an email inbox for people to
+submit samples or other useful information. williewillus is currently working to clean up and get the information
+presented by D3SL into this doc.
 
 ----
 
 *2023-06-07 6:20 UTC*
 
-D3SL informs the unofficial Discord that they have a copy of the full (untruncated) Stage 3 `client.jar`, as well as an in-depth analysis of what the malware is doing. They first noticed this weeks ago and undertook in-depth analysis, and as a result was able to obtain full copies of all the payloads.
+D3SL informs the unofficial Discord that they have a copy of the full (untruncated) Stage 3 `client.jar`, as well as an
+in-depth analysis of what the malware is doing. They first noticed this weeks ago and undertook in-depth analysis, and
+as a result was able to obtain full copies of all the payloads.
 
 ----
 
 *2023-06-07 5:27 UTC*
 
-We've discovered a potential (truncated) Stage 3 file; it is heavily obfuscated and contains a native payload DLL that attempts to steal credentials from the Windows credentials store.
+We've discovered a potential (truncated) Stage 3 file; it is heavily obfuscated and contains a native payload DLL that
+attempts to steal credentials from the Windows credentials store.
 
 ----
 
 *2023-06-07 4:57 UTC*
 
-Files uploaded in April have been discovered; either the dates are being spoofed, or this has been going on even longer. Many of the accounts have Last Active times in 1999 — likely a quirk with old CurseForge accounts, but still notable.
+Files uploaded in April have been discovered; either the dates are being spoofed, or this has been going on even longer.
+Many of the accounts have Last Active times in 1999 — likely a quirk with old CurseForge accounts, but still notable.
 
-Modrinth staff are investigating if any uploads on there are compromised. A quick pass they did through recently updated projects looked OK.
+Modrinth staff are investigating if any uploads on there are compromised. A quick pass they did through recently updated
+projects looked OK.
 
 ----
-    
+
 *2023-06-07 4:40 UTC*
 
-The scope of this compromise seems larger than initially realized. The malicious files go back multiple weeks, as early as May 20th. We only noticed today because they compromised a popular modpack.
+The scope of this compromise seems larger than initially realized. The malicious files go back multiple weeks, as early
+as May 20th. We only noticed today because they compromised a popular modpack.
 
 ---
 
 *2023-06-07 3:38 UTC*
 
-
-The C&C server has been taken down by the server provider. A new one will likely come up if the Cloudflare page stays up, we're monitoring it.
+The C&C server has been taken down by the server provider. A new one will likely come up if the Cloudflare page stays
+up, we're monitoring it.
 
 ----
 
@@ -170,7 +191,8 @@ We were sent a possible Stage 2 jar by an anonymous user that claims to work at 
 
 *2023-06-07 2:26 UTC*
 
-The #cfmalware EsperNet channel is created to coordinate discussion that had been happening in multiple Discord guilds and Matrix spaces.
+The #cfmalware EsperNet channel is created to coordinate discussion that had been happening in multiple Discord guilds
+and Matrix spaces.
 
 ----
 
