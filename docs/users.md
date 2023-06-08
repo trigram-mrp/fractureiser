@@ -26,7 +26,7 @@ the end, as most of the questions we've been getting are answered here.
 Several innocent looking malicious mods were initially uploaded by the malware's creator to the mod
 hosting website CurseForge. A high-profile mod pack developer downloaded one of these mods to try
 out, which infected files in their computer without their knowledge - this included a copy of a 
-working project that would then be uploaded to CurseForge as a seemmingly leigimate file, with the 
+working project that would then be uploaded to CurseForge as a seemingly leigimate file, with the 
 virus  included. 
 
 This process then repeated itself for a few other cases from users on the CurseForge website and
