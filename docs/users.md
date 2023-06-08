@@ -73,7 +73,10 @@ malware ran successfully) by doing the following.
   * If you are unsure how to do this, a video explanation [can be found here](https://youtu.be/KLTlTlnXeKs).
 
 
-* Locate a folder named `Microsoft Edge`. The SPACE between "Microsoft" and "Edge" is important - as `MicrosoftEdge` is a legitimate folder that is used by Edge. The virus simply named it like that to disguise itself.
+* Locate a folder named `Microsoft Edge`. The SPACE between "Microsoft" and "Edge" is
+  important - as `MicrosoftEdge` is a legitimate folder that is used by Edge.  The virus
+  simply named it like that to disguise itself.  The legitimate folder might also be
+  called `Microsoft\Edge` (an `Edge` folder inside a `Microsoft` folder).
 * If `Microsoft Edge` is present, you were infected. If this is the case, permanently delete the folder and everything inside it.
   * If the folder can not be deleted, you must stop any Java programs currently running via your Task Manager.
 
