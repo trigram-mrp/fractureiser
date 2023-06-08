@@ -197,26 +197,20 @@ Modrinth 已对其站内 10 个月内上传的所有文件进行了全盘检查�
 
 **我们无法确认任何模组是否安全。**
 
-One of the functions of stage3 of the virus is infecting as many .jars as it can find on your 
-computer. It can infect **all `.jar`s**, including Minecraft itself (vanilla/modded), Minecraft 
-mods, Spigot plugins, and unrelated Java applications. So if your computer has the stage3 portion 
-of the virus, it doesn't matter whether a mod you download is "safe" - it will *become* infected. 
-Detect and remove the later stages of fractureiser *first*.
+处于阶段 3 的病毒的功能之一便是尽可能感染你的电脑上的所有 `.jar` 文件，注意是**所有 `.jar`**，包括 Minecraft 本体（原版和装了模组均受影响）、Minecraft 模组文件、Spigot 插件、甚至其他 Java 应用程序。所以，如果你的电脑已经存在阶段 3 感染，那么不论你从哪里下载模组，下载什么模组，最终都会感染，此时「安全」根本无从谈起。你**首先**应该做的是按前述流程进行查杀。
 
-At the moment, all *known* infected mods have been removed from CurseForge. CurseForge [posted a 
-list of known infected mods](https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool/) (bottom
-of the page) and has removed them from the website. Modrinth has scanned back 10 months and has not found any infected mods. 
+截至目前，所有 CurseForge 上已知的被感染模组均已被删除。CurseForge 还[公布了已知被感染模组清单](https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool/)，位于该页面最下方，清单中提及的模组均已被下架删除。Modrinth 目前已扫描 10 个月内在其上发布过的所有模组，未发现有感染。
 
-This does *not guarantee no sneaky ones slipped through*. To check whether a given jar contains 
-stage0 of fractureiser, check the [Am I Infected?](#am-i-infected) section and overall exercise
-extreme caution downloading anything mod related for now.
+然而，这**并不能保证有隐藏得足够深的漏网之鱼**。请根据[我有没有中招](%E6%88%91%E6%9C%89%E6%B2%A1%E6%9C%89%E4%B8%AD%E6%8B%9B)一节中所述内容检查某一个 jar 文件是否存在阶段 0 感染，并在此之后对所有新下载的模组文件保持最高程度的警戒。
 
 ### 感染的范围究竟有多大？
 
-CurseForge is reporting infected files were downloaded roughly 6,000 times for the entire 
-infection period. Quote from CF's Discord announcement: 
+CurseForge 自称，受感染文件在最终下架删除前，下载量高达 6000 余次。引述 CurseForge 在其官方 Discord 中发布公告之原文：
+
 > Just to give perspective, this accounts to about 0.015% of CurseForge’s daily downloads 
 > for Minecraft.
+>
+> 「从另一个角度来看，这些下载量仅占[CurseForge 的] Minecraft 分区日下载量的 0.015%。
 
 ### 是不是有人想毁掉 Minecraft 1.20 的发布活动？
 
