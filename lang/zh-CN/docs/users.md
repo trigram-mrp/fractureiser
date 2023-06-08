@@ -76,71 +76,62 @@ existing infections may still be active.
 
 ![Flowchart](media/flowchart.png)-->
 
-### Wait, what the f*** is a "stage"?
+### 等等，TMD 到底啥是「阶段」？
 
-![Stage Diagram](media/stages.png)
+<!-- TODO 我们需要汉化这个图 -->
+
+![阶段示意流程图](../../../docs/media/stages.png)
 
 ## 我有没有中招？
 
-The malware has multiple stages, so asking whether you are infected is actually two questions
+该恶意软件的感染分数个阶段，所以这个问题实际上是两个问题：
 
-### Do any of my mod files have Stage 0?
-A variety of scanners exist that take a mod file and detect whether it is infected by Stage 0 of
-the malware.
+### 我的模组文件有没有感染「阶段 0」？
 
-* Overwolf's [scanner](https://github.com/overwolf/jar-infection-scanner/releases)
-  * This is the recommended option for checking your entire game - just point it at the CurseForge 
-installation folder or wherever else  you have your instances saved
-  * This is a standalone program and does not require the Overwolf app installed
-* douira's [website-based online scanner](https://douira.github.io/fractureiser-web-detector/)
-* cortex's [nekodetector](https://github.com/MCRcortex/nekodetector/releases) 
-  * Click on "Assets" to show the runnable file - requires Java to be installed
+目前，已有相当多开发者编写了各式扫描软件，可用于判定是否你的模组文件是否已进入「阶段 0」感染期。
 
-In isolation, stage 0 infection is not dangerous if the files are deleted and never ran.
+* Overwolf 自己的[扫描器](https://github.com/overwolf/jar-infection-scanner/releases)
+  * 如果你要检查你的整个游戏，那我们推荐此选项。只需告诉扫描器你把 CurseForge App 或者其他整合包装哪里了就行。
+  * 该扫描器是独立程序，不需要 Overwolf App 即可使用。
+* douira 的 [网页版在线扫描器](https://douira.github.io/fractureiser-web-detector/)
+* cortex 的 [nekodetector](https://github.com/MCRcortex/nekodetector/releases) 
+  * 点「Assets」获取编译好的程序的下载链接。需要安装 Java 方可运行。
 
-### Are Stage 2 files present on my system?
+在完全隔离的环境，且文件被删除或从未运行的情况下，阶段 0 感染并不会构成威胁。
 
-Stage 2 files being on your system means that the stages 0 and 1 of the malware ran successfully.
-If they are present at all, you are likely *fully infected* and should continue reading the
-instructions in the document.
+### 我的系统中是否存在「阶段 2」感染的文件？
 
-Many virus scanners are starting to detect stage 2 files. If you get a warning that such
-files were found and removed, proceed to the "I'm Infected, Now What?" section.
+阶段 2 感染相关文件的出现，代表着恶意软件已成功执行了阶段 0 和 1。
+如果你找到了任何阶段 2 感染的文件，你的系统很可能已经**完全感染**，请务必往下读以了解应对措施。
 
-Otherwise, you can check manually by doing the following, based on your platform:
+很多防病毒软件已开始识别阶段 2 相关的文件。若你使用的杀毒软件已提示你相关文件已发现并被清除，请跳到「我中招了，怎么办」一节。
 
-#### Windows Instructions
+若你不确定，你可以根据下列流程手动检查，请按你的平台选择对应流程：
 
-* Open your Start menu with the Windows Key, and type `%localappdata%` - it should appear as such:
-![Search results for the above query](media/localappdata.png)
+#### Windows 流程
 
-* Inside the Local appdata folder, you must ensure that your Explorer is set to view both 
-`Hidden Items`, and `Protected Operating System Files`.
-  * This can be done from View > Options
-  * If you are unsure how to do this, a video explanation 
-[can be found here](https://youtu.be/KLTlTlnXeKs).
-  * Windows 11 users can find the same options under the "View" button at the top ribbon, as 
-  well as  the  "..." button on the rightmost side of it
+* 打开开始菜单，输入 `%localappdata%`，如下图所示
+![上述关键词的搜索结果](media/localappdata.png)
 
-* Locate a folder named `Microsoft Edge`. The SPACE between "Microsoft" and "Edge" is
-  important - as `MicrosoftEdge` is a legitimate folder that is used by Edge.  The virus
-  simply named it like that to disguise itself.  
-  * The legitimate folder might also be called `Microsoft\Edge` (an `Edge` folder inside a 
-`Microsoft` folder).
-  * The legitimate folder doesn't *have* to exist - if you don't have any Edge related folders,
-  you're safe.
-  * Both legitimate folders can exist at the same time, this is okay too.
-* If `Microsoft Edge` is present, you were infected. If this is the case, permanently delete the 
-folder and everything inside it.
-  * If the folder can not be deleted, you must stop any Java programs currently running via your 
-Task Manager.
+* 你需要确保资源浏览器已开启 `显示隐藏文件`，并取消 `保护操作系统文件` 的勾选：
+  * 该选项在 View > Options 中
+  * 如果你不知道如何操作，[这里有视频教程](https://youtu.be/KLTlTlnXeKs)。<!-- TODO 换个源？ -->
+  * Windows 11 用户可以在顶部 Ribbon 导航条的 "View" 按钮中找到一样的选项，或者点最右侧「……」按钮亦可。
 
-#### MacOS Information
+* 找到名为 `Microsoft Edge` 的文件夹。注意中间多了个空格！不带空格的 `MicrosoftEdge` 才是真正的 Edge 浏览器使用的文件夹名字。这个病毒只是通过这样命名来伪装自己。
+  * 真正的 Edge 浏览器目录也可能是叫 `Microsoft\Edge`（即，在 `Microsoft` 文件夹里有个叫 `Edge` 的文件夹）。
+  * 真正的 Edge 浏览器目录**不一定**存在。如果你没找到，那你也是安全的。
+  * 你也可能同时找到 `MicrosoftEdge` 和 `Microsoft` 文件夹里的 `Edge`，这样也是安全的。
+* 如果你找到了带空格的 `Microsoft Edge`，那么你已被感染了。请立即完整删除整个文件夹，以及里面的所有文件。
+  * 如果系统提示你无法删除，请先通过任务管理器强制停止所有正在运行的 Java 程序。
 
-The malware does not seem to affect MacOS, so you should be fine.  
-*Check back here every now and then just in case.*
+#### MacOS 流程
 
-#### Linux Instructions
+该恶意软件似乎并不影响 MacOS，所以你应该没事。
+
+**为以防万一，我们建议你仍务必时刻关注本文档更新。**
+
+#### Linux 流程
 
 Firstly, ensure whichever method you are using to list files has the ability to view hidden files.
 Most GUI file managers have the shortcut Ctrl+H to toggle hidden files. If doing this on a terminal, 
