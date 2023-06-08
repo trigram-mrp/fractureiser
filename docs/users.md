@@ -51,7 +51,7 @@ Afterwards, follow onto the next section of this page that is relevant to you.
 
 The malware does not seem to affect MacOS, so you should be fine. *Recheck this doc in the future if this changes*
 
-### Scripts
+## Scripts
 
 *If you don't know how to run a PowerShell or Bash script, these are not for you.*  
 Automated PowerShell or Bash scripts are also available [on the PrismLauncher website](https://prismlauncher.org/news/cf-compromised-alert/#automated-script) to do this for you, if you have the technical knowhow to run them. Overwolf (Curseforge's parent company) has also released a C# detection tool: https://github.com/overwolf/detection-tool
