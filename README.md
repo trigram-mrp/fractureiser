@@ -14,7 +14,7 @@ fractureiser가 점검되지 않은 상태로 남겨두면, 귀하의 컴퓨터�
 
 ## 알아야 할 정보
 
-### [모드 플레이어는 여기를 클릭하세요](docs/users_ko.md)
+### [모드 플레이어는 여기를 클릭하세요](https://github.com/DominoKorean/fractureiser_KoraenTranslate/blob/main/docs/users_ko.md)
 
 개발자가 아니라 모드 플레이어인 경우, 위의 링크만으로 충분합니다. 이 링크에는 악성 코드의 영향, 악성 코드가 있는지 확인하고 제거하는 방법, FAQ가 포함되어 있습니다.
 
