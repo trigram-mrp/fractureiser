@@ -205,7 +205,7 @@ Thus, if a user copies a file and goes to paste it elsewhere they will instead p
 * PolyMC / Prism
 * Technic
 * Feather
-* LabyMod
+* LabyMod (< v3.9.59)
 * And any MSA token found in the [Windows Credential Manager](https://support.microsoft.com/en-us/windows/accessing-credential-manager-1b5c916a-6a16-889f-8581-fc16e8165ac0)
 
 The retrival logic (Seen in [`dev/neko/nekoclient/api/stealer/msa/impl/MSAStealer.java`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/api/stealer/msa/impl/MSAStealer.java)) looks similar across a number of items since they store this data in a similr way. For example here is the laby-mod code:
