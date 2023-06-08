@@ -91,8 +91,8 @@ the malware.
 
 * Overwolf's [scanner](https://github.com/overwolf/jar-infection-scanner/releases)
   * This is the recommended option for checking your entire game - just point it at the CurseForge 
-installation folder or wherever else  you have your instances saved)
-  * This is a standalone application and does not require the Overwolf app installed
+installation folder or wherever else  you have your instances saved
+  * This is a standalone program and does not require the Overwolf app installed
 * douira's [website-based online scanner](https://douira.github.io/fractureiser-web-detector/)
 * cortex's [nekodetector](https://github.com/MCRcortex/nekodetector/releases) 
   * Click on "Assets" to show the runnable file - requires Java to be installed
