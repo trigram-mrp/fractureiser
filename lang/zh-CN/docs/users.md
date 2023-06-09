@@ -58,7 +58,7 @@
 
 <!-- TODO 我们需要汉化这个图 -->
 
-![阶段示意流程图](../../../docs/media/stages.png)
+![阶段示意流程图](./media/stages.png)
 
 ## 我有没有中招？
 
