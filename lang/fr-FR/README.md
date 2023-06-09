@@ -2,7 +2,7 @@
     <img src="docs/media/logo.svg" alt="Logo">
 </p>
 
-*Excusez nous pour le rangement, la documentation est toujours en cours*
+*Excusez-nous pour le rangement, la documentation est toujours en cours*
 
 ## Quoi ?
 `fractureiser` est un [Virus](https://fr.wikipedia.org/wiki/Virus_informatique) trouvé dans plusieurs projets Minecraft publiés sur les sites CurseForge et CraftBukkit. Le malware est inclus dans de multiples mods, certains faisant partis de modpacks très populaires. Le malware semble n'attaquer que les systèmes Windows et Linux.
