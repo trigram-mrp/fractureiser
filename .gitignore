@@ -1,5 +1,6 @@
 # Exclude obsidian config
 .obsidian/
+.vscode/
 
 # Remove OS-specific stuff
 .trash/
