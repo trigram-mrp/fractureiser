@@ -9,7 +9,19 @@ fractureiser malware to ensure your machine and personal data are not at risk. Y
 so with the instructions below.
 
 ### Is it still going on??
-Yes. Check back later.
+**No. Well, kinda.**  
+As of now, with our current knowledge, we believe the `fractureiser` virus has been fully cleaned 
+from current public mod(pack)s.  
+
+Our current recommendation is that players who have ran the stage2 checker in this page are safe
+to continue playing, however, since mod uploads have been turned back online at both CurseForge 
+and Modrinth, there is now the potential for copycat malware authors to make new viruses. 
+
+We are in contact with all relevant parties to establish protocols so that this doesn't happen 
+in the future.
+
+If you want to play, please go through the diagnostic steps in this page as well as the follow
+up sections on what to do if you are or aren't infected.
 
 ### Page Structure
 * [What Actually Happened?](#what-actually-happened)
@@ -194,18 +206,18 @@ that supports it, please start doing so immediately
 
 ## I'm Not Infected, Now What?
 
-If you have played mods in the last few months, the absolute safest thing you can do at the moment 
-is to **not launch Minecraft at all**. Yes, even Vanilla.  
+If nothing was found by the stage 2 detector, chances are there's nothing going on and you're good
+to play.
 
-With that said - if nothing was found in the first place, chances are there's nothing going on.
-If you still want to play the game:
-* With the current knowledge we have, this is not risky, but we do not guarantee this is
-accurate - you are *willingly putting yourself at risk*.
-* After each session, check for the stage 2 infection files in the previous step to ensure nothing
-has happened since
-* Do not, under **any circumstances**, download or update any mods, modpacks, or plugins you
-may use, or even run any you downloaded and never ran before - stick to instances you have
-already used, and those **ONLY**.
+While `fractureiser` has been cleaned out, new viruses may appear in the near future until we 
+establish new protocols. If you want to play the game, we recommend:
+
+* Play exclusively mods and modpacks that you have already downloaded and verified safe.
+* Avoid downloading anything uploaded after the 8th of June from new or unknown authors, for the
+same reason as the previous point.
+* Avoid updating your mod(pack)s.
+* Keep an eye on communication from the team on developments regarding new methods to detect
+issues like this in the future.
 
 ## Frequently Asked Questions
 
