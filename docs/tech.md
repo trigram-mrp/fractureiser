@@ -73,7 +73,7 @@ This:
 2. Loads the class `Utility` from the classloader, fetching code from the internet
 3. Calls the `run` method on `Utility`, passing a String argument different for each infected mod (!). E.g.
     * Skyblock Core: "`-74.-10.78.-106.12`"
-    * Dungeonz: "`114.-18.38.108.-100`"
+    * Dungeonz: "`-114.-18.38.108.-100`"
     * HavenElytra: "`-114.-18.38.108.-100`"
     * Vault Integrations: "`-114.-18.38.108.-100`"
 
