@@ -3,6 +3,11 @@
 The timeline is from bottom-to-top. Topmost events are the most recent.
 
 ---
+*2023-06-09 07:48 UTC*
+
+Creators of Stage3b (skyrage) have apparantly lost their domain sykrage.de (nameserver and registrar entries changed, dns entries vanished)
+
+---
 *2023-06-08 10:50 UTC*
 
 The current C&C servers of stage3b (skyrage) `95[.].214.27.172` and `171[.]22.30.117` are no longer reachable. Watching out for potential DNS changes.
