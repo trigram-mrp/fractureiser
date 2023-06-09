@@ -340,27 +340,30 @@ CLASS y MinecraftPacketEncryption
 
 While it's a bit early to speak of long term follow-ups, this whole debacle has brought up several critical flaws in the modded Minecraft ecosystem. This section is just brainstorming on them and how we can improve.
 
-#### 1. Review at mod repositories is inadequate
+虽然现在讨论事后追踪有点为时尚早，这场面对恶意软件的失败业已揭示了 Minecraft 模组生态中的数个致命缺陷。本小节将用作头脑风暴区，思考我们遇到了哪些问题，以及应该如何改进。
 
-What exactly does CurseForge and Modrinth do when "reviewing" a mod? We should know as a community, instead of relying on security through obscurity.
-Should be we be running some sort of static analysis? (williewillus has a few ideas here)
+#### 1. 模组仓库的审核机制不完善
 
-#### 2. A lack of code signing for mods
+CurseForge 和 Modrinth 在「审核」模组的时候究竟在审些什么？我们作为社区应该对此有充分的了解，而不是将希望全寄托在「隐晦式安全」（Security through obscurity）上。
 
-Unlike the software industry at large, mods released and uploaded to repositories are usually not signed with a signing key that proves that the owner of the key uploaded the mod. Having signing and a separate key distribution/trust mechanism mitigates CurseForge accounts getting compromised.
+我们是否需要进行某种形式的静态分析？（williewillus 表示他有有若干想法）
 
-However, this then leads to the greater issue of how to derive key trust, as the fact that "this jar has this signature" has to be communicated out of band from CurseForge/Modrinth, in a standard way so that loaders or users can verify the signatures.
-Forge tried to introduce signing many years ago and it had limited uptake.
+#### 2. 模组缺少数字签名
 
-#### 3. A lack of reproducible builds
+和广义上的软件业的习惯不同，模组开发者通常不会在发布并上传模组的时候，使用签名用密钥为模组签名，以证身份。如果我们有一套签名以及公钥分发/信任机制，类似今天 CurseForge 账号被盗这样的事件就不至于落到这个地步。
 
-Minecraft toolchains are a mess, and builds are usually not reproducible. It is common to have buildscripts fetching unpinned -SNAPSHOT versions of random Gradle plugins and using them, which results in artifacts that are non-reproducible and thus non-auditable.
+然而，数字签名本身产生更大的问题：如何建立对密钥的信任？「这个 jar 有这个签名」这个事实不能只局限于 CurseForge/Modrinth 之内，还必须要让模组加载器和用户知道，并能独立验证签名的有效性。
+Forge 数年前就已在尝试引入对签名机制的要求，然而结果不甚理想。
 
-A random Gradle plugin being a future attack vector is not out of the question.
+#### 3. 缺少可重现构建（Reproducible Build）
 
-#### 4. Lack of sandboxing of Minecraft itself
+Minecraft 相关工具链只能用「一团糟」来形容，这些工具链构建出的产物通常也无法重现。使用动态 `-SNAPSHOT` 版本号的构建脚本随处可见，其结果自然也不可能复现，进而导致无法对构建流程进行审计（Audit）。
 
-Java edition modding has always had the full power of Java, and this is the other side of that double-edged sword: malicious code has far-reaching impact.
-Minecraft itself is not run with any sandboxing, and servers usually are not sandboxed unless the owner is knowledgeable enough to do so.
+在未来，出现使用 Gradle 插件作为攻击媒介的恶意软件并非完全不可能。
 
-Good sandboxing is difficult, especially on systems such as Linux where SELinux/AppArmor have such poor UX that no one deploys them.
+#### 4. Minecraft 本身缺少沙箱保护
+
+Java 版的模组开发一向都可以使用整个 Java 生态的能力，然而这只是这把双刃剑中的其中一面，另一面则是给了恶意代码大开杀戒的可乘之机。
+Minecraft 本身并无任何形式的沙箱保护，服务器通常也不会在沙箱中运行，除非服主有足够多的服务器运维相关知识。
+
+要实现严丝合缝的沙箱保护绝非易事，尤其是在 Linux 这种 SELinux/AppArmor 这种用户体验差到根本没人用的地方。
