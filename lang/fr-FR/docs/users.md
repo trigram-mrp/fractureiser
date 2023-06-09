@@ -46,7 +46,7 @@ L'Étape 3 est le cerveau du malware, et nous avons des preuves qu'elle essaye d
 
 [^1]: Note de traduction : ne sachant pas ce à quoi cela peut correspondre, il s'agit d'une traduction littérale de l'anglais
 
-(Voir les [détails techniques](tech.md) pour plus d'informations)
+(Voir les [détails techniques](/docs/tech.md) pour plus d'informations)
 
 À cause de ce comportement, nous sommes **très confiant** sur le fait que cela soit **une attaque visant l'écosystème de mods de Minecraft**. C'est assez grave.
 
@@ -59,7 +59,7 @@ Pour le moment, de nouvelles infections sont impossible car le serveur de l'atta
 
 ### Qu'est ce qu'une Étape ? (What the f*** is a Stage?)
 
-![Stage Diagram](media/stages.png)
+![Stage Diagram](/docs/media/stages.png)
 
 *Note de traduction : je me concentre pour le moment sur la traduction textuelle, la traduction des images arrivera au plus vite*
 
@@ -90,7 +90,7 @@ Dans le cas contraire, vous pouvez vérifier manuellement en faisant ce qui suit
 #### Instructions pour le système Windows
 
 * Ouvrez le menu Démarrer avec la touche Windows, et taper `%localappdata%` - il devrait apparaître comme suit :
-![Résultats de la recherche ci dessus](media/localappdata.png)
+![Résultats de la recherche ci dessus](/docs/media/localappdata.png)
 
 * Dans le dossier Local appdata, vous devez vous assurer que votre explorateur de fichier est configurer pour permettre de voir les `Fichiers cachés` et les `Fichiers protégés du Système d'Exploitation`. 
   * Cela peut être fait via Affichage > Options

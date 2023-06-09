@@ -13,7 +13,7 @@ Nous avons nommés ce logiciel `fractureiser` par rapport au nom du compte Curse
 
 ## Ce que vous devez savoir
 
-### [Joueurs de mods CLIQUEZ ICI](/docs/users.md)
+### [Joueurs de mods CLIQUEZ ICI](docs/users.md)
 
 Si vous êtes simplement un joueur avec mods et non un développeur, le lien ci dessus est tous ce dont vous avez besoin. Il contient des informations succinctes sur les effets du logiciel, les étapes à suivre pour vérifier si vous l'avez et comment le supprimer ainsi qu'une FAQ.
 
@@ -29,7 +29,7 @@ Nous travaillons en ce moment pour améliorer les informations dédiés aux util
 
 ## Réunion de suivi
 Le 08/06/2023, la fractureiser Mitigation Team a tenu une réunion avec des acteurs actifs de la communauté pour discuter de mesures préventives et solutions pour les futurs problèmes de cet ampleur.
-Reportez vous à [cette page](/docs/2023-06-08-meeting.md) pour l'ordre du jour et le résumé de la réunion
+Reportez vous à [cette page](docs/2023-06-08-meeting.md) pour l'ordre du jour et le résumé de la réunion
 
 ## Informations additionnelles
 
