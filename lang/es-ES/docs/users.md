@@ -1,17 +1,13 @@
-# Modded Players Guide
+# Guía de Jugadores con Mods
 
-If you **only** play vanilla through a trusted launcher such as the official launcher or
-Prism, and have never touched mods ever: you are 100% safe. Stay away from mods for the
-time being.
+Si tú juegas "Vanilla/Vainilla" **solo** con un lanzador confianza such como el lanzador  oficial o Prism, y has tocado mods nunca: estás 100% seguro. Mantente alejado desde mods por ahora.
 
-If you're a Modded Minecraft player, you need to verify if you have been infected by the
-fractureiser malware to ensure your machine and personal data are not at risk. You can do
-so with the instructions below.
+Si estás un jugador de Minecraft con mods, necesitas verificar si has estado infectado por el malware fractureiser para asegurar tu máquina/computadora y datos personales no están en riesgo. Puedes hacerlo con los instrucciones abajo.
 
-### Is it still going on??
-Yes. Check back later.
+### ¿Todavía está pasando?
+Sí. Vuelva más tarde.
 
-### Page Structure
+### Estructura de Página
 * [What Actually Happened?](#what-actually-happened)
 * [Am I Infected?](#am-i-infected)
 * [I'm Infected, Now What?](#im-infected-now-what)
@@ -141,7 +137,7 @@ Task Manager.
 The malware does not seem to affect MacOS, so you should be fine.  
 *Check back here every now and then just in case.*
 
-#### Linux Instructions
+#### Instrucciones Linux
 
 Firstly, ensure whichever method you are using to list files has the ability to view hidden files.
 Most GUI file managers have the shortcut Ctrl+H to toggle hidden files. If doing this on a terminal, 
