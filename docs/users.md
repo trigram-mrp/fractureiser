@@ -33,7 +33,7 @@ virus included.
 
 This process then repeated itself for a few other cases from users on CurseForge and 
 dev.craftbukkit.org, infecting copies of several popular plugins and mods. *There are reports of 
-malicious plugin and mod JARs as early
+malicious plugin and mod jars as early
 as mid-April.*
 
 Alongside this, brute force access attempts on high traffic content creator accounts on CurseForge

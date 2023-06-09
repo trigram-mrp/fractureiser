@@ -145,7 +145,7 @@ From analysis, these do what they say on the tin:
 * Steal Microsoft account credentials
 
 There is also evidence of code attempting to do the following:
-* Scan for *all* JAR files on the system that look like Minecraft mods (by detecting
+* Scan for *all* jar files on the system that look like Minecraft mods (by detecting
   Forge/Fabric/Quilt/Bukkit), or [declare a Main
   class](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L235-L244)
   (most plain Java programs) and attempt to inject Stage 0 into them
