@@ -4,48 +4,45 @@
 
 *Pardon our dust, documentation still in progress*
 
-## What?
-`fractureiser` is a [Virus](https://en.wikipedia.org/wiki/Computer_virus) found in several Minecraft projects uploaded to CurseForge and CraftBukkit's dev website. The malware is embedded in multiple mods, some of which were added to highly popular modpacks. The Malware is only known to target Windows and Linux Systems.
+## Ne?
+`fractureiser`, CurseForge'a yüklenen birkaç Minecraft projesinde ve CraftBukkit'in geliştirici web sitesinde bulunan bir [Virüs](https://en.wikipedia.org/wiki/Computer_virus)'tür. Kötü amaçlı yazılım, birden fazla moda gömülüdür ve bazıları son derece popüler mod paketlerine eklenmiştir. Bu kötü amaçlı yazılımın yalnızca Windows ve Linux sistemlerine hedeflendiği bilinmektedir.
 
-If left unchecked, fractureiser can be **INCREDIBLY DANGEROUS** to your machine. Please read through this document for the info you need to keep yourself safe.
+Kontrolsüz bırakılırsa, fractureiser makineniz için **SON DERECE TEHLİKELİ** olabilir. Kendinizi güvende tutmak için bu belgeyi okuyun.
 
-We've dubbed this malware `fractureiser` because that's the name of the CurseForge account that uploaded the most notable malicious files.  
+En dikkat çeken kötü amaçlı dosyaları yükleyen CurseForge hesabının adı "fractureiser" olduğu için bu kötü amaçlı yazılıma "fractureiser" adını verdik.
 
-## What YOU need to know
+## Bilmeniz Gerekenler
 
-### [Modded Players CLICK HERE](docs/users.md)
+### [Modlu Oyuncular BURAYA TIKLAYIN](docs/users_tr.md)
 
-If you're simply a mod player and not a developer, the above link is all you need. It contains surface level information of the malware's effects, steps to check if you have it and how to remove it, and a FAQ.
+Sadece bir mod oyuncusuysanız ve bir geliştirici değilseniz, yukarıdaki bağlantı işinizi görecektir. Bu bağlantıda kötü amaçlı yazılımın etkileri, sahip olup olmadığınızı kontrol etmek ve nasıl kaldırılacağı hakkında yüzey seviyesinde bilgi, ve bir SSS bulunmaktadır.
 
-Anyone who wishes to dig deeper may also look at
-* [Event Timeline](docs/timeline.md)
-* [Technical Breakdown](docs/tech.md)
+Daha derinlemesine inmek isteyen herkes ayrıca şu sayfalara da bakabilir:
+* [Etkinlik Zaman Çizelgesi](docs/timeline_tr.md)
+* [Teknik Ayrıntılar](docs/tech_tr.md)
 
-### I have never used any minecraft mods
+### Hiçbir Minecraft modu kullanmadım
 
-You are not infected.
+Enfekte değilsiniz.
 
-## Current Investigation Status
-We have a good idea how fractureiser works, from Stages 0 to 3. There are certain
-unknowns, but the attack servers are offline and to our knowledge, *new* infections are
-not possible. Old infections may still be active.
+## Şu Anki Soruşturma Durumu
+fractureiser'ın 0'dan 3'e kadar olan aşamalarının nasıl çalıştığı konusunda iyi bir fikrimiz var. Belirli bilinmeyenler olsa da, saldırı sunucuları çevrimdışı ve bilgimize göre *yeni* enfeksiyonlar mümkün değil. Eski enfeksiyonlar hala aktif olabilir.
 
-We are currently working on refining user-facing documentation, please check there for
-resources.
+Şu anda kullanıcı odaklı belgeleri geliştirmek üzerinde çalışıyoruz, lütfen kaynaklar için oraya bakın.
 
-## Follow up Meeting
-On 2023-06-08 the fractureiser Mitigation Team held a meeting with notable members of the community to discuss preventive measures and solutions for future problems of this scale.
-See [this page](https://github.com/fractureiser-investigation/fractureiser/blob/main/docs/2023-06-08-meeting.md) for the agenda and minutes of the event.
+## Takip Toplantısı
+2023-06-08 tarihinde fractureiser Önleme Ekibi, bu ölçekteki gelecekteki sorunlar için önleyici tedbirler ve çözümler konusunda topluluğun dikkate değer üyeleriyle bir toplantı gerçekleştirdi.
+Etkinliğin gündemi ve tutanakları için [bu sayfaya](https://github.com/fractureiser-investigation/fractureiser/blob/main/docs/2023-06-08-meeting_tr.md) bakın.
 
-## Additional Info
+## Ek Bilgiler
 
-If you have files relevant to this malware, please upload them to https://wormhole.app and email the URL to fractureiser.investigation@opayq.com — this inbox is controlled by unascribed, and anything sent to it will be shared with the rest of the team. If you need to get in touch more generally, please send mail to jaskarth4@gmail.com.
+Bu kötü amaçlı yazılımla ilgili dosyalarınız varsa, lütfen bunları https://wormhole.app adresine yükleyin ve URL'yi fractureiser.investigation@opayq.com adresine e-posta olarak gönderin. Bu gelen kutusu unascribed tarafından kontrol edilmektedir ve oraya gönderilen her şey ekibin geri kalanıyla paylaşılacaktır. Genel olarak iletişim kurmanız gerekiyorsa, lütfen jaskarth4@gmail.com adresine posta gönderin.
 
-If you copy portions of this document elsewhere, *please* put a prominent link back to this [GitHub Repository](https://github.com/fractureiser-investigation/fractureiser) somewhere near the top so that people can read the latest updates and get in contact.
+Bu belgenin parçalarını başka bir yere kopyalarsanız, lütfen en üstte bu [GitHub Deposu](https://github.com/fractureiser-investigation/fractureiser)na çarpıcı bir bağlantı yerleştirerek insanların en son güncellemeleri okumasına ve iletişim kurmasına olanak sağlayın.
 
-The **only** official public channel you may join without being personally invited that's *run by the same team that wrote this writeup* is [#cfmalware on EsperNet IRC](https://webchat.esper.net/?channels=cfmalware).
-**Joining an IRC channel will expose your IP address.**
+*Yalnızca* kişisel olarak davet edilmeden katılabileceğiniz tek resmi genel kanal, aynı ekibin bu yazıyı yazan ekip tarafından çalıştırılan [#cfmalware on EsperNet IRC](https://webchat.esper.net/?channels=cfmalware)dir.
+**Bir IRC kanalına katılmak IP adresinizi ortaya çıkarır.**
 
 ---
 
-\- the [fractureiser Mitigation Team](docs/credits.md)
+\- [fractureiser Önleme Ekibi](docs/credits_tr.md)
