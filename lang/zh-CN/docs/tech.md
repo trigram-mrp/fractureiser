@@ -172,35 +172,36 @@ sha-1：`e299bf5a025f5c3fff45d017c3c2f467fa599915`
 * `SpigotPluginTemplate` 会定位继承 `org/bukkit/plugin/java/JavaPlugin` 的类
 * 若上述条件均不满足，[其将试图感染 jar 文件的 main 方法](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L235-L244)（如果有的话）。
 
-The malicious code injected is the backdoor logic seen in Stage0. The way that injection works is that the malicious code is declared in the `Loader` class in a static method. The `Injector` class that is adjacent to it is responsible for extracting the code from `Loader` and inserting it into new classes targeted for infection. The return value of `Injector.loadInstallerNode(...)` is a `MethodNode` outlining the infection process itself. Now they just need to add that method to the targeted class. Back in the [`dev/neko/nekoclient/Client.start(InetSocketAddress, byte[])`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L272) they call `Entry.inject(MethodNode)` to achive this. To ensure the malicious method is invoked this `inject` method adds logic to the targeted class's static initializer that invokes the added method. Since the static initializer is run when the class first loads, and the target class is a plugin/mod the assumption is this code will always be triggered by users who run infected modpacks or servers. After this, they repackage the jar with the newly infected target class.
+这些恶意代码会向正常文件中注入阶段 0 中所展示的后门逻辑。具体来说，这些代码首先存在于 `Loader` 类中的一个静态方法里，然后同一个包下的 `Injector` 类会负责将代码从 `Loader` 中提取出来，并注入目标类中，以完成感染。`Injector.loadInstallerNode(...)` 的返回值为描述了感染过程的 `MethodNode`。在获取到这个 `MethodNode` 后，程序只需要将代码注入目标类中即可。回到 [`dev/neko/nekoclient/Client.start(InetSocketAddress, byte[])`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L272) 中，我们可以看到其实现方式是调用 `Entry.inject(MethodNode)`。`inject` 方法还会在目标类的静态初始化块中增加对注入方法的调用，确保该方法一定会执行。有鉴于静态初始化块在类首次加载时一定会被调用，并且目标类是模组/插件类，我们可以判断，恶意代码的作者假设用户在整合包/服务器中安装受感染模组/插件后，这些代码一定会执行。注入完成后，程序会将感染后的类重新打包入 jar 中。
 
-### Anti-sandbox tricks
+### 反沙盒技巧
 
-Something not commonly seen in JVM malware that is present here is a class titled `VMEscape`. It checks if its in a sandboxed windows environment by checking if the current user is `WDAGUtilityAccount`, which is part of the [Windows Defender Application Guard](https://www.majorgeeks.com/content/page/what_is_the_wdagutilityaccount.html). If this condition is met, an attempt to escape the sandbox system is made.
+在该恶意软件中出现了一个名为 `VMEscape` 的类，而这样的命名在基于 JVM 的恶意软件中并不常见。该类的会检查当前用户是否为 `WDAGUtilityAccount` 以判断其是否在沙箱化的 Windows 环境中运行。该用户为 [Windows Defender Application Guard](https://www.majorgeeks.com/content/page/what_is_the_wdagutilityaccount.html) 的一部分。若检查通过，该恶意软件会尝试脱离沙箱。
 
-The process is roughly as follows:
+该尝试流程如下：
 
-- Start a repeating thread to run the following actions:
-  - Create a temporary directory using `Files.createTempDirectory(...)`
-  - Iterate over `FileDescriptor` entries in the system clipboard _(Supposedly this will be accessing the contents of the host)_ 
-  - Create a shortcut that looks like the original file _(using icons from SHELL32)_ but instead invokes the malware
-  - Assings this shortcut to the clipboard, overwriting the original file reference
+- 发起一新线程，循环执行下列操作：
+  - 调用 `Files.createTempDirectory(...)` 新建临时目录。
+  - 遍历系统剪贴板中的 `FileDescriptor` 对象（**其假设此举将能访问到宿主机剪贴板**）
+  - 创建一与原文件相似的快捷方式（**利用 SHELL32 中的图标**），该快捷方式则会启动恶意软件
+  - 将原剪贴板内容替换为该快捷方式
 
-Thus, if a user copies a file and goes to paste it elsewhere they will instead paste a shortcut that looks like their intended file, but actually runs the malware.
+由此，若用户将文件复制到别处，他们将会得到外观和原文件类似，但实际上会运行恶意软件的快捷方式。
 
-### Data theft
+### 窃取数据
 
-**MSA Tokens**: Since this mod is targeting Minecraft mods, its only natural to attempt to steal the MSA token used to login to Minecraft with. Some launchers keep this data in a local file, which this malware will attempt to read from. This affects a variety of launchers such as:
+**MSA Token**：有鉴于该「模组」针对其他 Minecraft 模组，窃取用于登录 Minecraft 的 MSA Token 当然再正常不过了。某些启动器会将 MSA Token 写入本地文件储存，而该恶意软件则会尝试读取这些文件。受此影响的应用有：
 
-* The vanilla/mojang launcher
-* The legacy vanilla/mojang launcher
-* PolyMC / Prism
+* 原版启动器（Mojang 启动器）（译注：似乎是指应用商店的那个）
+* 旧版原版启动器（Mojang 启动器）
+* PolyMC、Prism
 * Technic
 * Feather
-* LabyMod (< v3.9.59)
-* And any MSA token found in the [Windows Credential Manager](https://support.microsoft.com/en-us/windows/accessing-credential-manager-1b5c916a-6a16-889f-8581-fc16e8165ac0)
+* LabyMod（v3.9.59 及以下版本）
+* 任何在 [Windows Credential Manager](https://support.microsoft.com/en-us/windows/accessing-credential-manager-1b5c916a-6a16-889f-8581-fc16e8165ac0) 里存储的 MSA Token
 
-The retrival logic (Seen in [`dev/neko/nekoclient/api/stealer/msa/impl/MSAStealer.java`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/api/stealer/msa/impl/MSAStealer.java)) looks similar across a number of items since they store this data in a similr way. For example here is the laby-mod code:
+针对不同启动器窃取信息的逻辑（见 [`dev/neko/nekoclient/api/stealer/msa/impl/MSAStealer.java`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/api/stealer/msa/impl/MSAStealer.java)）大体上一致，因为启动器保存登录信息的方式也类似。例如下列针对 LabyMod 的代码：
+
 ```java
 private static void retrieveRefreshTokensFromLabyMod(List<RefreshToken> refreshTokens) throws IOException {
 	String appdata = System.getenv("APPDATA");
@@ -212,15 +213,16 @@ private static void retrieveRefreshTokensFromLabyMod(List<RefreshToken> refreshT
 	}
 }
 ```
-The code for retrieving tokens from Feather/PolyMC/Prism are essentially identical.
+窃取 Feather/PolyMC/Prism 存储的登录信息的代码几乎完全相同。
 
-The change from this strategy to the vanilla launchers is that the Json has an additional layer of cryptography protecting it.
+针对原版启动器的策略还会处理 JSON 文件外的一层加密保护。
 
 The change from this strategy to technic is that technic stores credentials using Java's built-in object serialization, wrapping the `com.google.api.client.auth.oauth2.StoredCredential` type.
+针对 Technic 的策略则是先使用 Java 内置的对象序列化（译注：`Serializable`、`ObjectInputStream`、`ObjectOutputStream`）读取，然后处理 `com.google.api.client.auth.oauth2.StoredCredential` 的包装。
 
-**Discord tokens**: Everyone's seen a token-stealer before. Affects the standard client, canary, ptb, and lightcord clients.
+**Discord token**：偷 Discord Token 这事可谓是众所周知了。此功能影响原版 Discord 客户端、Canary、PTB 以及 Lightcord。
 
-**Cookies & Saved credentials**: Steals saved cookies and login credentials saved in affected browsers.  Relevant source: [`dev/neko/nekoclient/api/stealer/browser/impl/BrowserDataStealer.java`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/api/stealer/browser/impl/BrowserDataStealer.java)
+**Cookies 及浏览器保存的登录凭证**：从各种受影响的浏览器中窃取 Cookies 和登录凭证信息。相关代码：[`dev/neko/nekoclient/api/stealer/browser/impl/BrowserDataStealer.java`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/api/stealer/browser/impl/BrowserDataStealer.java)
 
 - Mozilla Firefox
   - Waterfox
@@ -244,29 +246,33 @@ The change from this strategy to technic is that technic stores credentials usin
     - Crypto
   - CryptoTab
 
-## Stage 3b (`dummyloader3.jar`)
+## 阶段 3b（`dummyloader3.jar`）
 
-Stage 3 was replaced with another jar some time after the second C&C server was stood up.
+阶段 3 在第二台 C&C 服务器上线后更新成了另一个 jar。
 
-It appears to be just the SkyRage updater, which is another minecraft malware targetting blackspigot.
+表面上看，这只是一个 SkyRage 更新器。SkyRage 是另一个 Minecraft 相关恶意软件，主要针对 BlackSpigot。
 
-### Persistence
-- Windows: task scheduler `MicrosoftEdgeUpdateTaskMachineVM`, file `%AppData%\..\LocalLow\Microsoft\Internet Explorer\DOMStore\microsoft-vm-core`
-- Linux: `/bin/vmd-gnu`, `/etc/systemd/system/vmd-gnu.service`, service `vmd-gnu`
+### 持久化
 
-### Connections
-- C&C server: `connect.skyrage.de`
-- Downloading: `hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/qqqqqqqqq`
+- Windows：task scheduler `MicrosoftEdgeUpdateTaskMachineVM`，相关文件 `%AppData%\..\LocalLow\Microsoft\Internet Explorer\DOMStore\microsoft-vm-core`
+- Linux：`/bin/vmd-gnu`、`/etc/systemd/system/vmd-gnu.service`、service `vmd-gnu`
 
-### Actions
-- `qqqqqqqqq` jar extracts all kinds of information (browser cookies, discord, minecraft, epic games, steam login, also some stuff about crypto wallets and password pamangers), which update jar uploads to C&C server
-- replaces crypto coin addresses in clipboard with address recieved from `95.214.27.172:18734`
-- persistence (see above)
-- contains auto-updater, current version is 932 (`hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/version`)
+### 连接
 
-### Mappings
+- C&C 服务器：`connect.skyrage.de`
+- 下载文件：`hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/qqqqqqqqq`
 
-These are the mappings for this sample, which can be applied via Enigma or another tool supporting Engima mappings.
+### 动作
+
+- `qqqqqqqqq` jar 会提取各种信息（浏览器 Cookies、Discord、Epic、Steam、以及加密货币钱包和密码管理器相关），然后更新器 jar 会将信息传回 C&C 服务器。
+- 将剪贴板里的加密货币钱包地址替换为从 `95.214.27.172:18734` 获取的地址。
+- 持久化（见上一节）
+- 包含自动更新器，目前版本 932 (`hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/version`)
+
+### 映射表
+
+下列代码为该样本的反混淆映射表，可在 Enigma 或任意支持 Enigma 映射表格式的工具中使用。
+
 ```
 CLASS D Chat
 CLASS E ChatChain
@@ -301,36 +307,37 @@ CLASS t MinecraftPacketDecoder
 CLASS y MinecraftPacketEncryption
 ```
 
-### Anti-decompilation
+### 抗反编译
 
-This sample appears to abuse technicalities in the class-file to crash decompiler tools. Such exploits can be fixed using [CAFED00D](https://github.com/Col-E/CAFED00D), a bytecode parser that filters out malformed attributes. After this, the only remaining hassle is basic obfuscation applied by Allatori demo.
+该样本表面上利用了 class 文件的实现细节来诱使反编译器报错退出。此类问题可通过 [CAFED00D](https://github.com/Col-E/CAFED00D) 解决。CAFED00D 是一款可过滤存在结构问题的字节码解析器。在这之后剩下的唯一问题只有试用版 Allatori 产生的初步混淆。
 
-# Other Stuff
+# 其他信息
 
-More details are available in the live stage-3 reversal doc: https://hackmd.io/5gqXVri5S4ewZcGaCbsJdQ
+更多细节可在这份实时更新的阶段 3 逆向工程文档中找到：https://hackmd.io/5gqXVri5S4ewZcGaCbsJdQ
 
-When the second C&C server was stood up, a deobfuscated version of stage 3 was
-accidentally served for around 40 minutes.
+第二台 C&C 服务器上线时，一份未混淆的阶段 3 jar 意外在此存活了大约 40 分钟。
 
-The main payload server ~~is~~ *was* (got taken down) hosted on Serverion, a company based in the Netherlands.
+主要文件服务器托管于于位于荷兰的 Serverion 公司；公司在收到滥用举报后已下线该服务器。
 
-The new C&C has been taken down as well. _2023-06-07 18:51 UTC_
 
-Other than an HTTP server on port 80/443 and an SSH server on port 22, the following ports were open on `85.217.144.130` and `107.189.3.101`:
+新的 C&C 服务器也已下线。时间：_2023-06-07 18:51 UTC_
+
+除了 HTTP(S) 的 80/443 以及 SSH 的 22 端口，`85.217.144.130` 和 `107.189.3.101` 还开启了下列端口：
 
 * 1337
-* 1338 (a port referenced in Stage 1's file for creating new Debugger connection)
-* 8081 (this is a WebSocket server - no apparent function right now, not referenced in any malicious code)
-* 8082 (nobody's gotten anything out of this one,  not referenced in any malicious code)
-* 8083 (contacted by Stage 1)
+* 1338（阶段 1 引用了此端口，用于创建 Debugger 连接）
+* 8081（这是个 WebSocket 服务器，目前并无明显功能，也无恶意代码引用此端口）
+* 8082（没人从这个端口里试出任何东西，也无恶意代码引用此端口）
+* 8083（阶段 1 使用了此端口）
 
-Curiously, fractureiser's bukkit page says "Last active Sat, Jan, 1 2000 00:00:00" https://dev.bukkit.org/members/fractureiser/projects/
+奇妙的是，fractureiser 的 Bukkit 用户页显示 "Last active Sat, Jan, 1 2000 00:00:00" https://dev.bukkit.org/members/fractureiser/projects/（最后一次活跃时间：2000 年 1 月 1 日（星期六）0 时 0 分 0 秒）
 
-## Samples
+## 样本
 
-Please ask in the IRC chat for read or read/write access to samples. Source code of the decompiled Stage 3 client is available: https://github.com/clrxbl/NekoClient
+请在 IRC 聊天室中请求样本的只读或读写权限。阶段 3「客户端」问的反编译结果可在此找到：https://github.com/clrxbl/NekoClient
 
-## Follow-Ups
+## 反思
+
 While it's a bit early to speak of long term follow-ups, this whole debacle has brought up several critical flaws in the modded Minecraft ecosystem. This section is just brainstorming on them and how we can improve.
 
 #### 1. Review at mod repositories is inadequate
