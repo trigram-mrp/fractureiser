@@ -217,7 +217,6 @@ private static void retrieveRefreshTokensFromLabyMod(List<RefreshToken> refreshT
 
 针对原版启动器的策略还会处理 JSON 文件外的一层加密保护。
 
-The change from this strategy to technic is that technic stores credentials using Java's built-in object serialization, wrapping the `com.google.api.client.auth.oauth2.StoredCredential` type.
 针对 Technic 的策略则是先使用 Java 内置的对象序列化（译注：`Serializable`、`ObjectInputStream`、`ObjectOutputStream`）读取，然后处理 `com.google.api.client.auth.oauth2.StoredCredential` 的包装。
 
 **Discord token**：偷 Discord Token 这事可谓是众所周知了。此功能影响原版 Discord 客户端、Canary、PTB 以及 Lightcord。
@@ -337,8 +336,6 @@ CLASS y MinecraftPacketEncryption
 请在 IRC 聊天室中请求样本的只读或读写权限。阶段 3「客户端」问的反编译结果可在此找到：https://github.com/clrxbl/NekoClient
 
 ## 反思
-
-While it's a bit early to speak of long term follow-ups, this whole debacle has brought up several critical flaws in the modded Minecraft ecosystem. This section is just brainstorming on them and how we can improve.
 
 虽然现在讨论事后追踪有点为时尚早，这场面对恶意软件的失败业已揭示了 Minecraft 模组生态中的数个致命缺陷。本小节将用作头脑风暴区，思考我们遇到了哪些问题，以及应该如何改进。
 
