@@ -2,8 +2,6 @@
     <img src="docs/media/logo.svg" alt="Logo">
 </p>
 
-*Pardon our dust, documentation still in progress*
-
 ## Ne?
 `fractureiser`, CurseForge'a yüklenen birkaç Minecraft projesinde ve CraftBukkit'in geliştirici web sitesinde bulunan bir [Virüs](https://en.wikipedia.org/wiki/Computer_virus)'tür. Kötü amaçlı yazılım, birden fazla moda gömülüdür ve bazıları son derece popüler mod paketlerine eklenmiştir. Bu kötü amaçlı yazılımın yalnızca Windows ve Linux sistemlerine hedeflendiği bilinmektedir.
 
