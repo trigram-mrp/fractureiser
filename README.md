@@ -33,7 +33,9 @@ not possible. Old infections may still be active.
 We are currently working on refining user-facing documentation, please check there for
 resources.
 
-We're holding a meeting to follow-up and discuss potential solutions, see [this page](https://github.com/fractureiser-investigation/fractureiser/blob/main/docs/2023-06-08-meeting.md) for more information about how you can listen in, and about the agenda.
+## Follow up Meeting
+On 2023-06-08 the fractureiser Mitigation Team held a meeting with notable members of the community to discuss preventive measures and solutions for future problems of this scale.
+See [this page](https://github.com/fractureiser-investigation/fractureiser/blob/main/docs/2023-06-08-meeting.md) for the agenda and minutes of the event.
 
 ## Additional Info
 
@@ -43,8 +45,6 @@ If you copy portions of this document elsewhere, *please* put a prominent link b
 
 The **only** official public channel you may join without being personally invited that's *run by the same team that wrote this writeup* is [#cfmalware on EsperNet IRC](https://webchat.esper.net/?channels=cfmalware).
 **Joining an IRC channel will expose your IP address.**
-
-IRC logs: TODO
 
 ---
 
