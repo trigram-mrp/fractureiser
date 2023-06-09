@@ -18,7 +18,7 @@ Notre recommendation actuel est : si vous avez exécuté le scanner pour l'Étap
 
 Nous sommes en contact avec tout les parties pour établir des protocoles pour que ceci n'arrive plus dans le futur.
 
-Si vous voulez jouer, 
+Si vous voulez jouer, suivez les étapes de diagnostiques sur cette page ainsi que les sections sur quoi faire si vous êtes infectés ou non.
 
 ### Page Structure
 * [Qu'est ce qu'il s'est passé ?](#quest-ce-quil-sest-passé-)
@@ -154,13 +154,14 @@ Si vous avez trouvé des fichiers de l'Étape 2 de fractureiser sur votre ordina
 
 ## Je ne suis pas infecté·e, que faire ?
 
-Si vous avez joué en moddé ces derniers mois, la chose la plus sûre que vous pouvez faire pour le moment est de **ne pas lancer Minecraft du tout**. Oui, même en Vanilla.
+Si rien n'a été trouvé par le scanner pour l'Étape 2, il est probable que rien ne se passe et que vous soyez capable de jouer tranquillement.
 
-Avec ceci dit - si rien n'a été trouvé dans un premier lien, il est probable que rien ne se passe. Si vous voulez quand même jouer :
+Bien que `fractureiser` a été supprimé, de nouveaux virus peuvent apparaître dans un futur proche tant que nous n'aurons pas établis de nouveaux protocoles. Si vous voulez jouer, nous vous recommandons de :
 
-* Avec les connaissances que nous avons pour le moment, ce n'est pas risqué, mais nous ne pouvons garantir que c'est le cas - vous *vous mettez en danger*.
-* Après chaque session, vérifier si les fichiers d'infections dans les étapes précédentes pour être sur que rien n'est arrivé depuis 
-* **En aucune circonstance**, installer ou mettez à jour des mods, modpacks, ou plugins que vous utilisez, ou même lancer quoi que ce soit que vous avez télécharger et jamais lancer avant - rester sur les instances que vous avez deja utilisé, et celles-ci **seulement**
+* Jouer exclusivement avec les mods et modpacks que vous avez deja installer et vérifier pour leur sécurité
+* Éviter d'installer quoi que ce soit publié le 8 Juin venant de nouveaux auteurs ou d'auteurs inconnues, pour la même raison que le point d'avant.
+* Éviter de mettre à jour vos modpacks.
+* Garder un œil sur les communications des équipes de développement pour être au courant des nouvelles méthodes pour détecter des problèmes similaires dans le futur.
 
 ## Foire aux Questions
 
