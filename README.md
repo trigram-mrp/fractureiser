@@ -4,7 +4,7 @@
 
 _현재 문서 작업 중입니다. 불편을 드려 죄송합니다._
 
-## 무슨일인가요?
+## 무슨일이 일어났는가?
 
 `fractureiser`는 CurseForge와 CraftBukkit의 개발 웹사이트에 업로드된 몇 가지 Minecraft 프로젝트에서 발견된 [바이러스](https://ko.wikipedia.org/wiki/%EB%B0%94%EC%9D%B4%EB%9F%AC%EC%8A%A4)입니다. 이 악성 코드는 여러 모드에 내장되어 있으며, 일부는 인기있는 모드 팩에 추가되었습니다. 이 악성 코드는 Windows 및 Linux 시스템을 대상으로만 알려져 있습니다.
 
@@ -44,4 +44,4 @@ IRC 로그: TODO
 
 ---
 
-\- [fractureiser 대응 팀](docs/credits_ko.md)
+\- [fractureiser 대응 팀](docs/credits.md)
