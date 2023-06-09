@@ -11,7 +11,14 @@ cela en suivant les instructions ci dessous.
 Informations additionnels sur quoi faire si vous êtes ou non infecté sera donnés après les étapes permettant un diagnostique.
 
 ### Est ce toujours en cours ??
-Oui. Revenez plus tard.
+**Non. Enfin, en quelque sorte.**
+Pour le moment avec nos connaissances, nous pensons que le virus `fractureiser` a été complètement supprimé de tout les mod(pack)s publics.
+
+Notre recommendation actuel est : si vous avez exécuté le scanner pour l'Étape 2 de cette page, vous êtes en sécurité pour jouer tranquillement, cependant, depuis que la publication de mods est de retour sur CurseForge et Modrinth, il est possible que des créateurs de virus, voulant copier fractureiser, créent de nouveaux virus.
+
+Nous sommes en contact avec tout les parties pour établir des protocoles pour que ceci n'arrive plus dans le futur.
+
+Si vous voulez jouer, 
 
 ### Page Structure
 * [Qu'est ce qu'il s'est passé ?](#quest-ce-quil-sest-passé-)
@@ -272,7 +279,7 @@ Les mods pour Minecraft Java sont basiquement un sac de code arbitraire : traite
 
 ### Pourquoi les mods n'ont pas de signature cryptographique pour éviter des malwares de se glisser en leur sein ?
 
-Le problème est qu'une signature seule ne prevent en aucun cas un malware - un virus possédant une signature reste un virus - et si s'auto attribuer une signature est autorisé, cela ne change rien, le virus peut simplement supprimé la signature du jar ("supprimé le fichier META-INF") et recréé une signature avec sa propre clé. (Ce n'est pas une hypothèse, en effet : fractureizer contient une partie permettant d'enlever la signature des jars qu'il infecte.)
+Le problème est qu'une signature seule ne prevent en aucun cas un malware - un virus possédant une signature reste un virus - et si s'auto attribuer une signature est autorisé, cela ne change rien, le virus peut simplement supprimé la signature du jar ("supprimé le fichier META-INF") et recréé une signature avec sa propre clé. (Ce n'est pas une hypothèse, en effet : fractureiser contient une partie permettant d'enlever la signature des jars qu'il infecte.)
 
 Une signature en ligne pour les mods *semble* être un pas en avant prometteur, mais il y aura des compromis à faire. Il y aura [une réunion](/docs/2023-06-08-meeting.md) avec différents responsables de l'écosystème Minecraft moddé pour discuter de comment continuer sur cette voie.
 
@@ -289,7 +296,7 @@ Ce n'est pas possible. Vous ne pouvez pas savoir si un fichier contient du code 
 
 ### Est ce que cela à un lien avec le plugin malveillant Spigot qui circule ?
 
-Possiblement ! Il existe des liens vers ce malware existant `skyrage` - l'auteur de fractureizer a publié  des fichiers jars reliés à skyrage sur son serveur "command&control" de secours, dans une tentative sans succès d'étendre son attaque, juste avant que CloudFare coupe le serveur.
+Possiblement ! Il existe des liens vers ce malware existant `skyrage` - l'auteur de fractureiser a publié  des fichiers jars reliés à skyrage sur son serveur "command&control" de secours, dans une tentative sans succès d'étendre son attaque, juste avant que CloudFare coupe le serveur.
 
 **Nous n'avons reçu aucune preuve que qui que ce soit ai été infecté par Skyrage via ce moyen.**
 L'auteur a mis à jour l'URL CloudFare pour rediriger vers Skyrage après une longue période de temps *après* que l'adresse écrite en brute dans les mods infecté par l'Étape 0 ai été retiré. Il s'agit plus d'une curiosité amusante que l'attaquant ai essayé de partagé ce fichier dans tout les cas.
