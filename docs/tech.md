@@ -73,7 +73,7 @@ This:
 2. Loads the class `Utility` from the classloader, fetching code from the internet
 3. Calls the `run` method on `Utility`, passing a String argument different for each infected mod (!). E.g.
     * Skyblock Core: "`-74.-10.78.-106.12`"
-    * Dungeonz: "`114.-18.38.108.-100`"
+    * Dungeonz: "`-114.-18.38.108.-100`"
     * HavenElytra: "`-114.-18.38.108.-100`"
     * Vault Integrations: "`-114.-18.38.108.-100`"
 
@@ -145,7 +145,7 @@ From analysis, these do what they say on the tin:
 * Steal Microsoft account credentials
 
 There is also evidence of code attempting to do the following:
-* Scan for *all* JAR files on the system that look like Minecraft mods (by detecting
+* Scan for *all* jar files on the system that look like Minecraft mods (by detecting
   Forge/Fabric/Quilt/Bukkit), or [declare a Main
   class](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L235-L244)
   (most plain Java programs) and attempt to inject Stage 0 into them
