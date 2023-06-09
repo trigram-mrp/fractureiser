@@ -2,6 +2,10 @@
 .obsidian/
 .vscode/
 
+# Exclude WebStorm config
+
+.idea
+
 # Remove OS-specific stuff
 .trash/
 .DS_Store
