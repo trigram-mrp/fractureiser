@@ -1,0 +1,6 @@
+# Exclude obsidian config
+.obsidian/
+
+# Remove OS-specific stuff
+.trash/
+.DS_Store
