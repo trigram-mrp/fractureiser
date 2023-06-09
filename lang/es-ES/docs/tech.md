@@ -1,6 +1,6 @@
-# Technical info
+# Información técnica
 
-## Distribution
+## Distribución
 
 Some modpacks have had updates published for them without the knowledge of the authors, adding a dependency on malicious mods. These modpack updates were archived immediately after uploading, meaning they *do not show on the web UI, only via the API.*
 
@@ -35,7 +35,7 @@ Darkhax sent this: https://gist.github.com/Darkhax/d7f6d1b5bfb51c3c74d3bd1609cab
 
 potentially more: Sophisticated Core, Dramatic Doors, Moonlight lib, Union lib
 
-## Stage 0 (Infected mod jars)
+## Etapa 0 (Infected mod jars)
 
 Affected mods or plugins have a new `static void` method inserted into their main class, and a call to this method is inserted into that class's static initializer. For DungeonZ, the method is named `_d1385bd3c36f464882460aa4f0484c53` and exists in `net.dungeonz.DungeonzMain`. For Skyblock Core, the method is named `_f7dba6a3a72049a78a308a774a847180` and is inserted into `com.bmc.coremod.BMCSkyblockCore`. For HavenElytra, the code is inserted directly into the otherwise-unused static initializer of `valorless.havenelytra.HavenElytra`.
 
@@ -81,7 +81,7 @@ The passed numerals are parsed as bytes by Stage 1 and written to a file named "
 
 The creation of the classloader is hardcoded to that URL and does not use the Cloudflare URL that Stage 1 does. As that IP is now offline, this means the Stage 0 payloads *we are presently aware of* no longer function.
 
-## Stage 1 (`dl.jar`)
+## Etapa 1 (`dl.jar`)
 
 SHA-1: `dc43c4685c3f47808ac207d1667cc1eb915b2d82`
 
@@ -104,7 +104,7 @@ Stage 1 then attempts to achieve persistence by doing the following:
   (`HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run`) to start itself, or
   failing that, tries adding itself to the `Windows\Start Menu\Programs\Startup` folder
 
-## Stage 2 (`lib.jar` or `libWebGL64.jar`)
+## Etapa 2 (`lib.jar` o `libWebGL64.jar`)
 
 Known sha1 hashes:
 * `52d08736543a240b0cbbbf2da03691ae525bb119`
@@ -127,7 +127,7 @@ When launched it does the following:
     5. Loads and invokes the static method `dev.neko.nekoclient.Client#start(InetAddress, refFileBytes)`
     6. Sleeps for 5 seconds
 
-## Stage 3 (`client.jar`)
+## Etapa 3 (`client.jar`)
 
 sha-1: `c2d0c87a1fe99e3c44a52c48d8bcf65a67b3e9a5`
 sha-1: `e299bf5a025f5c3fff45d017c3c2f467fa599915`
@@ -146,7 +146,7 @@ From analysis, these do what they say on the tin:
 
 There is also evidence of code attempting to do the following:
 * Scan for *all* JAR files on the system that look like Minecraft mods (by detecting
-  Forge/Fabric/Quilt/Bukkit), or [declare a Main
+  Forge/Fabric/Quilt/Bukkit), o [declare a Main
   class](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L235-L244)
   (most plain Java programs) and attempt to inject Stage 0 into them
 * Steal cookies and login information for many web browsers
@@ -162,13 +162,13 @@ Jars are heuristically detected as Minecraft mods or plugins as follows:
 * Bungee (`dev/neko/e/e/e/l`): The malware checks if a class extends Bungee's `Plugin` class
 * Vanilla (`dev/neko/e/e/e/c`): The malware checks if the main client class `net.minecraft.client.main.Main` exists
 
-## Stage3 (`unobf-client.jar`)
+## Etapa3 (`unobf-client.jar`)
 
 Around 2023-06-07 14:20 UTC the stage3 client jar was seemingly accidentally replaced with an unobfuscated version. You can find the archive here: https://github.com/clrxbl/NekoClient
 
 This validates the suspected behavior/evidence from the analysis done on the prior obfuscated `client.jar` sample.
 
-### Replication
+### Replicación
 
 Replication is handled through automatic processing of classes in jar files across the entire filesystem on the local machine. Any jar file that contains classes meeting certain critera is subject for infection. The process of scanning the local file system and injecting malicious code can be found here: [`dev/neko/nekoclient/Client.start(InetSocketAddress, byte[])`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L273)
 
@@ -253,13 +253,13 @@ The change from this strategy to technic is that technic stores credentials usin
     - Crypto
   - CryptoTab
 
-## Stage 3b (`dummyloader3.jar`)
+## Etapa 3b (`dummyloader3.jar`)
 
 Stage 3 was replaced with another jar some time after the second C&C server was stood up.
 
 It appears to be just the SkyRage updater, which is another minecraft malware targetting blackspigot.
 
-### Persistence
+### Persistencia
 - Windows: task scheduler `MicrosoftEdgeUpdateTaskMachineVM`, file `%AppData%\..\LocalLow\Microsoft\Internet Explorer\DOMStore\microsoft-vm-core`
 - Linux: `/bin/vmd-gnu`, `/etc/systemd/system/vmd-gnu.service`, service `vmd-gnu`
 
@@ -267,7 +267,7 @@ It appears to be just the SkyRage updater, which is another minecraft malware ta
 - C&C server: `connect.skyrage.de`
 - Downloading: `hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/qqqqqqqqq`
 
-### Actions
+### Acciónes
 - `qqqqqqqqq` jar extracts all kinds of information (browser cookies, discord, minecraft, epic games, steam login, also some stuff about crypto wallets and password pamangers), which update jar uploads to C&C server
 - replaces crypto coin addresses in clipboard with address recieved from `95.214.27.172:18734`
 - persistence (see above)
