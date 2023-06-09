@@ -269,7 +269,7 @@ Fractureiser 相关代码会试图访问下列 URL 或 IP 的诸多端口：
 
 阻止 Java 代码引用某一特定类（比如 `URLClassLoader`）相当困难，因为你也可以在 `Class.forName` 中用到这个类，而这个用法有相当多的合理用途。如果你直接禁止引用，或者只限定某一列表内的类对其直接引用，你通常还能在你的 classpath 里找到**另一段代码**可以帮你调用 `Class.forName`，然后你会开始阻止更多的类，最终掉进无穷无尽的「打地鼠」循环中。
 
-沙箱化 Java 基本上不可能，可参考[《Twenty Years of Escaping the Java Sandbox》](https://www.exploit-db.com/papers/45517)了解其中原因。
+沙箱化 Java 基本上不可能，可参考[《Twenty Years of Escaping the Java Sandbox》](https://www.exploit-db.com/papers/45517)等文章了解其中原因。
 
 Java 编写的模组本质上就是任意代码的集合。你理应将其视作和 `.exe` 一样，有执行任意代码能力的程序。
 
