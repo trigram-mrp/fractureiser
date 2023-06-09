@@ -1,9 +1,9 @@
 ## Credits
-Nonextensive! Thank you to all that pitched in. We'll flesh this out after this all blows over.
+Nonexhaustive! Thank you to all that pitched in.
 
-[**Emi**](https://github.com/emilyploszaj/): Coordination, initial discovery (for this team), and early research  
-[**Jasmine**](https://github.com/jaskarth/): Coordination, writing the decompiler we've been using ([Quiltflower](https://github.com/QuiltMC/quiltflower/))  
-[**unascribed**](https://github.com/unascribed/): Coordination of documentation, crowd control
+[**Emi**](https://github.com/emilyploszaj/): Coordination, initial discovery (for this team), early research, meeting organization  
+[**Jasmine**](https://github.com/jaskarth/): Coordination, research, writing the decompiler we've been using ([Quiltflower](https://github.com/QuiltMC/quiltflower/))  
+[**unascribed**](https://github.com/unascribed/): Coordination of documentation, crowd control, logo  
 [**williewillus**](https://github.com/williewillus/): Coordination, journalist  
 [**Vazkii**](https://github.com/vazkii/): Documentation, public communications  
 [**Col-E**](https://github.com/Col-E/): Reverse engineering, writing the deobfuscator we've been using ([Recaf](https://www.coley.software/Recaf/))  
