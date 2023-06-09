@@ -45,3 +45,20 @@ IRC 로그: TODO
 ---
 
 \- [fractureiser 대응 팀](docs/credits.md)
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+---
+
+### 한국어 번역
+
+<br/>
+
+users.md  
+tech.md  
+credits.md  
+_번역 완료됨_

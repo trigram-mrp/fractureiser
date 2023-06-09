@@ -1,10 +1,11 @@
-## Credits
-Nonextensive! Thank you to all that pitched in. We'll flesh this out after this all blows over.
+## 크레딧
 
-**D3SL**: Extensive reverse engineering, early discovery learned of later  
-**Nia**: Extensive Stage 3 reverse engineering  
-**Jasmine**: Coordination, writing the decompiler we've been using (Quiltflower)  
-**Emi**: Coordination, initial discovery (for this team), and early research  
-**williewillus**: Coordination, journalist  
-**quat**: Documentation, initial infected sample research  
-**unascribed**: Coordination of documentation, crowd control, responsible for using Snopyta at first and the disaster that caused
+Nonextensive! 모두 참여해주신 분들에게 감사드립니다. 이 모든 일이 종료된 후에 자세히 정리할 예정입니다.
+
+**D3SL**: 광범위한 리버스 엔지니어링, 나중에 발견된 초기 발견 사항
+**Nia**: 광범위한 Stage 3 리버스 엔지니어링
+**Jasmine**: 조정, 사용한 디컴파일러(Quiltflower) 작성
+**Emi**: 조정, 초기 발견(이 팀을 위한), 초기 연구
+**williewillus**: 조정, 기자
+**quat**: 문서 작성, 초기 감염 샘플 연구
+**unascribed**: 문서 조정, 혼잡 관리, 처음에 Snopyta를 사용한 책임과 그로 인한 재앙
