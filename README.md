@@ -2,49 +2,48 @@
     <img src="docs/media/logo.svg" alt="Logo">
 </p>
 
-*Pardon our dust, documentation still in progress*
+*お騒がせして申し訳ないですが、このドキュメントは作業中です*
 
-## What?
-`fractureiser` is a [Virus](https://en.wikipedia.org/wiki/Computer_virus) found in several Minecraft projects uploaded to CurseForge and CraftBukkit's dev website. The malware is embedded in multiple mods, some of which were added to highly popular modpacks. The Malware is only known to target Windows and Linux Systems.
+## これは何?
+`fractureiser`は、[CurseForge](https://www.curseforge.com/minecraft)と[CraftBukkitのプラグイン配布サイト](https://dev.bukkit.org/)にアップロードされた、いくつかのMinecraft関係のプロジェクトにて発見された[コンピュータウイルス](https://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%82%BF%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9)です。このマルウェアは複数のModに組み込まれており、そのうちのいくつかは非常に有名なmodpackに追加されていました。このマルウェアは、Windows及びLinuxのみを対象としている事が知られています。
 
-If left unchecked, fractureiser can be **INCREDIBLY DANGEROUS** to your machine. Please read through this document for the info you need to keep yourself safe.
+確認せずに放置した場合、fractureiserはあなたのパソコンにおいて**非常に危険**になり得ます。この文書を読み、自身の安全を守るために必要な情報を確認してください。
 
-We've dubbed this malware `fractureiser` because that's the name of the CurseForge account that uploaded the most notable malicious files.  
+私達は、このマルウェアに対して`fractureiser`という名前を付けました。これは、最も注意すべき悪質なファイルをアップロードした、CurseForgeのアカウント名に由来します。
 
-## What YOU need to know
+## あなたが知るべき事
 
-### [Modded Players CLICK HERE](docs/users.md)
+### [Modを利用していた人はここを見てください](docs/users.md)
 
-If you're simply a mod player and not a developer, the above link is all you need. It contains surface level information of the malware's effects, steps to check if you have it and how to remove it, and a FAQ.
+あなたがただModで遊んでいただけで、開発者でないのなら。上記のリンクがあなたに必要な情報の全てです。そこには、このマルウェアの能力の表面的な情報・感染しているかどうかを確認する方法・除去する方法・FAQが書かれています。
 
-Anyone who wishes to dig deeper may also look at
-* [Event Timeline](docs/timeline.md)
-* [Technical Breakdown](docs/tech.md)
+より詳細な情報を知りたい人は、以下の記事も見ると良いでしょう。
+* [事件の時系列](docs/timeline.md)
+* [技術的詳細](docs/tech.md)
 
-### I have never used any minecraft mods
+### 私はMinecraftのModを利用したことがありません
 
-You are not infected.
+あなたは影響を受けません。
 
-## Current Investigation Status
-We have a good idea how fractureiser works, from Stages 0 to 3. There are certain
-unknowns, but the attack servers are offline and to our knowledge, *new* infections are
-not possible. Old infections may still be active.
+## 現在の調査状況
+fractureiserがどの様に動作するかは、Stage 0から3まで概ね判明しています。いくつかの不明点はありますが、攻撃サーバーはオフラインであり、私達の知る限り、*新しい*感染はあり得ません。古い感染はまだ有効な可能性があります。
 
-We are currently working on refining user-facing documentation, please check there for
-resources.
+私達は今、ユーザー向けのドキュメントの改良に取り組んでいるため、そちらをご覧ください。
 
-## Follow up Meeting
-On 2023-06-08 the fractureiser Mitigation Team held a meeting with notable members of the community to discuss preventive measures and solutions for future problems of this scale.
-See [this page](https://github.com/fractureiser-investigation/fractureiser/blob/main/docs/2023-06-08-meeting.md) for the agenda and minutes of the event.
+## フォローアップ・ミーティング
+2023/06/08(アメリカ時間, 日本標準時で2023/06/09 午前01:00~)にfractureiser緩和チームはコミュニティの注目すべきメンバーと共に会議を行いました。この会議では、fractureiserを阻止する方法と、将来に類似した問題を起こさないための解決策を話し合いました。
+議題と議事録については、[このページ](docs/2023-06-08-meeting.md)を見てください。
 
-## Additional Info
+## 追加情報
 
-If you have files relevant to this malware, please upload them to https://wormhole.app and email the URL to fractureiser.investigation@opayq.com — this inbox is controlled by unascribed, and anything sent to it will be shared with the rest of the team. If you need to get in touch more generally, please send mail to jaskarth4@gmail.com.
+このマルウェアに関するファイルを持っている場合、 https://wormhole.app にファイルをアップロードし、そのURLを fractureiser.investigation@opayq.com にメールしてください。このメールはunascribedにより管理され、送られた物は全てチームの全員に共有されます。より一般的に連絡を取る必要がある場合、jaskarth4@gmail.comにメールしてください。
+**訳注**: この翻訳版についてはこれらのメールアドレスを含む、調査チームに対して連絡しないでください。この翻訳はCC-BY-SA-4.0 ライセンスに基づいた非公式な翻訳版です。この翻訳に関する連絡はこのリポジトリのIssueまたは[Twitterの@toliner_](twitter.com/toliner_)に対して行ってください。
 
-If you copy portions of this document elsewhere, *please* put a prominent link back to this [GitHub Repository](https://github.com/fractureiser-investigation/fractureiser) somewhere near the top so that people can read the latest updates and get in contact.
+このドキュメントの一部をどこかに引用する場合、*必ず*冒頭周辺の目立った場所にオリジナルの [GitHub Repository](https://github.com/fractureiser-investigation/fractureiser)へのリンクを貼ってください。読者が最新の情報を得たり連絡を取るのに必要です。
+**訳注**: この翻訳版を引用する場合、可能であればオリジナルのリポジトリとこのリポジトリの両方のリンクを貼ってください。字数等の制約により難しい場合はオリジナル版のみでかまいません。
 
-The **only** official public channel you may join without being personally invited that's *run by the same team that wrote this writeup* is [#cfmalware on EsperNet IRC](https://webchat.esper.net/?channels=cfmalware).
-**Joining an IRC channel will expose your IP address.**
+個人的に招待される物を除いた、能動的に参加可能な*オリジナルの記事を書いているのと同じ団体が運営している***唯一の**公式の公開チャンネルは、[EsperNet IRCにおける #cfmalwareチャンネル](https://webchat.esper.net/?channels=cfmalware)です。
+**IRCチャンネルに参加すると、IPアドレスが公開されます。**
 
 ---
 
