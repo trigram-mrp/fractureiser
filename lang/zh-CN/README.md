@@ -26,13 +26,21 @@
 * [事件时间线](docs/timeline.md)
 * [技术分析](docs/tech.md)
 
+### 我从未使用过任何 Minecraft 模组
+
+你没有感染。
+
 ## 目前调查进展
 
 我们目前已经对 fractureiser 从「阶段 0」到「阶段 3」的工作流程有了充分了解。虽然仍然有一些细节没有查明，但根据我们所掌握的情况，攻击者的服务器已下线，**新感染**已不可能，但已感染的设备仍会受影响。
 
 我们正在改进针对普通用户的文档，请查阅相关文档了解更多信息。
 
-我们计划就善后及可能解决方案的讨论召开社区会议，关于如何旁听会议及日程安排等详细信息可在[此页](docs/2023-06-08-meeting.md)找到
+On 2023-06-08 the fractureiser Mitigation Team held a meeting with notable members of the community to discuss preventive measures and solutions for future problems of this scale.
+See [this page](https://github.com/fractureiser-investigation/fractureiser/blob/main/docs/2023-06-08-meeting.md) for the agenda and minutes of the event.
+
+2023 年 6 月 8 日，Fractureiser Mitigation Team 召集了一场社区会议，与会成员均为社区知名成员，会议讨论了同类事件的预防措施，及在未来彻底解决此类问题的方案。  
+是次会议的议程及会议纪要可在[此页](docs/2023-06-08-meeting.md)找到。
 
 ## 其他信息
 
@@ -41,7 +49,6 @@
 如果你把本文档部分复制、转载到了别处，**请务必**在开头或其他位置显著标明[本 GitHub 仓库的链接](https://github.com/fractureiser-investigation/fractureiser)，这样其他人可以在第一时间内了解事态的最新进展。
 
 我们**只有一个**__由本文档撰写者原班人马维护__，可以无需邀请即可加入的聊天频道：[EsperNet 上的 IRC 频道 #cfmalware](https://webchat.esper.net/?channels=cfmalware)。
-你如果有兴趣的话，可以加入该频道参与讨论，但由于新用户过多，我们已开启 +m 模式，这意味着你需要权限方可发言。
 **注意：加入 IRC 频道会暴露你的 IP 地址。**
 
 IRC 聊天日志：待补全
