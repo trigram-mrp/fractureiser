@@ -26,62 +26,39 @@ Lesen Sie diese Seite vollständig, inklusive dem FAQ am Ende, falls Sie Fragen 
 
 ## Was ist eigentlich passiert?
 
-Several innocent looking malicious mods and plugins were initially uploaded by the malware's creator 
-to the mod hosting website CurseForge and plugin hub dev.craftbukkit.org (not the Bukkit 
-software itself). A high-profile mod pack developer downloaded one of these mods to try
-out, which infected files in their computer without their knowledge - this included a copy of a 
-working project that would then be uploaded to CurseForge as a seemingly leigimate file, with the 
-virus included. 
+Mehrere unauffällige böswillige Mods und Plugins wurden ursprünglich vom Ersteller der Malware auf die Mod-Hosting-Website CurseForge und die Plugin-Seite dev.craftbukkit.org (nicht die Bukkit-Software selbst). Ein wichtiger Mod-Pack-Developer lud sich einer dieser Mods herunter, um sie auszuprobieren. Dabei wurden unbemerkt Dateien auf seinem/ihrem Computer infiziert, darunter die Kopie eines Projektes, die dann als unaufällige Datei auf CurseForge hochgeladen werden würde.
 
-This process then repeated itself for a few other cases from users on CurseForge and 
-dev.craftbukkit.org, infecting copies of several popular plugins and mods. *There are reports of 
-malicious plugin and mod jars as early
-as mid-April.*
+Dieser Prozess wiederholte sich einige Male bei anderen Nutzern von CurseForge und dev.craftbukkit.org, wobei Kopien von mehreren beliebten Plugins und Mods infiziert wurden. *Es gibt Meldungen von infizierten Plugin und Mod Jar-Dateien, die bis Mitte April zurückreichen.*
 
-Alongside this, brute force access attempts on high traffic content creator accounts on CurseForge
-were attempted by the malware author. We are currently unsure whether the breach was due to the
-brute force attempt or due to trojan infection on the accounts' owners.
+Gleichzeitig versuchte der Autor der Malware mithilfe einer Brute-Force-Attacke Zugriff zu Accounts beliebter Ersteller auf CurseForge zu erhalten. Es ist derzeit unbekannt, ob Attacken erfolgreich waren oder ob die Besitzer der Accounts mit der Malware infiziert wurden.
 
-This malware is composed of multiple "stages", each Stage is responsible for downloading and
-running the next one. In total, there are three known Stages (Stages 1, 2, and 3), with infected
-mod files serving as a "Stage 0" to kick the whole process off.
+Die Malware besteht aus mehreren Stufen ("stages"). Jede Stufe ist für das herunterladen und ausführen der Nächsten verantwortlich. Insgesamt gibt es drei bekannte Stufen (Stage 1, 2, 3) und infizierte Mod-Dateien als "Stage0", die den Prozess starten.
 
-Stage 3 is the "mastermind" of the malware, and we have evidence that it attempts to do all of
-the following:
+Stage3 ist das "mastermind" der Malware und sie wurde beim folgenden beobachtet:
 
-* Propagate itself to *all* `jar` files on the filesystem, possibly infecting mods that
-  were not downloaded from CurseForge or BukkitDev, or other Java programs
-* Steal cookies and login information for many web browsers
-* Replace cryptocurrency addresses in the clipboard with alternates that are presumably owned by
-the attacker
-* Steal Discord credentials
-* Steal Microsoft and Minecraft credentials
+* Verbreitung zu *allen* `jar`-Dateien auf dem Dateisystem, auch Mods, die nicht von CurseForge oder BukkitDev heruntergeladen wurden oder anderen Java-Programmen
+* Stehlen von Cookies und Login-Informationen von vielen WebBrowsern
+* Ersetzen von kopierten Cryptowährungs-Addressen in der Zwischenablage mit anderen, vermutlich dem Angreifer gehörenden
+* Stehlen von Discord-Logindaten
+* Stehlen von Microsoft- und Mojang-Logindaten
 
-(See [technical details](tech.md) for more info)
+(Siehe [technische Details](tech.md) für mehr Informationen)
 
-Because of its behavior, we are **very confident** this is a **targeted attack against the modded 
-Minecraft ecosystem**. It's quite bad.
+Aufgrund seines Verhalten sind wird uns **sehr sicher**, dass es sich um eine **gezielte Attacke gegen das Minecraft-Modding-Ökosystem** handelt.
 
-**Until further notice, exercise extreme caution with Minecraft mod downloads, regardless
-of origin.** While the control server for this malware is currently offline, **any
-download from Curseforge or the Bukkit plugin repository in the last 2-3 weeks should be
-treated as potentially malicious**. Some malware scanners have started adding signatures
-to their databases, but until this rolls out to all of them, please exercise caution.
+**Bis auf weiteres ist mit heruntergeladenen Minecraft-Mods höchste Vorsicht geboten, egal, woher sie kommen.** Der Kontroll-Server der Malware ist zwar derzeit offline, aber **jeder Donwload von CurseForge oder dev.craftbukkit.org in den letzten 2-3 Wochen sollte als potentiell bösartig angesehen werden**. Einige Malware-Scanner haben begonnen, Signaturen der Malware in ihre Datenbanken hinzuzufügen, aber seien Sie, bis alle Scanner diese Signaturen erhalten haben, vorsichtig.
 
-*At this point we cannot be confident claiming any hosting service is unaffected*. Please
-exercise caution regardless of what site you use. Even Maven repositories may be infected,
-and this malware goes back months.
+*Derzeit können wir für keinen Hosting-Service garantieren, dass er nicht betroffen ist*. Bitte lassen Sie Vorsicht walten, egal, welche Seiten Sie verwenden. Sogar Maven Repositories können betroffen sein und diese Malware ist Monate alt.
 
-Currently, new infections are impossible as the attacker's server has been shut down,
-existing infections may still be active.
+Aktuell sind keine neuen Infektionen möglich, da der Server des Angreifers ausgeschaltet ist, bestehende Infektionen sind eventuell immer noch aktiv.
 
 <!--### Get to the point, how do I fix this?
 
 ![Flowchart](media/flowchart.png)-->
 
-### Wait, what the f*** is a "stage"?
+### Was zur Hölle ist eine Stufe/stage?
 
-![Stage Diagram](media/stages.png)
+![Stage Diagram](media/stages.png) <!-- TODO: Translate image into German-->
 
 ## Bin ich infiziert?
 
