@@ -34,6 +34,9 @@ Wenn Sie für die Malware relevante Dateien besitzen, uploaden Sie diese bitte a
 
 Falls Sie Teile dieses Dokuments übernehmen, verlinken Sie *bitte* dieses [GitHub Repository](https://github.com/fractureiser-investigation/fractureiser) auffällig am Anfang, damit die Leser die neuesten Updates erhalten und das Team kontaktieren können.
 
+Der **einzige** offizielle öffentliche Kanal, dem Sie ohne persönliche Einladung beitreten können, der *von dem gleichen Team, das dieses Dokument schrieb* ist [#cfmalware auf EsperNet IRC](https://webchat.esper.net/?channels=cfmalware).
+**Das Beitreten eines IRC-Channels legt Ihre IP offen.**
+
 ---
 
 \- das [fractureiser Mitigation Team](docs/credits.md)
