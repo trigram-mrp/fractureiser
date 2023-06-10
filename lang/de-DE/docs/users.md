@@ -23,18 +23,18 @@ in the future.
 If you want to play, please go through the diagnostic steps in this page as well as the follow
 up sections on what to do if you are or aren't infected.
 
-### Page Structure
-* [What Actually Happened?](#what-actually-happened)
-* [Am I Infected?](#am-i-infected)
-* [I'm Infected, Now What?](#im-infected-now-what)
-* [I'm Not Infected, Now What?](#im-not-infected-now-what)
-* [Frequently Asked Questions](#frequently-asked-questions)
-* [Technical FAQ](#technical-faq)
+### Seitenaufbau
+* [Was ist eigentlich passiert?](#was-ist-eigentlich-passiert)
+* [Bin ich infiziert?](#bin-ich-infiziert)
+* [Ich bin infiziert, was jetzt?](#ich-bin-infiziert-was-jetzt)
+* [Ich bin nicht infiziert, was jetzt?](#ich-bin-nicht-infiziert-was-jetzt)
+* [Häufig gestellte Fragen](#häufig-gestellte-fragen)
+* [Technisches FAQ](#technisches-faq)
 
 If you have any questions about fractureiser, please read this page in full, including the FAQ at
 the end, as most of the questions we've been getting are answered here.
 
-## What Actually Happened?
+## Was ist eigentlich passiert?
 
 Several innocent looking malicious mods and plugins were initially uploaded by the malware's creator 
 to the mod hosting website CurseForge and plugin hub dev.craftbukkit.org (not the Bukkit 
@@ -93,7 +93,7 @@ existing infections may still be active.
 
 ![Stage Diagram](media/stages.png)
 
-## Am I Infected?
+## Bin ich infiziert?
 
 The malware has multiple stages, so asking whether you are infected is actually two questions
 
@@ -181,7 +181,7 @@ for Stage 2 for you, if you have the technical knowhow to run them. Overwolf (Cu
 parent company) has also released a C# Stage 2 detection tool:
 https://github.com/overwolf/detection-tool
 
-## I'm Infected, Now What?
+## Ich bin infiziert, was jetzt?
 
 **IMPORTANT**: We do not currently know the full extent of everything this can do, nor what its
 intent is, so extreme caution should be exercised until a complete way to remove any symptoms is
@@ -204,7 +204,7 @@ that supports it, please start doing so immediately
   reinstall the system.
 * Read the below section on what to do if you're not infected, as the steps there apply to you too.
 
-## I'm Not Infected, Now What?
+## Ich bin nicht infiziert, was jetzt?
 
 If nothing was found by the stage 2 detector, chances are there's nothing going on and you're good
 to play.
@@ -219,7 +219,7 @@ same reason as the previous point.
 * Keep an eye on communication from the team on developments regarding new methods to detect
 issues like this in the future.
 
-## Frequently Asked Questions
+## Häufig gestellte Fragen
 
 ### Is CurseForge hacked?
 CurseForge itself is not compromised, only individual users. This is not a CurseForge problem, they
@@ -285,7 +285,7 @@ infection period. Quote from CF's Discord announcement:
 It appears to be a coincidence - this malware campaign was active for quite a while before being 
 widely uncovered the morning-of the 1.20 release.
 
-## Technical FAQ
+## Technisches FAQ
 
 ### Can fractureiser escape VMs (Virtual Machines)?
 
