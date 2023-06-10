@@ -1,27 +1,18 @@
-# Modded Players Guide
+# Anleitung für Spieler mit Mods
 
-If you **only** play vanilla through a trusted launcher such as the official launcher or
-Prism, and have never touched mods ever: you are 100% safe. Stay away from mods for the
-time being.
+Falls Sie **nur** Vanilla mit einem vertrauenswürdigen Launcher, wie dem offiziellen Launcher oder dem Prism-Launcher gespielt hat und niemals Mods verwendet haben: Sie sind zu 100% sicher. Halten Sie sich vorerst von Mods fern.
 
-If you're a Modded Minecraft player, you need to verify if you have been infected by the
-fractureiser malware to ensure your machine and personal data are not at risk. You can do
-so with the instructions below.
+Falls Sie ein Modded Minecraft-Spieler sind müssen Sie prüfen, ob Sie von der fractureiser-Malware infiziert worden sind, um sicherzustellen, dass ihr Computer und ihre persöhnlichen Daten nicht gefährdet sind. Dies können Sie mit den Anweisungen unten.
 
-### Is it still going on??
-**No. Well, kinda.**  
-As of now, with our current knowledge, we believe the `fractureiser` virus has been fully cleaned 
-from current public mod(pack)s.  
+### Läuft der Angriff noch?
+**Nein. Nun, ein bisschen.**  
+Nach dem aktuellen Wissenstand wurde das `fractureiser`-Virus vollständig von öffentlichen mod(pack)s entfernt.
 
-Our current recommendation is that players who have ran the stage2 checker in this page are safe
-to continue playing, however, since mod uploads have been turned back online at both CurseForge 
-and Modrinth, there is now the potential for copycat malware authors to make new viruses. 
+Aktuell glauben wir, dass Nutzer, die mit dem Stage2-Checker auf dieser Seite gescannt haben, sicher weiterspielen können. Allerdings gibt es nun die Möglichkeit für Trittbrettfahrer, neue Viren zu schreiben, da die Uploads auf Curseforge und Modrinth wieder aktiviert wurden.
 
-We are in contact with all relevant parties to establish protocols so that this doesn't happen 
-in the future.
+Wir stehen mit allen Beteiligten in Kontakt, um Vorgänge und Protokolle zu etablieren, die dies in der Zukunft verhindern sollen.
 
-If you want to play, please go through the diagnostic steps in this page as well as the follow
-up sections on what to do if you are or aren't infected.
+Bitte gehen Sie sowohl die Schritte auf dieser Seite, als auch die Folgeabschnitte, falls Sie infiziert oder nicht infiziert sind, durch, wenn Sie spielen wollen.
 
 ### Seitenaufbau
 * [Was ist eigentlich passiert?](#was-ist-eigentlich-passiert)
@@ -31,8 +22,7 @@ up sections on what to do if you are or aren't infected.
 * [Häufig gestellte Fragen](#häufig-gestellte-fragen)
 * [Technisches FAQ](#technisches-faq)
 
-If you have any questions about fractureiser, please read this page in full, including the FAQ at
-the end, as most of the questions we've been getting are answered here.
+Lesen Sie diese Seite vollständig, inklusive dem FAQ am Ende, falls Sie Fragen zu fractureiser haben, da die meisten Fragen, die wir erhielten hier beantwortet werden.
 
 ## Was ist eigentlich passiert?
 
