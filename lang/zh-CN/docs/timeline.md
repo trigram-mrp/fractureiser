@@ -3,6 +3,12 @@
 时间线顺序是从下往上，最上方的事件为最新消息。
 
 ---
+
+*2023-06-09 07:48 UTC*
+
+目测阶段 3b（Skyrage）的作者失去了 `skyrage.de` 域名的控制权（解析服务器及 Registrar 信息变更，DNS 解析记录消失）。
+
+---
 *2023-06-08 10:50 UTC*
 
 阶段 3b 的指挥控制（Command & Control，下简称 C&C）服务器（Skyrage 相关）`95[.].214.27.172` 和 `171[.]22.30.117` 已无法访问。将持续保持对潜在 DNS 解析记录变化的观测。
@@ -146,8 +152,6 @@ D3SL 通知了（我们的）非官方 Discord，称其获得了未截断的完�
 
 我们发现了上传时间标记为四月的文件。对此，有两种解释：要么这个日期是窜改后的，要么这意味着该恶意软件的传播时间远超预期。很多涉及此事的账号的最后活跃时间是 1999 年，大概率为 CurseForge 旧账号迁移的历史遗留，但仍然值得注意。
 
-Modrinth staff are investigating if any uploads on there are compromised. A quick pass they did through recently updated projects looked OK.
-
 Modrinth 工作人员正在调查是否有上传到 Modrinth 上的文件被感染。针对最近一段时间的快速检查显示并无文件感染。
 
 ----
@@ -159,9 +163,6 @@ Modrinth 工作人员正在调查是否有上传到 Modrinth 上的文件被感�
 ---
 
 *2023-06-07 3:38 UTC*
-
-
-The C&C server has been taken down by the server provider. A new one will likely come up if the Cloudflare page stays up, we're monitoring it.
 
 服务器提供商下架了 C&C 服务器。若 CloudFlare Page 链接仍然存活，我们预计会有新 C&C 服务器上线。我们在时刻对此保持监视。
 
