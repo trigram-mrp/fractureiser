@@ -2,52 +2,38 @@
     <img src="docs/media/logo.svg" alt="Logo">
 </p>
 
-*Pardon our dust, documentation still in progress*
+*Entschuldigung für die Unordnung, die Dokumentation ist noch in Arbeit*
 
-[简体中文版本见此](./lang/zh-CN/)
+## Was ist fractureiser?
+`fractureiser` ist ein [Computervirus](https://de.wikipedia.org/wiki/Computervirus), das sich in mehreren Minecraft-Projekten auf CurseForge oder der CraftBukkit-Dev-Website befindet. Die Malware ist in mehrere Mods integriert, die teilweise zu sehr beliebten Modpacks hinzugefügt worden sind. Die Malware hat es nach aktuellem Wissenstand nur auf Windows- oder Linux-Systeme abgesehen.
 
-## What?
-`fractureiser` is a [Virus](https://en.wikipedia.org/wiki/Computer_virus) found in several Minecraft projects uploaded to CurseForge and CraftBukkit's dev website. The malware is embedded in multiple mods, some of which were added to highly popular modpacks. The Malware is only known to target Windows and Linux Systems.
+## Was DU wissen musst
 
-If left unchecked, fractureiser can be **INCREDIBLY DANGEROUS** to your machine. Please read through this document for the info you need to keep yourself safe.
+### [Modded-Spieler BITTE HIER KLICKEN](docs/users.md)
 
-We've dubbed this malware `fractureiser` because that's the name of the CurseForge account that uploaded the most notable malicious files.  
+Wenn Sie nur mit Mods spielen und kein Entwickler sind, reicht der Link oben. Dort sind grundlegende Informationen über die Auswirkungen der Malware, eine Anleitung zur Überprüfung, ob Sie infiziert sind, wie Sie die Malware entfernen können, und ein FAQ.
 
-## What YOU need to know
+Falls Sie mehr wissen wollen, informieren Sie sich bei den unteren Links:
+* [Ablauf](docs/timeline.md)
+* [Technische Erklärung](docs/tech.md)
 
-### [Modded Players CLICK HERE](docs/users.md)
+### Ich habe niemals Minecraft-Mods verwendet
 
-If you're simply a mod player and not a developer, the above link is all you need. It contains surface level information of the malware's effects, steps to check if you have it and how to remove it, and a FAQ.
+Sie sind nicht infiziert.
 
-Anyone who wishes to dig deeper may also look at
-* [Event Timeline](docs/timeline.md)
-* [Technical Breakdown](docs/tech.md)
+## Aktueller Status der Untersuchung
+Wir wissen ungefähr, wie fractureiser von Phase 0 bis Phase 3 funktioniert. Einige Details sind noch unbekannt, aber die Angriffs-Server sind offline und, soweit wir wissen, sind *neue* Infektionen nicht möglich. Alte Infektionen sind möglicherweise noch aktiv.
 
-### I have never used any minecraft mods
+## Folgebesprechung
+Am 08.06.2023 hielt das fractureiser Mitigation Team ein Meeting mit wichtigen Mitgliedern der Community, um vorbeugende Maßnahmen und Lösungen für zukünftige Probleme dieser Größenordnung zu diskutieren.
+[Auf dieser Seite](docs/2023-06-08-meeting.md) ist die Tagesordnung und das Protokoll des Meetings zu finden.
 
-You are not infected.
+## Zusatzinfo
 
-## Current Investigation Status
-We have a good idea how fractureiser works, from Stages 0 to 3. There are certain
-unknowns, but the attack servers are offline and to our knowledge, *new* infections are
-not possible. Old infections may still be active.
+Wenn Sie für die Malware relevante Dateien besitzen, uploaden Sie diese bitte auf https://wormhole.app und senden Sie die URL per E-Mail an fractureiser.investigation@opayq.com - Dieses Postfach gehört unascribed und alles, was dorthin gesendet wird, wird mit dem restlichen Team geteilt. Wenn Sie das Team aus allgemeineren Gründen kontaktieren wollen, senden Sie bitte eine E-Mail an jaskarth4@gmail.com.
 
-We are currently working on refining user-facing documentation, please check there for
-resources.
-
-## Follow up Meeting
-On 2023-06-08 the fractureiser Mitigation Team held a meeting with notable members of the community to discuss preventive measures and solutions for future problems of this scale.
-See [this page](https://github.com/fractureiser-investigation/fractureiser/blob/main/docs/2023-06-08-meeting.md) for the agenda and minutes of the event.
-
-## Additional Info
-
-If you have files relevant to this malware, please upload them to https://wormhole.app and email the URL to fractureiser.investigation@opayq.com — this inbox is controlled by unascribed, and anything sent to it will be shared with the rest of the team. If you need to get in touch more generally, please send mail to jaskarth4@gmail.com.
-
-If you copy portions of this document elsewhere, *please* put a prominent link back to this [GitHub Repository](https://github.com/fractureiser-investigation/fractureiser) somewhere near the top so that people can read the latest updates and get in contact.
-
-The **only** official public channel you may join without being personally invited that's *run by the same team that wrote this writeup* is [#cfmalware on EsperNet IRC](https://webchat.esper.net/?channels=cfmalware).
-**Joining an IRC channel will expose your IP address.**
+Falls Sie Teile dieses Dokuments übernehmen, verlinken Sie *bitte* dieses [GitHub Repository](https://github.com/fractureiser-investigation/fractureiser) auffällig am Anfang, damit die Leser die neuesten Updates erhalten und das Team kontaktieren können.
 
 ---
 
-\- the [fractureiser Mitigation Team](docs/credits.md)
+\- das [fractureiser Mitigation Team](docs/credits.md)
