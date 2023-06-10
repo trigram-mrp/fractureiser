@@ -1,15 +1,15 @@
 ## Credits
-Nonexhaustive! Thank you to all that pitched in.
+Nicht vollständig! Danke an alle, die mitgeholfen haben.
 
-[**Emi**](https://github.com/emilyploszaj/): Coordination, initial discovery (for this team), early research, meeting organization  
-[**Jasmine**](https://github.com/jaskarth/): Coordination, research, writing the decompiler we've been using ([Quiltflower](https://github.com/QuiltMC/quiltflower/))  
-[**unascribed**](https://github.com/unascribed/): Coordination of documentation, crowd control, logo  
-[**williewillus**](https://github.com/williewillus/): Coordination, journalist  
-[**Vazkii**](https://github.com/vazkii/): Documentation, public communications  
-[**Col-E**](https://github.com/Col-E/): Reverse engineering, writing the deobfuscator we've been using ([Recaf](https://www.coley.software/Recaf/))  
-[**quat**](https://github.com/quat1024/): Documentation, initial infected sample research  
-[**cortex**](https://github.com/mcrcortex/): Reverse engineering  
-[**aurelium**](https://github.com/autumnaurelium/): Coordination, deobfuscation  
-[**D3SL**](https://github.com/D3SL/): Extensive reverse engineering, early discovery learned of later  
-[**Luna Pixel Studios**](https://lunapixelstudios.github.io/): Quick detection of unauthorized uploads  
-**Nia**: Extensive Stage 3 reverse engineering  
+[**Emi**](https://github.com/emilyploszaj/): Koordination, erste Entdeckung (für dieses Team), anfängliche Forschungen, Meeting-Organisation  
+[**Jasmine**](https://github.com/jaskarth/): Koordination, Forschungen, schrieb den Dekompiler, den wir verwenden ([Quiltflower](https://github.com/QuiltMC/quiltflower/))  
+[**unascribed**](https://github.com/unascribed/): Koordination der Dokumentation, crowd control, Logo  
+[**williewillus**](https://github.com/williewillus/): Koordination, Journalist  
+[**Vazkii**](https://github.com/vazkii/): Dokumentation, Öffentliche Kommunikation
+[**Col-E**](https://github.com/Col-E/): Reverse Engineering, schrieb den Deobfuskater, den wir verwenden ([Recaf](https://www.coley.software/Recaf/))  
+[**quat**](https://github.com/quat1024/): Dokumentation, Forschung an der ersten infizierten Datei
+[**cortex**](https://github.com/mcrcortex/): Reverse Engineering  
+[**aurelium**](https://github.com/autumnaurelium/): Koordination, Deobfuscation
+[**D3SL**](https://github.com/D3SL/): Intensives Reverse Engineering, später erfahrenes frühes Vorkommen
+[**Luna Pixel Studios**](https://lunapixelstudios.github.io/): Schnelle Erkennung unautorisierter Uploads
+**Nia**: Intensives Reverse Engineering der Phase 3
