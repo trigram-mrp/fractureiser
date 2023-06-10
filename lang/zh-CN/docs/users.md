@@ -99,7 +99,7 @@ Last updated at Jun 9th, 2023
 #### Windows 流程
 
 * 打开开始菜单，输入 `%localappdata%`，如下图所示
-![上述关键词的搜索结果](../../../docs/media/localappdata.png)
+![上述关键词的搜索结果](./media/localappdata.png)
 
 * 你需要确保资源浏览器已开启 `显示隐藏文件`，并取消 `保护操作系统文件` 的勾选：
   * 该选项在 View > Options 中
