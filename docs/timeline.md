@@ -5,7 +5,7 @@ The timeline is from bottom-to-top. Topmost events are the most recent.
 ---
 *2023-06-09 07:48 UTC*
 
-Creators of Stage3b (skyrage) have apparantly lost their domain sykrage.de (nameserver and registrar entries changed, dns entries vanished)
+Creators of Stage3b (skyrage) have apparently lost their domain skyrage.de (nameserver and registrar entries changed, dns entries vanished)
 
 ---
 *2023-06-08 10:50 UTC*
