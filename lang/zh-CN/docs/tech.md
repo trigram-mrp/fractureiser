@@ -96,7 +96,7 @@ SHA-1：`dc43c4685c3f47808ac207d1667cc1eb915b2d82`
 **CloudFlare Pages 域名已停止服务。** 一个新 C&C 服务器已上线，地址为 `107.189.3.101`。
 
 阶段 1 随后会尝试持久化，过程如下：
-1. 从服务器上下载阶段 2 文件（对于 Linux 是 `lib.jar`，对于 Windows 是 `libWebGL64.jar）
+1. 从服务器上下载阶段 2 文件（对于 Linux 是 `lib.jar`，对于 Windows 是 `libWebGL64.jar`）
 2. 令阶段 2 文件开机自启动：
 * 对于 Linux，其试图在 `/etc/systemd/system` 或 `~/.config/systemd/user` 中放置 `systemd` 的 unit 文件来达成自启动。
     * 在用户目录下放置的 unit 实际上不可能工作，因为该 unit 试图使用 user unit 中并不存在的 `multi-user.target`。
