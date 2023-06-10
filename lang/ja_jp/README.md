@@ -48,3 +48,6 @@ fractureiserがどの様に動作するかは、Stage 0から3まで概ね判明
 ---
 
 \- the [fractureiser Mitigation Team](docs/credits.md)
+
+翻訳された日/Translated At: 2023/06/10 12:00 JST
+対象のコミット/Target Commit:[c15def8](https://github.com/fractureiser-investigation/fractureiser/commit/c15def8bf03315cefe24faa564754c6fa8648975)
