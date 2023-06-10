@@ -22,7 +22,7 @@ Falls Sie mehr wissen wollen, informieren Sie sich bei den unteren Links:
 Sie sind nicht infiziert.
 
 ## Aktueller Status der Untersuchung
-Wir wissen ungefähr, wie fractureiser von Phase 0 bis Phase 3 funktioniert. Einige Details sind noch unbekannt, aber die Angriffs-Server sind offline und, soweit wir wissen, sind *neue* Infektionen nicht möglich. Alte Infektionen sind möglicherweise noch aktiv.
+Wir wissen ungefähr, wie fractureiser von Stage0 bis Stage3 funktioniert. Einige Details sind noch unbekannt, aber die Angriffs-Server sind offline und, soweit wir wissen, sind *neue* Infektionen nicht möglich. Alte Infektionen sind möglicherweise noch aktiv.
 
 ## Folgebesprechung
 Am 08.06.2023 hielt das fractureiser Mitigation Team ein Meeting mit wichtigen Mitgliedern der Community, um vorbeugende Maßnahmen und Lösungen für zukünftige Probleme dieser Größenordnung zu diskutieren.
