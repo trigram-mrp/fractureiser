@@ -20,7 +20,7 @@ Nous sommes en contact avec toutes les parties pour établir des protocoles pour
 
 Si vous voulez jouer, suivez les étapes de diagnostic sur cette page ainsi que les sections sur quoi faire si vous êtes infectés ou non.
 
-### Page Structure
+### Structure de la page
 * [Qu'est-ce qu'il s'est passé ?](#quest-ce-quil-sest-passé-)
 * [Suis-je infecté·e ?](#suis-je-infectée)
 * [Je suis infecté·e, que faire ?](#je-suis-infectée-que-faire)
