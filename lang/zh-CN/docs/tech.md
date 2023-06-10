@@ -70,7 +70,7 @@ static void _1685f49242dd46ef9c553d8af1a4e0bb() {
 2. 透过 1. 中所述 `ClassLoader` 加载名为 `Utility` 的类。此过程会联网下载文件。
 3. 调用 `Utility` 类的 `run` 方法，传入一字符串作为实参。每个受感染模组在此处传入的实参均不相同（！），例如：
     * Skyblock Core：`-74.-10.78.-106.12`
-    * Dungeonz：`114.-18.38.108.-100`
+    * Dungeonz：`-114.-18.38.108.-100`
     * HavenElytra：`-114.-18.38.108.-100`
     * Vault Integrations：`-114.-18.38.108.-100`
 
@@ -176,13 +176,13 @@ sha-1：`e299bf5a025f5c3fff45d017c3c2f467fa599915`
 
 ### 反沙盒技巧
 
-在该恶意软件中出现了一个名为 `VMEscape` 的类，而这样的命名在基于 JVM 的恶意软件中并不常见。该类的会检查当前用户是否为 `WDAGUtilityAccount` 以判断其是否在沙箱化的 Windows 环境中运行。该用户为 [Windows Defender Application Guard](https://www.majorgeeks.com/content/page/what_is_the_wdagutilityaccount.html) 的一部分。若检查通过，该恶意软件会尝试脱离沙箱。
+在该恶意软件中出现了一个名为 `VMEscape` 的类，而这样的命名在基于 JVM 的恶意软件中并不常见。该类的会检查当前用户是否为 `WDAGUtilityAccount` 以判断其是否在 [Windows Sandbox](https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview) 中运行。若检查通过，该恶意软件会尝试脱离沙箱。
 
 该尝试流程如下：
 
 - 发起一新线程，循环执行下列操作：
   - 调用 `Files.createTempDirectory(...)` 新建临时目录。
-  - 遍历系统剪贴板中的 `FileDescriptor` 对象（**其假设此举将能访问到宿主机剪贴板**）
+  - 遍历系统剪贴板中的 `FileDescriptor` 对象，而其内容实为宿主机剪贴板内容
   - 创建一与原文件相似的快捷方式（**利用 SHELL32 中的图标**），该快捷方式则会启动恶意软件
   - 将原剪贴板内容替换为该快捷方式
 
@@ -219,7 +219,7 @@ private static void retrieveRefreshTokensFromLabyMod(List<RefreshToken> refreshT
 
 针对 Technic 的策略则是先使用 Java 内置的对象序列化（译注：`Serializable`、`ObjectInputStream`、`ObjectOutputStream`）读取，然后处理 `com.google.api.client.auth.oauth2.StoredCredential` 的包装。
 
-**Discord token**：偷 Discord Token 这事可谓是众所周知了。此功能影响原版 Discord 客户端、Canary、PTB 以及 Lightcord。
+**Discord token**：偷 Discord Token 这事可谓是众所周知了。除了登录令牌外，还会窃取支付信息、绑定手机号等。此功能影响原版 Discord 客户端、Canary、PTB 以及 Lightcord。相关代码：[`dev/neko/nekoclient/api/stealer/discord/DiscordAccount.java`](https://github.com/clrxbl/NekoClient/blob/fd76c5f9d40d1e10de11f00a6b4e0cca3d6221a3/dev/neko/nekoclient/api/stealer/discord/DiscordAccount.java)
 
 **Cookies 及浏览器保存的登录凭证**：从各种受影响的浏览器中窃取 Cookies 和登录凭证信息。相关代码：[`dev/neko/nekoclient/api/stealer/browser/impl/BrowserDataStealer.java`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/api/stealer/browser/impl/BrowserDataStealer.java)
 
