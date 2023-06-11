@@ -1,7 +1,7 @@
 <p align="center">
     <img src="../../docs/media/logo.svg" alt="fractureiser logo" height="240"><br>
     Traduce/Translates <a href="https://github.com/fractureiser-investigation/fractureiser/tree/ae759e509f1f06d040705034e370146b51f7881d">ae759e5</a>
-    — 10/06/2023 11:26 PM GMT+2
+    — 2023-06-10 21:26 UTC
 </p>
 
 *Documentazione in fase di aggiornamento*
