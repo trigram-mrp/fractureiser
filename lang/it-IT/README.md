@@ -1,7 +1,7 @@
 <p align="center">
     <img src="../../docs/media/logo.svg" alt="fractureiser logo" height="240"><br>
-    Traduce/Translates <a href="https://github.com/fractureiser-investigation/fractureiser/tree/ae759e509f1f06d040705034e370146b51f7881d">ae759e5</a>
-    — 2023-06-10 21:26 UTC
+    Traduce/Translates <a href="https://github.com/fractureiser-investigation/fractureiser/tree/1f61c29bdc3036bf1973fd8f109fb1652961eb2b">1f61c29</a>
+    — 2023-06-11 3:05 UTC
 </p>
 
 *Documentazione in fase di aggiornamento*
@@ -43,6 +43,8 @@ Se sei in possesso di file relativi a questo malware puoi caricarli su https://w
 Se copi parti di questo documento in altri posti, *per favore* inserisci un link che colleghi a questa [repository GitHub](https://github.com/fractureiser-investigation/fractureiser) in alto in modo che le persone possano leggere gli ultimi aggiornamento ed entrare in contatto.
 
 L'**unico** canale pubblico ufficiale in cui puoi entrare senza essere invitato personalmente e che *è gestito dallo stesso team che ha scritto questi documenti* è [#cfmalware su EsperNet IRC](https://webchat.esper.net/?channels=cfmalware). **Entrare in un canale IRC esporrà il tuo indirizzo IP.**
+
+**Non chiedere campioni.** Potresti anche avere esperienza e riconoscimenti in questo ambito, ma non abbiamo alcun modo di verificarlo senza usare gran parte del nostro tempo già limitato. Condividere campioni di malware è pericoloso, anche tra persone che sanno cosa stanno facendo.
 
 ---
 
