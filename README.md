@@ -43,8 +43,9 @@ If you have files relevant to this malware, please upload them to https://wormho
 
 If you copy portions of this document elsewhere, *please* put a prominent link back to this [GitHub Repository](https://github.com/fractureiser-investigation/fractureiser) somewhere near the top so that people can read the latest updates and get in contact.
 
-The **only** official public channel you may join without being personally invited that's *run by the same team that wrote this writeup* is [#cfmalware on EsperNet IRC](https://webchat.esper.net/?channels=cfmalware).
-**Joining an IRC channel will expose your IP address.**
+The **only** official public channel you may join without being personally invited that's *run by the same team that wrote this writeup* is [#cfmalware on EsperNet IRC](https://webchat.esper.net/?channels=cfmalware). **Joining an IRC channel will expose your IP address.**
+
+**Do not ask for samples.** If you have experience and credentials, that's great, but we have no way to verify this without using up tons of our team's limited time. Sharing malware samples is dangerous, even among people who know what they're doing.
 
 ---
 
