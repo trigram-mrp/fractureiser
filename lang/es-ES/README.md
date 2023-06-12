@@ -26,6 +26,7 @@ Cualquiera que desee profundizar acerca del tema puede dirigirse a
 Tú no estás infectado.
 
 ## Estado actual de la investigación
+
 Nos hemos hecho una idea de cómo fractureiser actúa desde su etapa 0 hasta 3. Hay algunos puntos desconocidos, pero los servidores del ataque están offline y, hasta lo que sabemos, *nuevas* infecciones ya no pueden ocurrir. Sin embargo, las infecciones antiguas podrían seguir activas.
 
 La documentación para usuarios esta más o menos terminada. Estamos trabajando con los miembros de la comunidad para traducirla en más idiomas para generar conciencia.
