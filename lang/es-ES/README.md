@@ -26,26 +26,24 @@ Cualquiera que desee profundizar acerca del tema puede dirigirse a
 Tú no estás infectado.
 
 ## Estado actual de la investigación
-We have a good idea how fractureiser works, from Stages 0 to 3. There are certain
-unknowns, but the attack servers are offline and to our knowledge, *new* infections are
-not possible. Old infections may still be active.
+Nos hemos hecho una idea de cómo fractureiser actúa desde su etapa 0 hasta 3. Hay algunos puntos desconocidos, pero los servidores del ataque están offline y, hasta lo que sabemos, *nuevas* infecciones ya no pueden ocurrir. Sin embargo, las infecciones antiguas podrían seguir activas.
 
-User-facing documentation is more or less finished. We're working with community members to get it translated into other languages to further spread awareness.
+La documentación para usuarios esta más o menos terminada. Estamos trabajando con los miembros de la comunidad para traducirla en más idiomas para generar conciencia.
 
-## Follow-Up Meeting
-On 2023-06-08 the fractureiser Mitigation Team held a meeting with notable members of the community to discuss preventive measures and solutions for future problems of this scale.
-See [this page](https://github.com/fractureiser-investigation/fractureiser/blob/main/docs/2023-06-08-meeting.md) for the agenda and minutes of the event.
+## Reunión de seguimiento
+El 08-06-2023 el Equipo de Mitigación de fractureiser sostuvo una reunión con miembros importantes de la comunidad para discutir sobre medidas preventivas y soluciones para futuros problemas que se puedan presentar de esta misma escala.
+Ver [esta página](https://github.com/fractureiser-investigation/fractureiser/blob/main/docs/2023-06-08-meeting.md) para encontrar la agenda y los detalles del evento.
 
 ## Información Adicional
 
-If you have files relevant to this malware, please upload them to https://wormhole.app and email the URL to fractureiser@unascribed.com — anything sent to it will be shared with the rest of the team. If you need to get in touch more generally, please send mail to jaskarth4@gmail.com.
+Si tienes archivos relevantes en relación a este malware, por favor súbelos a https://wormhole.app y envía el URL generado por correo a fractureiser@unascribed.com — todo lo que se envíe sera compartido con el resto del equipo. Si necesitas contactarte de manera más general, por favor envía un correo a jaskarth4@gmail.com.
 
-If you copy portions of this document elsewhere, *please* put a prominent link back to this [Repositorio GitHub](https://github.com/fractureiser-investigation/fractureiser) somewhere near the top so that people can read the latest updates and get in contact.
+Si copias porciones de este documento en alguna parte, por favor incluye un link de vuelta a este [Repositorio GitHub](https://github.com/fractureiser-investigation/fractureiser) en la parte superior para que las personas puedan leer las últimas actualizaciones y ponerse en contacto.
 
-The **only** official public channel you may join without being personally invited that's *run by the same team that wrote this writeup* is [#cfmalware on EsperNet IRC](https://webchat.esper.net/?channels=cfmalware). **Joining an IRC channel will expose your IP address.**
+El **único** canal público oficial al que te puedes unir sin ser invitado personalmente, y que es *dirigido por el mismo equipo que escribió este writeup*, es [#cfmalware on EsperNet IRC](https://webchat.esper.net/?channels=cfmalware). **Unirse a un canal IRC expondrá tu dirección IP.**
 
-**Do not ask for samples.** If you have experience and credentials, that's great, but we have no way to verify this without using up tons of our team's limited time. Sharing malware samples is dangerous, even among people who know what they're doing.
+**No pidan muestras.** Si tienes experiencia y credenciales está genial, pero no tenemos cómo verificar esto sin usar mucho del limitado tiempo que tiene el equipo. Compartir muestras se malware es peligroso, incluso entre personas que saben lo que están haciendo.
 
 ---
 
-\- el [equipo fractureiser Mitigation](docs/credits.md)
+\- el [Equipo de Mitigación de fractureiser](docs/credits.md)
