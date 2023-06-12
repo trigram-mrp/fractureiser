@@ -38,7 +38,7 @@ Ver [esta página](https://github.com/fractureiser-investigation/fractureiser/bl
 
 Si tienes archivos relevantes en relación a este malware, por favor súbelos a https://wormhole.app y envía el URL generado por correo a fractureiser@unascribed.com — todo lo que se envíe sera compartido con el resto del equipo. Si necesitas contactarte de manera más general, por favor envía un correo a jaskarth4@gmail.com.
 
-Si copias porciones de este documento en alguna parte, por favor incluye un link de vuelta a este [Repositorio GitHub](https://github.com/fractureiser-investigation/fractureiser) en la parte superior para que las personas puedan leer las últimas actualizaciones y ponerse en contacto.
+Si copias porciones de este documento en alguna parte, por favor incluye un link de vuelta a este [Repositorio de GitHub](https://github.com/fractureiser-investigation/fractureiser) en la parte superior para que las personas puedan leer las últimas actualizaciones y ponerse en contacto.
 
 El **único** canal público oficial al que te puedes unir sin ser invitado personalmente, y que es *dirigido por el mismo equipo que escribió este writeup*, es [#cfmalware on EsperNet IRC](https://webchat.esper.net/?channels=cfmalware). **Unirse a un canal IRC expondrá tu dirección IP.**
 
