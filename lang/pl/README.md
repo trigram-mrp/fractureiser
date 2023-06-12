@@ -35,9 +35,9 @@ Dokumentacja bardziej przystępna przeciętnemu użytkownikowi jest dalej w prac
 Dnia 8 Czerwca 2023 Drużyna odpowiedzialna za przeciwdziałanie fractureiser'owi zwołała spotkanie z ważnymi członkami społeczności aby przedyskutować działania obronne i znaleźć rozwiązania na przyszłe problemy tej skali. Wejdź na [tę strone](docs/2023-06-08-meeting.md) aby zobaczyć porządek obrad.
 
 ## Dodatkowe Informacje
-Jeżeli masz pliki związane z tym wirusem, prosze wyślij je na https://wormhole.app i wyślij do nas maila na fractureiser@unascribed.com - cokolwiek co zostanie wysłane zostanie przedstawione reszcie drużyny Jeżeli chcesz ogółem się z nami skontaktować, wyslij maila na jaskarth4@gmail.com
+Jeżeli masz pliki związane z tym wirusem, prosze wyślij je na https://wormhole.app i wyślij do nas maila na fractureiser@unascribed.com - cokolwiek co zostanie wysłane zostanie przedstawione reszcie drużyny. Jeżeli chcesz ogółem się z nami skontaktować, wyslij maila na jaskarth4@gmail.com
 
-Jeżeli kopiujesz porcje tego dokumentu, *prosze* podaj gdzieś w widoczny miejscu link do tego [Repozytorium](https://github.com/fractureiser-investigation/fractureiser) aby ludzie mogli dostać najnowsze informacje i się z nami skontaktować.
+Jeżeli kopiujesz porcje tego dokumentu, *prosze* podaj gdzieś w widocznym miejscu link do tego [Repozytorium](https://github.com/fractureiser-investigation/fractureiser) aby ludzie mogli dostać najnowsze informacje i się z nami skontaktować.
 
 **Jedyny** oficjalny publiczny kanał do którego możesz dołączyć bez zaproszenia jest [#cfmalware on EsperNet IRC](https://webchat.esper.net/?channels=cfmalware). **Dołączenie do kanału IRC wyda twój adres IP**
 
@@ -45,4 +45,4 @@ Jeżeli kopiujesz porcje tego dokumentu, *prosze* podaj gdzieś w widoczny miejs
 
 ---
 
-\- the [fractureiser Mitigation Team](docs/credits.md)
+\- [fractureiser Mitigation Team](docs/credits.md)
