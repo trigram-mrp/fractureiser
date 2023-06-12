@@ -8,7 +8,7 @@ Si vous êtes un joueur de Minecraft moddé, vous allez avoir besoin de vérifie
 malware fractureiser pour être sûr que votre ordinateur et vos données personneles ne courent aucun risque. Vous pouvez faire
 cela en suivant les instructions ci-dessous.
 
-(*translation note :* Des informations additionnelles sur quoi faire si vous êtes ou non infecté seront données après les étapes permettant un diagnostic.)
+Des informations additionnelles sur quoi faire si vous êtes ou non infecté seront données après les étapes permettant un diagnostic.
 
 ### Est-ce toujours en cours ??
 **Non. Enfin, en quelque sorte.**
@@ -176,7 +176,7 @@ Le fait qu'aucun mod n'ait été infecté est un coup de chance.
 Le problème ne vient pas du site, la sécurité de Modrinth équivaut à celle de CurseForge.
 
 ### Comment CurseForge n'ont pas pu détecter cela ?
-Le code de l'Étape 0 exécute n'est pas nécessairement suspicieux pour un système de vérification automatisé, et pourrait très bien être quelque chose qu'un autre mod utilise (une dépendance). En faite, les premiers outils pour détecter l'Étape 0 renvoyaient un nombre signifiant de faux positifs sur des mods populaires tel que Quark.
+Le code que l'Étape 0 exécute n'est pas nécessairement suspicieux pour un système de vérification automatisé, et pourrait très bien être quelque chose qu'un autre mod utilise (une dépendance). En faite, les premiers outils pour détecter l'Étape 0 renvoyaient un nombre signifiant de faux positifs sur des mods populaires tel que Quark.
 
 Soyons réaliste : ce type de prévention à la taille d'une platform est infaisable à cause de l'infinité de possibilités de cacher les intentions de son code.
 
