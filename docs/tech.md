@@ -164,7 +164,7 @@ Jars are heuristically detected as Minecraft mods or plugins as follows:
 
 ## Stage3 (`unobf-client.jar`)
 
-Around 2023-06-07 14:20 UTC the stage3 client jar was seemingly accidentally replaced with an unobfuscated version. You can find the archive here: https://github.com/clrxbl/NekoClient
+Around 2023-06-07 14:20 UTC the Stage-3 client jar was seemingly accidentally replaced with an unobfuscated version. You can find the archive here: https://github.com/clrxbl/NekoClient
 
 This validates the suspected behavior/evidence from the analysis done on the prior obfuscated `client.jar` sample.
 
@@ -181,11 +181,11 @@ The critera that the process looks for can be found here: [`dev/neko/nekoinjecto
 * `SpigotPluginTemplate` looks for the super-type `org/bukkit/plugin/java/JavaPlugin` in classes
 * If none of the above match the class, [it will attempt to infect the main class of the jar file](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L235-L244) - if one exists.
 
-The malicious code injected is the backdoor logic seen in Stage0. The way that injection works is that the malicious code is declared in the `Loader` class in a static method. The `Injector` class that is adjacent to it is responsible for extracting the code from `Loader` and inserting it into new classes targeted for infection. The return value of `Injector.loadInstallerNode(...)` is a `MethodNode` outlining the infection process itself. Now they just need to add that method to the targeted class. Back in the [`dev/neko/nekoclient/Client.start(InetSocketAddress, byte[])`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L272) they call `Entry.inject(MethodNode)` to achive this. To ensure the malicious method is invoked this `inject` method adds logic to the targeted class's static initializer that invokes the added method. Since the static initializer is run when the class first loads, and the target class is a plugin/mod the assumption is this code will always be triggered by users who run infected modpacks or servers. After this, they repackage the jar with the newly infected target class.
+The malicious code injected is the backdoor logic seen in Stage0. The way that injection works is that the malicious code is declared in the `Loader` class in a static method. The `Injector` class that is adjacent to it is responsible for extracting the code from `Loader` and inserting it into new classes targeted for infection. The return value of `Injector.loadInstallerNode(...)` is a `MethodNode` outlining the infection process itself. Now they just need to add that method to the targeted class. Back in the [`dev/neko/nekoclient/Client.start(InetSocketAddress, byte[])`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L272) they call `Entry.inject(MethodNode)` to achieve this. To ensure the malicious method is invoked this `inject` method adds logic to the targeted class's static initializer that invokes the added method. Since the static initializer is run when the class first loads, and the target class is a plugin/mod the assumption is this code will always be triggered by users who run infected modpacks or servers. After this, they repackage the jar with the newly infected target class.
 
 ### Anti-sandbox tricks
 
-Something not commonly seen in JVM malware that is present here is a class titled `VMEscape`. It checks if its in [Windows Sandbox](https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview) by checking if the current user is `WDAGUtilityAccount`. If this condition is met, an attempt to escape Windows Sandbox is made.
+Something not commonly seen in JVM malware - that is present here - is a class titled `VMEscape`. It checks if its in [Windows Sandbox](https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview) by checking if the current user is `WDAGUtilityAccount`. If this condition is met, an attempt to escape Windows Sandbox is made.
 
 The process is roughly as follows:
 
@@ -209,7 +209,7 @@ Thus, if a user copies a file and goes to paste it elsewhere they will instead p
 * LabyMod (< v3.9.59)
 * And any MSA token found in the [Windows Credential Manager](https://support.microsoft.com/en-us/windows/accessing-credential-manager-1b5c916a-6a16-889f-8581-fc16e8165ac0)
 
-The retrival logic (Seen in [`dev/neko/nekoclient/api/stealer/msa/impl/MSAStealer.java`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/api/stealer/msa/impl/MSAStealer.java)) looks similar across a number of items since they store this data in a similr way. For example here is the laby-mod code:
+The retrieval logic (seen in [`dev/neko/nekoclient/api/stealer/msa/impl/MSAStealer.java`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/api/stealer/msa/impl/MSAStealer.java)) looks similar across a number of items since they store this data in a similar way. For example here is the laby-mod code:
 ```java
 private static void retrieveRefreshTokensFromLabyMod(List<RefreshToken> refreshTokens) throws IOException {
 	String appdata = System.getenv("APPDATA");
@@ -221,15 +221,15 @@ private static void retrieveRefreshTokensFromLabyMod(List<RefreshToken> refreshT
 	}
 }
 ```
-The code for retrieving tokens from Feather/PolyMC/Prism are essentially identical.
+The code for retrieving tokens from Feather/PolyMC/Prism is essentially identical.
 
 The change from this strategy to the vanilla launchers is that the Json has an additional layer of cryptography protecting it.
 
-The change from this strategy to technic is that technic stores credentials using Java's built-in object serialization, wrapping the `com.google.api.client.auth.oauth2.StoredCredential` type.
+The change from this strategy to Technic is that Technic stores credentials using Java's built-in object serialization, wrapping the `com.google.api.client.auth.oauth2.StoredCredential` type.
 
 **Discord tokens**: Everyone's seen a token-stealer before. Steals token and extra information such as payment methods, linked phone number, etc. Affects the standard client, canary, ptb, and lightcord clients. Relevant source: [`dev/neko/nekoclient/api/stealer/discord/DiscordAccount.java`](https://github.com/clrxbl/NekoClient/blob/fd76c5f9d40d1e10de11f00a6b4e0cca3d6221a3/dev/neko/nekoclient/api/stealer/discord/DiscordAccount.java)
 
-**Cookies & Saved credentials**: Steals saved cookies and login credentials saved in affected browsers.  Relevant source: [`dev/neko/nekoclient/api/stealer/browser/impl/BrowserDataStealer.java`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/api/stealer/browser/impl/BrowserDataStealer.java)
+**Cookies & Saved credentials**: Steals cookies and login credentials saved in affected browsers. Relevant source: [`dev/neko/nekoclient/api/stealer/browser/impl/BrowserDataStealer.java`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/api/stealer/browser/impl/BrowserDataStealer.java)
 
 - Mozilla Firefox
   - Waterfox
@@ -257,10 +257,10 @@ The change from this strategy to technic is that technic stores credentials usin
 
 Stage 3 was replaced with another jar some time after the second C&C server was stood up.
 
-It appears to be just the SkyRage updater, which is another minecraft malware targetting blackspigot.
+It appears to be just the SkyRage updater, which is another Minecraft malware targetting BlackSpigot.
 
 ### Persistence
-- Windows: task scheduler `MicrosoftEdgeUpdateTaskMachineVM`, file `%AppData%\..\LocalLow\Microsoft\Internet Explorer\DOMStore\microsoft-vm-core`
+- Windows: Task Scheduler `MicrosoftEdgeUpdateTaskMachineVM`, file `%AppData%\..\LocalLow\Microsoft\Internet Explorer\DOMStore\microsoft-vm-core`
 - Linux: `/bin/vmd-gnu`, `/etc/systemd/system/vmd-gnu.service`, service `vmd-gnu`
 
 ### Connections
@@ -268,8 +268,8 @@ It appears to be just the SkyRage updater, which is another minecraft malware ta
 - Downloading: `hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/qqqqqqqqq`
 
 ### Actions
-- `qqqqqqqqq` jar extracts all kinds of information (browser cookies, discord, minecraft, epic games, steam login, also some stuff about crypto wallets and password pamangers), which update jar uploads to C&C server
-- replaces crypto coin addresses in clipboard with address recieved from `95.214.27.172:18734`
+- `qqqqqqqqq` jar extracts all kinds of information (browser cookies, Discord, Minecraft, Epic Games, Steam login, also some stuff about crypto wallets and password pamangers), which update jar uploads to C&C server
+- replaces crypto coin addresses in clipboard with address received from `95.214.27.172:18734`
 - persistence (see above)
 - contains auto-updater, current version is 932 (`hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/version`)
 
@@ -316,9 +316,9 @@ This sample appears to abuse technicalities in the class-file to crash decompile
 
 # Other Stuff
 
-More details are available in the live stage-3 reversal doc: https://hackmd.io/5gqXVri5S4ewZcGaCbsJdQ
+More details are available in the live Stage-3 reversal doc: https://hackmd.io/5gqXVri5S4ewZcGaCbsJdQ
 
-When the second C&C server was stood up, a deobfuscated version of stage 3 was
+When the second C&C server was stood up, a deobfuscated version of Stage 3 was
 accidentally served for around 40 minutes.
 
 The main payload server ~~is~~ *was* (got taken down) hosted on Serverion, a company based in the Netherlands.
@@ -345,7 +345,7 @@ While it's a bit early to speak of long term follow-ups, this whole debacle has 
 #### 1. Review at mod repositories is inadequate
 
 What exactly does CurseForge and Modrinth do when "reviewing" a mod? We should know as a community, instead of relying on security through obscurity.
-Should be we be running some sort of static analysis? (williewillus has a few ideas here)
+Should we be running some sort of static analysis? (williewillus has a few ideas here)
 
 #### 2. A lack of code signing for mods
 
