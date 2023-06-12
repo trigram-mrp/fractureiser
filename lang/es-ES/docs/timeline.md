@@ -3,6 +3,11 @@
 The timeline is from bottom-to-top. Topmost events are the most recent.
 
 ---
+*2023-06-09 07:48 UTC*
+
+Creators of Stage3b (skyrage) have apparently lost their domain skyrage.de (nameserver and registrar entries changed, dns entries vanished)
+
+---
 *2023-06-08 10:50 UTC*
 
 The current C&C servers of stage3b (skyrage) `95[.].214.27.172` and `171[.]22.30.117` are no longer reachable. Watching out for potential DNS changes.
@@ -117,7 +122,7 @@ They are also investigating the IPs of the uploaders of the malicious files, to 
 
 We believe we've discovered the true function of Stage3 (`client.jar`) and are attempting to document it here. It's not good, folks.
 
-The quick version, while we get this document in shape: client.jar searches *the entire filesystem* for files that look like mod JARs, and infects them with Stage0. This includes *entire Gradle and Maven caches*, as well as tons of things mod devs would likely never think to check. The potential scale and scope of this infection has gone from "a couple weird mods" to *potentially infinite*.
+The quick version, while we get this document in shape: client.jar searches *the entire filesystem* for files that look like mod jars, and infects them with Stage0. This includes *entire Gradle and Maven caches*, as well as tons of things mod devs would likely never think to check. The potential scale and scope of this infection has gone from "a couple weird mods" to *potentially infinite*.
 
 We believe this is how the infection initially spread, and Curseforge may not have been the initial attack vector.
 

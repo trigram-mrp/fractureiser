@@ -12,12 +12,12 @@ mods, as it was an interesting new upload.
 ### Known affected mods & plugins
 
 Note: This list is **non-comprehensive**. It was constructed in the early days of
-investigation and quickly we realized the scope of this was much larger than we though,
+investigation and quickly we realized the scope of this was much larger than we thought,
 making tracking of individual cases pointless. It's left here for historical purposes.
 
 See also CurseForge's
 [list](https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool/)
-of affected projects
+of affected projects.
 
 |mod/plugin|link(s)|SHA1|"Uploader"|
 |---|---|---|---|
@@ -73,7 +73,7 @@ This:
 2. Loads the class `Utility` from the classloader, fetching code from the internet
 3. Calls the `run` method on `Utility`, passing a String argument different for each infected mod (!). E.g.
     * Skyblock Core: "`-74.-10.78.-106.12`"
-    * Dungeonz: "`114.-18.38.108.-100`"
+    * Dungeonz: "`-114.-18.38.108.-100`"
     * HavenElytra: "`-114.-18.38.108.-100`"
     * Vault Integrations: "`-114.-18.38.108.-100`"
 
@@ -145,7 +145,7 @@ From analysis, these do what they say on the tin:
 * Steal Microsoft account credentials
 
 There is also evidence of code attempting to do the following:
-* Scan for *all* JAR files on the system that look like Minecraft mods (by detecting
+* Scan for *all* jar files on the system that look like Minecraft mods (by detecting
   Forge/Fabric/Quilt/Bukkit), o [declare a Main
   class](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L235-L244)
   (most plain Java programs) and attempt to inject Stage 0 into them
@@ -199,7 +199,7 @@ Thus, if a user copies a file and goes to paste it elsewhere they will instead p
 
 ### Data theft
 
-**MSA Tokens**: Since this mod is targeting Minecraft mods, its only natural to attempt to steal the MSA token used to login to Minecraft with. Some launchers keep this data in a local file, which this malware will attempt to read from. This affects a variety of launchers such as:
+**MSA Tokens**: Since this mod is targeting Minecraft mods, it's only natural to attempt to steal the MSA token used to login to Minecraft with. Some launchers keep this data in a local file, which this malware will attempt to read from. This affects a variety of launchers such as:
 
 * The vanilla/mojang launcher
 * The legacy vanilla/mojang launcher
@@ -227,7 +227,7 @@ The change from this strategy to the vanilla launchers is that the Json has an a
 
 The change from this strategy to technic is that technic stores credentials using Java's built-in object serialization, wrapping the `com.google.api.client.auth.oauth2.StoredCredential` type.
 
-**Discord tokens**: Everyone's seen a token-stealer before. Affects the standard client, canary, ptb, and lightcord clients.
+**Discord tokens**: Everyone's seen a token-stealer before. Steals token and extra information such as payment methods, linked phone number, etc. Affects the standard client, canary, ptb, and lightcord clients. Relevant source: [`dev/neko/nekoclient/api/stealer/discord/DiscordAccount.java`](https://github.com/clrxbl/NekoClient/blob/fd76c5f9d40d1e10de11f00a6b4e0cca3d6221a3/dev/neko/nekoclient/api/stealer/discord/DiscordAccount.java)
 
 **Cookies & Saved credentials**: Steals saved cookies and login credentials saved in affected browsers.  Relevant source: [`dev/neko/nekoclient/api/stealer/browser/impl/BrowserDataStealer.java`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/api/stealer/browser/impl/BrowserDataStealer.java)
 
