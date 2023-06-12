@@ -5,7 +5,19 @@ Si tú juegas "Vanilla/Vainilla" **solo** con un lanzador confianza such como el
 Si estás un jugador de Minecraft con mods, necesitas verificar si has estado infectado por el malware fractureiser para asegurar tu máquina/computadora y datos personales no están en riesgo. Puedes hacerlo con los instrucciones abajo.
 
 ### ¿Todavía está pasando?
-Sí. Vuelva más tarde.
+**No. Well, kinda.**  
+As of now, with our current knowledge, we believe the `fractureiser` virus has been fully cleaned 
+from current public mod(pack)s.  
+
+Our current recommendation is that players who have ran the stage2 checker in this page are safe
+to continue playing, however, since mod uploads have been turned back online at both CurseForge 
+and Modrinth, there is now the potential for copycat malware authors to make new viruses. 
+
+We are in contact with all relevant parties to establish protocols so that this doesn't happen 
+in the future.
+
+If you want to play, please go through the diagnostic steps in this page as well as the follow
+up sections on what to do if you are or aren't infected.
 
 ### Estructura de Página
 * [What Actually Happened?](#what-actually-happened)
@@ -29,7 +41,7 @@ virus included.
 
 This process then repeated itself for a few other cases from users on CurseForge and 
 dev.craftbukkit.org, infecting copies of several popular plugins and mods. *There are reports of 
-malicious plugin and mod JARs as early
+malicious plugin and mod jars as early
 as mid-April.*
 
 Alongside this, brute force access attempts on high traffic content creator accounts on CurseForge
