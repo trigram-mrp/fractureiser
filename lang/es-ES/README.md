@@ -26,11 +26,9 @@ Cualquiera que desee profundizar acerca del tema puede dirigirse a
 Tú no estás infectado.
 
 ## Estado actual de la investigación
-We have a good idea how fractureiser works, from Stages 0 to 3. There are certain
-unknowns, but the attack servers are offline and to our knowledge, *new* infections are
-not possible. Old infections may still be active.
+Tenemos un idea bueno como fractureiser trabaja, desde Etapas 0 hasta 3. Hay desconocidos seguros, pero el servidor ataque sin conexión y a nuestro conocimiento, infección *nuevo* no son posible. Infecciónes viejos puede ser activo todavía.
 
-User-facing documentation is more or less finished. We're working with community members to get it translated into other languages to further spread awareness.
+Documentación usaria es más o menos terminado. Estamos trabajando con miembros de la comunidad para traducir en idiomas otras difundirse conciencia más extenso.
 
 ## Follow-Up Meeting
 On 2023-06-08 the fractureiser Mitigation Team held a meeting with notable members of the community to discuss preventive measures and solutions for future problems of this scale.
