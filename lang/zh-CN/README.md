@@ -16,7 +16,7 @@ Last updated at Jun 9th, 2023
 
 若不加以处置，fractureiser 将会对你的设备构成**极为严重的安全威胁**。请阅读整个文档以了解如何在当下保证安全。
 
-我们将该病毒/恶意软件称为 `fractureiser`。这个名字是某个 CurseForge 账号的用户名，而该账号的持有者正是最明显的含该恶意软件文件的上传者。 
+我们将该病毒/恶意软件称为 `fractureiser`。这个名字是某个 CurseForge 账号的用户名，很明显，该账号的持有者正是的含该恶意软件文件的上传者。 
 
 ## **你**需要知道的事项
 
@@ -43,11 +43,11 @@ Last updated at Jun 9th, 2023
 
 ## 其他信息
 
-如果你持有该恶意软件的样本，请上传至 https://wormhole.app 然后将文件地址通过电邮发送到这个邮箱地址：`fractureiser.investigation@opayq.com`。该邮箱由 unascribed 控制，所有收到的样本将会分享给其他团队成员。若你需要就其他事项联系，请向 `jaskarth4@gmail.com` 发电邮咨询。
+如果你在某个文件中发现了该恶意软件，请上传至 https://wormhole.app 然后将文件地址通过电邮发送到这个邮箱地址：`fractureiser.investigation@opayq.com`。该邮箱由 unascribed 控制，所有收到的样本将会分享给其他团队成员。若你需要就其他事项联系，请向 `jaskarth4@gmail.com` 发电邮咨询。
 
 如果你把本文档部分复制、转载到了别处，**请务必**在开头或其他位置显著标明[本 GitHub 仓库的链接](https://github.com/fractureiser-investigation/fractureiser)，这样其他人可以在第一时间内了解事态的最新进展。
 
-我们**只有一个**__由本文档撰写者原班人马维护__，可以无需邀请即可加入的聊天频道：[EsperNet 上的 IRC 频道 #cfmalware](https://webchat.esper.net/?channels=cfmalware)。
+我们**只有一个**<u>由本文档撰写者原班人马维护</u>的聊天频道：[EsperNet 上的 IRC 频道 #cfmalware](https://webchat.esper.net/?channels=cfmalware)。可以无需邀请即可加入。
 **注意：加入 IRC 频道会暴露你的 IP 地址。**
 
 IRC 聊天日志：待补全
