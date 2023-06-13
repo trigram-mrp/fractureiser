@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="../../docs/media/logo.svg" alt="Logo">
+    <img src="../../docs/media/logo.svg" alt="fractureiser logo" height="240">
 </p>
 
 *Disculpen las molestias, la documentación sigue en progreso*
