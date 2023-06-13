@@ -26,25 +26,25 @@ Cualquiera que desee profundizar acerca del tema puede dirigirse a
 Tú no estás infectado.
 
 ## Estado actual de la investigación
-Tenemos un idea bueno como fractureiser trabaja, desde Etapas 0 hasta 3. Hay desconocidos seguros, pero el servidor ataque sin conexión y a nuestro conocimiento, infección *nuevo* no son posible. Infecciónes viejos puede ser activo todavía.
 
-Documentación usaria es más o menos terminado. Estamos trabajando con miembros de la comunidad para traducir en idiomas otras difundirse conciencia más extenso.
+Nos hemos hecho una idea de cómo fractureiser actúa desde su etapa 0 hasta 3. Hay algunos puntos desconocidos, pero los servidores del ataque están offline y, hasta lo que sabemos, *nuevas* infecciones ya no pueden ocurrir. Sin embargo, las infecciones antiguas podrían seguir activas.
 
-## Follow-Up Meeting
-En 2023-06-08 el equipo Mitigation fractureiser llevó un reunión con miembros de la comunidad notable para hablar medidas preventivas y solucións por problemos futoro de este escala.
+La documentación para usuarios esta más o menos terminada. Estamos trabajando con los miembros de la comunidad para traducirla en más idiomas para generar conciencia.
 
-Vi [esta página](https://github.com/fractureiser-investigation/fractureiser/blob/main/lang/es-ES/docs/2023-06-08-meeting.md) para la agenda y minutas del evento.
+## Reunión de seguimiento
+El 08-06-2023 el Equipo de Mitigación de fractureiser sostuvo una reunión con miembros importantes de la comunidad para discutir sobre medidas preventivas y soluciones para futuros problemas que se puedan presentar de esta misma escala.
+Ver [esta página](https://github.com/fractureiser-investigation/fractureiser/blob/main/docs/2023-06-08-meeting.md) para encontrar la agenda y los detalles del evento.
 
 ## Información Adicional
 
-Si tienes archivos pertinente a este malware, por favor sube a https://wormhole.app y envia un correo electrónico el URL a fractureiser@unascribed.com — Cualquier envió estará compartido con with el miembros resto del equipo. Si necesitas estar en contacto más generalmente, por favor envia un correo electrónico a jaskarth4@gmail.com.
+Si tienes archivos relevantes en relación a este malware, por favor súbelos a https://wormhole.app y envía el URL generado por correo a fractureiser@unascribed.com — todo lo que se envíe sera compartido con el resto del equipo. Si necesitas contactarte de manera más general, por favor envía un correo a jaskarth4@gmail.com.
 
-Si copias porciónes de este documento en otro lugar, *por favor* ponga un link prominente que volver a este [Repositorio GitHub](https://github.com/fractureiser-investigation/fractureiser) algún lugar cerca de la más alta para que gente puede leer las noticias últimas y comunicarse.
+Si copias porciones de este documento en alguna parte, por favor incluye un link de vuelta a este [Repositorio de GitHub](https://github.com/fractureiser-investigation/fractureiser) en la parte superior para que las personas puedan leer las últimas actualizaciones y ponerse en contacto.
 
-La canal oficial pública **solo** puedes juntar sin ser invitado personalmente que esta *opera del equipo misma que escribió esta crítica* es [#cfmalware en EsperNet IRC](https://webchat.esper.net/?channels=cfmalware). **Juntando una canal IRC revalará tu dirección IP.**
+El **único** canal público oficial al que te puedes unir sin ser invitado personalmente, y que es *dirigido por el mismo equipo que escribió este writeup*, es [#cfmalware on EsperNet IRC](https://webchat.esper.net/?channels=cfmalware). **Unirse a un canal IRC expondrá tu dirección IP.**
 
-**No pregunta para muestras.** Si tu tienes experiencia y credenciales, eso es excelente, pero no tenemos una forma a verificar sin usando muchísimo tiempo de nuestro equipo limitado. Compartiendo muestras de malware es peligroso, incluso gentes que saber que hacen.
+**No pidan muestras.** Si tienes experiencia y credenciales está genial, pero no tenemos cómo verificar esto sin usar mucho del limitado tiempo que tiene el equipo. Compartir muestras se malware es peligroso, incluso entre personas que saben lo que están haciendo.
 
 ---
 
-\- el [equipo fractureiser Mitigation](docs/credits.md)
+\- el [Equipo de Mitigación de fractureiser](docs/credits.md)
