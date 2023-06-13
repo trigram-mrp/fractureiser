@@ -5,7 +5,7 @@
 Niektóre paczki z modami dostały aktualizacje bez wiedzy oryginalnych autorów, dodając szkodliwy kod. Te aktualizacje zostały od razu zarchiwizowane po wysłaniu, co oznacza *że nie widać ich na stronie, tylko poprzez API.*
 
 Szkodliwy kod zawarty w aktualizacjach ma date wysłania wynoszącą kilka tygodni wstecz.
-Większość z nich zostało wysłąne przez konta jednorazowego użytku z automatycznie wygenerowanymi nazwami, i najprawdopodobniej były przekazującymi infekcje.
+Większość z nich zostało wysłane przez konta jednorazowego użytku z automatycznie wygenerowanymi nazwami, i najprawdopodobniej były przekazującymi infekcje.
 Luna Pixel Studios zostało zarażone przez dewelopera testującego jednego z tych modów, ponieważ zaciekawił się nowymi plikami.
 
 ### Znane zainfekowane mody i pluginy
@@ -14,8 +14,8 @@ Notka: ta lista **nie jest pełna**. Została zrobiona we wczesnych dniach docho
 doszliśmy do wniosku że skala tej operacji jest o wiele większa niż oryginalnie zakładaliśmy,
 powodując iż wymienianie pojedyńczych przypadków jest bezcelowe. Lista zostaje tutaj dla potrzeb archiwalnych.
 
-Zobacz również liste od CurseForge
-[list](https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool/)
+Zobacz również
+[liste od CurseForge](https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool/)
 o zainfekowanych projektach.
 
 |mod/plugin|link(i)|SHA1|"Wysyłający"|
