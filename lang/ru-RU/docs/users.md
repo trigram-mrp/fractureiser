@@ -89,7 +89,7 @@ dev.craftbukkit.org, заражая копии нескольких популя
 
 ### Подожди, что за "стадия"?
 
-![Stage Diagram](media/stages.png)
+![Stage Diagram](media/stages.jpg)
 
 ## Заражен ли я?
 
