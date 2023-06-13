@@ -185,3 +185,185 @@ Le code malicieux injecté est une backdoor vue dans Étape0. Le moyen dont le c
 
 ### Méthodes anti Sandbox
 
+Quelque chose peut commun dans les Malware JVM, qui est présent ici est la classe intitulée `VMEscape`. Cela recherche si le fichier se trouve dans un [bac a sable Windows](https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview) en vérifiant si l'utilisateur actuel est `WDAGUtilityAccount`. Si cette condition est remplie, un essait pour s'échaper de la VM est réalisé.
+
+Le processus est a peut près comme suit:
+
+- Lance un thread répétitif pour run les actions suivantes:
+  - Crée un directory temporaire en utilisant `Files.createTempDirectory(...)`
+  - Itère par dessus les entrées `FileDescriptor` dans le presse papier système qui représente le presse papier host
+  - Crée un racourcit qui ressemble au fichier original _(en utilisant des icones SHELL32)_ qui invoque le malware
+  - Assigne ce racourcit au presse papier, réécrivant les references du fichier originel
+
+DE ce fait, si un utilisateur copie un fichier et vas pour le coller ailleur, l'utilisateur vas coller un racourcit ressemblant a leur fichier, qui fait tourner le malware.
+
+### Vol de données
+
+**Tokens MS (microsoft)**: Puisque ce malware vise les mods Minecraft, il est naturel pour lui d'essayer de voler les tokens de connexion aux comptes MS utilisés pour se connecter a Minecraft. Cerrtains launchers gardent cette donée en sécuritée dans un fichier local, dans lequel le malware vas tenter d'y lire son contenu. Cela affecte une variétée de launchers tel que :
+
+* Le launcher Vanilla/Mojang
+* Le launcher legacy Vanilla/Mojang
+* PolyMC / Prism
+* Technic
+* Feather
+* LabyMOd (< v3.9.59)
+* Et tout les tokens trouvable dans le [Windows Credential Manager](https://support.microsoft.com/en-us/windows/accessing-credential-manager-1b5c916a-6a16-889f-8581-fc16e8165ac0)
+
+La logique de retrait (vue dans [`dev/neko/nekoclient/api/stealer/msa/impl/MSAStealer.java`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/api/stealer/msa/impl/MSAStealer.java)) est similaire a celle ci car les donés sont stoqués d'une manière similaire. Par exemple voicit le code pour laby-mod:
+```java
+private static void retrieveRefreshTokensFromLabyMod(List<RefreshToken> refreshTokens) throws IOException {
+	String appdata = System.getenv("APPDATA");
+	if (Platform.isWindows() || Objects.isNull(appdata)) {
+		Path path = appdata == null ? null : Paths.get(appdata, ".minecraft", "LabyMod", "accounts.json");
+		if (Files.isReadable(path)) {
+			extractRefreshTokensFromLabyModLauncher(refreshTokens, Json.parse(Files.readString(path)).asObject());
+		}
+	}
+}
+```
+le code pour récupérer les tokens depuis Feather/PolyMC/Prism est essentiellement identique.
+
+La différence dans la stratégie pour le launcher vanilla est que le fichier Json a une couche additionelle de cryptographie la protégeant.
+
+La différence dans la stratégie pour technic est que technic stoque les tokens en utilisant un objet java buit-in, entourant `com.google.api.client.auth.oauth2.StoredCredential`.
+
+**Tokens Discord**: Tout le monde a vus un voler de token avant. Ca vole le token et d'autres informations tel que les méthodes de payement, numéro de telephone lié, etc. Afecte les clients standart,canary,ptb et lightcord. Source: [`dev/neko/nekoclient/api/stealer/discord/DiscordAccount.java`](https://github.com/clrxbl/NekoClient/blob/fd76c5f9d40d1e10de11f00a6b4e0cca3d6221a3/dev/neko/nekoclient/api/stealer/discord/DiscordAccount.java)
+
+**Cooies & informations sauvegardées**: Vole les cookies et les informations de connection sauvegardés dans les navigateurs web afectés. Source : [`dev/neko/nekoclient/api/stealer/browser/impl/BrowserDataStealer.java`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/api/stealer/browser/impl/BrowserDataStealer.java)
+
+- Mozilla Firefox
+    - Waterfox
+    - Pale Moon
+    - SeaMonkey
+- Chrome
+    - Edge
+    - Brave
+    - Vivaldi
+    - Yandex
+    - Slimjet
+    - CentBrowser
+    - Comodo
+    - Iridium
+    - UCBrowser
+    - Opera
+      - Beta
+      - Developer
+      - Stable
+      - GX
+      - Crypto
+    - CryptoTab
+
+## Étape 3b (`dummyloader3.jar`)
+
+Étape 3 a été remplacé par un autre fichier jar peut après l'aret du second serveur C&C.
+
+Il semble que ça ne soit que Skyrage, qui est un autre malware Minecraft, visant blackspigot.
+
+### Persistence
+- Windows: task scheduler `MicrosoftEdgeUpdateTaskMachineVM`, le fichier `%AppData%\..\LocalLow\Microsoft\Internet Explorer\DOMStore\microsoft-vm-core`
+- Linux: `/bin/vmd-gnu`, `/etc/systemd/system/vmd-gnu.service`, service `vmd-gnu`
+
+## Connexions
+- Serveur C&C: `connect.skyrage.de`
+- Téléchargement: `hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/qqqqqqqqq`
+
+### Actions
+- `qqqqqqqqq` jar extrait tout plein d'informations (cookies de navigation, discord, minecraft, epic games, steam, gestionaires de mdp, etc.)
+- remplace les adresses crypto dans le presse papier avec une adresse reçue depuis `95.214.27.172:18734`
+- Persistence: voir ci dessus
+- Contien des auto updateurs, version actuelle 932 (`hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/version`)
+
+### Mapping
+
+Ce qui suit sont les mappings pour ces échantillon, pouvant etre apliqué via Enigma ou tout autre outil suportant un mapping Enigma.
+```
+CLASS D Chat
+CLASS E ChatChain
+CLASS E$a ChatChain$ChainLink
+CLASS F ClientChat
+CLASS G EncryptionRequest
+CLASS H EncryptionResponse
+CLASS H$a EncryptionResponse$EncryptionData
+CLASS J KeepAlive
+CLASS L LoginPayloadResponse
+CLASS O PluginMessage
+CLASS O$1 BungeeCordProtocolVersionMapFunction
+CLASS P SetCompression
+CLASS R StatusResponse
+CLASS T CryptocurrencyClipboardLogger
+CLASS T$1 CryptocurrencyClipboardLogger$LowLevelKeyboardHook
+CLASS U AutoRunPersistence
+CLASS V InputStreamFileWriter
+CLASS W OperatingSystem
+CLASS X AutoUpdater
+CLASS Y StacktraceSerializer
+CLASS a MalwareClientConnectionHandler
+CLASS b Main
+    FIELD a intconst I
+    FIELD a string0 Ljava/lang/String;
+    FIELD a ipAddress Ljava/net/InetSocketAddress;
+CLASS g MinecraftBot
+CLASS h MinecraftBot2
+CLASS o MinecraftFriendlyByteBuf
+CLASS s MinecraftIPAddressResolver
+CLASS t MinecraftPacketDecoder
+CLASS y MinecraftPacketEncryption
+```
+
+### Anti-décompilation
+
+Ces échantillon a l'air d'abuser de technicalités dans le fichier-class pour faire crashed les outils de décompilation!. de tels exploits peuvent etre réparés en utilisant [CAFED00D](https://github.com/Col-E/CAFED00D), un parser qui filtre les atributs malformés. Après quoi, le seul obstacle restant est l'obfuscation basique apliquée par Allatori démo.
+
+# Autres informations
+
+Plus de détails sont disponibles dans le document de reveal d'Étape3: https://hackmd.io/5gqXVri5S4ewZcGaCbsJdQ
+
+Quand le 2nd serveur C&C eu été suprimé, une version déobfusquée d'Étape3 a accidentellement été rendue publique 
+pendant environ 40 minutes.
+
+Le serveur primaire ~~est~~ *a été* (terminé) hébergé chez Servion, une compagnie basé aux pays-bas.
+
+Le nouveau serveur C&C a été lui aussi été terminé. _2023-06-07 18:51 UTC_
+
+Autre qu'un serveur HTTP sur le port 80/443 et un serveur SSH sur le port 22, les ports suivant etaient ouvert sur `85.217.144.130` et `107.189.3.101`:
+
+* 1337
+* 1338 (un port référencé dans le fichier Étape1 pour créer une nouvelle connexion de débogage)
+* 8081 (C'est un serveur Websocket - pas de fonctions aparentes a ce jour, non référencé dans quelque code malicieux)
+* 8082 (personne n'a rien pu en tirer, non référencé dans quelque code malicieux)
+* 8083 (contacté par Étape1)
+
+Curieusement, la page bukkit de fractureiser (l'utilisateur malveillant) indique "Last active Sat, Jan, 1 2000 00:00:00" https://dev.bukkit.org/members/fractureiser/projects/
+
+## échantillons
+
+S'il vous plait, demandez dans le chat IRC pour une permission d'accès lecture/ecriture aux échantillons. Le code source d'Étape 3, décompilé est disponible ici: https://github.com/clrxbl/NekoClient
+
+## follow-ups
+Pendant qu'il est un peut tôt pour parler de follow-ups de long terme, tout ceci a amené plusieurs problèmes critiques dans l'écosystème de minecraft modé. Cette section n'est qu'un brainstorming sur celles ci et comment nous pourrions nous améliorer.
+
+#### 1. Review au niveau des repo de mods
+
+Que fait exactement Curseforge et Modrinth quand ils "reviewent" un mod? Nous nous devont de savoir, au lieu de se reposer sur la 
+sécuritée par l'obscuritée.
+
+#### 2. Un manquement de signature de code
+
+Contrairement a l'industrie software, les mods déposés sur des repo sont généralement non signés avec une clé de signature prouvant que le propriétaire de la clé a déposé le code. Le fait d'avoir une signature et une distribution de clé séparé mitige Curseforge.
+
+Cependant, cela nous ammène donc a un problème plus large, le fait que "ce jar a cette signature" a besoin d'etre communiqué en dehors de Curseforge et Modrinth, pour permettre aux loaders ou aux utilisateurs de vérifier leur signature.
+Forge a essayé d'introduire les signatures quelques années auparavant, et il y avait des limites.
+
+#### 3. Un manque de compilation reproduisibles
+
+les toolchains de Minecraft sont cahotiques, et les builds ne sont généralement pas reproduisibles. Il est courant d'avoir des scripts de construction qui téléchargent des versions -SNAPSHOT non épinglées de plugins Gradle aléatoires et les utilisent, ce qui entraîne des artefacts non reproductibles et donc non auditables.
+
+Un plugin Gradle aléatoire étant un futur vecteur d'attaque n'est pas hors de la question.
+
+#### 4. Manque de sanboxing de minecraft
+
+Le modding Minecraft Java editona toujours eu le plein pouvoir de Java, et c'est l'autre coté de cette lame a double tranchant: du code malicieux a un impacte tout aussi dément.
+Minecraft en lui même n'est pas lancé avec quelque sandboxing que ce soit, et les serveurs ne le sont généralement pas non plus, a part si le propriétaire s'y connait assez pour se le permettre.
+
+Un bon sandboxing est compliqué, spéciallement sur des systèmes tels que Linux ou SELinux/Apparmor sont connu pour avoir une UX si terrible que personne ne tente de les déployer.
+>>>>>>> Stashed changes
