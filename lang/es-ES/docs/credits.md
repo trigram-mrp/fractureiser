@@ -1,15 +1,15 @@
-## Credits
-Nonexhaustive! Thank you to all that pitched in.
+## Créditos
+¡No es exhaustivo! Gracias a todos los que colaboraron.
 
-[**Emi**](https://github.com/emilyploszaj/): Coordination, initial discovery (for this team), early research, meeting organization  
-[**Jasmine**](https://github.com/jaskarth/): Coordination, research, writing the decompiler we've been using ([Quiltflower](https://github.com/QuiltMC/quiltflower/))  
-[**unascribed**](https://github.com/unascribed/): Coordination of documentation, crowd control, logo  
-[**williewillus**](https://github.com/williewillus/): Coordination, journalist  
-[**Vazkii**](https://github.com/vazkii/): Documentation, public communications  
-[**Col-E**](https://github.com/Col-E/): Reverse engineering, writing the deobfuscator we've been using ([Recaf](https://www.coley.software/Recaf/))  
-[**quat**](https://github.com/quat1024/): Documentation, initial infected sample research  
-[**cortex**](https://github.com/mcrcortex/): Reverse engineering  
-[**aurelium**](https://github.com/autumnaurelium/): Coordination, deobfuscation  
-[**D3SL**](https://github.com/D3SL/): Extensive reverse engineering, early discovery learned of later  
-[**Luna Pixel Studios**](https://lunapixelstudios.github.io/): Quick detection of unauthorized uploads  
-**Nia**: Extensive Stage 3 reverse engineering
+[**Emi**](https://github.com/emilyploszaj/): Coordinación, descubrimiento inicial (para este equipo), investigación temprana, organización de la reunión  
+[**Jasmine**](https://github.com/jaskarth/): Coordinación, investigación, escribir el decompilador que hemos usado ([Quiltflower](https://github.com/QuiltMC/quiltflower/))  
+[**unascribed**](https://github.com/unascribed/): Coordinación de la documentación, control de la multitud, logo  
+[**williewillus**](https://github.com/williewillus/): Coordinación, periodista  
+[**Vazkii**](https://github.com/vazkii/): Documentación, comunicación pública  
+[**Col-E**](https://github.com/Col-E/): Ingeniería inversa, escribir el desofuscador que hemos usado ([Recaf](https://www.coley.software/Recaf/))  
+[**quat**](https://github.com/quat1024/): Documentación, investigación de la muestra inicial infectada  
+[**cortex**](https://github.com/mcrcortex/): Ingeniería inversa  
+[**aurelium**](https://github.com/autumnaurelium/): Coordinación, desofuscación  
+[**D3SL**](https://github.com/D3SL/): Ingeniería inversa extensiva, descubrimiento temprano aprendido más tarde  
+[**Luna Pixel Studios**](https://lunapixelstudios.github.io/): Detención rápida de subidas no autorizadas  
+**Nia**: Ingeniería reversa extensiva de la etapa 3
