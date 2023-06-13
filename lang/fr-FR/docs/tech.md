@@ -366,4 +366,3 @@ Le modding Minecraft Java editona toujours eu le plein pouvoir de Java, et c'est
 Minecraft en lui même n'est pas lancé avec quelque sandboxing que ce soit, et les serveurs ne le sont généralement pas non plus, a part si le propriétaire s'y connait assez pour se le permettre.
 
 Un bon sandboxing est compliqué, spéciallement sur des systèmes tels que Linux ou SELinux/Apparmor sont connu pour avoir une UX si terrible que personne ne tente de les déployer.
->>>>>>> Stashed changes
