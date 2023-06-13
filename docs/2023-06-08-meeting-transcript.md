@@ -69,7 +69,7 @@ And I think, particulary in UGC communities, user-generated content, mods, safet
 
 And this could turn into a bad reality for everybody, and you know, it's very much against the furture we believe in, so this is why we think safety is critical. And we're gonna do, and we are doing everything we can to improve and to correct and to focus on providing a great, safe to players experiences and consumers.  
 
-Um, so the first question was really which tests are now happening. I want to talk about this from a faily high-level perspective, and the reason why I don't be extremely detailed is we don't want to be in a place, where, everything is out there and open, and people understand exactly which test are performed, and how and maybe we see the code, that is running those tests, so they can find ways to bypass that, so. 
+Um, so the first question was really which tests are now happening. I want to talk about this from a fairly high-level perspective, and the reason why I don't be extremely detailed is we don't want to be in a place, where, everything is out there and open, and people understand exactly which test are performed, and how and maybe we see the code, that is running those tests, so they can find ways to bypass that, so. 
 
 I understand that ambiguity is, um, a concern, especially, and this is why I wanna try sharing as much as I can, from the perspective how we work, but at the same time, hopefully some reviewers can understand that, exposing everything that eventually would lead to vulnerabilities. 
 
@@ -81,7 +81,7 @@ We check for file tags and inspecting file structures, um, I saw the comment in 
 
 Um, in terms of the manual checks, whenever something is triggered, um from these automation checks, then a human would then review the mod. By the way, if someone changes the texts and images, we also require manual review, to avoid profanity and that content, all of these things, um.  
 
-But if those automated checks have trigged some sort of the issue, or there is suspicous, it would be an manual check. 
+But if those automated checks have triggered some sort of the issue, or there is [suspicion], it would be an manual check. 
 
 Also I wanna emphasis that this is continuously evolving process for us, uh so just for example following this incident, we already updated our automatic checks, to um test for this particular vulnerabiliy, and should we identified this particular vulnerability again, it would trigger a manual review, um because we want to double check to make sure that, um, the mod are not compromised.    
 
@@ -130,9 +130,9 @@ And I do understand this process is inherently flawed. After kind of the initial
 
 So if someone, let's say, uploads a project and it's like, "hey, I'm gonna be an innocent project at first, and once it's get approved, I am going to upload malware to it." Currently, we would rely on reports to fix that, but ideally we wouldn't have to do that.  
 
-So yeah, I guess like part of the reaason we are here, is to kinda of imporve the moderation process. But as kinda of our principle, all of our code is open-source; we really wanna have like a transparent tool that anybody in the community can use for finding or detecting malware and making mod more safe for all. 
+So yeah, I guess like part of the reason we are here, is to kinda of improve the moderation process. But as kinda of our principle, all of our code is open-source; we really wanna have like a transparent tool that anybody in the community can use for finding or detecting malware and making mod more safe for all. 
 
-I would say, our modertion process, we generally rely on a lot of community trust, so like if an auther is well known, we generally will kinda be less robust their projects, which might also be flawed. 
+I would say, our moderation process, we generally rely on a lot of community trust, so like if an author is well known, we generally will kinda be less robust their projects, which might also be flawed. 
 
 But, if authors is like completely new, we'll generally have a lot more scrutiny towards what they upload, and we defnintely have caught some in the past with that.
 
@@ -151,7 +151,7 @@ But yeah, it is definitely a flawed system, and I'm not sure how we should fix i
 Emi: Thank you. And there is an action item here that I would like to ask, what method does Modrinth do 
 for verifying integrity of a file that has been uploaded? CurseForge, as it stands, uses MD5 hashes.
 
-Geo: Yeah, so we use, uh, we use a combination of hashes through our API, so, you can use SHA-1, SHA-512. For the launcher we're building, we validate every hash for every file that has downloaded. We kinda leave that more as an implementation deatil for whoever is kinda implementing our API. 
+Geo: Yeah, so we use, uh, we use a combination of hashes through our API, so, you can use SHA-1, SHA-512. For the launcher we're building, we validate every hash for every file that has downloaded. We kinda leave that more as an implementation detail for whoever is kinda implementing our API. 
 
 It's like recommended in our documentation, everybody does it, will provide it. SHA-1 is more over-deprecated, because there is vulnerabilities in SHA-1 integrity. 
 
@@ -169,13 +169,13 @@ Willie: Yeah. Uh, I think one thing, I just want to, like, plug in (laugh), in t
 
 similarity checks to like popular mods, 'cause we saw impersonation attempts for few projects during this incident. Another thing is like you might want to flip this around and say that, every upload by a popular modder, or to a popular pack, should be reviewed, if it's an update not an initial project, 
 
-'cause [data lose] a few months might be compromised, or [voice unclear] targets were compromised. But that's just an idea. So, let's go on to the next point, which is reproducible builds. We're kinda on this topic already, but bascially one thing that would've helped the response a lot, is knowing... knowing whether a mod is tampered with Stage 0 infection.
+'cause [data lose] a few months might be compromised, or [voice unclear] targets were compromised. But that's just an idea. So, let's go on to the next point, which is reproducible builds. We're kinda on this topic already, but bascially one thing that would've helped the response a lot, is knowing... knowing whether a mod is tampered with Stage0 infection.
 
-We could've simply just rebuid a mod from the source, hashed it, and compare that hash to every candidate, right? That will cause, "hey, was this mod modified from the version that supposed to be", maybe something is up there. 
+We could've simply just rebuilt a mod from the source, hashed it, and compare[d] that hash to every candidate, right? That will cause, "hey, was this mod modified from the version that supposed to be", maybe something is up there. 
 
-Uh, the reason I bring this up is, as the second point, is that it is kinda actionable I think; the problems right now are that Fabric example mod, also Forge's MDK example
+Uh, the reason I bring this up is, as the second point, is that it is kinda actionable I think; the problems right now are that Fabric example mod, also Forge's MDK example, uses like `-SNAPSHOT` versions basically, or like, ForgeGradle is like, `5.1.+` or whatever, in the gradle plugins of the default build for ExampleMods. 
 
-Um, uses like `-SNAPSHOT` versions basically, or like, ForgeGradle is like, `5.1.+` or whatever, in the gradle plugins of the default build for ExampleMods. And that's just like one example; there is a lot of, like, irreproducibility in the modding ecosystem; that's kinda like been there since for years, basically. And I think like, we should probably start moving towards like, "hey let's specify the exact versions of for these things," 
+And that's just like one example; there is a lot of, like, irreproducibility in the modding ecosystem; that's kinda like been there since for years, basically. And I think like, we should probably start moving towards like, "hey let's specify the exact versions of for these things," 
 
 and maybe even start using Gradle's checks verification where dumps hashs of all of your dependencies, and you checked in like npm or cargo rust lockfiles. 
 
@@ -205,7 +205,7 @@ I think it is much more relevant to build specialized tooling to compare differe
 
 And um maybe even, building an hashing system that actually gonna look at the relevant part, and like not care about timestamp, signature and like that. 
 
-Even if we can have Modrinth and CurseForge implements that, directly show hash directly on the website, we'll have a good way to comparing differnt files together ignoring all the irrevelant part. 
+Even if we can have Modrinth and CurseForge implements that, directly show hash directly on the website, we'll have a good way to comparing different files together ignoring all the irrelevant part. 
 
 Willie: Sorry I do have a question about signature in like, the reproducibility. So when you say… I am assuming this is for Quilt, but like are the signatures embedded in the jar? Or they are like in the `.asc` files let's say, like separately? Cause like, usually it's like, it's the jar like the only reproducible thing, and you distribute the signature separetly from that, right?
 
@@ -373,7 +373,7 @@ So I feel like if we're able to get something done, where it's part of the Gradl
 
 But that's something we are gonna have to work together with various of the modding projects to get it done for example mods and such. 
 
-Emi: I'd like to bring up some of these things that have been messaged in the meeting's channel, because there are people talking in text chant not speaking on voice, so that's not being recorded, and I'd like to relay it. 
+Emi: I'd like to bring up some of these things that have been messaged in the meeting's channel, because there are people talking in text chat not speaking on voice, so that's not being recorded, and I'd like to relay it. 
 
 Um, there are questions of what the purpose of signing is. If, you know, like, if someone has the key, can they just sign the malware? 
 
@@ -449,7 +449,7 @@ We wouldn't want them to lose their ability to code-sign from a certificate auth
 
 I don't know like how we could do that. I guess the fact that someone uploading to a user account, we have to associatie that. 
 
-But I would agree definitely that we'd love to work on code-sigining, and kinda of becoming a certificate authority. 
+But I would agree definitely that we'd love to work on code-signing, and kinda of becoming a certificate authority. 
 
 Um, I just think we just have to do it in a really secure way, to make sure that there is no vulnerabilities; we are not going to have a, like, flawed system and all of that. 
 
@@ -497,7 +497,7 @@ timoreo: Hello hello.
 
 ZekeZ: Alright, um. Do you want to start this timoreo? You're the main, one of the main developers behind the actual launcher. 
 
-timoreo: Yeah. So I'll to start. So, sandboxing, first off, the first point: executing untruest will never be safe, no matter how much sandboxing you put, that's just a fact. [ZekeZ: um-hum.] You can never fully protect. 
+timoreo: Yeah. So I'll to start. So, sandboxing, first off, the first point: executing untrust [code] will never be safe, no matter how much sandboxing you put, that's just a fact. [ZekeZ: um-hum.] You can never fully protect. 
 
 This is kind of, sandboxing is the last resort, just to limit the impact. 
 
@@ -775,7 +775,7 @@ I know for me, I don't have a system set up in place to accept file uploads.
 
 All the binary on my maven have been built on the same machine, and I don't have a system to not do that, which is something I'm gonna look into after this whole system. Yes, good.
 
-Emi: Sure, I can definitely speak on that because I'm a author that uses GitHub Actions, and I use a thrid-party maven. 
+Emi: Sure, I can definitely speak on that because I'm a author that uses GitHub Actions, and I use a third-party maven. 
 
 Typically, the situation from the GitHub CI perspective, is there is small amount of code built into build script, and the secret are passed from GitHub Actions, do you know, the username and password, as well as the maven URL, passed from GitHub Actions, and Gradle can just handle uploading files. 
 
@@ -783,7 +783,7 @@ I think in terms of accessibility, GitHub Actions publishing to maven is probabl
 
 Um, there's just solutions like CurseMaven and Modrinth has a maven for all uploaded mods, which is useful for mods that aren't exposing themselves as APIs, and you know, for just like, casual add-on developers. 
 
-And... I think the space for API developers kinda of set off a higher standard for understanding the ecosystem, settup up Maven, and the communication there. 
+And... I think the space for API developers... kind of already sets a higher standard for understanding the ecosystem, set up up Maven, and the communication there. 
 
 Maybe a much less significant concern. 
 
