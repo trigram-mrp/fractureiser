@@ -164,7 +164,7 @@ Jars are heuristically detected as Minecraft mods or plugins as follows:
 
 ## Stage3 (`unobf-client.jar`)
 
-Around 2023-06-07 14:20 UTC the Stage-3 client jar was seemingly accidentally replaced with an unobfuscated version. You can find the archive here: https://github.com/clrxbl/NekoClient
+Around 2023-06-07 14:20 UTC the Stage 3 client jar was seemingly accidentally replaced with an unobfuscated version. You can find the archive here: https://github.com/clrxbl/NekoClient
 
 This validates the suspected behavior/evidence from the analysis done on the prior obfuscated `client.jar` sample.
 
@@ -181,7 +181,7 @@ The critera that the process looks for can be found here: [`dev/neko/nekoinjecto
 * `SpigotPluginTemplate` looks for the super-type `org/bukkit/plugin/java/JavaPlugin` in classes
 * If none of the above match the class, [it will attempt to infect the main class of the jar file](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L235-L244) - if one exists.
 
-The malicious code injected is the backdoor logic seen in Stage0. The way that injection works is that the malicious code is declared in the `Loader` class in a static method. The `Injector` class that is adjacent to it is responsible for extracting the code from `Loader` and inserting it into new classes targeted for infection. The return value of `Injector.loadInstallerNode(...)` is a `MethodNode` outlining the infection process itself. Now they just need to add that method to the targeted class. Back in the [`dev/neko/nekoclient/Client.start(InetSocketAddress, byte[])`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L272) they call `Entry.inject(MethodNode)` to achieve this. To ensure the malicious method is invoked this `inject` method adds logic to the targeted class's static initializer that invokes the added method. Since the static initializer is run when the class first loads, and the target class is a plugin/mod the assumption is this code will always be triggered by users who run infected modpacks or servers. After this, they repackage the jar with the newly infected target class.
+The malicious code injected is the backdoor logic seen in Stage 0. The way that injection works is that the malicious code is declared in the `Loader` class in a static method. The `Injector` class that is adjacent to it is responsible for extracting the code from `Loader` and inserting it into new classes targeted for infection. The return value of `Injector.loadInstallerNode(...)` is a `MethodNode` outlining the infection process itself. Now they just need to add that method to the targeted class. Back in the [`dev/neko/nekoclient/Client.start(InetSocketAddress, byte[])`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L272) they call `Entry.inject(MethodNode)` to achieve this. To ensure the malicious method is invoked this `inject` method adds logic to the targeted class's static initializer that invokes the added method. Since the static initializer is run when the class first loads, and the target class is a plugin/mod the assumption is this code will always be triggered by users who run infected modpacks or servers. After this, they repackage the jar with the newly infected target class.
 
 ### Anti-sandbox tricks
 
@@ -316,7 +316,7 @@ This sample appears to abuse technicalities in the class-file to crash decompile
 
 # Other Stuff
 
-More details are available in the live Stage-3 reversal doc: https://hackmd.io/5gqXVri5S4ewZcGaCbsJdQ
+More details are available in the live Stage 3 reversal doc: https://hackmd.io/5gqXVri5S4ewZcGaCbsJdQ
 
 When the second C&C server was stood up, a deobfuscated version of Stage 3 was
 accidentally served for around 40 minutes.
