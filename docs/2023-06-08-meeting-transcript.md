@@ -12,7 +12,7 @@ As a summary, Fractureiser is a 4-Stage, self-updating, self-replicating piece o
 
 Stage3 is capable of stealing all browser information, including passwords, payment info, and cookies. It's also capable of stealing Microsoft, Minecraft and Discord credentials along with cryptocurrency. 
 
-Contained is also various botnet utilties for DDoS-ing, the ability to run arbirtrary system commands, and all stuff like that. It's a comprehnesive, uh, huh, on the entire system. 
+Contained is also various botnet utilities for DDoS-ing, the ability to run arbitrary system commands, and all stuff like that. It's a comprehensive pwn on the entire system.
 
 Stage3 is notably capable of spearding Stage 0 to every jar file on the system, to perpetuate itself with special logic to additionaly target Minecraft mods and plugins. 
 
@@ -85,7 +85,7 @@ But if those automated checks have trigged some sort of the issue, or there is s
 
 Also I wanna emphasis that this is continuously evolving process for us, uh so just for example following this incident, we already updated our automatic checks, to um test for this particular vulnerabiliy, and should we identified this particular vulnerability again, it would trigger a manual review, um because we want to double check to make sure that, um, the mod are not compromised.    
 
-I also saw the idea of um [DISCONNECTED]
+I also saw the idea of um [Fury disconnected]
 
 Emi: ah, looks like they've muted. We also have the Geometrically from Modrinth who's here to speak, so uh, if you have any finishing words, go ahead. We want other voices. 
 
@@ -95,7 +95,7 @@ Emi: yes.
 
 Fury: OK. Can you repeat? I did not listen; I am not here for the first thing what's that?
 
-Emi: Since you muted, and because we want to get as many voices in here as possible, we're going to [be] moving on to modern's perspective, if you have any quick final words, feel free.
+Emi: Since you muted, and because we want to get as many voices in here as possible, we're going to [be] moving on to Modrinth's perspective, if you have any quick final words, feel free.
 
 Fury: On this topic of which tests were running or in general?
 
@@ -115,7 +115,6 @@ It's crazy that there is 300 people here. But yeah, besides the point, about how
 So, um, our moderation process is, let's say it's pretty robust. 
 
 When we, uh when files are initially uploaded, for new projects we do manual reviews, and during that manual reviews, we check all kinds of things, right? Like the usual description and images, gallary images, all the kind of like the stuff to check for inapproporaite stuff. 
-
 
 But we also check the source code occasionally, not every single time. If the mod is suspicious or if it's a new author or not really known in the community. 
 
@@ -194,7 +193,7 @@ So I mainly look for discussion about the stuff I mentioned before, which is mak
 
 Emi: sounds great, we have a representative from the Quilt project here that would like to speak on this topic. And I will give them the floor. 
 
-Starchild: Hello, so very quickly, I am the admin and ??? lead for Quilt, also I am DevOp experts in my day jobs. 
+Starchild: Hello, so very quickly, I am the admin and infrastructure lead for Quilt, also I am DevOp experts in my day jobs. 
 
 Um okay, so one issue we have here is that, like later in the discussion, if anyone want to talk about, is signing build. 
 
@@ -225,7 +224,8 @@ I think like, one thing is to just keep in mind that accessibility, right? Like 
 So like, let's say you only have for like a fraction of authors on the site, should you have the rest of mods just not be trusted by the community? And I think that's kind like, one concern I had, right? Would it just basically make it so like smaller mod devs, the barrier to entry for Minecraft modder would be a lot more higher?
 
 I think it's like template mods exist to you right? But like, code-sigining, stuff like that, it's still something when you try to up to the AppStore, or the Android, right? Something like developers struggle with? I think we should still do it, but it should be done in a way that everybody can do.
-And enforce reproducible builds are definitely hard, some mods might have some stuff that is a barrier to that, and I think a better solution in general would be just code-signing, where developer sign thair artifacts; that wouldn't fix the problem of people just could swap the source between the builds that ??? actually believs that, right? But you still need to keep in mind that nobody is gonna be checking the source code. 
+
+And enforce reproducible builds are definitely hard, some mods might have some stuff that is a barrier to that, and I think a better solution in general would be just code-signing, where developer sign thair artifacts; that wouldn't fix the problem of people just could swap the source between the builds that ??? actually believes that, right? But you still need to keep in mind that nobody is gonna be checking the source code. 
 
 And I think it's pretty hard for moderator on either Overwolf or us to constantly review for... at every update; we get hundreds of if not thousands of file submissions a day, so it would be really difficult; I think ideally it could something that is automated, but if not, it should be something that is like very easy to do by human moderator, especially because code analysis and the decompiling are both like pretty hard and time-consuming skill to learn.
 
@@ -517,7 +517,7 @@ ZekeZ: This specific one, at least.
 
 timoreo: This specific one was entirely broken on Linux. 
 
-But the problem is kind of, you can restrict more with Flatpaks, but you restrict ???. 
+But the problem is kind of, you can restrict more with Flatpaks, but... 
 
 For example, you could restrict microphone access because you can't think, "oh, Minecraft doesn't need microphone," but some mods may add some voice chat or something like that, which would need microphone and would restrict users; or even Discord RPC, you know, the little thing displaying Minecraft or whatever.
 
