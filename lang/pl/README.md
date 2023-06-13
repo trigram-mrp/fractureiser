@@ -20,8 +20,8 @@ Nazwaliśmy te złośliwe oprogramowanie "fractureiser" ponieważ tak nazywa si�
 Jeżeli jesteś zwykłym graczem a nie deweloperem, powyższy link powinien ci wystarczyć. Zawiera on znane nam efekty złośliwego oprgoramowania, kroki o tym jak sprawdzić czy się je ma oraz jak je usunąć, i liste najczęściej zadawanych pytań (FAQ)
 
 Dla kogokolwiek kto chce się zagłębić w temacie:
-* [Oś Czasu Wydarzeń](lang/pl/docs/timeline.md)
-* [Techniczne Wyjaśnienie](lang/pl/docs/tech.md) 
+* [Oś Czasu Wydarzeń](docs/timeline.md)
+* [Techniczne Wyjaśnienie](docs/tech.md) 
 
 ### Nigdy nie grałem z modami
 Nie jesteś zainfekowany.
