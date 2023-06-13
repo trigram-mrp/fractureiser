@@ -1,209 +1,209 @@
-### Timeline
+### Временная шкала
 
-The timeline is from bottom-to-top. Topmost events are the most recent.
+Временная шкала расположена снизу вверх. Самые верхние события - самые последние.
 
 ---
 *2023-06-09 07:48 UTC*
 
-Creators of Stage3b (skyrage) have apparently lost their domain skyrage.de (nameserver and registrar entries changed, dns entries vanished)
+Создатели Stage3b (skyrage), очевидно, потеряли свой домен skyrage.de (записи сервера имен и регистратора изменились, записи dns исчезли).
 
 ---
 *2023-06-08 10:50 UTC*
 
-The current C&C servers of stage3b (skyrage) `95[.].214.27.172` and `171[.]22.30.117` are no longer reachable. Watching out for potential DNS changes.
+Текущие C&C сервера stage3b (skyrage) `95[.].214.27.172` и `171[.]22.30.117` больше не доступны. Следим за возможными изменениями DNS.
 
-Time is when it was noticed, not when it happened.
+Время - когда это было замечено, а не когда это произошло.
 
 ---
 *2023-06-08 05:11 UTC*
 
-Prospector announces the following:
+Prospector объявляет следующее:
 
-> An update from Modrinth, all files uploaded in the last 10 months
-> (about half of our files) have been scanned and not one infected
-> file has been found.
+> Обновление от Modrinth, все файлы, загруженные за последние 10 месяцев...
+> (примерно половина наших файлов) были просканированы и ни один зараженный
+> файл не был найден.
 
 ---
 *2023-06-08 01:12 UTC*
 
-Things have mostly settled down again, virus scanners have begun detecting the stage 1+
-jars as malicious, and a meeting for next steps is planned for the next morning in the US.
+Все в основном снова успокоилось, вирусные сканеры начали определять файлы стадии 1+
+jar-файлы как вредоносные, и на следующее утро в США запланирована встреча для обсуждения дальнейших шагов.
 
-The meeting will be semi-private, but recordings/minutes will be shared afterwards.
+Встреча будет полуприватной, но записи/протоколы будут выложены после.
 
-CurseForge is scanning all mods, but that process is still ongoing.
+CurseForge сканирует все моды, но этот процесс все еще продолжается.
 
 ---
 *2023-06-07 18:51 UTC*
 
-The second C&C server 107[.]189.3.101 has been suspended by its hosting provider
+Второй C&C сервер 107[.]189.3.101 был приостановлен хостинг-провайдером.
 
 ---
 *2023-06-07 16:00 UTC*
 
-Due to lag in the HackMD, this document was transferred to the GitHub repository
+Из-за задержки в HackMD, этот документ был перенесен в репозиторий GitHub
 https://github.com/fractureiser-investigation/fractureiser
 
 ---
 *2023-06-07 14:40 UTC*
 
-The unobfuscated stage 3 was replaced by an obfuscated one, then further by another
-payload.
+Необфусцированный этап 3 был заменен на обфусцированный, а затем на другую
+полезной нагрузкой.
 
-That payload is the skyrage updater, which is a known Minecraft malware targeting spigot
-servers.
+Эта полезная нагрузка - skyrage updater, который является известной вредоносной программой Minecraft, нацеленной на spigot
+серверы.
 
-After serving skyrage for a while, it switched again to serving the Meteor hacked client.
+После обслуживания skyrage на некоторое время, он снова переключился на обслуживание взломанного клиента Meteor.
 
-(TODO this timeframe is not completely accurate)
+(TODO эти временные рамки не совсем точны)
 
 ---
-*2023-06-07 14:20 UTC*
+*2023-06-07 14:20 UTC*.
 
-Analysis of the new IP address yields a fully deobfuscated stage 3, seemingly uploaded by accident.
-It has been archived here: https://github.com/clrxbl/NekoClient
+Анализ нового IP-адреса дал полностью деобфусцированный stage 3, похоже, загруженный случайно.
+Он был заархивирован здесь: https://github.com/clrxbl/NekoClient
 
 ---
 *2023-06-07 14:19 UTC*
 
-The Cloudflare pages domain has been taken down.
+Домен Cloudflare pages был удален.
 
 ---
 *2023-06-07 14:05 UTC*
 
-The Cloudflare pages domain has switched to pointing to a new IP address, 107.189.3.101.
+Домен Cloudflare pages переключился на новый IP-адрес, 107.189.3.101.
 
 ---
 
 
 *2023-06-07 08:52 UTC*
 
-The dust has mostly settled for now. We have a good idea of the early stages of the malware, and stage 3 is being reverse-engineered. The first stage is temporarily dormant.
+На данный момент пыль в основном улеглась. У нас есть хорошее представление о ранних стадиях вредоносной программы, а третья стадия находится в стадии реинжиниринга. Первая стадия временно неактивна.
 
-We will resume updates next morning US time (or thereabouts).
+Мы возобновим обновления следующим утром по американскому времени (или около того).
 
 ----
-*2023-06-07 08:09 UTC*
+*2023-06-07 08:09 UTC*.
 
-We are still working on reversing stage 3, see the section below for technical details.
+Мы все еще работаем над реверсированием третьей стадии, технические подробности см. в разделе ниже.
 
 ----
 *2023-06-07 07:37 UTC*
 
-CurseForge published the following statement in their discord's #news channel:
+CurseForge опубликовал следующее заявление в своем канале #news в discord:
 
-> Hey everyone,
+> Привет всем,
 > 
-> We would like to address the current situation that is ongoing and highlight some important points:
+> Мы хотели бы рассмотреть текущую ситуацию и подчеркнуть некоторые важные моменты:
 > 
-> * A malicious user has created several accounts and uploaded projects containing malware to the platform
-> * Separately a user belonging to Luna Pixel Studios (LPS) was hacked and was used to upload similar malware
-> * We have banned all accounts relevant to this and disabled the LPS one as well. We are in direct contact with the LPS team to help them restore their access
-> * We are in the process of going through ALL new projects and files to guarantee your safety. We are of course <u>holding the approval process of all new files until this is resolved</u>
-> * Deleting your CF client isn’t a recommended solution as it will not solve the issue and will prevent us from deploying a fix. We are working on a tool to help you make sure you weren’t exposed to any of this. In the meantime refer to information published in #current-issues.
-> * This is relevant ONLY to Minecraft users
-> * To be clear **CurseForge is not compromised! No admin account was hacked.**
+> * Вредоносный пользователь создал несколько учетных записей и загрузил на платформу проекты, содержащие вредоносное ПО.
+> * Отдельно был взломан пользователь, принадлежащий Luna Pixel Studios (LPS), который использовался для загрузки аналогичного вредоносного ПО.
+> * Мы запретили все аккаунты, имеющие отношение к этому, а также отключили аккаунт LPS. Мы поддерживаем прямой контакт с командой LPS, чтобы помочь им восстановить доступ.
+> * В настоящее время мы проверяем ВСЕ новые проекты и файлы, чтобы гарантировать вашу безопасность. Разумеется, мы <u>задерживаем процесс утверждения всех новых файлов, пока эта проблема не будет решена</u>.
+> * Удаление вашего CF клиента не рекомендуется, так как это не решит проблему и не позволит нам развернуть исправление. Мы работаем над инструментом, который поможет вам убедиться, что вы не были подвержены этому. Тем временем обратитесь к информации, опубликованной в #current-issues.
+> * Это относится ТОЛЬКО к пользователям Minecraft.
+> * Для ясности **CurseForge не взломан! Ни одна учетная запись администратора не была взломана**.
 >
-> We are working on this to make sure the platform remains a safe place to download and share mods. Thank you to all authors and users who help us with highlighting, we appreciate your cooperation and patience ❤️ 
+> > Мы работаем над этим, чтобы убедиться, что платформа остается безопасным местом для загрузки и обмена модами. Спасибо всем авторам и пользователям, которые помогают нам с выделением, мы ценим ваше сотрудничество и терпение ❤️ 
 >
-> Stay tuned for more updates and we will clear this issue.
+> Следите за обновлениями, и мы решим эту проблему.
 
 ----
-*2023-06-07 07:24 UTC*
+*2023-06-07 07:24 UTC*.
 
-Darkhax has contacted Curseforge representatives who have confirmed that the affected files were uploaded via the UI, not the API.
+Darkhax связался с представителями Curseforge, которые подтвердили, что затронутые файлы были загружены через пользовательский интерфейс, а не через API.
 
-Curseforge has halted upload approvals while this situation unfolds and have taken down many infected files.
+Curseforge приостановил одобрение загрузок, пока эта ситуация развивается, и удалил многие зараженные файлы.
 
-They are also investigating the IPs of the uploaders of the malicious files, to see if they match previous requests by the rightful account holders.
+Они также изучают IP-адреса тех, кто загрузил вредоносные файлы, чтобы выяснить, совпадают ли они с предыдущими запросами законных владельцев аккаунтов.
 
 ----
-*2023-06-07 7:03 UTC*
+*2023-06-07 7:03 UTC*.
 
-We believe we've discovered the true function of Stage3 (`client.jar`) and are attempting to document it here. It's not good, folks.
+Мы считаем, что обнаружили истинную функцию Stage3 (`client.jar`) и пытаемся задокументировать ее здесь. Это нехорошо, друзья.
 
-The quick version, while we get this document in shape: client.jar searches *the entire filesystem* for files that look like mod jars, and infects them with Stage0. This includes *entire Gradle and Maven caches*, as well as tons of things mod devs would likely never think to check. The potential scale and scope of this infection has gone from "a couple weird mods" to *potentially infinite*.
+Краткая версия, пока мы приводим документ в порядок: client.jar ищет *всей файловой системе* файлы, похожие на mod jars, и заражает их Stage0. Это включает *все кэши Gradle и Maven*, а также тонны вещей, которые разработчики модов, скорее всего, никогда не подумают проверить. Потенциальный масштаб и охват этой инфекции увеличился с "пары странных модов" до *потенциально бесконечного*.
 
-We believe this is how the infection initially spread, and Curseforge may not have been the initial attack vector.
+Мы считаем, что именно так инфекция распространялась изначально, и Curseforge, возможно, не был первоначальным вектором атаки.
 
 ----
 
 *2023-06-07 6:27 UTC*
 
-Investigation has slowed down and most of the team is going to bed. unascribed has opened an email inbox for people to submit samples or other useful information. williewillus is currently working to clean up and get the information presented by D3SL into this doc. 
+Расследование замедлилось, и большая часть команды ложится спать. unascribed открыл почтовый ящик для людей, которые могут прислать образцы или другую полезную информацию. williewillus в настоящее время работает над очисткой и включением информации, представленной D3SL, в этот документ.
 
 ----
 
 *2023-06-07 6:20 UTC*
 
-D3SL informs the unofficial Discord that they have a copy of the full (untruncated) Stage 3 `client.jar`, as well as an in-depth analysis of what the malware is doing. They first noticed this weeks ago and undertook in-depth analysis, and as a result was able to obtain full copies of all the payloads.
+D3SL сообщает в неофициальном Discord, что у них есть копия полной (неусеченной) версии Stage 3 `client.jar`, а также подробный анализ того, что делает вредоносная программа. Они впервые заметили это несколько недель назад и провели углубленный анализ, в результате чего смогли получить полные копии всех полезных нагрузок.
 
 ----
 
-*2023-06-07 5:27 UTC*
+*2023-06-07 5:27 UTC*.
 
-We've discovered a potential (truncated) Stage 3 file; it is heavily obfuscated and contains a native payload DLL that attempts to steal credentials from the Windows credentials store.
+Мы обнаружили потенциальный (усеченный) файл Stage 3; он сильно обфусцирован и содержит родную DLL полезной нагрузки, которая пытается украсть учетные данные из хранилища учетных данных Windows.
 
 ----
 
-*2023-06-07 4:57 UTC*
+*2023-06-07 4:57 UTC*.
 
-Files uploaded in April have been discovered; either the dates are being spoofed, or this has been going on even longer. Many of the accounts have Last Active times in 1999 — likely a quirk with old CurseForge accounts, but still notable.
+Обнаружены файлы, загруженные в апреле; либо даты подделываются, либо это происходит еще дольше. Многие аккаунты имеют время Last Active в 1999 году - вероятно, это причуда старых аккаунтов CurseForge, но все же примечательно.
 
-Modrinth staff are investigating if any uploads on there are compromised. A quick pass they did through recently updated projects looked OK.
+Сотрудники Modrinth выясняют, не скомпрометированы ли какие-либо загрузки. Быстрый проход, который они сделали через недавно обновленные проекты, выглядит нормально.
 
 ----
     
 *2023-06-07 4:40 UTC*
 
-The scope of this compromise seems larger than initially realized. The malicious files go back multiple weeks, as early as May 20th. We only noticed today because they compromised a popular modpack.
+Масштаб этой угрозы, похоже, больше, чем предполагалось вначале. Вредоносные файлы появились несколько недель назад, еще 20 мая. Мы заметили это только сегодня, потому что они скомпрометировали популярный модпак.
 
 ---
 
 *2023-06-07 3:38 UTC*
 
 
-The C&C server has been taken down by the server provider. A new one will likely come up if the Cloudflare page stays up, we're monitoring it.
+C&C сервер был удален провайдером. Новый, вероятно, появится, если страница Cloudflare останется на месте, мы следим за этим.
 
 ----
 
 *2023-06-07 3:26 UTC*
 
-We were sent a possible Stage 2 jar by an anonymous user that claims to work at a server host.
+Анонимный пользователь, утверждающий, что работает на серверном хосте, прислал нам возможный Stage 2 jar.
 
 ----
 
 *2023-06-07 2:26 UTC*
 
-The #cfmalware EsperNet channel is created to coordinate discussion that had been happening in multiple Discord guilds and Matrix spaces.
+Канал #cfmalware EsperNet создан для координации обсуждения, которое происходило в многочисленных гильдиях Discord и пространствах Матрицы.
 
 ----
 
 *2023-06-07 0:40 UTC*
 
-The team behind this document learns of the malicious files included in an unauthorized update to Better Minecraft.
+Команда, создавшая этот документ, узнает о вредоносных файлах, включенных в несанкционированное обновление Better Minecraft.
 
 ----
 
-*2023-06-01 to 2023-06-04*
+*2023-06-01 - 2023-06-04*
 
-D3SL becomes suspicious of the malicious files' consumption of CPU and RAM and begins
-investigating. Order of operations:
+D3SL начинает подозревать, что вредоносные файлы потребляют процессор и оперативную память, и начинает
+расследование. Порядок действий:
 
-1. Suspicion about the Java executable's firewall request leads to it being blocked.
-2. Inability to reach self-hosted services leads to event viewer showing all tcpip ports
-   blocked
-3. Netstat shows massive port consumption via the hostile jar file's PID
-4. Identifying the malicious javaw.exe running libwebgl64.jar confirmed malware
+1. Подозрения по поводу запроса брандмауэра исполняемого файла Java приводят к его блокировке.
+2. Невозможность связаться с самораспространяемыми службами приводит к тому, что в программе просмотра событий показываются все tcpip-порты
+   заблокированы .
+3. Netstat показывает массовое потребление портов через PID враждебного jar-файла.
+4. Идентификация вредоносного javaw.exe, запускающего libwebgl64.jar, подтверждает наличие вредоносного ПО.
 
-From here Tzalumen was instrumental in assisting with the initial reverse engineering of
-the byte[] obfuscated code and manually capturing a complete set of files from the remote
-destinations.
+Отсюда Tzalumen сыграл важную роль в оказании помощи в начальной обратной разработке
+байт[] обфусцированного кода и ручного перехвата полного набора файлов с удаленных сайтов.
+места назначения.
 
-Full copies of all original files (incl. deobfuscations) except lib.dll, translations of
-all remote destinations contacted, and a writeup of the infection process and several
-hostile capabilities were provided through channels to Windows Defender and
-Malwarebytes. Curseforge was notified as well. Knowledge of the malware wasn't shared
-publicly at this time in order to avoid tipping off the attackers
+Полные копии всех оригинальных файлов (включая деобфускации), кроме lib.dll, переводы
+всех удаленных пунктов назначения, а также описание процесса заражения и нескольких
+враждебных возможностей были предоставлены по каналам Windows Defender и
+Malwarebytes. Curseforge также был уведомлен. Информация о вредоносной программе не была распространена
+публично, чтобы не выдать злоумышленников.
 
 ----
