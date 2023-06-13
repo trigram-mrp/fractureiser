@@ -519,7 +519,7 @@ timoreo: This specific one was entirely broken on Linux.
 
 But the problem is kind of, you can restrict more with Flatpaks, but... 
 
-For example, you could restrict microphone access because you can't think, "oh, Minecraft doesn't need microphone," but some mods may add some voice chat or something like that, which would need microphone and would restrict users; or even Discord RPC, you know, the little thing displaying Minecraft or whatever.
+For example, you could restrict microphone access because you can think, "oh, Minecraft doesn't need microphone," but some mods may add some voice chat or something like that, which would need microphone and would restrict users; or even Discord RPC, you know, the little thing displaying Minecraft or whatever.
 
 This needs also special permissions and all of that, even with some older systems like X11 that requests some special permissions.
 
