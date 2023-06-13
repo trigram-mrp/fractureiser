@@ -4,7 +4,11 @@
 
 *Pardon our dust, documentation still in progress*
 
+See on other languages
+
 [简体中文版本见此](./lang/zh-CN/)
+
+[Русский язык здесь](./lang/ru-RU/)
 
 ## What?
 `fractureiser` is a [virus](https://en.wikipedia.org/wiki/Computer_virus) found in several Minecraft projects uploaded to CurseForge and BukkitDev. The malware is embedded in multiple mods, some of which were added to highly popular modpacks. The malware is only known to target Windows and Linux.
