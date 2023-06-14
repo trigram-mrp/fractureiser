@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-## 크레딧
-
-Nonextensive! 모두 참여해주신 분들에게 감사드립니다. 이 모든 일이 종료된 후에 자세히 정리할 예정입니다.
-
-**D3SL**: 광범위한 리버스 엔지니어링, 나중에 발견된 초기 발견 사항
-**Nia**: 광범위한 Stage 3 리버스 엔지니어링
-**Jasmine**: 조정, 사용한 디컴파일러(Quiltflower) 작성
-**Emi**: 조정, 초기 발견(이 팀을 위한), 초기 연구
-**williewillus**: 조정, 기자
-**quat**: 문서 작성, 초기 감염 샘플 연구
-**unascribed**: 문서 조정, 혼잡 관리, 처음에 Snopyta를 사용한 책임과 그로 인한 재앙
-=======
 ## Credits
 Nonexhaustive! Thank you to all that pitched in.
 
@@ -26,4 +13,3 @@ Nonexhaustive! Thank you to all that pitched in.
 [**D3SL**](https://github.com/D3SL/): Extensive reverse engineering, early discovery learned of later  
 [**Luna Pixel Studios**](https://lunapixelstudios.github.io/): Quick detection of unauthorized uploads  
 **Nia**: Extensive Stage 3 reverse engineering  
->>>>>>> 1f61c29bdc3036bf1973fd8f109fb1652961eb2b
