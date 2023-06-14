@@ -4,7 +4,24 @@ _급하게 번역기, AI등을 추가로 활용해 번역하였습니다. 오타
 
 **공식 런처**나 Prism과 같은 신뢰할 수 있는 런처를 통해 **바닐라**만 플레이하고, 모드를 한 번도 다뤄보지 않았다면 100% 안전합니다. 현재는 모드를 피하시기 바랍니다.
 
+<<<<<<< HEAD
 만약 모드를 사용하는 Minecraft 플레이어라면, fractureiser 악성 코드에 감염되었는지 확인하여 귀하의 컴퓨터와 개인 데이터가 위험에 노출되지 않도록 해야 합니다. 아래의 지침을 따라 확인할 수 있습니다.
+=======
+### Is it still going on??
+**No. Well, kinda.**  
+As of now, with our current knowledge, we believe the `fractureiser` virus has been fully cleaned 
+from current public mod(pack)s.  
+
+Our current recommendation is that players who have ran the stage2 checker in this page are safe
+to continue playing, however, since mod uploads have been turned back online at both CurseForge 
+and Modrinth, there is now the potential for copycat malware authors to make new viruses. 
+
+We are in contact with all relevant parties to establish protocols so that this doesn't happen 
+in the future.
+
+If you want to play, please go through the diagnostic steps in this page as well as the follow
+up sections on what to do if you are or aren't infected.
+>>>>>>> 1f61c29bdc3036bf1973fd8f109fb1652961eb2b
 
 ### 현재도 계속되고 있나?
 
@@ -19,7 +36,14 @@ _급하게 번역기, AI등을 추가로 활용해 번역하였습니다. 오타
 - [자주 묻는 질문](#자주-묻는-질문)
 - [기술적인 자주 묻는 질문](#기술적인-FAQ)
 
+<<<<<<< HEAD
 fractureiser에 대한 질문이 있다면 FAQ를 포함한 이 페이지 전체를 읽어주시기 바랍니다. 대부분의 질문들은 여기에 이미 답변되어 있습니다.
+=======
+This process then repeated itself for a few other cases from users on CurseForge and 
+dev.craftbukkit.org, infecting copies of several popular plugins and mods. *There are reports of 
+malicious plugin and mod jars as early
+as mid-April.*
+>>>>>>> 1f61c29bdc3036bf1973fd8f109fb1652961eb2b
 
 ## 실제로 무슨 일이 일어났는가?
 
@@ -158,11 +182,26 @@ fractureiser의 stage 2 파일을 시스템에서 찾았다면, stage 3 코드�
 
 ## 감염되지않았습니다. 이제 어떻게 해야 하나요?
 
+<<<<<<< HEAD
 감염되지 않았다면 현재 상태에서 가장 안전한 조치는 **Minecraft를 전혀 실행하지 않는 것**입니다.
 네, 심지어 바닐라 버전도 포함하여 말이죠.
 
 그렇지만, 만약 처음부터 아무 문제도 발견되지 않았다면, 현재로서는 아무 문제가 없을 가능성이 큽니다.
 만약 게임을 플레이하고자 한다면 다음을 따르세요:
+=======
+If nothing was found by the stage 2 detector, chances are there's nothing going on and you're good
+to play.
+
+While `fractureiser` has been cleaned out, new viruses may appear in the near future until we 
+establish new protocols. If you want to play the game, we recommend:
+
+* Play exclusively mods and modpacks that you have already downloaded and verified safe.
+* Avoid downloading anything uploaded after the 8th of June from new or unknown authors, for the
+same reason as the previous point.
+* Avoid updating your mod(pack)s.
+* Keep an eye on communication from the team on developments regarding new methods to detect
+issues like this in the future.
+>>>>>>> 1f61c29bdc3036bf1973fd8f109fb1652961eb2b
 
 - 우리가 현재 알고 있는 정보로는 위험하지 않다고 보장하지만, 이는 정확하지 않을 수 있습니다. 여전히
   자발적으로 위험에 노출되는 것입니다.

@@ -3,8 +3,17 @@
 타임라인은 아래에서 위로입니다. 최상위 이벤트는 가장 최근의 이벤트입니다.
 
 ---
+<<<<<<< HEAD
 
 _2023-06-08 10:50 UTC_
+=======
+*2023-06-09 07:48 UTC*
+
+Creators of Stage3b (skyrage) have apparently lost their domain skyrage.de (nameserver and registrar entries changed, dns entries vanished)
+
+---
+*2023-06-08 10:50 UTC*
+>>>>>>> 1f61c29bdc3036bf1973fd8f109fb1652961eb2b
 
 The current C&C servers of stage3b (skyrage) `95[.].214.27.172` and `171[.]22.30.117` are no longer reachable. Watching out for potential DNS changes.
 
@@ -129,7 +138,11 @@ _2023-06-07 7:03 UTC_
 
 We believe we've discovered the true function of Stage3 (`client.jar`) and are attempting to document it here. It's not good, folks.
 
+<<<<<<< HEAD
 The quick version, while we get this document in shape: client.jar searches _the entire filesystem_ for files that look like mod JARs, and infects them with Stage0. This includes _entire Gradle and Maven caches_, as well as tons of things mod devs would likely never think to check. The potential scale and scope of this infection has gone from "a couple weird mods" to _potentially infinite_.
+=======
+The quick version, while we get this document in shape: client.jar searches *the entire filesystem* for files that look like mod jars, and infects them with Stage0. This includes *entire Gradle and Maven caches*, as well as tons of things mod devs would likely never think to check. The potential scale and scope of this infection has gone from "a couple weird mods" to *potentially infinite*.
+>>>>>>> 1f61c29bdc3036bf1973fd8f109fb1652961eb2b
 
 We believe this is how the infection initially spread, and Curseforge may not have been the initial attack vector.
 

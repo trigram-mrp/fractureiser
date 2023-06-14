@@ -8,9 +8,19 @@
 
 ### 알려진 영향을 받은 모드 및 플러그인들
 
+<<<<<<< HEAD
 참고: 이 목록은 **완전한 것이 아닙니다**. 이는 조사 초기에 작성된 목록으로, 빠르게 이 문제의 범위가 예상보다 훨씬 크다는 것을 깨달았기 때문에 개별 사례를 추적하는 것은 무의미해졌습니다. 이 목록은 역사적인 목적을 위해 남겨져 있습니다.
 
 CurseForge의 [영향을 받은 프로젝트 목록](https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool/)도 참고하세요.
+=======
+Note: This list is **non-comprehensive**. It was constructed in the early days of
+investigation and quickly we realized the scope of this was much larger than we thought,
+making tracking of individual cases pointless. It's left here for historical purposes.
+
+See also CurseForge's
+[list](https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool/)
+of affected projects.
+>>>>>>> 1f61c29bdc3036bf1973fd8f109fb1652961eb2b
 
 | 모드/플러그인              | 링크                                                                                                                                                                                                                                                                                            | SHA1                                                               | "업로더"           |
 | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------ |
@@ -62,7 +72,18 @@ static void _1685f49242dd46ef9c553d8af1a4e0bb() {
 }
 ```
 
+<<<<<<< HEAD
 해당 코드는 다음과 같은 작업을 수행합니다:
+=======
+This:
+1. Creates a `URLClassLoader` with the URL `http://[85.217.144.130:8080]/dl` ([shodan](https://www.shodan.io/host/85.217.144.130))
+2. Loads the class `Utility` from the classloader, fetching code from the internet
+3. Calls the `run` method on `Utility`, passing a String argument different for each infected mod (!). E.g.
+    * Skyblock Core: "`-74.-10.78.-106.12`"
+    * Dungeonz: "`-114.-18.38.108.-100`"
+    * HavenElytra: "`-114.-18.38.108.-100`"
+    * Vault Integrations: "`-114.-18.38.108.-100`"
+>>>>>>> 1f61c29bdc3036bf1973fd8f109fb1652961eb2b
 
 1. `http://[85.217.144.130:8080]/dl` ( [shodan](https://www.shodan.io/host/85.217.144.130) 참조) URL을 사용하여 `URLClassLoader`를 생성합니다.
 2. 해당 클래스로부터 `Utility` 클래스를 클래스로더(classloader)로부터 로드하며, 인터넷에서 코드를 가져옵니다.
@@ -135,7 +156,20 @@ Java에서 호출하기 위해 고안된 두 가지 네이티브 함수가 있�
 - `__int64 __fastcall Java_dev_neko_nekoclient_api_windows_WindowsHook_retrieveClipboardFiles(__int64 a1);`
 - `__int64 __fastcall Java_dev_neko_nekoclient_api_windows_WindowsHook_retrieveMSACredentials(__int64 a1);`
 
+<<<<<<< HEAD
 분석 결과, 이 함수들은 다음과 같은 작업을 수행합니다:
+=======
+There is also evidence of code attempting to do the following:
+* Scan for *all* jar files on the system that look like Minecraft mods (by detecting
+  Forge/Fabric/Quilt/Bukkit), or [declare a Main
+  class](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L235-L244)
+  (most plain Java programs) and attempt to inject Stage 0 into them
+* Steal cookies and login information for many web browsers
+* Replace cryptocurrency addresses in the clipboard with alternates that are presumably owned by the attacker
+* Steal Discord credentials
+* Steal Microsoft and Minecraft credentials, from a variety of launchers
+* Steal crypto wallets
+>>>>>>> 1f61c29bdc3036bf1973fd8f109fb1652961eb2b
 
 - 클립보드 내용 읽기
 - Microsoft 계정 자격 증명 탈취
@@ -167,26 +201,42 @@ Minecraft 모드 또는 플러그인으로서 JAR 파일을 휴리스틱하게 �
 
 프로세스가 검사하는 기준은 여기에서 찾을 수 있습니다: dev/neko/nekoinjector/template/impl
 
+<<<<<<< HEAD
 BungeecordPluginTemplate은 클래스에서 인터페이스 net/md_5/bungee/api/plugin/Plugin을 찾습니다.
 FabricModTemplate은 클래스에서 인터페이스 net/fabricmc/api/ModInitializer을 찾습니다.
 ForgeModTemplate은 클래스에서 어노테이션 net/minecraftforge/fml/common/Mod을 찾습니다.
 MinecraftClientTemplate은 JAR 파일에서 net/minecraft/client/main/Main.class 및 net/minecraft/client/gui/GuiMultiplayer.class의 존재를 확인합니다.
 SpigotPluginTemplate은 클래스에서 슈퍼 타입 org/bukkit/plugin/java/JavaPlugin을 찾습니다.
 위의 기준에 해당하지 않는 경우, JAR 파일의 주 클래스를 감염 대상으로 시도합니다 - 주 클래스가 존재하는 경우에만 수행됩니다.
+=======
+Something not commonly seen in JVM malware that is present here is a class titled `VMEscape`. It checks if its in [Windows Sandbox](https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview) by checking if the current user is `WDAGUtilityAccount`. If this condition is met, an attempt to escape Windows Sandbox is made.
+>>>>>>> 1f61c29bdc3036bf1973fd8f109fb1652961eb2b
 
 주입된 악성 코드는 Stage0에서 확인한 백도어 로직입니다. 주입 방식은 악성 코드가 `Loader` 클래스의 정적 메서드에 선언되는 것입니다. 그 옆에 있는 `Injector` 클래스는 `Loader`에서 코드를 추출하고 감염 대상이 되는 새로운 클래스에 삽입하는 역할을 담당합니다. `Injector.loadInstallerNode(...)`의 반환 값은 감염 프로세스 자체를 개요화한 `MethodNode`입니다. 이제 그 메서드를 대상 클래스에 추가하기만 하면 됩니다. [`dev/neko/nekoclient/Client.start(InetSocketAddress, byte[])`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L272)에서 `Entry.inject(MethodNode)`를 호출하여 이를 수행합니다. 악성 메서드가 호출되도록 하기 위해 `inject` 메서드는 대상 클래스의 정적 이니셜라이저에 추가된 메서드를 호출하는 로직을 추가합니다. 정적 이니셜라이저는 클래스가 처음으로 로드될 때 실행되며, 대상 클래스가 플러그인/모드인 경우에는 항상 이 코드가 감염된 모드팩이나 서버를 실행하는 사용자에 의해 트리거될 것으로 가정됩니다. 이후에는 새로 감염된 대상 클래스로 JAR 파일을 재패키징합니다.
 
+<<<<<<< HEAD
 ### 안티-샌드박스 기법
+=======
+- Start a repeating thread to run the following actions:
+  - Create a temporary directory using `Files.createTempDirectory(...)`
+  - Iterate over `FileDescriptor` entries in the system clipboard which mirrors the hosts clipboard 
+  - Create a shortcut that looks like the original file _(using icons from SHELL32)_ but instead invokes the malware
+  - Assings this shortcut to the clipboard, overwriting the original file reference
+>>>>>>> 1f61c29bdc3036bf1973fd8f109fb1652961eb2b
 
 JVM(Java Virtual Machine) 악성 소프트웨어에서 흔히 볼 수 없는 기능 중 하나는 `VMEscape`라는 클래스입니다. 이 클래스는 현재 사용자가 [Windows Defender Application Guard](https://www.majorgeeks.com/content/page/what_is_the_wdagutilityaccount.html)의 일부인 `WDAGUtilityAccount`인지 확인하여 샌드박스된 Windows 환경에서 실행 중인지 확인합니다. 이 조건이 충족되면 샌드박스 시스템 탈출을 시도합니다.
 
 주요 과정은 다음과 같습니다:
 
+<<<<<<< HEAD
 - 다음 작업을 반복하는 스레드를 시작합니다:
   - `Files.createTempDirectory(...)`를 사용하여 임시 디렉토리를 생성합니다.
   - 시스템 클립보드에서 `FileDescriptor` 항목을 반복합니다. (이로 인해 호스트의 내용에 액세스하게 됨)
   - 원본 파일처럼 보이는 바로 가기를 생성합니다. (SHELL32에서 아이콘을 사용)
   - 이 바로 가기를 클립보드에 할당하여 원본 파일 참조를 덮어씁니다.
+=======
+**MSA Tokens**: Since this mod is targeting Minecraft mods, it's only natural to attempt to steal the MSA token used to login to Minecraft with. Some launchers keep this data in a local file, which this malware will attempt to read from. This affects a variety of launchers such as:
+>>>>>>> 1f61c29bdc3036bf1973fd8f109fb1652961eb2b
 
 따라서 사용자가 파일을 복사하고 다른 곳에 붙여넣을 때 의도한 파일 대신 악성 소프트웨어가 실행되는 것처럼 보이는 바로 가기가 붙여지게 됩니다.
 
@@ -220,7 +270,11 @@ Feather/PolyMC/Prism에서 토큰을 가져오는 코드는 본질적으로 동�
 
 이 전략에서 기본 런처로의 변경은 Json이 추가적인 암호화 층을 가지고 있다는 것입니다.
 
+<<<<<<< HEAD
 Technic으로의 전략 변경은 Technic이 Java의 내장 객체 직렬화를 사용하여 자격 증명을 저장한다는 점입니다. 이는 `com.google.api.client.auth.oauth2.StoredCredential` 타입을 래핑합니다.
+=======
+**Discord tokens**: Everyone's seen a token-stealer before. Steals token and extra information such as payment methods, linked phone number, etc. Affects the standard client, canary, ptb, and lightcord clients. Relevant source: [`dev/neko/nekoclient/api/stealer/discord/DiscordAccount.java`](https://github.com/clrxbl/NekoClient/blob/fd76c5f9d40d1e10de11f00a6b4e0cca3d6221a3/dev/neko/nekoclient/api/stealer/discord/DiscordAccount.java)
+>>>>>>> 1f61c29bdc3036bf1973fd8f109fb1652961eb2b
 
 **Discord 토큰**: 토큰 도용은 누구나 본 적이 있을 것입니다. 일반 클라이언트, canary, ptb 및 lightcord 클라이언트에 영향을 줍니다.
 
