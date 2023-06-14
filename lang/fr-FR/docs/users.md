@@ -1,5 +1,7 @@
 # Guide pour les joueurs modés
 
+> (*Note de traduction: les informations relevant du jargon technique sont potentiellement faussées, merci de me corriger si tel est le cas*)
+
 Si vous jouez **uniquement** en vanilla via un launcher de confiance comme le launcher officiel ou 
 Prism, et n'avez jamais touché à des mods : vous êtes en sécurité à 100%. Restez éloignés des mods 
 pour le moment.
@@ -47,11 +49,11 @@ L'Étape 3 est le cerveau du malware, et nous avons des preuves qu'elle essaye d
 * S'autopropager à *tous* les fichiers `jar` sur votre machine, affectant probablement les mods
   n'ayant pas été téléchargé via CurseForge ou BukkitDev, et les autres programmes Java
 * Voler les "cookies" et informations de connection de nombreux navigateurs web
-* Remplacer les adresses de cryptomonnaies contenues dans le presse-papier par des versions alternatives qui semblent appartenir à l'attaquant[^1]
+* Remplacer les adresses de cryptomonnaies contenues dans le presse-papier par des versions alternatives qui semblent appartenir à l'attaquant
 * Voler des identifiants Discord (tokens)
 * Voler des identifiants Microsoft et Minecraft
 
-(Voir les [détails techniques](/docs/tech.md) pour plus d'informations)
+(Voir les [détails techniques](/lang/fr-FR/docs/tech.md) pour plus d'informations)
 
 À cause de ce comportement, nous sommes **très confiant** sur le fait que cela soit **une attaque visant l'écosystème de mods de Minecraft**. C'est assez grave.
 
@@ -284,7 +286,7 @@ Les mods pour Minecraft Java sont basiquement un sac de code arbitraire : traite
 
 Le problème est qu'une signature seule ne previent en aucun cas un malware - un virus possédant une signature reste un virus - et si s'autoattribuer une signature est autorisé, cela ne change rien, le virus peut simplement supprimer la signature du jar ("supprimer le dossier META-INF") et recréer une signature avec sa propre clé. (Ce n'est pas une hypothèse, en effet : fractureiser contient une partie permettant d'enlever la signature des jars qu'il infecte.)
 
-Une signature en ligne pour les mods *semble* être un pas en avant prometteur, mais il y aura des compromis à faire. Il y a eu [une réunion](/docs/2023-06-08-meeting.md) avec différents responsables de l'écosystème Minecraft moddé pour discuter de comment continuer sur cette voie.
+Une signature en ligne pour les mods *semble* être un pas en avant prometteur, mais il y aura des compromis à faire. Il y a eu [une réunion](/lang/fr-FR/docs/2023-06-08-meeting.md) avec différents responsables de l'écosystème Minecraft moddé pour discuter de comment continuer sur cette voie.
 
 ### Serait-il possible d'interdire la possibilité de télécharger du code exécutable aux mods ?
 

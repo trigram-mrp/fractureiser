@@ -1,8 +1,9 @@
 <p align="center">
-	<img src="docs/media/logo.svg" alt="fractureiser logo">
+	<img src="../../fractureiser.png" alt="fractureiser logo">
 </p>
 
 *Excusez-nous pour le rangement, la documentation est toujours en cours*
+> (*Note de traduction: les informations relevant du jargon technique sont potentiellement faussées, merci de me corriger si tel est le cas*)
 
 ## Quoi ?
 `fractureiser` est un [virus](https://fr.wikipedia.org/wiki/Virus_informatique) trouvé dans plusieurs projets Minecraft publiés sur les sites CurseForge et BukkitDev. Le malware est inclus dans de multiples mods, certains faisant partis de modpacks très populaires. Le malware semble n'attaquer que Windows et Linux.

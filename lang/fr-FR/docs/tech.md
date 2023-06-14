@@ -1,5 +1,5 @@
 # Informations techniques
-
+> (*Note de traduction: les informations relevant du jargon technique sont potentiellement faussées, merci de me corriger si tel est le cas*)
 ## Distribution
 
 Certains modpacks ont recu des mises a jours sans que l'auteur ne soit au courant, ajoutant une dépendence sur des mods malveillants. Ces mises a jours ont été archivés imédiatement après l'upload, ce qui signifie *qu'ils n'aparaissent pas sur l'interface Web, seulement sur L'API.*
@@ -85,7 +85,7 @@ La création du classloader est hardcodé dans cet URL et n'utilise pas l'URL Cl
 
 SHA-1: `dc43c4685c3f47808ac207d1667cc1eb915b2d82`
 
-[une version décompilée est disponible ici](../../../decomp/).
+[une version décompilée est disponible ici](/decomp/).
 
 La première chose qu'`Utility.run` fait est de vérifier si la propriété système `neko.run` est active. Si tel est le cas, *Le fichier aretera son execution*. Si tel n'est pas le cas, un str vide est initialisé et le code continue de s'executer. Cela fait penser que le malware évite de s'executer lui même plusieurs fois, dans le cas ou il aurait infecté plusieurs mods. *Cela ne peut pas etre considéré comme un killswitch car Étape1 est téléchargé depuis l'internet et peut changer.*
 
@@ -263,7 +263,7 @@ Il semble que ça ne soit que Skyrage, qui est un autre malware Minecraft, visan
 - Windows: task scheduler `MicrosoftEdgeUpdateTaskMachineVM`, le fichier `%AppData%\..\LocalLow\Microsoft\Internet Explorer\DOMStore\microsoft-vm-core`
 - Linux: `/bin/vmd-gnu`, `/etc/systemd/system/vmd-gnu.service`, service `vmd-gnu`
 
-## Connexions
+### Connexions
 - Serveur C&C: `connect.skyrage.de`
 - Téléchargement: `hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/qqqqqqqqq`
 
