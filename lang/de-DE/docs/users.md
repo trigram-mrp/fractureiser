@@ -62,90 +62,79 @@ Aktuell sind keine neuen Infektionen möglich, da der Server des Angreifers ausg
 
 ## Bin ich infiziert?
 
-The malware has multiple stages, so asking whether you are infected is actually two questions
+Die Malware hat mehrere Stufen, also ist die Frage, ob Sie infiziert sind, eigentlich zwei Fragen
 
-### Do any of my mod files have Stage 0?
-A variety of scanners exist that take a mod file and detect whether it is infected by Stage 0 of
-the malware.
+### Besitze ich mit Stage0 infizierte Mods?
+Es gibt viele Scanner, die eine Mod-Datei auf eine Infektion mit Stage0 überprüfen können.
 
-* Overwolf's [scanner](https://github.com/overwolf/jar-infection-scanner/releases)
-  * This is the recommended option for checking your entire game - just point it at the CurseForge 
-installation folder or wherever else  you have your instances saved
-  * This is a standalone program and does not require the Overwolf app installed
-* douira's [website-based online scanner](https://douira.github.io/fractureiser-web-detector/)
-* cortex's [nekodetector](https://github.com/MCRcortex/nekodetector/releases) 
-  * Click on "Assets" to show the runnable file - requires Java to be installed
+* Der [Scanner]((https://github.com/overwolf/jar-infection-scanner/releases)) von Overwolf
+  * Dies ist empfohlen, wenn Sie ihr gesamtes Spiel prüfen wollen - Stellen Sie einfach nur den CurseForge-Ordner oder den Ordner, in dem sich Ihre Instanzen befinden, ein
+  * Dieses Programm funktioniert auch ohne die Overwolf-App
+* Der [web-basierte Onlinescanner](https://douira.github.io/fractureiser-web-detector/) von douira
+* [nekodetector](https://github.com/MCRcortex/nekodetector/releases) von cortex
+  * Klicke auf "Assets", um die ausführbare Datei anzuzeigen - Java wird benötigt
 
-In isolation, stage 0 infection is not dangerous if the files are deleted and never ran.
+Alleine ist eine Infektion mit Stage0 harmlos, wenn die Dateien gelöscht werden und niemals ausgeführt wurden.
 
-### Are Stage 2 files present on my system?
+### Sind Stage2-Dateien auf meinem System?
 
-Stage 2 files being on your system means that the stages 0 and 1 of the malware ran successfully.
-If they are present at all, you are likely *fully infected* and should continue reading the
-instructions in the document.
+Wenn Stage2-Dateien auf Ihrem System sind, bedeutet das, dass Stage0 und Stage1 erfolgreich ausgeführt wurden.
+Falls Sie präsent sind, ist ihr Computer vermutlich *vollständig infiziert* und Sie sollten die Anweisungen in diesem Dokument weiter lesen.
 
-Many virus scanners are starting to detect stage 2 files. If you get a warning that such
-files were found and removed, proceed to the "I'm Infected, Now What?" section.
+Viele Virenscanner beginnen, Stage2-Dateien zu erkennen. Falls Sie eine Warnung, dass solche Dateien erkannt und entfernt wurden, sollten Sie den "Ich bin infiziert, was jetzt?"-Abschnitt lesen.
 
-Otherwise, you can check manually by doing the following, based on your platform:
+Ansonsten können Sie selbst wie folgt eine Überprüfung durchführen:
 
-#### Windows Instructions
+#### Auf Windows
 
-* Open your Start menu with the Windows Key, and type `%localappdata%` - it should appear as such:
-![Search results for the above query](media/localappdata.png)
+* Öffnen Sie ihr Startmenu mit der Windows-Taste und geben Sie `%localappdata%` ein - es sollte so aussehen:
+![Suchergebnisse für die Anfrage oben](media/localappdata.png)
 
-* Inside the Local appdata folder, you must ensure that your Explorer is set to view both 
-`Hidden Items`, and `Protected Operating System Files`.
-  * This can be done from View > Options
-  * If you are unsure how to do this, a video explanation 
-[can be found here](https://youtu.be/KLTlTlnXeKs).
-  * Windows 11 users can find the same options under the "View" button at the top ribbon, as 
-  well as  the  "..." button on the rightmost side of it
+* Stellen Sie dann sicher, dass ihr Explorer sowohl
+`Versteckte Dateien`, als auch `Geschützte Systemdateien` anzeigt.
+  * Dies können Sie in Ansicht > Optionen machen
+  * Falls Sie nicht wissen, wie [finden Sie ein Videotutorial hier](https://youtu.be/KLTlTlnXeKs).
+  * Auf Windows 11 sind die gleichen Optionen beim dem Ansicht-Button und beim "..."-Button rechts daneben.
 
-* Locate a folder named `Microsoft Edge`. The SPACE between "Microsoft" and "Edge" is
-  important - as `MicrosoftEdge` is a legitimate folder that is used by Edge.  The virus
-  simply named it like that to disguise itself.  
-  * The legitimate folder might also be called `Microsoft\Edge` (an `Edge` folder inside a 
-`Microsoft` folder).
-  * The legitimate folder doesn't *have* to exist - if you don't have any Edge related folders,
-  you're safe.
-  * Both legitimate folders can exist at the same time, this is okay too.
-* If `Microsoft Edge` is present, you were infected. If this is the case, permanently delete the 
-folder and everything inside it.
-  * If the folder can not be deleted, you must stop any Java programs currently running via your 
-Task Manager.
+* Suchen Sie nach einem Ordner names `Microsoft Edge`. Die LEERTASTE zwishcen "Microsoft" und "Edge" ist wichtig - `MicrosoftEdge` ist der legitime Ordner, der von Edge verwendet wird.
+Der Virus benannte ihn nur so, um sich zu verstecken.
+  * Der legitime Ordner kann auch `Microsoft\Edge` heißen (ein `Edge` Ordner in einem
+`Microsoft` Ordner).
+  * Der legitime Ordner *muss* nicht existieren - wenn es keine Edge-Ordner gibt, sind Sie sicher.
+  * Es können auch beide legitime Ordner gleichzeitig existieren.
+* Wenn `Microsoft Edge` existiert, sind Sie infiert. Löschen Sie in diesem Fall den Ordner und seinen Inhalt dauerhaft.
+  * Wenn der Ordner nicht gelöscht werden kann, stoppen Sie alle Java-Programme mit dem Task Manger.
 
-#### MacOS Information
+#### Auf MacOS
 
-The malware does not seem to affect MacOS, so you should be fine.  
-*Check back here every now and then just in case.*
+Die Malware scheint MacOS nicht anzugreifen, also besteht keine Gefahr.
+*Schauen Sie immer mal wieder hier vorbei, falls sich dies ändert.*
 
-#### Linux Instructions
+#### Auf Linux
 
-Firstly, ensure whichever method you are using to list files has the ability to view hidden files.
-Most GUI file managers have the shortcut Ctrl+H to toggle hidden files. If doing this on a terminal, 
-use `ls -A` in the respective directories, or `ls -lha` for a more detailed listing.
+Stellen Sie zuerst sicher, dass die Methode, mit der Sie Dateien auflisten versteckte Dateien anzeigen kann.
+Bei den meisten GUI-Dateimanagern können Sie mit der Tastenkombination Strg+H die versteckten Dateien anzeigen.
+Falls Sie ein Terminal verwenden, führen Sie `ls -A` (oder `ls -lha` für mehr Details) in den entsprechenden Ordnern aus.
 
-If any of the following files exist, you were infected. If this is the case, delete all of them:
+Falls eine der folgenden Dateien existiert, sind Sie infiziert. Löschen Sie in diesem Fall jede dieser Dateien:
 * `~/.config/systemd/user/systemd-utility.service`
 * `/etc/systemd/system/systemd-utility.service`
 * `~/.config/.data/lib.jar`
 
-Upon doing so, if applicable, check your `journalctl` for any changes you may not recognize. You
-can do this with the commands `journalctl -exb` (for system logs) and `journalctl -exb --user` 
-(for user logs). Run the following commands to refresh your systemd services:
+Nachdem Sie dies getan haben, überprüfen Sie `journalctl` nach Änderungen, die Sie nicht erkennen.
+Dies können Sie mit dem Befehl `journalctl -exb` (für System-Logs) und `journalctl -exb --user` 
+(für Nutzer-Logs).
+Führen Sie die folgenden Befehle aus, um ihre Systemd-Dienste neu zu laden:
 ```sh
-sudo systemctl daemon-reload # Enter your user password
+sudo systemctl daemon-reload # Geben Sie Nutzer-Passwort ein.
 systemctl --user daemon-reload 
 ```
 
-#### Scripts
+#### Skripte
 
-*If you don't know how to run a PowerShell or Bash script, these are not for you.*  
-Automated PowerShell or Bash scripts are also available [on the PrismLauncher
-website](https://prismlauncher.org/news/cf-compromised-alert/#automated-script) to check
-for Stage 2 for you, if you have the technical knowhow to run them. Overwolf (Curseforge's
-parent company) has also released a C# Stage 2 detection tool:
+*Nutzen Sie diese nur, wenn Sie wissen, wie man ein PowerShell- oder Bash-Skript ausführt.*  
+Automatische PowerShell- und Bash-Skripte zur Überprüfung auf Stage2 sind auch [auf der PrismLauncher
+website](https://prismlauncher.org/news/cf-compromised-alert/#automated-script) erhältlich, falls Sie das technische Wissen haben, um die Skripte auszuführen. Overwolf (Muttergesellschaft von CurseForge) hat auch ein in C# geschriebenes Erkennungswerkzeug für Stage2 veröffentlicht:
 https://github.com/overwolf/detection-tool
 
 ## Ich bin infiziert, was jetzt?
