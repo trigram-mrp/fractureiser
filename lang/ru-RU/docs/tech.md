@@ -169,7 +169,7 @@ This validates the suspected behavior/evidence from the analysis done on the pri
 
 ### Репликация
 
-Репликация осуществляется посредством автоматической обработки классов в файлах jar по всей файловой системе на локальном компьютере. Любой jar-файл, содержащий классы, отвечающие определенным критериям, может быть заражен. Процесс сканирования локальной файловой системы и внедрения вредоносного кода можно найти здесь: [`dev/neko/nekoclient/Client.start(InetSocketAddress, byte[])`](https://github.com/clrxbl/NekoClient/ blob/main/dev/neko/nekoclient/Client.java#L273)
+Репликация осуществляется посредством автоматической обработки классов в файлах jar по всей файловой системе на локальном компьютере. Любой jar-файл, содержащий классы, отвечающие определенным критериям, может быть заражен. Процесс сканирования локальной файловой системы и внедрения вредоносного кода можно найти здесь: [`dev/neko/nekoclient/Client.start(InetSocketAddress, byte[])`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L273)
 
 Критерии, которые ищет процесс, можно найти здесь: [`dev/neko/nekoinjector/template/impl`](https://github.com/clrxbl/NekoClient/tree/main/dev/neko/nekoinjector/template/impl)
 
