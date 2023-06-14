@@ -1,7 +1,5 @@
 <p align="center">
-
     <img src="docs/media/logo.svg" alt="fractureiser 로고" height="240">
-
 </p>
 
 _아직 작업중인 문서입니다 불편을 드려 죄송합니다._
