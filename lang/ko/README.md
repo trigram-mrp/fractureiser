@@ -65,7 +65,4 @@ fractureiser의 작동 방식에 대해 Stage 0부터 Stage 3까지 어느 정�
 
 <br/>
 
-users.md  
-tech.md  
-credits.md  
-_번역 완료됨_
+_급하게 번역기, AI등을 추가로 활용해 번역하였습니다. 오타, 오역, 부자연스러운 문장이 많을 수 있습니다._
