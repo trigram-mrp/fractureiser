@@ -1,11 +1,13 @@
-# Guide pour les joueurs de mods
+# Guide pour les joueurs modés
+
+> (*Note de traduction: les informations relevant du jargon technique sont potentiellement faussées, merci de me corriger si tel est le cas*)
 
 Si vous jouez **uniquement** en vanilla via un launcher de confiance comme le launcher officiel ou 
 Prism, et n'avez jamais touché à des mods : vous êtes en sécurité à 100%. Restez éloignés des mods 
-pour le moment
+pour le moment.
 
 Si vous êtes un joueur de Minecraft moddé, vous allez avoir besoin de vérifier si vous avez été infecté par le
-malware fractureiser pour être sûr que votre ordinateur et vos données personnels ne courent aucun risque. Vous pouvez faire
+malware fractureiser pour être sûr que votre ordinateur et vos données personneles ne courent aucun risque. Vous pouvez faire
 cela en suivant les instructions ci-dessous.
 
 Des informations additionnelles sur quoi faire si vous êtes ou non infecté seront données après les étapes permettant un diagnostic.
@@ -28,14 +30,14 @@ Si vous voulez jouer, suivez les étapes de diagnostic sur cette page ainsi que 
 * [Foire aux Questions](#foire-aux-questions)
 * [FAQ technique](#faq-technique)
 
-Si vous avez des questions sur fractureiser, lisez cette page en entier, y compris la FAQ à la fin, car la plupart des questions y ont été répondu.
+Si vous avez des questions sur fractureiser, lisez cette page en entier, y compris la FAQ à la fin, car la plupart des questions ont leur réponse la bas.
 
 ## Qu'est-ce qu'il s'est passé ?
 
 Plusieurs mods et plugins malicieux ont été publié par le créateur du malware
 sur le site d’hébergement de mods CurseForge et sur le hub de plugins dev.craftbukkit.org (à ne pas confondre avec le logiciel Bukkit lui-même). Une développeuse connue a téléchargé l'un de ces mods pour l'essayer, ce qui a infecté les fichiers de son ordinateur sans sa connaissance - incluant une copie d'un projet qui aurait pu être publié sur CurseForge comme un fichier légitime, avec le virus inclus.
 
-Cette suite d’événements s'est répétée plusieurs fois sur d'autres utilisateurs de CurseForge et dev.craftbukkit.org, infectant des copies de plusieurs plugins et mods populaires. *Il y a des traces de ces fichiers malicieux remontant à mi-avril.*
+Cette suite d’événements s'est répétée plusieurs fois sur d'autres utilisateurs de CurseForge et dev.craftbukkit.org, infectant des copies de plusieurs plugins et mods populaires. *Il y a des traces de ces fichiers malicieux remontant jusqu'a mi-avril.*
 
 Pendant ce temps, le créateur du malware a essayé de "brute force" les comptes de créateurs ayant des mods populaires sur CurseForge. Pour le moment, nous ne sommes pas sûr de s'il s'agit d'une brèche causée par le "brute force" ou par l'infection des comptes des créateurs.
 
@@ -47,11 +49,11 @@ L'Étape 3 est le cerveau du malware, et nous avons des preuves qu'elle essaye d
 * S'autopropager à *tous* les fichiers `jar` sur votre machine, affectant probablement les mods
   n'ayant pas été téléchargé via CurseForge ou BukkitDev, et les autres programmes Java
 * Voler les "cookies" et informations de connection de nombreux navigateurs web
-* Remplacer les adresses de cryptomonnaies contenues dans le presse-papier par des versions alternatives qui semblent appartenir à l'attaquant[^1]
-* Voler des identifiants Discord
+* Remplacer les adresses de cryptomonnaies contenues dans le presse-papier par des versions alternatives qui semblent appartenir à l'attaquant
+* Voler des identifiants Discord (tokens)
 * Voler des identifiants Microsoft et Minecraft
 
-(Voir les [détails techniques](/docs/tech.md) pour plus d'informations)
+(Voir les [détails techniques](/lang/fr-FR/docs/tech.md) pour plus d'informations)
 
 À cause de ce comportement, nous sommes **très confiant** sur le fait que cela soit **une attaque visant l'écosystème de mods de Minecraft**. C'est assez grave.
 
@@ -81,25 +83,25 @@ Plusieurs scanners existent qui prennent un fichier de mod et détectent s'il co
 * Le [scanner](https://douira.github.io/fractureiser-web-detector/) en ligne par douira
 * [nekodetector](https://github.com/MCRcortex/nekodetector/releases) par cortex (Cliquez sur "Assets" pour avoir accès au fichier exécutable)
 
-Isolée, l'infection de l'Étape 0 est inoffensive tant que le fichier est supprimé et jamais lancé.
+Isolée, l'infection de l'Étape 0 est inoffensive tant que le fichier est supprimé et jamais executé.
 
 ### Est-ce que les fichiers de l'Étape 2 sont présents sur mon ordinateur ?
 
 Si les fichiers de l'Étape 2 se trouvent sur votre ordinateur, cela signifie que les étapes 0 et 1 ont fonctionné avec succès.
 S'ils sont présents, vous êtes possiblement *complètement infecté* et devriez continuer à lire les instructions de ce document.
 
-Beaucoup d'anti virus ont commencé à détecter les fichiers de l'étape 2. Si vous recevez un avertissement que de tels fichiers ont été trouvés et supprimés, passez à la section "Je suis infecté·e, que faire ?"
+Beaucoup d'anti virus ont commencé à détecter les fichiers de l'étape 2. Si vous recevez un avertissement a propos de fichiers trouvés et supprimés, passez à la section "Je suis infecté·e, que faire ?"
 
 Dans le cas contraire, vous pouvez vérifier manuellement en faisant ce qui suit, selon votre système d'exploitation :
 
-#### Instructions pour le système Windows
+#### Instructions pour Windows
 
 * Ouvrez le menu Démarrer avec la touche Windows, et taper `%localappdata%` - il devrait apparaître comme suit :
 ![Résultats de la recherche ci dessus](/docs/media/localappdata.png)
 
 * Dans le dossier Local appdata, vous devez vous assurer que votre explorateur de fichier est configuré pour permettre de voir les `Fichiers cachés` et les `Fichiers protégés du Système d'Exploitation`. 
   * Cela peut être fait via Affichage > Options
-  * Si vous n'êtes pas sûr de comment faire, une vidéo explicative (en anglais) [se trouve ici](https://youtu.be/KLTlTlnXeKs).
+  * Si vous n'êtes pas sûr de la procédure, une vidéo explicative (en anglais) [se trouve ici](https://youtu.be/KLTlTlnXeKs).
   * Les utilisateurs de Windows 11 users peuvent trouver des options similaires sous le bouton "Affichage" en haut de la fenêtre, ainsi que le bouton "..." à droite de celui-ci
 
 
@@ -108,18 +110,18 @@ Dans le cas contraire, vous pouvez vérifier manuellement en faisant ce qui suit
   le nomme juste ainsi pour se cacher. Le vrai dossier peut aussi s'appeler `Microsoft\Edge` (un dossier `Edge` dans le dossier `Microsoft`).
   * Le vrai dossier *peut ne pas exister* - si vous n'avez rien lié à Edge, vous êtes en sécurités
   * Les deux dossiers légitimes peuvent coexister en même temps, c'est normal.
-* Si le dossier `Microsoft Edge` existe, vous êtes infecté. Si c'est le cas, supprimé définitivement ce dossier et son contenu.
-  * Si le dossier ne peut pas être supprimé, couper tous les programmes Java via le Manager des Tâches.
+* Si le dossier `Microsoft Edge` existe, vous êtes infecté. Si c'est le cas, supprimez définitivement ce dossier et son contenu.
+  * Si le dossier ne peut pas être supprimé, couper tous les programmes Java via le Gestionaire de Tâches.
 
 
 #### Informations pour les utilisateurs de MacOS
 
 Ce malware ne semble pas affecter MacOS, donc vous devriez être tranquille.
-*Revenez ici parfois, juste au cas où.*
+*Revenez ici de temps en temps, juste au cas où.*
 
 #### Instructions pour les systèmes Linux
 
-Premièrement, assurez-vous que la méthode que la méthode que vous utilisez pour voir les fichiers est capable de voir les fichiers cachés. La plupart des explorateurs de fichiers graphiques ont le raccourci Ctrl+H pour afficher/cacher les fichiers cachés. Si vous faites, ceci via un invite de commandes, utilisez `ls -A` dans les dossiers correspondants, ou `ls -lha` pour plus d'informations.
+Premièrement, assurez-vous que la méthode que vous utilisez pour voir les fichiers est capable de voir les fichiers cachés. La plupart des explorateurs de fichiers graphiques ont le raccourci Ctrl+H pour afficher/cacher les fichiers cachés. Si vous faites, ceci via un invite de commandes, utilisez `ls -A` dans les dossiers correspondants, ou `ls -lha` pour plus d'informations.
 
 Si un seul des fichiers suivant existe, vous êtes infecté. Dans ce cas, supprimez les tous :
 * `~/.config/systemd/user/systemd-utility.service`
@@ -142,19 +144,21 @@ https://github.com/overwolf/detection-tool
 
 **IMPORTANT** : Nous ne connaissons pas encore l’entièreté de ce que peut réaliser le malware, ni ses intentions, donc une précaution extrême doit être appliqué jusqu'à ce qu'une façon de supprimer tous les symptômes soit trouvée. Tout ce qui est noté ici est seulement *ce que nous savons* - gardez un œil sur les communications de l'équipe pour de possible mise à jour si quoi que ce soit de critique est trouvé.
 
-Si vous avez trouvé des fichiers de l'Étape 2 de fractureiser sur votre ordinateur, il est fortement possible que l'Étape 3 ait été exécuté et ait infecté votre appareil. Votre meilleure option est de considérer que tout ce qui se trouve sur votre ordinateur est *entièrement compromis*. Vous devrez :
+(*note de traduction : Référez vous aux communications de l'equipe anglaise en premier lieu, la traduction en français prend du temps*) 
+
+Si vous avez trouvé des fichiers de l'Étape 2 de fractureiser sur votre ordinateur, il est fortement probable que l'Étape 3 ait été exécuté et ait infecté votre appareil. Votre meilleure option est de considérer que tout ce qui se trouve sur votre ordinateur est *entièrement compromis*. Vous devrez :
 
 * Faire une Back Up de tout ce que vous ne voulez pas perdre sur une clé USB ou une mémoire externe (vous devriez faire ceci souvent dans tous les cas !)
 * Utiliser un ordinateur différent, changer vos mots de passes pour tous les services auxquel vous étiez connectés sur votre ancien ordinateur (Discord, boite mails, etc...). Si possible utilisez une gestionnaire de mots de passe comme [BitWarden](https://bitwarden.com).
 * Si vous n'utilisez pas encore d’Authentification à Double Facteur (l'application Authentificar ou SMS) pour tous les services le proposant, commencez à le faire immédiatement
-* Si vous le pouvez, contactez un service professionnel pour effectuer un diagnostic plus détaillé sur votre appareil pour quoi que ce soit de suspicieux, ou pour vous aider à tout effacer et réinstaller l'ordinateur.
+* Si vous le pouvez, contactez un service professionnel pour effectuer un diagnostic plus détaillé sur votre appareil pour quoi que ce soit de suspicieux, ou pour vous aider à tout effacer et réinstaller le système d'exploitation.
 * Lisez les sections suivantes sur quoi faire si vous n'êtes pas infecté, car les étapes s'appliquent à vous aussi.
 
 ## Je ne suis pas infecté·e, que faire ?
 
 Si rien n'a été trouvé par le scanner pour l'Étape 2, il est probable que rien ne se passe et que vous soyez capable de jouer tranquillement.
 
-Bien que `fractureiser` a été supprimé, de nouveaux virus peuvent apparaître dans un futur proche tant que nous n'aurons pas établi de nouveaux protocoles. Si vous voulez jouer, nous vous recommandons de :
+Bien que `fractureiser` ai été supprimé, de nouveaux virus peuvent apparaître dans un futur proche tant que nous n'aurons pas établi de nouveaux protocoles. Si vous voulez jouer, nous vous recommandons de :
 
 * Jouer exclusivement avec les mods et modpacks que vous avez deja installer et vérifier pour leur sécurité
 * Éviter d'installer quoi que ce soit publié le 8 juin venant de nouveaux auteurs ou d'auteurs inconnus, pour la même raison que le point d'avant.
@@ -174,12 +178,12 @@ Le fait qu'aucun mod n'ait été infecté est un coup de chance.
 Le problème ne vient pas du site, la sécurité de Modrinth équivaut à celle de CurseForge.
 
 ### Comment CurseForge n'ont pas pu détecter cela ?
-Le code que l'Étape 0 exécute n'est pas nécessairement suspicieux pour un système de vérification automatisé, et pourrait très bien être quelque chose qu'un autre mod utilise. En faite, les premiers outils pour détecter l'Étape 0 renvoyaient un nombre signifiant de faux positifs sur des mods populaires tel que Quark.
+Le code que l'Étape 0 exécute n'est pas nécessairement suspicieux pour un système de vérification automatisé, et pourrait très bien être quelque chose qu'un autre mod utilise (une dépendance). En faite, les premiers outils pour détecter l'Étape 0 renvoyaient un nombre signifiant de faux positifs sur des mods populaires tel que Quark.
 
 Soyons réaliste : ce type de prévention à la taille d'une platform est infaisable à cause de l'infinité de possibilités de cacher les intentions de son code.
 
 ### Quels Antivirus sont capables d'identifier le malware ?
-De nouveaux sont en train d'être ajoutés au moment où nous parlons, il est mieux de rester à faire la vérification manuelle ci-dessus plutôt que de compter sur les AV pour le moment.
+De nouveaux sont en train d'être ajoutés au moment où nous parlons, il est mieux de rester à la vérification manuelle ci-dessus plutôt que de compter sur les AV pour le moment.
 
 ### Est-ce que je peux aller en multijoueur ?
 Oui, vous ne pouvez pas être infecté via un serveur multijoueur si vous ne téléchargez pas de mods pour lui.
@@ -190,26 +194,28 @@ Non, cela n'affecte que la version Java de Minecraft.
 ### Est-ce que des clients alternatifs tels que Lunar ou Badlion sont sûrs ?
 Voir ci-dessous.
 
-### Est-ce qu'Optifine est sûr ? / Est-ce que Sodium est sûr ? / Est-ce qu'Iris est sûr ? / Est-ce que Create est sûr ? / Est-ce que Essential est sûr ? / Est-ce que (nom de mod) est sûr ?
+### Est-ce qu'Optifine est sûr ? / Est-ce que Sodium est sûr ? / Est-ce qu'Iris est sûr ? / Est-ce que Create est sûr ? / Est-ce que Essential est sûr ? / Est-ce que (inserer un nom de mod) est sûr ?
 
 **Nous ne pouvons pas entièrement confirmer la sécurité d'aucun mod.**
 
 L'une des fonctions de l'Étape 3 du virus est d'infecter le plus de `.jar`s qu'il peut trouver sur votre ordinateur. Il peut infecter **tous les .`jar`s**, y compris Minecraft (vanilla/moddé), des mods, des plugins, et des applications Java sans rapport. Donc si votre ordinateur à l'Étape 3 du virus, savoir si le mod que vous venez de télécharger est sûr n'est plus utile - il va *devenir* infecté.
 Détectez et supprimez les Étapes 1 et 2 de fractureiser **en premier**.
 
-Pour le moment, tous les mods infectés **connus** ont été supprimé de CurseForge. CurseForge [ont posté une liste des mods infectés connus](https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool/) (en anglais, en fin de page) et les ont supprimés du site. Modrinth a scanné 10 mois de mods publiés et n'ont trouvé aucune infection.
+Pour le moment, tous les mods infectés **connus** ont été supprimé de CurseForge. CurseForge [a posté une liste des mods infectés connus](https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool/) (en anglais, en fin de page) et les ont supprimés du site. Modrinth a scanné 10 mois de mods publiés et n'ont trouvé aucune infection.
 
 Cela *ne garantit pas que des mods infectés aient passé les vérifications*. Pour vérifier si un `jar` donné contient l'Étape 0 de fractureiser, regardez la section [Suis-je infecter ?](#suis-je-infectée) et surtout ayez une précaution extrême en téléchargeant quoi que ce soit lié aux mods pour le moment.
 
-### À quel point l'infection a été répandu ?
+### À quel point l'infection est elle répandue ?
 
 CurseForge a indiqué que les fichiers infectés ont été téléchargé près de 6 000 fois pour leur entière période d'infection. Citation de l'annonce de CurseForge sur Discord (en anglais) :
 > Just to give perspective, this accounts to about 0.015% of CurseForge’s daily downloads 
 > for Minecraft.
 
+> "Pour vous donner un ordre d'idée, cela représente a peut près 0.015% des téléchargements journaliers de mods minecraft sur curseforge"
+
 ### Est-ce que quelqu'un a voulu gâcher la sortie de la 1.20 ?
 
-Il s'agit d'une coincidence - ce virus était actif depuis plusieurs mois avant d'être mis à la lumière du jours le matin même de la sorte de la 1.20.
+Il s'agit d'une coincidence - ce virus était actif depuis plusieurs mois avant d'être mis à la lumière du jours le matin même de la sortie de la 1.20.
 
 ## FAQ technique
 
@@ -235,7 +241,7 @@ CurseForge ont développé un [détecteur pour les étapes 2 et 3](https://githu
 
 Modrinth ont aussi scanné les mods et plugins publiés ces 10 derniers mois et n'ont trouvé aucune infection.
 
-Les deux platforms considèrent d'introduire un processus de scan automatique pour les mods soumis. C'est difficile, puisque les malwares Java comme celui-ci sont typiquement sur mesure.
+Les deux platforms considèrent l'introduire d'un processus de scan automatique pour les mods soumis. C'est difficile, puisque les malwares Java comme celui-ci sont typiquement uniques.
 
 ### Quelles adresses puis-je bloquer dans mon firewall/ma table de routage ?
 
@@ -278,9 +284,9 @@ Les mods pour Minecraft Java sont basiquement un sac de code arbitraire : traite
 
 ### Pourquoi les mods n'ont pas de signature cryptographique pour éviter des malwares de se glisser en leur sein ?
 
-Le problème est qu'une signature seule ne prevent en aucun cas un malware - un virus possédant une signature reste un virus - et si s'autoattribuer une signature est autorisé, cela ne change rien, le virus peut simplement supprimer la signature du jar ("supprimer le dossier META-INF") et recréer une signature avec sa propre clé. (Ce n'est pas une hypothèse, en effet : fractureiser contient une partie permettant d'enlever la signature des jars qu'il infecte.)
+Le problème est qu'une signature seule ne previent en aucun cas un malware - un virus possédant une signature reste un virus - et si s'autoattribuer une signature est autorisé, cela ne change rien, le virus peut simplement supprimer la signature du jar ("supprimer le dossier META-INF") et recréer une signature avec sa propre clé. (Ce n'est pas une hypothèse, en effet : fractureiser contient une partie permettant d'enlever la signature des jars qu'il infecte.)
 
-Une signature en ligne pour les mods *semble* être un pas en avant prometteur, mais il y aura des compromis à faire. Il y aura [une réunion](/docs/2023-06-08-meeting.md) avec différents responsables de l'écosystème Minecraft moddé pour discuter de comment continuer sur cette voie.
+Une signature en ligne pour les mods *semble* être un pas en avant prometteur, mais il y aura des compromis à faire. Il y a eu [une réunion](/lang/fr-FR/docs/2023-06-08-meeting.md) avec différents responsables de l'écosystème Minecraft moddé pour discuter de comment continuer sur cette voie.
 
 ### Serait-il possible d'interdire la possibilité de télécharger du code exécutable aux mods ?
 

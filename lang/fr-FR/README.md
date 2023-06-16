@@ -1,8 +1,9 @@
 <p align="center">
-	<img src="docs/media/logo.svg" alt="fractureiser logo" height="240">
+	<img src="../../fractureiser.png" alt="fractureiser logo">
 </p>
 
 *Excusez-nous pour le rangement, la documentation est toujours en cours*
+> (*Note de traduction: les informations relevant du jargon technique sont potentiellement faussées, merci de me corriger si tel est le cas*)
 
 ## Quoi ?
 `fractureiser` est un [virus](https://fr.wikipedia.org/wiki/Virus_informatique) trouvé dans plusieurs projets Minecraft publiés sur les sites CurseForge et BukkitDev. Le malware est inclus dans de multiples mods, certains faisant partis de modpacks très populaires. Le malware semble n'attaquer que Windows et Linux.
@@ -13,7 +14,7 @@ Nous avons nommé ce logiciel fractureiser par rapport au nom du compte CurseFor
 
 ## Ce que vous devez savoir
 
-### [Joueurs de mods, CLIQUEZ ICI](docs/users.md)
+### [Joueurs modés, CLIQUEZ ICI](docs/users.md)
 
 Si vous êtes simplement un joueur avec mods et non un développeur, le lien ci-dessus est tout ce dont vous avez besoin. Il contient des informations succinctes sur les effets du logiciel, les étapes à suivre pour vérifier si vous l'avez et comment le supprimer ainsi qu'une FAQ.
 
@@ -38,7 +39,7 @@ Reportez-vous à [cette page](docs/2023-06-08-meeting.md) pour l'ordre du jour e
 
 Si vous avez des fichiers révélateurs sur ce malware, publié les sur https://wormhole.app et envoyez par mail l'URL à fractureiser@unascribed.com — tout ce qui y sera envoyé sera partagé avec le reste de l'équipe. Si vous avez besoin prendre contact, envoyez un mail à jaskarth4@gmail.com.
 
-Si vous copiez des portions de ce document quelque part, *s'il vous plait* mettez en lien renvoyant vers ce [répertoire GitHub](https://github.com/fractureiser-investigation/fractureiser) prêt du début pour que tous puissent avoir les dernières mises à jour et entrer en contact avec l'équipe.
+Si vous copiez des portions de ce document quelque part, *s'il vous plait* mettez un lien renvoyant vers ce [répertoire GitHub](https://github.com/fractureiser-investigation/fractureiser) prêt du début pour que tous puissent avoir les dernières mises à jour et entrer en contact avec l'équipe.
 
 Le **seul** salon public officiel que vous pouvez rejoindre sans y être invité personnellement qui est *géré par la même équipe qui a écrit ce résumé* est [#cfmalware sur le serveur IRC EsperNet](https://webchat.esper.net/?channels=cfmalware). **Rejoindre un salon IRC exposera votre adresse IP.**
 
