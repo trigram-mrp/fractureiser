@@ -80,28 +80,28 @@ Przekazane liczby są traktowane jako bajty przez Etap 1, i są wpisywane to pli
 
 Tworzenie czytnika klas jest statyczne dla tego adresu URL i nie używa adresu Cloudflare którego używa Etap 1. Z powodu iż te IP jest aktualnie offline, to oznacza że mody zainfekowane Etapem 0 (*a przynajmnniej te o którym nam wiadomo*) na ten moment nie rozprzestrzeniają infekcji.
 
-## Stage 1 (`dl.jar`)
+## Etap 1 (`dl.jar`)
 
 SHA-1: `dc43c4685c3f47808ac207d1667cc1eb915b2d82`
 
-[Decompiled files from the Malware can be found here](../decomp).
+[Zdekompilowane wersje wirusa mogą być znalezione tutaj](../decomp).
 
-The very first thing `Utility.run` does is check if the system property `neko.run` is set. If it is, it will *immediately stop executing*. If not, it sets it to an empty string and continues. This appears to be the malware trying to avoid executing itself multiple times, such as if it had infected multiple mods. *This cannot be relied upon as a killswitch because Stage1 is downloaded from the Internet and may change.*
+Pierwsze co robi `Utility.run` to sprawdzenie czy systemowa zmienna `neko.run` jest ustawiona. Jeżeli jest, program *od razu zostanie poddany terminacji*. Jeżeli nie, ustawia tą zmienną na pusty string i kontynuuje. Wygląda to na że wirus chce się upewnić że nie odpala się kilka razy, np. w sytuacji gdzie zainfekował kilkanaście modów. *Nie możemy na tym polegać jako ochrone przed wirusem, ponieważ Etap 1 jest pobierany z Internetu i może się zmienić.*
 
-It attempts to contact `85.217.144.130`, and a Cloudflare Pages domain (`https://files-8ie.pages.dev/ip`). Abuse reports have already been sent. The Pages domain is used to retrieve the IP of the C&C server if the first IP no longer responds — the URL responds with a binary representation of an IPv4 address.
+Wirus próbuje skontaktować się z `85.217.144.130`, i z domeną od Cloudflare Pages (`https://files-8ie.pages.dev/ip`). Zgłoszenia nadużycia zostały już wysłane. Domena Pages jest używana aby zdobyć IP serwera C&C jeżeli pierwszy adres nie odpowiada - ten link odpowiada z adresem IPv4 w formacie binarnym.
 
-*The C&C IP has been nullrouted after an abuse report to the server provider. We will need to keep an eye on the Cloudflare page to see if a new C&C server is stood up, I can't imagine they didn't plan for this.* Thank you Serverion for your prompt response.
+*IP serwera C&C zostało zniwelowane po wysłanym zgłoszeniu do jego dostawcy. Musimy mieć na oku storne od Cloudflare aby zobaczyć czy nowy serwer C&c się pojawił, zakładam że nie mieli tego w planach*. Dziękuje Ci Serverion za twoją odpowiedź.
 
-*The Cloudflare Pages domain has been terminated.* There is a new C&C server located at `107.189.3.101`.
+*Domena Cloudflare Pages została poddana terminacji.* Istnieje nowy serwer C&C na IP `107.189.3.101`.
 
-Stage 1 then attempts to achieve persistence by doing the following:
-1. Downloading Stage 2 (lib.jar on Linux, libWebGL64.jar on Windows) from the server
-2. Making Stage 2 run automatically on startup:
-* On Linux, it tries placing systemd unit files in `/etc/systemd/system` or `~/.config/systemd/user`
-    * The unit file it places in the user folder never works, because it tries using `multi-user.target`, which doesn't exist for user units
-* On Windows, it attempts to modify the registry
-  (`HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run`) to start itself, or
-  failing that, tries adding itself to the `Windows\Start Menu\Programs\Startup` folder
+Etap 1 następnie próbuje ostać się na systemie poprzez:
+1. Pobranie Etapu 2 (lib.jar na Linuxie, libWebGL64.jar na Windowsie) z serwera
+2. Wrzucenie Etapu 2 do cyklu startowego:
+* Na Linuxie, stara się wsadzić pliki systemd w `/etc/systemd/system` lub `~/.config/systemd/user`
+  * Plik który wrzucany jest do folderu `user` nigdy nie będzie działał, ponieważ próbuje użyć `multi-user.target`, który nie istnieje w `user`.
+* Na Windowsie, stara się zmodyfikować rejestr 
+  (`HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run`), a jeżeli to się nie uda, 
+  próbuje dodać siebie do folderu `Windows\Start Menu\Programs\Startup`
 
 ## Stage 2 (`lib.jar` or `libWebGL64.jar`)
 
