@@ -6,7 +6,7 @@
 
 Emi: Hello everyone, I'm Emi, and I'm going to be leading this meeting, representing the Fractureiser Mitigation Team. 
 
-This is gonna be a discussion with community memebers of note about the mitigation for potential future malware incidents.
+This is gonna be a discussion with community members of note about the mitigation for potential future malware incidents.
 
 As a summary, Fractureiser is a 4-Stage, self-updating, self-replicating piece of malware that boardly targets Java programs with the focus on Minecraft and modded communities. 
 
@@ -20,7 +20,7 @@ Uh, the ability to capture browser passwords with further use to increase Fractu
 
 On June 7th, at about 00:20 UTC, the Luna Pixel modding team announced it detected unauthorized uploads to several of its projects. 
 
-One or more of their team memebers must've been compromised and the attacker has used the login information to upload further instances of the virus. 
+One or more of their team members must've been compromised and the attacker has used the login information to upload further instances of the virus. 
 
 Because of the quick response, the team was able to get the malicious server nullrouted, and also prompted attacker to temporarily disable the Stage 2 and its attempt to thwart analysis. 
 
