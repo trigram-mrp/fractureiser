@@ -12,11 +12,11 @@ yani aşağıdaki talimatlarla.
 Evet. Daha sonra tekrar kontrol edin.
 
 ### Sayfa Yapısı
-* [Aslında Ne Oldu?] (#what-actually-happened)
+* [Aslında Ne Oldu?](#what-actually-happened)
 * [Enfekte miyim?](#am-i-infected)
 * [Enfekte Oldum, Şimdi Ne Olacak?](#im-infected-now-what)
-* [Enfekte Değilim, Şimdi Ne Olacak?] (#im-not-infected-now-what)
-* [Sıkça Sorulan Sorular] (#frequently-asked-questions)
+* [Enfekte Değilim, Şimdi Ne Olacak?](#im-not-infected-now-what)
+* [Sıkça Sorulan Sorular](#frequently-asked-questions)
 * [Teknik SSS](#technical-faq)
 
 Fractureiser hakkında herhangi bir sorunuz varsa, lütfen bu sayfanın tamamını ve SSS bölümünü okuyun
