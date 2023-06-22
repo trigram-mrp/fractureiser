@@ -16,8 +16,8 @@ En dikkat çeken kötü amaçlı dosyaları yükleyen CurseForge hesabının ad�
 Sadece bir mod oyuncusuysanız ve bir geliştirici değilseniz, yukarıdaki bağlantı işinizi görecektir. Bu bağlantıda kötü amaçlı yazılımın etkileri, sahip olup olmadığınızı kontrol etmek ve nasıl kaldırılacağı hakkında yüzey seviyesinde bilgi, ve bir SSS bulunmaktadır.
 
 Daha derinlemesine inmek isteyen herkes ayrıca şu sayfalara da bakabilir:
-* [Etkinlik Zaman Çizelgesi](docs/timeline_tr.md)
-* [Teknik Ayrıntılar](docs/tech_tr.md)
+* [Etkinlik Zaman Çizelgesi](docs/timeline.md)
+* [Teknik Ayrıntılar](docs/tech.md)
 
 ### Hiçbir Minecraft modu kullanmadım
 
@@ -30,7 +30,7 @@ fractureiser'ın 0'dan 3'e kadar olan aşamalarının nasıl çalıştığı kon
 
 ## Takip Toplantısı
 2023-06-08 tarihinde fractureiser Önleme Ekibi, bu ölçekteki gelecekteki sorunlar için önleyici tedbirler ve çözümler konusunda topluluğun dikkate değer üyeleriyle bir toplantı gerçekleştirdi.
-Etkinliğin gündemi ve tutanakları için [bu sayfaya](https://github.com/fractureiser-investigation/fractureiser/blob/main/docs/2023-06-08-meeting_tr.md) bakın.
+Etkinliğin gündemi ve tutanakları için [bu sayfaya](https://github.com/fractureiser-investigation/fractureiser/blob/main/docs/2023-06-08-meeting.md) bakın.
 
 ## Ek Bilgiler
 
@@ -43,4 +43,4 @@ Bu belgenin parçalarını başka bir yere kopyalarsanız, lütfen en üstte bu 
 
 ---
 
-\- [fractureiser Önleme Ekibi](docs/credits_tr.md)
+\- [fractureiser Önleme Ekibi](docs/credits.md)
