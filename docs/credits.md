@@ -1,15 +1,16 @@
-## Credits
-Nonextensive! Thank you to all that pitched in. We'll flesh this out after this all blows over.
+## Emeği Geçenler
+Kapsamlı değil! Katılan herkese teşekkür ederim. Tüm bunlar sona erdikten sonra bunu ete kemiğe büründüreceğiz.
 
-[**Emi**](https://github.com/emilyploszaj/): Coordination, initial discovery (for this team), and early research  
-[**Jasmine**](https://github.com/jaskarth/): Coordination, writing the decompiler we've been using ([Quiltflower](https://github.com/QuiltMC/quiltflower/))  
-[**unascribed**](https://github.com/unascribed/): Coordination of documentation, crowd control
-[**williewillus**](https://github.com/williewillus/): Coordination, journalist  
-[**Vazkii**](https://github.com/vazkii/): Documentation, public communications  
-[**Col-E**](https://github.com/Col-E/): Reverse engineering, writing the deobfuscator we've been using ([Recaf](https://www.coley.software/Recaf/))  
-[**quat**](https://github.com/quat1024/): Documentation, initial infected sample research  
-[**cortex**](https://github.com/mcrcortex/): Reverse engineering  
-[**aurelium**](https://github.com/autumnaurelium/): Coordination, deobfuscation  
-[**D3SL**](https://github.com/D3SL/): Extensive reverse engineering, early discovery learned of later  
-[**Luna Pixel Studios**](https://lunapixelstudios.github.io/): Quick detection of unauthorized uploads  
-**Nia**: Extensive Stage 3 reverse engineering  
+[**Emi**](https://github.com/emilyploszaj/): Koordinasyon, ilk keşif (bu ekip için) ve erken araştırma  
+[**Jasmine**](https://github.com/jaskarth/): Koordinasyon, kullandığımız derleyiciyi yazma ([Quiltflower](https://github.com/QuiltMC/quiltflower/))  
+[**açıklanmamış**](https://github.com/unascribed/): Dokümantasyonun koordinasyonu, kalabalık kontrolü
+[**williewillus**](https://github.com/williewillus/): Koordinasyon, gazeteci  
+[**Vazkii**](https://github.com/vazkii/): Dokümantasyon, kamusal iletişim  
+[**Col-E**](https://github.com/Col-E/): Tersine mühendislik, kullandığımız deobfuscator'ı yazma ([Recaf](https://www.coley.software/Recaf/))  
+[**quat**](https://github.com/quat1024/): Dokümantasyon, ilk enfekte örnek araştırması  
+[**cortex**](https://github.com/mcrcortex/): Tersine mühendislik  
+[**aurelium**](https://github.com/autumnaurelium/): Koordinasyon, deobfuscation  
+[**D3SL**](https://github.com/D3SL/): Kapsamlı tersine mühendislik, sonradan öğrenilen erken keşif  
+[**Luna Pixel Studios**](https://lunapixelstudios.github.io/): Yetkisiz yüklemelerin hızlı tespiti  
+**Nia**: Kapsamlı Aşama 3 tersine mühendislik  
+[**NotRabug50**](https://https://github.com/NotRabug50): Çeviri
