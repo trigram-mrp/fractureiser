@@ -1,238 +1,238 @@
-# Modded Players Guide
+# Modlu Oyuncular Kılavuzu
 
-If you **only** play vanilla through a trusted launcher such as the official launcher or
-Prism, and have never touched mods ever: you are 100% safe. Stay away from mods for the
-time being.
+Eğer vanilyayı **sadece** resmi başlatıcı gibi güvenilir bir başlatıcı üzerinden oynuyorsanız veya
+Prism ve modlara hiç dokunmadıysanız: %100 güvendesiniz. Şu an için modlardan uzak durun
+şu anda.
 
-If you're a Modded Minecraft player, you need to verify if you have been infected by the
-fractureiser malware to ensure your machine and personal data are not at risk. You can do
-so with the instructions below.
+Modlu bir Minecraft oyuncusuysanız, virüsün size bulaşıp bulaşmadığını doğrulamanız gerekir.
+Makinenizin ve kişisel verilerinizin risk altında olmadığından emin olmak için kötü amaçlı yazılımları kırın. Yapabilirsin
+yani aşağıdaki talimatlarla.
 
-### Is it still going on??
-Yes. Check back later.
+### Hala devam ediyor mu?
+Evet. Daha sonra tekrar kontrol edin.
 
-### Page Structure
-* [What Actually Happened?](#what-actually-happened)
-* [Am I Infected?](#am-i-infected)
-* [I'm Infected, Now What?](#im-infected-now-what)
-* [I'm Not Infected, Now What?](#im-not-infected-now-what)
-* [Frequently Asked Questions](#frequently-asked-questions)
-* [Technical FAQ](#technical-faq)
+### Sayfa Yapısı
+* [Aslında Ne Oldu?] (#what-actually-happened)
+* [Enfekte miyim?](#am-i-infected)
+* [Enfekte Oldum, Şimdi Ne Olacak?](#im-infected-now-what)
+* [Enfekte Değilim, Şimdi Ne Olacak?] (#im-not-infected-now-what)
+* [Sıkça Sorulan Sorular] (#frequently-asked-questions)
+* [Teknik SSS](#technical-faq)
 
-If you have any questions about fractureiser, please read this page in full, including the FAQ at
-the end, as most of the questions we've been getting are answered here.
+Fractureiser hakkında herhangi bir sorunuz varsa, lütfen bu sayfanın tamamını ve SSS bölümünü okuyun
+Sonunda, aldığımız soruların çoğu burada yanıtlanıyor.
 
-## What Actually Happened?
+## Gerçekte Ne Oldu?
 
-Several innocent looking malicious mods and plugins were initially uploaded by the malware's creator 
-to the mod hosting website CurseForge and plugin hub dev.craftbukkit.org (not the Bukkit 
-software itself). A high-profile mod pack developer downloaded one of these mods to try
-out, which infected files in their computer without their knowledge - this included a copy of a 
-working project that would then be uploaded to CurseForge as a seemingly leigimate file, with the 
-virus included. 
+Başlangıçta kötü amaçlı yazılımın yaratıcısı tarafından birkaç masum görünümlü kötü amaçlı mod ve eklenti yüklendi 
+mod barındırma web sitesi CurseForge ve eklenti merkezi dev.craftbukkit.org (Bukkit değil 
+yazılımın kendisi). Yüksek profilli bir mod paketi geliştiricisi denemek için bu modlardan birini indirdi
+bilgisayarlarındaki dosyalara bilgileri olmadan virüs bulaştırdı - buna bir kopyası da dahildi 
+Daha sonra CurseForge'a görünüşte yalın bir dosya olarak yüklenecek olan çalışma projesi 
+virüs dahil. 
 
-This process then repeated itself for a few other cases from users on CurseForge and 
-dev.craftbukkit.org, infecting copies of several popular plugins and mods. *There are reports of 
-malicious plugin and mod jars as early
-as mid-April.*
+Bu süreç daha sonra CurseForge'daki kullanıcılardan gelen diğer birkaç vaka için kendini tekrarladı ve 
+dev.craftbukkit.org, birçok popüler eklenti ve modun kopyalarına bulaşıyor. *Şu raporlar var 
+kötü amaçlı eklenti ve mod kavanozları erken
+Nisan ortası gibi.*
 
-Alongside this, brute force access attempts on high traffic content creator accounts on CurseForge
-were attempted by the malware author. We are currently unsure whether the breach was due to the
-brute force attempt or due to trojan infection on the accounts' owners.
+Bunun yanı sıra, CurseForge'daki yüksek trafikli içerik oluşturucu hesaplarına yönelik kaba kuvvet erişim girişimleri
+kötü amaçlı yazılım yazarı tarafından denenmiştir. Şu anda ihlalin aşağıdaki nedenlerden kaynaklanıp kaynaklanmadığından emin değiliz
+kaba kuvvet girişimi veya hesap sahiplerine trojan bulaşması nedeniyle.
 
-This malware is composed of multiple "stages", each Stage is responsible for downloading and
-running the next one. In total, there are three known Stages (Stages 1, 2, and 3), with infected
-mod files serving as a "Stage 0" to kick the whole process off.
+Bu kötü amaçlı yazılım birden fazla "aşamadan" oluşur, her Aşama indirme ve yükleme işlemlerinden sorumludur.
+bir sonrakini çalıştırıyor. Toplamda bilinen üç Aşama (Aşama 1, 2 ve 3) vardır ve enfekte olmuş
+mod dosyaları tüm süreci başlatmak için bir "Aşama 0" görevi görür.
 
-Stage 3 is the "mastermind" of the malware, and we have evidence that it attempts to do all of
-the following:
+Aşama 3, kötü amaçlı yazılımın "beyni" ve elimizde tüm bunları yapmaya çalıştığına dair kanıtlar var
+aşağıdakileri yapabilir:
 
-* Propagate itself to *all* `jar` files on the filesystem, possibly infecting mods that
-  were not downloaded from CurseForge or BukkitDev, or other Java programs
-* Steal cookies and login information for many web browsers
-* Replace cryptocurrency addresses in the clipboard with alternates that are presumably owned by
-the attacker
-* Steal Discord credentials
-* Steal Microsoft and Minecraft credentials
+* Kendini dosya sistemindeki *tüm* `jar` dosyalarına yayar, muhtemelen şu modlara bulaştırır
+  CurseForge veya BukkitDev'den veya diğer Java programlarından indirilmemiştir
+* Birçok web tarayıcısı için çerezleri ve giriş bilgilerini çalmak
+* Panodaki kripto para adreslerini, muhtemelen sahip oldukları alternatif adreslerle değiştirin
+saldırgan
+* Discord kimlik bilgilerini çalın
+* Microsoft ve Minecraft kimlik bilgilerini çalın
 
-(See [technical details](tech.md) for more info)
+(Daha fazla bilgi için [teknik ayrıntılar](tech.md) bölümüne bakın)
 
-Because of its behavior, we are **very confident** this is a **targeted attack against the modded 
-Minecraft ecosystem**. It's quite bad.
+Davranışı nedeniyle, bunun modifiye edilmiş cihazlara yönelik bir **hedefli saldırı** olduğundan **çok eminiz 
+Minecraft ekosistemi**. Oldukça kötü.
 
-**Until further notice, exercise extreme caution with Minecraft mod downloads, regardless
-of origin.** While the control server for this malware is currently offline, **any
-download from Curseforge or the Bukkit plugin repository in the last 2-3 weeks should be
-treated as potentially malicious**. Some malware scanners have started adding signatures
-to their databases, but until this rolls out to all of them, please exercise caution.
+**Bir sonraki duyuruya kadar, Minecraft mod indirmeleri konusunda son derece dikkatli olun.
+Bu kötü amaçlı yazılımın kontrol sunucusu şu anda çevrimdışı olsa da, **herhangi bir
+Curseforge'dan veya Bukkit eklenti deposundan son 2-3 hafta içinde indirilen
+potansiyel olarak kötü niyetli olarak değerlendirilir**. Bazı kötü amaçlı yazılım tarayıcıları imza eklemeye başladı
+ancak bu durum tüm veritabanlarına yayılıncaya kadar lütfen dikkatli olun.
 
-*At this point we cannot be confident claiming any hosting service is unaffected*. Please
-exercise caution regardless of what site you use. Even Maven repositories may be infected,
-and this malware goes back months.
+*Bu noktada herhangi bir barındırma hizmetinin etkilenmediğini iddia edemeyiz*. Lütfen
+Hangi siteyi kullandığınızdan bağımsız olarak dikkatli olun. Maven depolarına bile virüs bulaşmış olabilir,
+ve bu kötü amaçlı yazılım aylar öncesine dayanıyor.
 
-Currently, new infections are impossible as the attacker's server has been shut down,
-existing infections may still be active.
+Saldırganın sunucusu kapatıldığı için şu anda yeni virüs bulaşması mümkün değil,
+mevcut enfeksiyonlar hala aktif olabilir.
 
-<!--### Get to the point, how do I fix this?
+<!--### Sadede gel, bunu nasıl düzeltebilirim?
 
-![Flowchart](media/flowchart.png)-->
+![Akış Şeması](media/flowchart.png)-->
 
-### Wait, what the f*** is a "stage"?
+### Bekle, s******* "sahne"si de ne?
 
-![Stage Diagram](media/stages.png)
+![Sahne Diyagramı](media/stages.png)
 
-## Am I Infected?
+## Virüs Bulaştı mı?
 
-The malware has multiple stages, so asking whether you are infected is actually two questions
+Kötü amaçlı yazılımın birden fazla aşaması vardır, bu nedenle size bulaşıp bulaşmadığını sormak aslında iki sorudan oluşur
 
-### Do any of my mod files have Stage 0?
-A variety of scanners exist that take a mod file and detect whether it is infected by Stage 0 of
-the malware.
+### Mod dosyalarımdan herhangi birinde Aşama 0 var mı?
+Bir mod dosyasını alan ve 0. Aşama tarafından enfekte edilip edilmediğini tespit eden çeşitli tarayıcılar mevcuttur.
+kötü amaçlı yazılım.
 
-* Overwolf's [scanner](https://github.com/overwolf/jar-infection-scanner/releases)
-  * This is the recommended option for checking your entire game - just point it at the CurseForge 
-installation folder or wherever else  you have your instances saved
-  * This is a standalone program and does not require the Overwolf app installed
-* douira's [website-based online scanner](https://douira.github.io/fractureiser-web-detector/)
-* cortex's [nekodetector](https://github.com/MCRcortex/nekodetector/releases) 
-  * Click on "Assets" to show the runnable file - requires Java to be installed
+* Overwolf'un [tarayıcısı](https://github.com/overwolf/jar-infection-scanner/releases)
+  * Bu, tüm oyununuzu kontrol etmek için önerilen seçenektir - sadece CurseForge'a doğrultun 
+kurulum klasörü veya örneklerinizi kaydettiğiniz başka bir yer
+  * Bu bağımsız bir programdır ve Overwolf uygulamasının yüklü olmasını gerektirmez
+* douira'nın [web sitesi tabanlı çevrimiçi tarayıcısı](https://douira.github.io/fractureiser-web-detector/)
+* korteks'in [nekodetektörü](https://github.com/MCRcortex/nekodetector/releases) 
+  * Çalıştırılabilir dosyayı göstermek için "Varlıklar" üzerine tıklayın - Java'nın yüklü olmasını gerektirir
 
-In isolation, stage 0 infection is not dangerous if the files are deleted and never ran.
+Tek başına, dosyalar silinir ve hiç çalıştırılmazsa 0. aşama enfeksiyon tehlikeli değildir.
 
-### Are Stage 2 files present on my system?
+### Aşama 2 dosyaları sistemimde mevcut mu?
 
-Stage 2 files being on your system means that the stages 0 and 1 of the malware ran successfully.
-If they are present at all, you are likely *fully infected* and should continue reading the
-instructions in the document.
+2. Aşama dosyalarının sisteminizde bulunması, kötü amaçlı yazılımın 0. ve 1. aşamalarının başarıyla çalıştığı anlamına gelir.
+Eğer bu dosyalar mevcutsa, muhtemelen *tamamen enfekte* olmuşsunuzdur ve
+belgedeki talimatlar.
 
-Many virus scanners are starting to detect stage 2 files. If you get a warning that such
-files were found and removed, proceed to the "I'm Infected, Now What?" section.
+Birçok virüs tarayıcısı 2. aşama dosyaları tespit etmeye başlamıştır. Eğer böyle bir uyarı alırsanız
+dosyaları bulundu ve kaldırıldı, "Enfekte Oldum, Şimdi Ne Olacak?" bölümüne geçin.
 
-Otherwise, you can check manually by doing the following, based on your platform:
+Aksi takdirde, platformunuza bağlı olarak aşağıdakileri yaparak manuel olarak kontrol edebilirsiniz:
 
-#### Windows Instructions
+#### Windows Talimatları
 
-* Open your Start menu with the Windows Key, and type `%localappdata%` - it should appear as such:
-![Search results for the above query](media/localappdata.png)
+* Başlat menünüzü Windows Tuşu ile açın ve `%localappdata%` yazın - bu şekilde görünmelidir:
+![Yukarıdaki sorgu için arama sonuçları](media/localappdata.png)
 
-* Inside the Local appdata folder, you must ensure that your Explorer is set to view both 
-`Hidden Items`, and `Protected Operating System Files`.
-  * This can be done from View > Options
-  * If you are unsure how to do this, a video explanation 
-[can be found here](https://youtu.be/KLTlTlnXeKs).
-  * Windows 11 users can find the same options under the "View" button at the top ribbon, as 
-  well as  the  "..." button on the rightmost side of it
+* Yerel appdata klasörünün içinde, Explorer'ınızın her ikisini de görüntüleyecek şekilde ayarlandığından emin olmalısınız 
+`Gizli Öğeler` ve `Korumalı İşletim Sistemi Dosyaları`.
+  * Bu işlem Görünüm > Seçenekler'den yapılabilir
+  * Bunu nasıl yapacağınızdan emin değilseniz, bir video açıklaması 
+[burada bulunabilir](https://youtu.be/KLTlTlnXeKs).
+  * Windows 11 kullanıcıları aynı seçenekleri üst şeritteki "Görünüm" düğmesinin altında bulabilirler. 
+  en sağındaki "..." düğmesinin yanı sıra
 
-* Locate a folder named `Microsoft Edge`. The SPACE between "Microsoft" and "Edge" is
-  important - as `MicrosoftEdge` is a legitimate folder that is used by Edge.  The virus
-  simply named it like that to disguise itself.  
-  * The legitimate folder might also be called `Microsoft\Edge` (an `Edge` folder inside a 
-`Microsoft` folder).
-  * The legitimate folder doesn't *have* to exist - if you don't have any Edge related folders,
-  you're safe.
-  * Both legitimate folders can exist at the same time, this is okay too.
-* If `Microsoft Edge` is present, you were infected. If this is the case, permanently delete the 
-folder and everything inside it.
-  * If the folder can not be deleted, you must stop any Java programs currently running via your 
-Task Manager.
+* Microsoft Edge` adlı bir klasör bulun. "Microsoft" ve "Edge" arasındaki boşluk
+  önemli - çünkü `MicrosoftEdge` Edge tarafından kullanılan meşru bir klasördür.  Virüs
+  kendini gizlemek için basitçe bu şekilde adlandırmıştır.  
+  * Meşru klasörün adı `Microsoft\Edge` de olabilir (bir `Edge` klasörünün içinde 
+Microsoft' klasörü).
+  * Edge ile ilgili herhangi bir klasörünüz yoksa, meşru klasörün var olması *gerekmez*,
+  güvendesiniz.
+  * Her iki yasal klasör de aynı anda mevcut olabilir, bu da sorun değil.
+* Eğer `Microsoft Edge` mevcutsa, size virüs bulaşmış demektir. Bu durumda, `Microsoft Edge` klasörünü kalıcı olarak silin. 
+klasörünü ve içindeki her şeyi silebilirsiniz.
+  * Klasör silinemiyorsa, o anda çalışmakta olan tüm Java programlarını 
+Görev Yöneticisi.
 
-#### MacOS Information
+#### MacOS Bilgileri
 
-The malware does not seem to affect MacOS, so you should be fine.  
-*Check back here every now and then just in case.*
+Kötü amaçlı yazılım MacOS'u etkilemiyor gibi görünüyor, bu yüzden iyi olmalısınız.  
+*Her ihtimale karşı ara sıra burayı tekrar kontrol edin.
 
-#### Linux Instructions
+#### Linux Talimatları
 
-Firstly, ensure whichever method you are using to list files has the ability to view hidden files.
-Most GUI file managers have the shortcut Ctrl+H to toggle hidden files. If doing this on a terminal, 
-use `ls -A` in the respective directories, or `ls -lha` for a more detailed listing.
+Öncelikle, dosyaları listelemek için kullandığınız yöntemin gizli dosyaları görüntüleme özelliğine sahip olduğundan emin olun.
+Çoğu GUI dosya yöneticisi, gizli dosyaları değiştirmek için Ctrl+H kısayoluna sahiptir. Eğer bunu bir terminal üzerinde yapıyorsanız, 
+ilgili dizinlerde `ls -A` veya daha ayrıntılı bir liste için `ls -lha` kullanın.
 
-If any of the following files exist, you were infected. If this is the case, delete all of them:
+Aşağıdaki dosyalardan herhangi biri mevcutsa, virüs bulaşmış demektir. Eğer durum buysa, hepsini silin:
 * `~/.config/systemd/user/systemd-utility.service`
 * `/etc/systemd/system/systemd-utility.service`
 * `~/.config/.data/lib.jar`
 
-Upon doing so, if applicable, check your `journalctl` for any changes you may not recognize. You
-can do this with the commands `journalctl -exb` (for system logs) and `journalctl -exb --user` 
-(for user logs). Run the following commands to refresh your systemd services:
+Bunu yaptıktan sonra, eğer varsa, `journalctl' dosyanızda fark edemediğiniz değişiklikler olup olmadığını kontrol edin. Sen
+bunu `journalctl -exb` (sistem günlükleri için) ve `journalctl -exb --user` komutları ile yapabilirsiniz. 
+(kullanıcı günlükleri için). Systemd servislerinizi yenilemek için aşağıdaki komutları çalıştırın:
 ```sh
-sudo systemctl daemon-reload # Enter your user password
+sudo systemctl daemon-reload # Kullanıcı parolanızı girin
 systemctl --user daemon-reload 
 ```
 
-#### Scripts
+#### Komut Dosyaları
 
-*If you don't know how to run a PowerShell or Bash script, these are not for you.*  
-Automated PowerShell or Bash scripts are also available [on the PrismLauncher
-website](https://prismlauncher.org/news/cf-compromised-alert/#automated-script) to check
-for Stage 2 for you, if you have the technical knowhow to run them. Overwolf (Curseforge's
-parent company) has also released a C# Stage 2 detection tool:
+*Bir PowerShell veya Bash betiğini nasıl çalıştıracağınızı bilmiyorsanız, bunlar sizin için değildir.  
+Otomatik PowerShell veya Bash betikleri de mevcuttur [PrismLauncher'da
+web sitesi](https://prismlauncher.org/news/cf-compromised-alert/#automated-script) kontrol etmek için
+Eğer bunları çalıştıracak teknik bilgiye sahipseniz, 2. Aşama için size yardımcı olabiliriz. Overwolf (Curseforge'un
+ana şirket) bir C# Stage 2 tespit aracı da yayınladı:
 https://github.com/overwolf/detection-tool
 
-## I'm Infected, Now What?
+## Enfekte Oldum, Şimdi Ne Olacak?
 
-**IMPORTANT**: We do not currently know the full extent of everything this can do, nor what its
-intent is, so extreme caution should be exercised until a complete way to remove any symptoms is
-found. Everything stated here is only *what we know* - please keep an eye on communication from the
-team on updates if anything critical is found.
+**ÖNEMLİ**: Şu anda bunun yapabileceği her şeyin tam kapsamını veya ne olduğunu bilmiyoruz.
+Bu nedenle, semptomları ortadan kaldırmanın tam bir yolu bulunana kadar son derece dikkatli olunmalıdır.
+bulundu. Burada belirtilen her şey sadece *bildiklerimizdir* - lütfen kurumun iletişimini takip edin
+kritik bir şey bulunursa güncellemelerle ilgili ekip.
 
-If you find stage 2 files from fractureiser on your system, it's very likely that the stage 3 code
-has ran and infected your machine.  
-Your best option now is to assume everything on that system is *entirely compromised*. You should:
+Sisteminizde fractureiser'ın 2. aşama dosyalarını bulursanız, büyük olasılıkla 3. aşama kodu
+koştu ve makinenize bulaştı.  
+Şu anda en iyi seçeneğiniz bu sistemdeki her şeyin *tamamen tehlikede* olduğunu varsaymaktır. Yapmanız gerekenler:
 
-* Back up anything you do not want to lose on an a flash drive or external disk (you should be
-doing this regularly anyway!)
-* Using a separate device, change the passwords to all services you were logged into on
-  the old machine (Discord, email, etc.). Preferably using a password manager like
+* Kaybetmek istemediğiniz her şeyi bir flash sürücüye ya da harici diske yedekleyin.
+bunu zaten düzenli olarak yapıyorsunuz!)
+* Ayrı bir cihaz kullanarak, oturum açtığınız tüm hizmetlerin parolalarını değiştirin
+  eski makine (Discord, e-posta vb.). Tercihen aşağıdaki gibi bir şifre yöneticisi kullanarak
   [BitWarden](https://bitwarden.com).
-* If you were not yet using Two-Factor Authentication (Authenticator app or SMS) for every service
-that supports it, please start doing so immediately
-* If you are able to, contact a professional service in your area to run a proper
-  diagnostic on your machine for anything suspicious, or as a safe default simply wipe and
-  reinstall the system.
-* Read the below section on what to do if you're not infected, as the steps there apply to you too.
+* Henüz her hizmet için İki Faktörlü Kimlik Doğrulama (Authenticator uygulaması veya SMS) kullanmıyorsanız
+destekliyorsa, lütfen bunu hemen yapmaya başlayın
+* Mümkünse, bölgenizdeki profesyonel bir servisle iletişime geçerek uygun bir
+  makinenizde şüpheli herhangi bir şey için tanılama veya güvenli bir varsayılan olarak sadece silme ve
+  sistemi yeniden yükleyin.
+* Virüs bulaşmadıysa ne yapmanız gerektiğine ilişkin aşağıdaki bölümü okuyun, çünkü buradaki adımlar sizin için de geçerlidir.
 
-## I'm Not Infected, Now What?
+## Enfekte Değilim, Şimdi Ne Olacak?
 
-If you have played mods in the last few months, the absolute safest thing you can do at the moment 
-is to **not launch Minecraft at all**. Yes, even Vanilla.  
+Son birkaç ay içinde mod oynadıysanız, şu anda yapabileceğiniz en güvenli şey 
+Minecraft'ı hiç başlatmamaktır**. Evet, Vanilla'yı bile.  
 
-With that said - if nothing was found in the first place, chances are there's nothing going on.
-If you still want to play the game:
-* With the current knowledge we have, this is not risky, but we do not guarantee this is
-accurate - you are *willingly putting yourself at risk*.
-* After each session, check for the stage 2 infection files in the previous step to ensure nothing
-has happened since
-* Do not, under **any circumstances**, download or update any mods, modpacks, or plugins you
-may use, or even run any you downloaded and never ran before - stick to instances you have
-already used, and those **ONLY**.
+Bununla birlikte - ilk etapta hiçbir şey bulunmadıysa, büyük olasılıkla hiçbir şey olmuyor.
+Eğer hala oyunu oynamak istiyorsanız:
+* Elimizdeki mevcut bilgilerle bu riskli değildir, ancak bunun böyle olduğunu garanti etmiyoruz
+doğru - *kendinizi isteyerek riske atıyorsunuz*.
+* Her oturumdan sonra, hiçbir şey olmadığından emin olmak için önceki adımdaki 2. aşama enfeksiyon dosyalarını kontrol edin
+o zamandan beri
+* **Hiçbir koşul altında**, herhangi bir mod, mod paketi veya eklentiyi indirmeyin veya güncellemeyin.
+kullanabilir, hatta indirdiğiniz ve daha önce hiç çalıştırmadığınız herhangi birini çalıştırabilir - sahip olduğunuz örneklere bağlı kalın
+zaten kullanılmış ve **SADECE** olanlar.
 
-## Frequently Asked Questions
+## Sıkça Sorulan Sorular
 
-### Is CurseForge hacked?
-CurseForge itself is not compromised, only individual users. This is not a CurseForge problem, they
-just happened to the be place this happened in. CurseForge have also [posted an article](https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool/) describing the situation from their end and
-are working on deploying countermeasures.
+### CurseForge saldırıya uğradı mı?
+CurseForge'un kendisi tehlikeye atılmadı, sadece bireysel kullanıcılar. Bu bir CurseForge sorunu değil, onlar
+sadece bu olayın yaşandığı yer oldu. CurseForge ayrıca [bir makale yayınladı] (https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool/) durumu kendi açılarından açıklıyor ve
+karşı önlemler üzerinde çalışıyorlar.
 
-### Is Modrinth okay?
-Modrinth has ran a full scan of the last 10 months of uploads and no infected projects were found. 
-We still recommend exercising extreme caution when downloading anything mod related at the moment. 
-The fact no mods were infected there was entirely luck.
+### Modrinth iyi mi?
+Modrinth son 10 aylık yüklemelerde tam bir tarama yaptı ve virüslü hiçbir projeye rastlanmadı. 
+Şu anda modla ilgili herhangi bir şey indirirken son derece dikkatli olmanızı tavsiye ediyoruz. 
+Orada hiçbir modun enfekte olmaması tamamen şanstı.
 
-### Is Modrinth safer?
-This isn't a website-level issue, Modrinth is just as safe as CurseForge is.
+### Modrinth daha mı güvenli?
+Bu web sitesi düzeyinde bir sorun değil, Modrinth de CurseForge kadar güvenli.
 
-### How did CurseForge let this slip through?
-The code the stage 0 infection ran wasn't necessarily suspicious to an automated system, and could
-very well have been something another mod would've used. In fact, early heuristics for determining
-stage 0 infection had significant amounts of false flags on popular mods such as Quark.
+### CurseForge bunun geçmesine nasıl izin verdi?
+Aşama 0 enfeksiyonunun çalıştırdığı kod, otomatik bir sistem için mutlaka şüpheli değildi ve
+başka bir modun kullanabileceği bir şey olabilirdi. Aslında, ilk sezgisel yöntemler
+0. aşama enfeksiyonunda Quark gibi popüler modlarda önemli miktarda yanlış bayrak vardı.
 
-Realistically, this type of prevention on a platform scale is non-feasible due to the infinite
-different ways you can lay out code to hide your intent.
+Gerçekçi olmak gerekirse, platform ölçeğinde bu tür bir önleme, sonsuz sayıda virüs olması nedeniyle mümkün değildir.
+Niyetinizi gizlemek için kodu düzenleyebileceğiniz farklı yollar.
 
-### Which Antiviruses catch this?
-New ones are being added as we speak, it's best to do the manual verification above instead of
-relying on AV for now.
+### Hangi Antivirüsler bunu yakalar?
+Konuştuğumuz gibi yenileri ekleniyor, bunun yerine yukarıdaki manuel doğrulamayı yapmak en iyisidir
+Şimdilik AV'ye güveniyorum.
 
 ### Is Multiplayer safe?
 Yes, you can not be infected via a multiplayer server if you don't download mods for it elsewhere.
