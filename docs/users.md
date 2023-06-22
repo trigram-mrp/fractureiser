@@ -12,11 +12,11 @@ yani aşağıdaki talimatlarla.
 Evet. Daha sonra tekrar kontrol edin.
 
 ### Sayfa Yapısı
-* [Aslında Ne Oldu?](#what-actually-happened)
-* [Enfekte miyim?](#am-i-infected)
-* [Enfekte Oldum, Şimdi Ne Olacak?](#im-infected-now-what)
-* [Enfekte Değilim, Şimdi Ne Olacak?](#im-not-infected-now-what)
-* [Sıkça Sorulan Sorular](#frequently-asked-questions)
+* [Aslında Ne Oldu?](#gerçekte-ne-oldu)
+* [Enfekte miyim?](#virüs-bulaştı-mı)
+* [Enfekte Oldum, Şimdi Ne Olacak?](#enfekteyim-ne-olacak)
+* [Enfekte Değilim, Şimdi Ne Olacak?](#enfekte-değilim-şimdi-ne-olacak)
+* [Sıkça Sorulan Sorular](#sıkça-sorulan-sorular)
 * [Teknik SSS](#technical-faq)
 
 Fractureiser hakkında herhangi bir sorunuz varsa, lütfen bu sayfanın tamamını ve SSS bölümünü okuyun
@@ -234,172 +234,172 @@ Niyetinizi gizlemek için kodu düzenleyebileceğiniz farklı yollar.
 Konuştuğumuz gibi yenileri ekleniyor, bunun yerine yukarıdaki manuel doğrulamayı yapmak en iyisidir
 Şimdilik AV'ye güveniyorum.
 
-### Is Multiplayer safe?
-Yes, you can not be infected via a multiplayer server if you don't download mods for it elsewhere.
+### Multiplayer güvenli mi?
+Evet, eğer başka bir yerden mod indirmezseniz çok oyunculu bir sunucu üzerinden virüs bulaşmaz.
 
-### Is Bedrock safe?
-Yes, this affects only Java.
+### Bedrock güvenli mi?
+Evet, bu sadece Java'yı etkiler.
 
-### Are alternative game clients such as Lunar or Badlion safe?
-See the below point.
+### Lunar veya Badlion gibi alternatif oyun istemcileri güvenli mi?
+Aşağıdaki noktaya bakın.
 
-### Is Optifine safe? / Is Sodium safe? / Is Iris safe? / Is Create safe? / Is Essential safe? / Is (insert mod) safe?
+### Optifine güvenli mi? / Sodium güvenli mi? / Iris güvenli mi? / Create güvenli mi? / Essential güvenli mi? / (mod ekleyin) güvenli mi?
 
-**We can not currently fully confirm the safety of any given mod.**
+**Şu anda herhangi bir modun güvenliğini tam olarak teyit edemiyoruz.**
 
-One of the functions of stage3 of the virus is infecting as many .jars as it can find on your 
-computer. It can infect **all `.jar`s**, including Minecraft itself (vanilla/modded), Minecraft 
-mods, Spigot plugins, and unrelated Java applications. So if your computer has the stage3 portion 
-of the virus, it doesn't matter whether a mod you download is "safe" - it will *become* infected. 
-Detect and remove the later stages of fractureiser *first*.
+Virüsün 3. aşamasının işlevlerinden biri, bilgisayarınızda bulabildiği kadar çok .jars'a bulaşmaktır. 
+bilgisayar. Minecraft'ın kendisi (vanilya/modifiye), Minecraft ve Minecraft'ın diğer versiyonları da dahil olmak üzere **tüm `.jar`lara** bulaşabilir. 
+modları, Spigot eklentileri ve ilgisiz Java uygulamaları. Yani bilgisayarınızda stage3 bölümü varsa 
+Virüsün bir parçası olarak, indirdiğiniz bir modun "güvenli" olup olmadığı önemli değildir - virüs *bulaşacaktır*. 
+İlk olarak *kırılmanın* sonraki aşamalarını tespit edin ve kaldırın.
 
-At the moment, all *known* infected mods have been removed from CurseForge. CurseForge [posted a 
-list of known infected mods](https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool/) (bottom
-of the page) and has removed them from the website. Modrinth has scanned back 10 months and has not found any infected mods. 
+Şu anda, *bilinen* tüm virüslü modlar CurseForge'dan kaldırılmıştır. CurseForge [bir 
+bilinen virüslü modların listesi](https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool/) (alt
+sayfanın) ve bunları web sitesinden kaldırdı. Modrinth 10 ay öncesini taradı ve herhangi bir virüslü mod bulamadı. 
 
-This does *not guarantee no sneaky ones slipped through*. To check whether a given jar contains 
-stage0 of fractureiser, check the [Am I Infected?](#am-i-infected) section and overall exercise
-extreme caution downloading anything mod related for now.
+Bu *sinsi olanların sızmadığını garanti etmez*. Belirli bir kavanozun şunları içerip içermediğini kontrol etmek için 
+fractureiser'ın 0. aşaması, [Am I Infected?] (#am-i-infected) bölümünü ve genel egzersizi kontrol edin
+Şimdilik modla ilgili herhangi bir şey indirirken çok dikkatli olun.
 
-### How widespread was the infection?
+### Enfeksiyon ne kadar yaygındı?
 
-CurseForge is reporting infected files were downloaded roughly 6,000 times for the entire 
-infection period. Quote from CF's Discord announcement: 
-> Just to give perspective, this accounts to about 0.015% of CurseForge’s daily downloads 
-> for Minecraft.
+CurseForge, virüslü dosyaların tüm yıl boyunca yaklaşık 6.000 kez indirildiğini bildiriyor 
+enfeksiyon dönemi. CF'nin Discord duyurusundan alıntı: 
+> Perspektif vermek gerekirse, bu CurseForge'un günlük indirmelerinin yaklaşık %0.015'ine denk geliyor 
+> Minecraft için.
 
-### Did someone want to spoil the 1.20 release event?
+### Birisi 1.20 sürüm etkinliğini mahvetmek mi istedi?
 
-It appears to be a coincidence - this malware campaign was active for quite a while before being 
-widely uncovered the morning-of the 1.20 release.
+Tesadüf gibi görünüyor - bu kötü amaçlı yazılım kampanyası yayınlanmadan önce uzunca bir süre aktifti 
+1.20 sürümünün sabahında yaygın olarak ortaya çıkarıldı.
 
-## Technical FAQ
+## Teknik SSS
 
-### Can fractureiser escape VMs (Virtual Machines)?
+### Fractureiser VM'lerden (Sanal Makineler) kaçabilir mi?
 
-**No.**
+**Hayır.**
 
-stage3 *does* contain code for *attempting* a *manual* escape from the 
+stage3 *does* contains code for *attempting* a *manual* escape from the 
 ["Windows Sandbox"](https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview).
-It does not happen automatically. If the virus is ran from the Windows Sandbox, it will try to
-mess with the clipboard to trick you into pasting a shortcut to the malware.
+Bu otomatik olarak gerçekleşmez. Virüs Windows Sandbox'tan çalıştırılırsa, aşağıdakileri yapmaya çalışacaktır
+sizi kandırarak zararlı yazılıma bir kısayol yapıştırmanızı sağlamak için pano ile oynar.
 
-Note that this sort of "clipboard escape" is nothing new and it is very easy to defeat by simply
-not sharing the clipboard between the host and guest OS. Use a more heavyweight virtual-machine
-than the "Windows Sandbox", and disable features like VirtualBox's "Guest Addons" or Hyper-V's
-"integration services".
+Bu tür bir "pano kaçışının" yeni bir şey olmadığını ve basitçe aşağıdaki yöntemlerle alt edilmesinin çok kolay olduğunu unutmayın
+panoyu ana bilgisayar ve konuk işletim sistemi arasında paylaşmamak. Daha ağır bir sanal makine kullanın
+"Windows Sandbox" yerine, VirtualBox'ın "Konuk Eklentileri" veya Hyper-V'nin
+"entegrasyon hizmetleri".
 
-(*Real* virtual-machine escape exploits are worth millions of dollars and would not be burned on
-some Minecraft kids, and we have reason to believe the author of this malware is not a very good
-programmer in the first place.)
+(*Gerçek* sanal makine kaçış açıkları milyonlarca dolar değerindedir ve
+Bazı Minecraft çocukları ve bu kötü amaçlı yazılımın yazarının çok iyi olmadığına inanmak için nedenlerimiz var.
+ilk etapta programcı).
 
-### Does this spread over the network?
+### Bu ağ üzerinden yayılıyor mu?
 
-As far as we know, fractureiser does not contain network spread functionality, but it is not fully
-out of the question.  
-A security researcher we are working with got an alert, but it ended up being about completely 
-unrelated malware that happened to use a similar filename. This was just a false alarm.
+Bildiğimiz kadarıyla, fractureiser ağa yayılma işlevi içermiyor, ancak tam olarak
+söz konusu değil.  
+Birlikte çalıştığımız bir güvenlik araştırmacısı bir uyarı aldı, ancak bu uyarı tamamen 
+Benzer bir dosya adı kullanan alakasız bir kötü amaçlı yazılım. Bu sadece yanlış bir alarmdı.
 
-### What are CurseForge and Modrinth doing about it?
+### CurseForge ve Modrinth bu konuda ne yapıyor?
 
-CurseForge has developed an open-source [stage2/3 detection tool](https://github.com/overwolf/detection-tool) 
-and [stage0 detection tool](https://github.com/overwolf/jar-infection-scanner), have scanned *all* 
-uploaded mods/plugins for stage0 infections, and have deleted all *known* infection cases.
+CurseForge açık kaynaklı bir [stage2/3 tespit aracı] geliştirdi (https://github.com/overwolf/detection-tool) 
+ve [stage0 tespit aracı] (https://github.com/overwolf/jar-infection-scanner), *tüm* 
+yüklenen modları/eklentileri 0. aşama enfeksiyonlar için taradı ve *bilinen* tüm enfeksiyon vakalarını sildi.
 
-Modrinth has also scanned uploaded mods/plugins for stage0 infections going back 10 months and did 
-not find any.
+Modrinth ayrıca 10 ay öncesine kadar yüklenen modları/eklentileri 0. aşama enfeksiyonlar için taradı ve şunları yaptı 
+bulamadılar.
 
-Both platforms are considering introducing some sort of automated "virus scan" process to the mod 
-submission pipeline. It's hard, since Java malware like this is typically bespoke.
+Her iki platform da mod'a bir tür otomatik "virüs tarama" süreci eklemeyi düşünüyor 
+gönderme hattı. Bunun gibi Java kötü amaçlı yazılımları genellikle ısmarlama olduğu için bu zordur.
 
-### What IP addresses and URLs should I block in my firewall/routing table?
+### Güvenlik duvarımda/yönlendirme tablomda hangi IP adreslerini ve URL'leri engellemeliyim?
 
-fractureiser-related code has been observed to connect to these URLs and addresses over a wide 
-variety of port numbers.
+kırılmayla ilgili kodun bu URL'lere ve adreslere geniş bir yelpazede bağlandığı gözlemlenmiştir 
+çeşitli port numaraları.
 
-* The hardcoded address in stage0-infected mods, and the first observed command&control 
-server: `85.217.144.130`
-* The second observed command&control server: `107.189.3.101`
-* The fallback URL that stage1 tries to use, and the stage2 command&control hostname: 
+* Stage0 virüslü modlarda kodlanmış adres ve ilk gözlemlenen komut&kontrol 
+sunucu: `85.217.144.130`
+* Gözlemlenen ikinci komuta ve kontrol sunucusu: `107.189.3.101`
+* stage1'in kullanmaya çalıştığı geri dönüş URL'si ve stage2 komut&kontrol ana bilgisayar adı: 
 `files-8ie.pages.dev`
 
-There's also evidence of it trying to connect to the hostname `v2202209151437200088` 
-over port 25575 - unknown reasons; probably from an older version of the malware.
+Ayrıca `v2202209151437200088` ana bilgisayar adına bağlanmaya çalıştığına dair kanıtlar da var 
+25575 numaralı bağlantı noktası üzerinden - bilinmeyen nedenler; muhtemelen kötü amaçlı yazılımın eski bir sürümünden.
 
-Here are some additional addresses to firewall related to skyrage stuff (again, *very* unlikely 
-skyrage was downloaded to anyone's PC through this vector, but nothing good comes from these 
-addresses anyway):
+İşte skyrage ile ilgili güvenlik duvarına bazı ek adresler (yine, *çok* olası değil 
+skyrage bu vektör aracılığıyla herkesin bilgisayarına indirildi, ancak bunlardan iyi bir şey çıkmaz 
+adresleri zaten):
 
 * `95.214.27.172`
 * `connect.skyrage.de`
 * `t23e7v6uz8idz87ehugwq.skyrage.de`
 * `qw3e1ee12e9hzheu9h1912hew1sh12uw9.skyrage.de`
-* *Probably just block all of `skyrage.de` honestly*
+* *Muhtemelen sadece `skyrage.de`nin tamamını engelleyin*
 
-Should go without saying that you should not visit these.
+Bunları ziyaret etmemeniz gerektiğini söylemeye gerek yok.
 
-### Can we make it against CurseForge/Modrinth rules for your mod to download other files?
+### Modunuzun diğer dosyaları indirmesini CurseForge/Modrinth kurallarına aykırı hale getirebilir miyiz?
 
-It's already against CurseForge rules to upload malware. There are also many legitimate use cases 
-for a mod to download files that this would also stifle.
+Kötü amaçlı yazılım yüklemek zaten CurseForge kurallarına aykırı. Ayrıca birçok meşru kullanım durumu vardır 
+bir modun dosya indirmesini de engelleyecektir.
 
-### Would it be possible to include some sort of "antivirus" or "sandbox" in the modloader itself?
+### Modloader'ın kendisine bir çeşit "antivirüs" veya "sandbox" eklemek mümkün olabilir mi?
 
-"Antivirus": Probably not, for the same reasons that regular antiviruses didn't detect it. 
-Antiviruses can only detect known malware, not unknown malware.
+"Antivirüs": Muhtemelen hayır, normal antivirüslerin tespit edemediği aynı nedenlerden dolayı. 
+Antivirüsler yalnızca bilinen kötü amaçlı yazılımları tespit edebilir, bilinmeyen kötü amaçlı yazılımları değil.
 
-Sandboxing: Including some sort of "does this class contain 'safe' code?" check before loading a 
-class is a great way to spur on a cat-and-mouse game between malware developers and modloader 
-developers.
+Sandboxing: Yüklemeden önce bir çeşit "bu sınıf 'güvenli' kod içeriyor mu?" kontrolünün dahil edilmesi 
+sınıfı, kötü amaçlı yazılım geliştiricileri ve modloader arasında bir kedi-fare oyununu teşvik etmek için harika bir yoldur 
+geliştiriciler.
 
-It's really hard to ban Java code from using a specific class (say, `URLClassLoader`) because you 
-can also refer to it with `Class.forName` (which has a ton of legitimate use-cases), and if you 
-ban or deny-list classes from *that*, you can typically find something *else* on the classpath 
-willing to call `Class.forName` for you, and trying to get rid of these gadgets is an endless 
-game of whack-a-mole.
+Java kodunun belirli bir sınıfı (örneğin `URLClassLoader`) kullanmasını yasaklamak gerçekten zordur çünkü 
+ayrıca `Class.forName` (bir ton meşru kullanım durumu vardır) ile de başvurabilir ve eğer 
+'dan sınıfları yasaklar veya listeden çıkarırsanız, genellikle sınıf yolunda *başka* bir şey bulabilirsiniz 
+sizin için `Class.forName` dosyasını çağırmaya isteklidir ve bu araçlardan kurtulmaya çalışmak sonu gelmeyen bir 
+köstebek oyunu.
 
-Sandboxing Java is pretty much impossible - see articles like 
+Java'yı sandbox'lamak neredeyse imkansızdır - aşağıdaki gibi makalelere bakın 
 ["Twenty Years of Escaping the Java Sandbox"](https://www.exploit-db.com/papers/45517).
 
-Java mods are simply bundles of arbitrary code: treat them like an `.exe`, they can do anything. 
+Java modları basitçe keyfi kod demetleridir: onlara bir `.exe' gibi davranın, her şeyi yapabilirler. 
 
-### Why aren't mods cryptographically signed to prevent malware from tampering with them?
+### Kötü amaçlı yazılımların bunları kurcalamasını önlemek için modlar neden kriptografik olarak imzalanmıyor?
 
-Part of the problem is that signatures alone do not prevent malware - a cryptographically-signed 
-virus is still a virus - and if self-signing was permitted, it doesn't prevent tampering either - 
-it's possible for a virus to simply strip digital signatures off a jar ("delete META-INF") and 
-re-sign it with its own key. (This isn't a hypothetical, either: fractureiser does contain code to 
-remove digital signatures from the jars it infects.)
+Sorunun bir kısmı imzaların tek başına kötü amaçlı yazılımları engellememesidir - kriptografik olarak imzalanmış bir 
+virüs hala virüstür - ve kendi kendini imzalamaya izin verildiyse, bu da kurcalamayı engellemez - 
+Bir virüsün bir kavanozdan dijital imzaları silmesi ("delete META-INF") ve 
+kendi anahtarıyla yeniden imzalayabilir. (Bu da varsayımsal bir durum değildir: fractureiser şu kodları içerir 
+bulaştığı kavanozlardan dijital imzaları kaldırır).
 
-Signed mods with online signature verification *does* seem like a somewhat promising way forward, 
-though it's not without tradeoffs. There will be [a meeting](2023-06-08-meeting.md) with
-many different reps from the modding ecosystem to discuss how to move forward.
+Çevrimiçi imza doğrulamalı imzalı modlar *gerçekten de* ileriye dönük umut verici bir yol gibi görünüyor, 
+Yine de ödünler olmadan olmaz. 2023-06-08-meeting.md) ile [bir toplantı] yapılacaktır.
+modlama ekosisteminden birçok farklı temsilci nasıl ilerleyeceğimizi tartışmak için.
 
-### Would it be possible to forbid mods from downloading executable code?
+### Modların çalıştırılabilir kod indirmesini yasaklamak mümkün mü?
 
-It's not possible. You can't know whether a file contains executable code before you download it, 
-and after a file is downloaded, you can't control what is done with it.
+Bu mümkün değil. Bir dosyayı indirmeden önce çalıştırılabilir kod içerip içermediğini bilemezsiniz, 
+ve bir dosya indirildikten sonra, onunla ne yapılacağını kontrol edemezsiniz.
 
-* What if my mod downloads a single Java class file?
-* What about a Java class file but spelled backwards, so it doesn't look like a class file at first?
-* What about a Java class file but encrypted?
-* What about Java *source* code that is compiled on your computer?
-* What about a Python script?
-* What about a file containing English prose where it just so *happens* that sentences with an 
-even number of words correspond to a 0, and sentences with an odd number of words correspond to 
-a 1? - even though it's a prose document I can technically reassemble it into 
-an `.exe`, if I so choose.
+* Modum tek bir Java sınıf dosyası indirirse ne olur?
+* Peki ya bir Java sınıf dosyası ama tersten yazılmış, bu yüzden ilk başta bir sınıf dosyası gibi görünmüyorsa?
+* Peki ya şifrelenmiş bir Java sınıf dosyası?
+* Bilgisayarınızda derlenen Java *kaynak* koduna ne dersiniz?
+* Peki ya bir Python betiği?
+* İngilizce düzyazı içeren bir dosyaya ne dersiniz? 
+çift sayıda kelime 0'a karşılık gelir ve tek sayıda kelime içeren cümleler 
+1 mi? - düzyazı bir belge olmasına rağmen teknik olarak onu 
+eğer istersem bir `.exe'.
 
-### Is this related to that Spigot plugin malware going around?
+### Bu, ortalıkta dolaşan Spigot eklentisi kötü amaçlı yazılımıyla mı ilgili?
 
-Possibly! There's some ties to the existing malware `skyrage` - the malware author uploaded a 
-skyrage-relevant `.jar` to their backup command&control server, in a fruitless attempt to 
-extend the attack, shortly before CloudFlare took it down anyway.
+Muhtemelen! Mevcut kötü amaçlı yazılım `skyrage` ile bazı bağlar var - kötü amaçlı yazılım yazarı bir 
+skyrage ile ilgili `.jar` dosyasını yedek komuta ve kontrol sunucusuna aktarmak için sonuçsuz bir girişim 
+CloudFlare yine de saldırıyı kaldırmadan kısa bir süre önce saldırıyı genişletti.
 
-**We have not received any reports of anyone becoming infected by Skyrage through this vector.** 
-The author updated their CloudFlare URL to point to Skyrage a significant length of time *after* 
-the hardcoded IP address in stage0-infected mods was already taken down. It's mostly a funny 
-curiosity that the attacker tried to serve this jar at all.
+**Bu vektör aracılığıyla Skyrage tarafından enfekte edilen herhangi bir rapor almadık.** 
+Yazar, CloudFlare URL'sini Skyrage'i işaret edecek şekilde *sonrasında* önemli bir süre boyunca güncellemiştir. 
+stage0 virüslü modlardaki sabit kodlu IP adresi zaten kaldırılmıştı. Bu çoğunlukla komik bir 
+Saldırganın bu kavanozu sunmaya çalışması merak uyandırıcı.
 
-skyrage is an existing, well-studied piece of malware and you can find some more info about 
-it [here](https://ljskatt.no/analysis/updater_class/).
+skyrage mevcut, iyi çalışılmış bir kötü amaçlı yazılım parçasıdır ve hakkında daha fazla bilgi bulabilirsiniz 
+burada] (https://ljskatt.no/analysis/updater_class/).
