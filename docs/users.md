@@ -17,7 +17,7 @@ Evet. Daha sonra tekrar kontrol edin.
 * [Enfekte Oldum, Şimdi Ne Olacak?](#enfekteyim-ne-olacak)
 * [Enfekte Değilim, Şimdi Ne Olacak?](#enfekte-değilim-şimdi-ne-olacak)
 * [Sıkça Sorulan Sorular](#sıkça-sorulan-sorular)
-* [Teknik SSS](#technical-faq)
+* [Teknik SSS](#teknik-sss)
 
 Fractureiser hakkında herhangi bir sorunuz varsa, lütfen bu sayfanın tamamını ve SSS bölümünü okuyun
 Sonunda, aldığımız soruların çoğu burada yanıtlanıyor.
