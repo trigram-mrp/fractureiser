@@ -11,7 +11,7 @@ En dikkat çeken kötü amaçlı dosyaları yükleyen CurseForge hesabının ad�
 
 ## Bilmeniz Gerekenler
 
-### [Modlu Oyuncular BURAYA TIKLAYIN](docs/users_tr.md)
+### [Modlu Oyuncular BURAYA TIKLAYIN](docs/users.md)
 
 Sadece bir mod oyuncusuysanız ve bir geliştirici değilseniz, yukarıdaki bağlantı işinizi görecektir. Bu bağlantıda kötü amaçlı yazılımın etkileri, sahip olup olmadığınızı kontrol etmek ve nasıl kaldırılacağı hakkında yüzey seviyesinde bilgi, ve bir SSS bulunmaktadır.
 
