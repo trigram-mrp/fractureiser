@@ -49,13 +49,8 @@ gelecekteki bunun gibi problemleri önlemek alına bilecek önlemler ve çözüm
 Etkinliğin ajendası ve dakikaları için [bu sayfaya](https://github.com/fractureiser-investigation/fractureiser/blob/main/docs/2023-06-08-meeting.md) bakınız.
 
 ## Ek Bilgi 
-Bu zararlı yazılım ile alakalı dosyalara sahipseniz lütfen bunları https://wormhole.app'e yükleyin ve fractureiser.investigation@opayq.com'a email atın - bu 
-
-## Additional Info
-
-If you have files relevant to this malware, please upload 
-them to https://wormhole.app and email the URL to fractureiser.investigation@opayq.com — bu gelen kutusu
-unascribed tarafından kontrol ediliyor ve buraya gönderdiğiniz her şey ekip ile paylaşılacaktır.
+Bu zararlı yazılım ile alakalı dosyalara sahipseniz lütfen bunları https://wormhole.app'e yükleyin ve fractureiser.investigation@opayq.com'a email atın
+bu gelen kutusu unascribed tarafından kontrol ediliyor ve buraya gönderdiğiniz her şey ekip ile paylaşılacaktır.
 Daha genel birşeyden kaynaklı iletişime geçmeniz gerekirse,
 lütfen jaskarth4@gmail.com'a email gönderin.
 
