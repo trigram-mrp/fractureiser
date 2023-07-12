@@ -1,27 +1,27 @@
-### Timeline
+### Linimasa
 
-The timeline is from bottom-to-top. Topmost events are the most recent.
+Linimasa ini dari bawah-ke-atas. kejadian yang paling atas adalah yang terbaru 
 
 ---
 *2023-06-09 07:48 UTC*
 
-Creators of Stage3b (skyrage) have apparently lost their domain skyrage.de (nameserver and registrar entries changed, dns entries vanished)
+Pencipta Stage3b (skyrage) telah tampaknya menghilang domainnya skyragede (entri nameserver dan registrar diubah, entri dns menghilang)
 
 ---
 *2023-06-08 10:50 UTC*
 
-The current C&C servers of stage3b (skyrage) `95[.].214.27.172` and `171[.]22.30.117` are no longer reachable. Watching out for potential DNS changes.
+Server C&C of stage3b (skyrage) saat ini `95[.].214.27.172` dan `171[.]22.30.117` tidak dapat dijangkau. mengawasi untuk perubahan DNS yang berpotensi.
 
-Time is when it was noticed, not when it happened.
+Waktu adalah kapan itu telah diberitahu, bukan kapan itu terjadi.
 
 ---
 *2023-06-08 05:11 UTC*
 
-Prospector announces the following:
+Pencari memberitahu dibawah ini:
 
-> An update from Modrinth, all files uploaded in the last 10 months
-> (about half of our files) have been scanned and not one infected
-> file has been found.
+> sebuah pembaruan dari Modrinth, semua file diunggah di akhir 10 bulan
+> (setengah dari file kita) telah dipindai dan tidak satupun terinfeksi
+> file telah ditemukan.
 
 ---
 *2023-06-08 01:12 UTC*

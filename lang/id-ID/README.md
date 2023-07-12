@@ -13,7 +13,7 @@ Jika ini dibiarkan, fractureiser dapat berpotensi **SANGAT BERBAHAYA!** pada per
 
 Kita telah menamai malware ini dengan nama *fractureiser* karena itu diambil dari nama akun Curseforge yang telah mengunggah file mengrugikan yang paling penting .  
 
-## Apa yang KAMU butuh dietahui
+## Apa yang KAMU butuh diketahui
 
 ### [Untuk pemain Modded Minecraft KLIK DISINI](docs/users.md)
 
