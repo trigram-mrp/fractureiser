@@ -1,40 +1,32 @@
-# Modded Players Guide
+# Panduan Pemain Modded(Termodifikasi)
 
-If you **only** play vanilla through a trusted launcher such as the official launcher or
-Prism, and have never touched mods ever: you are 100% safe. Stay away from mods for the
-time being.
+Jika kamu *hanya* bermain vanilla dengan launcher yang terpercaya seperti launcher resmi atau Prism, dan tidak pernah menyentuh mod satupun: kamu 100% aman. Berhati-hati dari mod untuk saat ini
 
-If you're a Modded Minecraft player, you need to verify if you have been infected by the
-fractureiser malware to ensure your machine and personal data are not at risk. You can do
-so with the instructions below.
+Jika kamu pemain Minecraft Modded(Termodifikasi), kamu butuh untuk memeriksa jika kamu telah terinfeksi oleh malware fractureiser untuk memastikan perangkat dan data pribadimu tidak dalam resiko. Kamu bisa melakukan dengan intruksi dibawah ini
 
-### Is it still going on??
-**No. Well, kinda.**  
-As of now, with our current knowledge, we believe the `fractureiser` virus has been fully cleaned 
-from current public mod(pack)s.  
+### Apakah masih berlangsung??
+**Tidak. Mungkin, sepertinya.**  
+Saat ini, dengan sepengetahuan kami sekarang, kita percaya virus `fractureiser` telah dihilangkan sepenuhnya dari mod(pack) publik saat ini 
 
-Our current recommendation is that players who have ran the stage2 checker in this page are safe
-to continue playing, however, since mod uploads have been turned back online at both CurseForge 
-and Modrinth, there is now the potential for copycat malware authors to make new viruses. 
+Rekomendasi kami saat ini pemain siapa yang telah menjalankan stage2 checker pada page ini adalah aman untuk melanjutkan bermain, namun, sejak unggah mod telah berbalik online antara Curseforge dan Modrinth, Sekarang itu pencipta malware peniru yang berpotensi untuk membuat virus baru 
 
-We are in contact with all relevant parties to establish protocols so that this doesn't happen 
-in the future.
+Kami berhubungan dengan semua pihak terkait untuk menetapkan protokol agar hal ini tidak terjadi
+di masa depan.
 
-If you want to play, please go through the diagnostic steps in this page as well as the follow
-up sections on what to do if you are or aren't infected.
+Jika Anda ingin bermain, silakan ikuti langkah-langkah diagnostik di halaman ini serta ikuti
+up bagian tentang apa yang harus dilakukan jika Anda atau tidak terinfeksi.
 
 ### Page Structure
-* [What Actually Happened?](#what-actually-happened)
-* [Am I Infected?](#am-i-infected)
-* [I'm Infected, Now What?](#im-infected-now-what)
-* [I'm Not Infected, Now What?](#im-not-infected-now-what)
+* [Apa yang sebenarnya terjadi?](#what-actually-happened)
+* [Apakah saya terinfeksi?](#am-i-infected)
+* [Saya terinfeksi, Sekarang apa?](#im-infected-now-what)
+* [Saya tidak terinfeksi, Sekarang apa?](#im-not-infected-now-what)
 * [Frequently Asked Questions](#frequently-asked-questions)
 * [Technical FAQ](#technical-faq)
 
-If you have any questions about fractureiser, please read this page in full, including the FAQ at
-the end, as most of the questions we've been getting are answered here.
+Jika kamu memiliki pertanyaan tentang fractureiser, mohon baca page ini sepenuhnya, termasuk FAQ pada diakhir, sebagai pertanyaan yang sangat mendapatkan jawaban disini 
 
-## What Actually Happened?
+## Apa yang sebenarnya terjadi?
 
 Several innocent looking malicious mods and plugins were initially uploaded by the malware's creator 
 to the mod hosting website CurseForge and plugin hub dev.bukkit.org (not the Bukkit
