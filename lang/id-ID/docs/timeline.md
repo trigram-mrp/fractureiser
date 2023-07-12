@@ -5,7 +5,7 @@ Linimasa ini dari bawah-ke-atas. kejadian yang paling atas adalah yang terbaru
 ---
 *2023-06-09 07:48 UTC*
 
-Pencipta Stage3b (skyrage) telah tampaknya menghilang domainnya skyragede (entri nameserver dan registrar diubah, entri dns menghilang)
+Pencipta Stage3b (skyrage) telah tampaknya menghilang domainnya, skyrage.de (entri nameserver dan registrar diubah, entri dns menghilang)
 
 ---
 *2023-06-08 10:50 UTC*
