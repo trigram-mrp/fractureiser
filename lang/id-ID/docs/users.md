@@ -16,7 +16,7 @@ di masa depan.
 Jika Anda ingin bermain, silakan ikuti langkah-langkah diagnostik di halaman ini serta ikuti
 up bagian tentang apa yang harus dilakukan jika Anda atau tidak terinfeksi.
 
-### Struktur halaman
+### Struktur Halaman
 * [Apa yang sebenarnya terjadi?](#apa-yang-sebenarnya-terjadi)
 * [Apakah saya terinfeksi?](#am-i-infected)
 * [Saya terinfeksi, Sekarang apa?](#im-infected-now-what)
