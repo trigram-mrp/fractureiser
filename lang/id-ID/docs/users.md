@@ -16,7 +16,7 @@ di masa depan.
 Jika Anda ingin bermain, silakan ikuti langkah-langkah diagnostik di halaman ini serta ikuti
 up bagian tentang apa yang harus dilakukan jika Anda atau tidak terinfeksi.
 
-### Struktur Page
+### Struktur halaman
 * [Apa yang sebenarnya terjadi?](#apa-yang-sebenarnya-terjadi)
 * [Apakah saya terinfeksi?](#am-i-infected)
 * [Saya terinfeksi, Sekarang apa?](#im-infected-now-what)
@@ -24,7 +24,7 @@ up bagian tentang apa yang harus dilakukan jika Anda atau tidak terinfeksi.
 * [Frequently Asked Questions](#frequently-asked-questions)
 * [FAQ Teknis](#technical-faq)
 
-Jika kamu memiliki pertanyaan tentang fractureiser, mohon baca page ini sepenuhnya, termasuk FAQ pada diakhir, sebagai pertanyaan yang sangat mendapatkan jawaban disini 
+Jika kamu memiliki pertanyaan tentang fractureiser, mohon baca halaman ini sepenuhnya, termasuk FAQ pada diakhir, sebagai pertanyaan yang sangat mendapatkan jawaban disini 
 
 ## Apa yang sebenarnya terjadi?
 
