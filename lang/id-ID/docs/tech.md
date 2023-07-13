@@ -6,13 +6,12 @@ Beberapa modpack telah mendapatkan pembaruan terbit dari mereka tanpa sepengatah
 
 mod yang berbahaya memiliki tanggal upload beberapa minggu dimasa lalu. beberapa dari mereka telah diunggah oleh akun sekali pakai dengan jelasnya nama yang digenerate secara otomatis, dan itu seperti benih dari infeksi. Luna Pixel Studio telah berkompromi karena pengujian dev satu dari mod tersebut, sebagai it telah sebuah unggah baru yang menarik
 
-### mod dan plugin yang diketahui mempegaruh
+### Mod dan plugin yang diketahui mempegaruh
 
 Catatan: list ini **tidak sebenarnya luas**. Itu telah dibuat pada awal hari dari investigasi dan secepatnya kita menyadari ruang lingkup ini jauh lebih besar daripada yang kita pikirkan, membuat pelacak dari kasus secari individu tidak berarti. itu ditinggalkan disini sebagai kegunaan ssecara sejarah 
 
-Lihat juga milik Curseforge
-[list](https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool/)
-of affected projects.
+Lihat juga [list](https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool/) dari Curseforge
+untuk project yang terpengaruh.
 
 |mod/plugin|link(s)|SHA1|"Pengunggah"|
 |---|---|---|---|

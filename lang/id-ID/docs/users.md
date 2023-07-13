@@ -16,50 +16,35 @@ di masa depan.
 Jika Anda ingin bermain, silakan ikuti langkah-langkah diagnostik di halaman ini serta ikuti
 up bagian tentang apa yang harus dilakukan jika Anda atau tidak terinfeksi.
 
-### Page Structure
-* [Apa yang sebenarnya terjadi?](#what-actually-happened)
+### Struktur Page
+* [Apa yang sebenarnya terjadi?](#apa-yang-sebenarnya-terjadi)
 * [Apakah saya terinfeksi?](#am-i-infected)
 * [Saya terinfeksi, Sekarang apa?](#im-infected-now-what)
 * [Saya tidak terinfeksi, Sekarang apa?](#im-not-infected-now-what)
 * [Frequently Asked Questions](#frequently-asked-questions)
-* [Technical FAQ](#technical-faq)
+* [FAQ Teknis](#technical-faq)
 
 Jika kamu memiliki pertanyaan tentang fractureiser, mohon baca page ini sepenuhnya, termasuk FAQ pada diakhir, sebagai pertanyaan yang sangat mendapatkan jawaban disini 
 
 ## Apa yang sebenarnya terjadi?
 
-Several innocent looking malicious mods and plugins were initially uploaded by the malware's creator 
-to the mod hosting website CurseForge and plugin hub dev.bukkit.org (not the Bukkit
-software itself). A high-profile mod pack developer downloaded one of these mods to try
-out, which infected files in their computer without their knowledge - this included a copy of a 
-working project that would then be uploaded to CurseForge as a seemingly leigimate file, with the 
-virus included. 
+Beberapa mod dan plugin berbahaya yang terlihat tidak bersalah awalnya diunggah oleh penbuat malware ke website layanan mod Curseforge dan hub plugin dev.bukkit.org (bukan perangkat lunak Bukkit itu sendiri). Pengembang modpack profil tinggi mengunduh sebuah satu-satunya mod untuk mencobanya, yang terinfeksi dalam komputernya tanpa sepengetahuannya, ini tercantum salinan dari project kerja yang bakal di unggah ke Curseforge sebagai file yang secara sah,dengan termasuknya virusnya.
 
-This process then repeated itself for a few other cases from users on CurseForge and 
-dev.bukkit.org, infecting copies of several popular plugins and mods. *There are reports of
-malicious plugin and mod jars as early
-as mid-April.*
+Proses ini akan terulang sendirinya untuk kasus lain dari pengguna di Curseforge dan dev.bukkit.org, menginfeksi salinan dari plugin dan mod yang populer. *Itu adalah laporan dari plugin dan mod jar yang berbahaya sebagai awal dari pertengahan April*
 
-Alongside this, brute force access attempts on high traffic content creator accounts on CurseForge
-were attempted by the malware author. We are currently unsure whether the breach was due to the
-brute force attempt or due to trojan infection on the accounts' owners.
+Disisi lain, akses bruteforce mencoba pada akun Content Creator yang bertraffic tinggi di Curseforge yang dicoba dari pembuat malware. Kita saat nini tidak yakin apakah pembocoran terjadi karena percobaan bruteforce atau karena infeksi trojan pada pemilik akun.
 
-This malware is composed of multiple "stages", each Stage is responsible for downloading and
-running the next one. In total, there are three known Stages (Stages 1, 2, and 3), with infected
-mod files serving as a "Stage 0" to kick the whole process off.
+Malware ini dibagi dengan beberapa "stadium", setiap Stadium akan dapat berresponsif untuk mengunduh dan menjalanikan yang selanjutnya. Dalam jumblah, mereka ada 3 stadium yang diketahui (Stadium 1, 2, dan 3), setiap mod yang terinfeksi akan ditandakan sebagai "Stadium 0" untuk memulaikan suatu proses
 
-Stage 3 is the "mastermind" of the malware, and we have evidence that it attempts to do all of
-the following:
+Stadium 3 adalah "dalang" dari sebuah malware, dan kita memiliki bukti itu dapat mencoba untuk melakukan semua yang dibawah ini:
 
-* Propagate itself to *all* `jar` files on the filesystem, possibly infecting mods that
-  were not downloaded from CurseForge or BukkitDev, or other Java programs
-* Steal cookies and login information for many web browsers
-* Replace cryptocurrency addresses in the clipboard with alternates that are presumably owned by
-the attacker
-* Steal Discord credentials
-* Steal Microsoft and Minecraft credentials
+* Akan menyebarkan itu sendiri ke *semua* file `jar` pada filesystem, kemungkinan menginfeksi mod yang tidak diunduh dari Curseforge atau BukkitDev, atau sistem Java lainya 
+* Mencuri cookies dan informasi login untuk beberaoa browser web
+* Mengubah alamat mata uang kripto dalam clipboard dengan alternatif itu adalah dugaan yang dimiliki oleh penyerang
+* Mencuri kredensial Discord 
+* Mencuri kredensial Microsoft dan Minecraft
 
-(See [technical details](tech.md) for more info)
+(Lihat [detil teknis](tech.md) untuk info lebih lanjut)
 
 Because of its behavior, we are **very confident** this is a **targeted attack against the modded 
 Minecraft ecosystem**. It's quite bad.
@@ -81,7 +66,7 @@ existing infections may still be active.
 
 ![Flowchart](media/flowchart.png)-->
 
-### Wait, what the f*** is a "stage"?
+### Tunggu, apa itu "stadium" g****k?
 
 ![Stage Diagram](media/stages.png)
 
