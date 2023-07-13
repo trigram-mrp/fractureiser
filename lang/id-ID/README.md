@@ -32,7 +32,7 @@ Kida memiliki ide yang bagus bagaimana fractureiser bekerja, dari Stadium 0 samp
 Dokumentasi terhadap penggunak masih banyak atau sedikit selesai. Kita berkerja dengan anggota komunitas untuk menerjemahkan ke bahasa lain untuk menyebarkan kesadaran
 
 ## Pertemuan Tingkat Lanjut
-Pada 2023-06-08 Tim Mitigasi fractureiser mengadakan pertemuan dengan anggota penting dari komunitas untuk mendiskusi tindakan pencegahan dan solusi untuk masalah kedepannya dari skala ini lihat [page ini](https://github.com/fractureiser-investigation/fractureiser/blob/main/docs/2023-06-08-meeting.md) for the agenda and minutes of the event.
+Pada 2023-06-08 Tim Mitigasi fractureiser mengadakan pertemuan dengan anggota penting dari komunitas untuk mendiskusi tindakan pencegahan dan solusi untuk masalah kedepannya dari skala ini lihat [Halaman ini](https://github.com/fractureiser-investigation/fractureiser/blob/main/docs/2023-06-08-meeting.md) for the agenda and minutes of the event.
 
 ## Informasi Tambahan
 

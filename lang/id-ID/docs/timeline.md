@@ -10,7 +10,7 @@ Pencipta Stage3b (skyrage) telah tampaknya menghilang domainnya, skyrage.de (ent
 ---
 *2023-06-08 10:50 UTC*
 
-Server C&C of stage3b (skyrage) saat ini `95[.].214.27.172` dan `171[.]22.30.117` tidak dapat dijangkau. mengawasi untuk perubahan DNS yang berpotensi.
+Server C&C stage3b (skyrage) saat ini `95[.].214.27.172` dan `171[.]22.30.117` tidak dapat dijangkau. mengawasi untuk perubahan DNS yang berpotensi.
 
 Waktu adalah kapan itu telah diberitahu, bukan kapan itu terjadi.
 
