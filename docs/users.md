@@ -37,14 +37,14 @@ the end, as most of the questions we've been getting are answered here.
 ## What Actually Happened?
 
 Several innocent looking malicious mods and plugins were initially uploaded by the malware's creator 
-to the mod hosting website CurseForge and plugin hub dev.craftbukkit.org (not the Bukkit 
+to the mod hosting website CurseForge and plugin hub dev.bukkit.org (not the Bukkit
 software itself). A high-profile mod pack developer downloaded one of these mods to try
 out, which infected files in their computer without their knowledge - this included a copy of a 
 working project that would then be uploaded to CurseForge as a seemingly leigimate file, with the 
 virus included. 
 
 This process then repeated itself for a few other cases from users on CurseForge and 
-dev.craftbukkit.org, infecting copies of several popular plugins and mods. *There are reports of 
+dev.bukkit.org, infecting copies of several popular plugins and mods. *There are reports of
 malicious plugin and mod jars as early
 as mid-April.*
 
