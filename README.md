@@ -16,6 +16,19 @@ If left unchecked, fractureiser can be **INCREDIBLY DANGEROUS** to your machine.
 
 We've dubbed this malware fractureiser because that's the name of the CurseForge account that uploaded the most notable malicious files.  
 
+## Current Investigation Status
+The fractureiser event has ended — no follow-up Stage0s were ever discovered and no further evidence of activity has been discovered in the past 3 months.
+A third C&C was never stood up to our knowledge.
+
+A copycat malware is still possible — and likely inevitable — but *fractureiser* is dead. **Systems that are already infected are still cause for concern**, and the below user documentation is still relevant.
+
+## Follow-Up Meeting
+On 2023-06-08 the fractureiser Mitigation Team held a meeting with notable members of the community to discuss preventive measures and solutions for future problems of this scale.
+See [this page](https://github.com/fractureiser-investigation/fractureiser/blob/main/docs/2023-06-08-meeting.md) for the agenda and minutes of the event.
+
+## BlanketCon Panel
+emilyploszaj and jaskarth, core members of the team, held a panel at BlanketCon 23 about the fractureiser mitigation effort. You can find a [recording of the panel by quat on YouTube](https://youtu.be/9eBmqHAk9HI).
+
 ## What YOU need to know
 
 ### [Modded Players CLICK HERE](docs/users.md)
@@ -29,24 +42,13 @@ Anyone who wishes to dig deeper may also look at
 ### I have never used any Minecraft mods
 You are not infected.
 
-## Current Investigation Status
-We have a good idea how fractureiser works, from Stages 0 to 3. There are certain
-unknowns, but the attack servers are offline and to our knowledge, *new* infections are
-not possible. Old infections may still be active.
-
-User-facing documentation is more or less finished. We're working with community members to get it translated into other languages to further spread awareness.
-
-## Follow-Up Meeting
-On 2023-06-08 the fractureiser Mitigation Team held a meeting with notable members of the community to discuss preventive measures and solutions for future problems of this scale.
-See [this page](https://github.com/fractureiser-investigation/fractureiser/blob/main/docs/2023-06-08-meeting.md) for the agenda and minutes of the event.
-
 ## Additional Info
 
-If you have files relevant to this malware, please upload them to https://wormhole.app and email the URL to fractureiser@unascribed.com — anything sent to it will be shared with the rest of the team. If you need to get in touch more generally, please send mail to jaskarth4@gmail.com.
+We've stopped receiving new unique samples, so the sample submission inbox is closed. If you would like to get in contact with the team, please shoot an email to `fractureiser@unascribed.com`.
 
 If you copy portions of this document elsewhere, *please* put a prominent link back to this [GitHub Repository](https://github.com/fractureiser-investigation/fractureiser) somewhere near the top so that people can read the latest updates and get in contact.
 
-The **only** official public channel you may join without being personally invited that's *run by the same team that wrote this writeup* is [#cfmalware on EsperNet IRC](https://webchat.esper.net/?channels=cfmalware). **Joining an IRC channel will expose your IP address.**
+The **only** official public channel that this team ever used for coordination was #cfmalware on EsperNet. ***We have no affiliation with any Discord guilds.***
 
 **Do not ask for samples.** If you have experience and credentials, that's great, but we have no way to verify this without using up tons of our team's limited time. Sharing malware samples is dangerous, even among people who know what they're doing.
 
