@@ -72,7 +72,7 @@ the attacker
 Because of its behavior, we are **very confident** this is a **targeted attack against the modded 
 Minecraft ecosystem**. It's quite bad.
 
-**Any download from CurseForge or the Bukkit plugin repository made during June 2023 should be
+**Any download from CurseForge or the Bukkit plugin repository made from February to June 2023 should be
 treated as potentially malicious**. Some malware scanners have started adding signatures
 to their databases, but until this rolls out to all of them, please exercise caution.
 
