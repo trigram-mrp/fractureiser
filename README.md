@@ -7,6 +7,7 @@
 * [简体中文版本见此](./lang/zh-CN/)
 * [Polska wersja](./lang/pl-PL/)
 * [Читать на русском языке](./lang/ru-RU/)
+* [한국어는 이곳으로](./lang/ko-KR/)
 * Many others that are unfinished can be found in [Pull Requests](https://github.com/fractureiser-investigation/fractureiser/pulls)
 
 ## What?
