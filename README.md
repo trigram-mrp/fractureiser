@@ -4,6 +4,8 @@
 
 **Translations to other languages:**
 
+*These were made at varying times in this document's history and **may be outdated** — especially the current status in README.md.*
+
 * [简体中文版本见此](./lang/zh-CN/)
 * [Polska wersja](./lang/pl-PL/)
 * [Читать на русском языке](./lang/ru-RU/)

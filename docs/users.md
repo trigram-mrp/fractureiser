@@ -72,15 +72,9 @@ the attacker
 Because of its behavior, we are **very confident** this is a **targeted attack against the modded 
 Minecraft ecosystem**. It's quite bad.
 
-**Until further notice, exercise extreme caution with Minecraft mod downloads, regardless
-of origin.** While the control server for this malware is currently offline, **any
-download from Curseforge or the Bukkit plugin repository in the last 2-3 weeks should be
+**Any download from CurseForge or the Bukkit plugin repository made from February to June 2023 should be
 treated as potentially malicious**. Some malware scanners have started adding signatures
 to their databases, but until this rolls out to all of them, please exercise caution.
-
-*At this point we cannot be confident claiming any hosting service is unaffected*. Please
-exercise caution regardless of what site you use. Even Maven repositories may be infected,
-and this malware goes back months.
 
 Currently, new infections are impossible as the attacker's server has been shut down,
 existing infections may still be active.
