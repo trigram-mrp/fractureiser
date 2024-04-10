@@ -2,10 +2,6 @@
 	<img src="./docs/media/logo.svg" alt="logo fractureiser" height="240">
 </p>
 
-*Xin lỗi nếu thiếu thông tin; chúng tôi vẫn đang hoàn thành tài liệu.*
-
-[English version](/README.md); [简体中文版本见此](/lang/zh-CN/); [Polska wersja](/lang/pl-PL)
-
 ## Cái gì?
 `Fractureiser` là một [vi rút](https://en.wikipedia.org/wiki/Computer_virus) đã thấy trong một số dự án Minecraft. Vi rút này đã ở trong một số mod, trong những đó một số cái đã cho vào trong một số mod rất là phổ biến trong cộng đồng.
 
