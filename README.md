@@ -47,7 +47,7 @@ You are not infected.
 
 ## Additional Info
 
-We've stopped receiving new unique samples, so the sample submission inbox is closed. If you would like to get in contact with the team, please shoot an email to `fractureiser@unascribed.com`.
+We've stopped receiving new unique samples, so the sample submission inbox is closed. If you would like to get in contact with the team, please shoot an email to `mrp@trigram.org`.
 
 If you copy portions of this document elsewhere, *please* put a prominent link back to this [GitHub Repository](https://github.com/fractureiser-investigation/fractureiser) somewhere near the top so that people can read the latest updates and get in contact.
 
