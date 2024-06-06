@@ -1,9 +1,16 @@
 ## Credits
 Nonexhaustive! Thank you to all that pitched in.
 
+### "Core Team"
+
+Now known as the [Trigram Malware Research & Prevention](https://mrp.trigram.org/) team.
+
 [**Emi**](https://github.com/emilyploszaj/): Coordination, initial discovery (for this team), early research, meeting organization  
-[**Jasmine**](https://github.com/jaskarth/): Coordination, research, writing the decompiler we've been using ([Quiltflower](https://github.com/QuiltMC/quiltflower/))  
+[**Jasmine**](https://github.com/jaskarth/): Coordination, research, writing the decompiler we've been using ([Quiltflower](https://github.com/QuiltMC/quiltflower/)) 
 [**unascribed**](https://github.com/unascribed/): Coordination of documentation, crowd control, logo  
+
+## Contributors
+
 [**williewillus**](https://github.com/williewillus/): Coordination, journalist  
 [**Vazkii**](https://github.com/vazkii/): Documentation, public communications  
 [**Col-E**](https://github.com/Col-E/): Reverse engineering, writing the deobfuscator we've been using ([Recaf](https://www.coley.software/Recaf/))  
